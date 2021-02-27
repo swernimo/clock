@@ -24284,201 +24284,73 @@ typedef uint32_t uint_fast32_t;
 void INTERRUPT_Initialize (void);
 # 54 "./mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/i2c1_driver.h" 1
-# 26 "./mcc_generated_files/i2c1_driver.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 1 3
-# 24 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 3
+# 1 "./mcc_generated_files/i2c1.h" 1
+# 55 "./mcc_generated_files/i2c1.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stddef.h" 1 3
+# 19 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stddef.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 132 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long ptrdiff_t;
+# 19 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stddef.h" 2 3
+# 55 "./mcc_generated_files/i2c1.h" 2
+# 86 "./mcc_generated_files/i2c1.h"
+typedef enum
+{
+    I2C1_MESSAGE_COMPLETE,
+    I2C1_MESSAGE_FAIL,
+    I2C1_MESSAGE_PENDING,
+    I2C1_STUCK_START,
+    I2C1_MESSAGE_ADDRESS_NO_ACK,
+    I2C1_DATA_NO_ACK,
+    I2C1_LOST_STATE
+} I2C1_MESSAGE_STATUS;
+# 111 "./mcc_generated_files/i2c1.h"
+typedef struct
+{
+    uint16_t address;
 
 
+    uint8_t length;
+    uint8_t *pbuffer;
+} I2C1_TRANSACTION_REQUEST_BLOCK;
+# 223 "./mcc_generated_files/i2c1.h"
+void I2C1_Initialize(void);
+# 262 "./mcc_generated_files/i2c1.h"
+void I2C1_MasterWrite(
+                                uint8_t *pdata,
+                                uint8_t length,
+                                uint16_t address,
+                                I2C1_MESSAGE_STATUS *pstatus);
+# 409 "./mcc_generated_files/i2c1.h"
+void I2C1_MasterRead(
+                                uint8_t *pdata,
+                                uint8_t length,
+                                uint16_t address,
+                                I2C1_MESSAGE_STATUS *pstatus);
+# 519 "./mcc_generated_files/i2c1.h"
+void I2C1_MasterTRBInsert(
+                                uint8_t count,
+                                I2C1_TRANSACTION_REQUEST_BLOCK *ptrb_list,
+                                I2C1_MESSAGE_STATUS *pflag);
+# 563 "./mcc_generated_files/i2c1.h"
+void I2C1_MasterReadTRBBuild(
+                                I2C1_TRANSACTION_REQUEST_BLOCK *ptrb,
+                                uint8_t *pdata,
+                                uint8_t length,
+                                uint16_t address);
+# 608 "./mcc_generated_files/i2c1.h"
+void I2C1_MasterWriteTRBBuild(
+                                I2C1_TRANSACTION_REQUEST_BLOCK *ptrb,
+                                uint8_t *pdata,
+                                uint8_t length,
+                                uint16_t address);
+# 650 "./mcc_generated_files/i2c1.h"
+_Bool I2C1_MasterQueueIsEmpty(void);
+# 688 "./mcc_generated_files/i2c1.h"
+_Bool I2C1_MasterQueueIsFull(void);
 
-
-
-typedef void * va_list[1];
-
-
-
-
-typedef void * __isoc_va_list[1];
-# 137 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long ssize_t;
-# 246 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long off_t;
-# 399 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct _IO_FILE FILE;
-# 24 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 2 3
-# 52 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 3
-typedef union _G_fpos64_t {
- char __opaque[16];
- double __align;
-} fpos_t;
-
-extern FILE *const stdin;
-extern FILE *const stdout;
-extern FILE *const stderr;
-
-
-
-
-
-FILE *fopen(const char *restrict, const char *restrict);
-FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
-int fclose(FILE *);
-
-int remove(const char *);
-int rename(const char *, const char *);
-
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-void clearerr(FILE *);
-
-int fseek(FILE *, long, int);
-long ftell(FILE *);
-void rewind(FILE *);
-
-int fgetpos(FILE *restrict, fpos_t *restrict);
-int fsetpos(FILE *, const fpos_t *);
-
-size_t fread(void *restrict, size_t, size_t, FILE *restrict);
-size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
-
-int fgetc(FILE *);
-int getc(FILE *);
-int getchar(void);
-int ungetc(int, FILE *);
-
-int fputc(int, FILE *);
-int putc(int, FILE *);
-int putchar(int);
-
-char *fgets(char *restrict, int, FILE *restrict);
-
-char *gets(char *);
-
-
-int fputs(const char *restrict, FILE *restrict);
-int puts(const char *);
-
-#pragma printf_check(printf) const
-#pragma printf_check(vprintf) const
-#pragma printf_check(sprintf) const
-#pragma printf_check(snprintf) const
-#pragma printf_check(vsprintf) const
-#pragma printf_check(vsnprintf) const
-
-int printf(const char *restrict, ...);
-int fprintf(FILE *restrict, const char *restrict, ...);
-int sprintf(char *restrict, const char *restrict, ...);
-int snprintf(char *restrict, size_t, const char *restrict, ...);
-
-int vprintf(const char *restrict, __isoc_va_list);
-int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
-int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
-
-int scanf(const char *restrict, ...);
-int fscanf(FILE *restrict, const char *restrict, ...);
-int sscanf(const char *restrict, const char *restrict, ...);
-int vscanf(const char *restrict, __isoc_va_list);
-int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
-
-void perror(const char *);
-
-int setvbuf(FILE *restrict, char *restrict, int, size_t);
-void setbuf(FILE *restrict, char *restrict);
-
-char *tmpnam(char *);
-FILE *tmpfile(void);
-
-
-
-
-FILE *fmemopen(void *restrict, size_t, const char *restrict);
-FILE *open_memstream(char **, size_t *);
-FILE *fdopen(int, const char *);
-FILE *popen(const char *, const char *);
-int pclose(FILE *);
-int fileno(FILE *);
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-int dprintf(int, const char *restrict, ...);
-int vdprintf(int, const char *restrict, __isoc_va_list);
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
-ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
-int renameat(int, const char *, int, const char *);
-char *ctermid(char *);
-
-
-
-
-
-
-
-char *tempnam(const char *, const char *);
-# 26 "./mcc_generated_files/i2c1_driver.h" 2
-
-
-
-
-
-
-
-
-typedef void (*interruptHandler)(void);
-
-
-__attribute__((inline)) void i2c1_driver_close(void);
-
-
-__attribute__((inline)) void mssp1_enableIRQ(void);
-__attribute__((inline)) __bit mssp1_IRQisEnabled(void);
-__attribute__((inline)) void mssp1_disableIRQ(void);
-__attribute__((inline)) void mssp1_clearIRQ(void);
-__attribute__((inline)) void mssp1_setIRQ(void);
-__attribute__((inline)) __bit mssp1_IRQisSet(void);
-__attribute__((inline)) void mssp1_waitForEvent(uint16_t*);
-
-
-__bit i2c1_driver_open(void);
-__attribute__((inline)) char i2c1_driver_getRXData(void);
-__attribute__((inline)) char i2c1_driver_getAddr(void);
-__attribute__((inline)) void i2c1_driver_setAddr(char addr);
-__attribute__((inline)) void i2c1_driver_setMask(char mask);
-__attribute__((inline)) void i2c1_driver_TXData(char d);
-__attribute__((inline)) void i2c1_driver_resetBus(void);
-__attribute__((inline)) void i2c1_driver_start(void);
-__attribute__((inline)) void i2c1_driver_restart(void);
-__attribute__((inline)) void i2c1_driver_stop(void);
-__attribute__((inline)) __bit i2c1_driver_isNACK(void);
-__attribute__((inline)) void i2c1_driver_startRX(void);
-__attribute__((inline)) void i2c1_driver_sendACK(void);
-__attribute__((inline)) void i2c1_driver_sendNACK(void);
-__attribute__((inline)) void i2c1_driver_clearBusCollision(void);
-
-__bit i2c1_driver_initSlaveHardware(void);
-__attribute__((inline)) void i2c1_driver_releaseClock(void);
-__attribute__((inline)) __bit i2c1_driver_isBufferFull(void);
-__attribute__((inline)) __bit i2c1_driver_isStart(void);
-__attribute__((inline)) __bit i2c1_driver_isStop(void);
-__attribute__((inline)) __bit i2c1_driver_isAddress(void);
-__attribute__((inline)) __bit i2c1_driver_isData(void);
-__attribute__((inline)) __bit i2c1_driver_isRead(void);
-__attribute__((inline)) __bit i2c1_driver_isWriteCollision(void);
-__attribute__((inline)) __bit i2c1_driver_isReceiveOverflow(void);
-
-__attribute__((inline)) void i2c1_driver_setBusCollisionISR(interruptHandler handler);
-__attribute__((inline)) void i2c1_driver_setI2cISR(interruptHandler handler);
-void (*i2c1_driver_busCollisionISR)(void);
-void (*i2c1_driver_i2cISR)(void);
+void I2C1_BusCollisionISR( void );
+void I2C1_ISR ( void );
 # 55 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/tmr0.h" 1
@@ -24504,77 +24376,23 @@ void OSCILLATOR_Initialize(void);
 # 97 "./mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
 # 1 "main.c" 2
-
-
-
-# 1 "./I2C.h" 1
-# 58 "./I2C.h"
-void I2C_Initialize();
-void I2C_Master_Idle (void);
-void I2C_Master_Wait (void);
-void I2C_Master_Start(void);
-void I2C_Master_Restart(void);
-void I2C_Master_Stop (void);
-void I2C_Master_NAK (void);
-void I2C_Master_Write (uint8_t data);
-uint8_t I2C_Master_Read (void);
-# 4 "main.c" 2
-
-# 1 "./RTC.h" 1
-# 5 "main.c" 2
-
-
-
-
-
-
-
-
-unsigned char sec, min, hr,day, dat, mon, yr ;
-unsigned char rtcc_buf ;
-unsigned char err_cnt = 0x00 ;
-unsigned char err_flg = 0x00 ;
-
-void MCP7940_Write (uint8_t dev_addr, uint8_t reg_addr, uint8_t reg_data)
-{
-
-    I2C_Master_Start();
-    I2C_Master_Write((dev_addr << 1) & 0xfe );
-    I2C_Master_Write(reg_addr);
-    I2C_Master_Write(reg_data);
-    I2C_Master_Stop();
-    _delay((unsigned long)((200)*(8000000/4000.0)));
-}
-
-uint8_t MCP7940_Read (uint8_t dev_addr, uint8_t reg_addr)
-{
-    I2C_Master_Start();
-    I2C_Master_Write((dev_addr << 1) | 0x01);
-    I2C_Master_Write(reg_addr);
-    uint8_t temp = I2C_Master_Read();
-    I2C_Master_NAK();
-    I2C_Master_Stop();
-    _delay((unsigned long)((200)*(8000000/4000.0)));
-    return temp;
-}
-
+# 41 "main.c"
 void main(void)
 {
 
     SYSTEM_Initialize();
-    I2C_Initialize();
 # 61 "main.c"
     TMR0_StartTimer();
 
-    MCP7940_Write(0x6F, 0x00, 0x0 | 0x80);
-    MCP7940_Write(0x6F, 0x01, 0x59);
-    MCP7940_Write(0x6F, 0x02, 0x12);
+
+
+
     while (1)
     {
 
         if(TMR0_HasOverflowOccured()){
-            sec = MCP7940_Read(0x6F, 0x00);
-            min = MCP7940_Read(0x6F, 0x01);
+
+
             TMR0_StopTimer();
             PIR0bits.TMR0IF = 0;
             do { LATDbits.LATD1 = ~LATDbits.LATD1; } while(0);

@@ -1,32 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F14626 `(v ~T0 @X0 0 tf ]
-[v F14628 `(v ~T0 @X0 0 tf ]
-"61 ./I2C.h
-[; ;./I2C.h: 61: void I2C_Master_Start(void);
-[v _I2C_Master_Start `(v ~T0 @X0 0 ef ]
-"65
-[; ;./I2C.h: 65: void I2C_Master_Write (uint8_t data);
-[v _I2C_Master_Write `(v ~T0 @X0 0 ef1`uc ]
-"63
-[; ;./I2C.h: 63: void I2C_Master_Stop (void);
-[v _I2C_Master_Stop `(v ~T0 @X0 0 ef ]
-[v F14184 `(v ~T0 @X0 1 tf1`ul ]
-"203 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\pic18.h
-[v __delay `JF14184 ~T0 @X0 0 e ]
-[p i __delay ]
-"66 ./I2C.h
-[; ;./I2C.h: 66: uint8_t I2C_Master_Read (void);
-[v _I2C_Master_Read `(uc ~T0 @X0 0 ef ]
-"64
-[; ;./I2C.h: 64: void I2C_Master_NAK (void);
-[v _I2C_Master_NAK `(v ~T0 @X0 0 ef ]
 [p mainexit ]
 "71 ./mcc_generated_files/mcc.h
 [; ;./mcc_generated_files/mcc.h: 71: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"58 ./I2C.h
-[; ;./I2C.h: 58: void I2C_Initialize();
-[v _I2C_Initialize `(v ~T0 @X0 0 e? ]
 "129 ./mcc_generated_files/tmr0.h
 [; ;./mcc_generated_files/tmr0.h: 129: void TMR0_StartTimer(void);
 [v _TMR0_StartTimer `(v ~T0 @X0 0 ef ]
@@ -2036,119 +2012,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "40981
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40981: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"78 ./mcc_generated_files/i2c1_driver.h
-[; ;./mcc_generated_files/i2c1_driver.h: 78: void (*i2c1_driver_busCollisionISR)(void);
-[v _i2c1_driver_busCollisionISR `*F14626 ~T0 @X0 1 e ]
-"79
-[; ;./mcc_generated_files/i2c1_driver.h: 79: void (*i2c1_driver_i2cISR)(void);
-[v _i2c1_driver_i2cISR `*F14628 ~T0 @X0 1 e ]
-"13 main.c
-[; ;main.c: 13: unsigned char sec, min, hr,day, dat, mon, yr ;
-[v _sec `uc ~T0 @X0 1 e ]
-[v _min `uc ~T0 @X0 1 e ]
-[v _hr `uc ~T0 @X0 1 e ]
-[v _day `uc ~T0 @X0 1 e ]
-[v _dat `uc ~T0 @X0 1 e ]
-[v _mon `uc ~T0 @X0 1 e ]
-[v _yr `uc ~T0 @X0 1 e ]
-"14
-[; ;main.c: 14: unsigned char rtcc_buf ;
-[v _rtcc_buf `uc ~T0 @X0 1 e ]
-"15
-[; ;main.c: 15: unsigned char err_cnt = 0x00 ;
-[v _err_cnt `uc ~T0 @X0 1 e ]
-[i _err_cnt
--> -> 0 `i `uc
-]
-"16
-[; ;main.c: 16: unsigned char err_flg = 0x00 ;
-[v _err_flg `uc ~T0 @X0 1 e ]
-[i _err_flg
--> -> 0 `i `uc
-]
-"18
-[; ;main.c: 18: void MCP7940_Write (uint8_t dev_addr, uint8_t reg_addr, uint8_t reg_data)
-[v _MCP7940_Write `(v ~T0 @X0 1 ef3`uc`uc`uc ]
-"19
-[; ;main.c: 19: {
-{
-[e :U _MCP7940_Write ]
-"18
-[; ;main.c: 18: void MCP7940_Write (uint8_t dev_addr, uint8_t reg_addr, uint8_t reg_data)
-[v _dev_addr `uc ~T0 @X0 1 r1 ]
-[v _reg_addr `uc ~T0 @X0 1 r2 ]
-[v _reg_data `uc ~T0 @X0 1 r3 ]
-"19
-[; ;main.c: 19: {
-[f ]
-"21
-[; ;main.c: 21:     I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
-"22
-[; ;main.c: 22:     I2C_Master_Write((dev_addr << 1) & 0xfe );
-[e ( _I2C_Master_Write (1 -> & << -> _dev_addr `i -> 1 `i -> 254 `i `uc ]
-"23
-[; ;main.c: 23:     I2C_Master_Write(reg_addr);
-[e ( _I2C_Master_Write (1 _reg_addr ]
-"24
-[; ;main.c: 24:     I2C_Master_Write(reg_data);
-[e ( _I2C_Master_Write (1 _reg_data ]
-"25
-[; ;main.c: 25:     I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"26
-[; ;main.c: 26:     _delay((unsigned long)((200)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"27
-[; ;main.c: 27: }
-[e :UE 2021 ]
-}
-"29
-[; ;main.c: 29: uint8_t MCP7940_Read (uint8_t dev_addr, uint8_t reg_addr)
-[v _MCP7940_Read `(uc ~T0 @X0 1 ef2`uc`uc ]
-"30
-[; ;main.c: 30: {
-{
-[e :U _MCP7940_Read ]
-"29
-[; ;main.c: 29: uint8_t MCP7940_Read (uint8_t dev_addr, uint8_t reg_addr)
-[v _dev_addr `uc ~T0 @X0 1 r1 ]
-[v _reg_addr `uc ~T0 @X0 1 r2 ]
-"30
-[; ;main.c: 30: {
-[f ]
-"31
-[; ;main.c: 31:     I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
-"32
-[; ;main.c: 32:     I2C_Master_Write((dev_addr << 1) | 0x01);
-[e ( _I2C_Master_Write (1 -> | << -> _dev_addr `i -> 1 `i -> 1 `i `uc ]
-"33
-[; ;main.c: 33:     I2C_Master_Write(reg_addr);
-[e ( _I2C_Master_Write (1 _reg_addr ]
-"34
-[; ;main.c: 34:     uint8_t temp = I2C_Master_Read();
-[v _temp `uc ~T0 @X0 1 a ]
-[e = _temp ( _I2C_Master_Read ..  ]
-"35
-[; ;main.c: 35:     I2C_Master_NAK();
-[e ( _I2C_Master_NAK ..  ]
-"36
-[; ;main.c: 36:     I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"37
-[; ;main.c: 37:     _delay((unsigned long)((200)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"38
-[; ;main.c: 38:     return temp;
-[e ) _temp ]
-[e $UE 2022  ]
-"39
-[; ;main.c: 39: }
-[e :UE 2022 ]
-}
 [v $root$_main `(v ~T0 @X0 0 e ]
-"41
+"41 main.c
 [; ;main.c: 41: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
 "42
@@ -2159,37 +2024,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 "44
 [; ;main.c: 44:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"45
-[; ;main.c: 45:     I2C_Initialize();
-[e ( _I2C_Initialize ..  ]
 "61
 [; ;main.c: 61:     TMR0_StartTimer();
 [e ( _TMR0_StartTimer ..  ]
-"63
-[; ;main.c: 63:     MCP7940_Write(0x6F, 0x00, 0x0 | 0x80);
-[e ( _MCP7940_Write (3 , , -> -> 111 `i `uc -> -> 0 `i `uc -> | -> 0 `i -> 128 `i `uc ]
-"64
-[; ;main.c: 64:     MCP7940_Write(0x6F, 0x01, 0x59);
-[e ( _MCP7940_Write (3 , , -> -> 111 `i `uc -> -> 1 `i `uc -> -> 89 `i `uc ]
-"65
-[; ;main.c: 65:     MCP7940_Write(0x6F, 0x02, 0x12);
-[e ( _MCP7940_Write (3 , , -> -> 111 `i `uc -> -> 2 `i `uc -> -> 18 `i `uc ]
 "66
 [; ;main.c: 66:     while (1)
-[e :U 2025 ]
+[e :U 2022 ]
 "67
 [; ;main.c: 67:     {
 {
 "69
 [; ;main.c: 69:         if(TMR0_HasOverflowOccured()){
-[e $ ! != -> ( _TMR0_HasOverflowOccured ..  `i -> 0 `i 2027  ]
+[e $ ! != -> ( _TMR0_HasOverflowOccured ..  `i -> 0 `i 2024  ]
 {
-"70
-[; ;main.c: 70:             sec = MCP7940_Read(0x6F, 0x00);
-[e = _sec ( _MCP7940_Read (2 , -> -> 111 `i `uc -> -> 0 `i `uc ]
-"71
-[; ;main.c: 71:             min = MCP7940_Read(0x6F, 0x01);
-[e = _min ( _MCP7940_Read (2 , -> -> 111 `i `uc -> -> 1 `i `uc ]
 "72
 [; ;main.c: 72:             TMR0_StopTimer();
 [e ( _TMR0_StopTimer ..  ]
@@ -2198,25 +2045,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _PIR0bits 0 5 -> -> 0 `i `uc ]
 "74
 [; ;main.c: 74:             do { LATDbits.LATD1 = ~LATDbits.LATD1; } while(0);
-[e :U 2030 ]
+[e :U 2027 ]
 {
 [e = . . _LATDbits 0 1 -> ~ -> . . _LATDbits 0 1 `i `uc ]
 }
-[e :U 2029 ]
+[e :U 2026 ]
 "75
 [; ;main.c: 75:             TMR0_StartTimer();
 [e ( _TMR0_StartTimer ..  ]
 "76
 [; ;main.c: 76:         }
 }
-[e :U 2027 ]
+[e :U 2024 ]
 "77
 [; ;main.c: 77:     }
 }
-[e :U 2024 ]
-[e $U 2025  ]
-[e :U 2026 ]
+[e :U 2021 ]
+[e $U 2022  ]
+[e :U 2023 ]
 "78
 [; ;main.c: 78: }
-[e :UE 2023 ]
+[e :UE 2020 ]
 }

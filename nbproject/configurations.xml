@@ -7,10 +7,17 @@
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"
                      projectFiles="true">
+        <logicalFolder name="drivers" displayName="drivers" projectFiles="true">
+          <itemPath>mcc_generated_files/drivers/i2c_types.h</itemPath>
+          <itemPath>mcc_generated_files/drivers/i2c_master.h</itemPath>
+          <itemPath>mcc_generated_files/drivers/i2c_simple_master.h</itemPath>
+        </logicalFolder>
         <itemPath>mcc_generated_files/device_config.h</itemPath>
         <itemPath>mcc_generated_files/pin_manager.h</itemPath>
         <itemPath>mcc_generated_files/mcc.h</itemPath>
         <itemPath>mcc_generated_files/tmr0.h</itemPath>
+        <itemPath>mcc_generated_files/interrupt_manager.h</itemPath>
+        <itemPath>mcc_generated_files/i2c1_driver.h</itemPath>
       </logicalFolder>
       <itemPath>I2C.h</itemPath>
       <itemPath>RTC.h</itemPath>
@@ -25,10 +32,17 @@
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"
                      projectFiles="true">
+        <logicalFolder name="drivers" displayName="drivers" projectFiles="true">
+          <itemPath>mcc_generated_files/drivers/i2c_master.c</itemPath>
+          <itemPath>mcc_generated_files/drivers/i2c_types.c</itemPath>
+          <itemPath>mcc_generated_files/drivers/i2c_simple_master.c</itemPath>
+        </logicalFolder>
         <itemPath>mcc_generated_files/device_config.c</itemPath>
         <itemPath>mcc_generated_files/mcc.c</itemPath>
         <itemPath>mcc_generated_files/pin_manager.c</itemPath>
         <itemPath>mcc_generated_files/tmr0.c</itemPath>
+        <itemPath>mcc_generated_files/interrupt_manager.c</itemPath>
+        <itemPath>mcc_generated_files/i2c1_driver.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>I2C.c</itemPath>

@@ -24292,9 +24292,9 @@ uint8_t I2C_Master_Read (void);
 # 10 "I2C.c" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 110 "./mcc_generated_files/pin_manager.h"
+# 144 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 122 "./mcc_generated_files/pin_manager.h"
+# 156 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 11 "I2C.c" 2
 

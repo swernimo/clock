@@ -1,54 +1,61 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [v F14626 `(v ~T0 @X0 0 tf ]
 [v F14628 `(v ~T0 @X0 0 tf ]
-"110 mcc_generated_files/interrupt_manager.h
-[; ;mcc_generated_files/interrupt_manager.h: 110: void INTERRUPT_Initialize (void);
-[v _INTERRUPT_Initialize `(v ~T0 @X0 0 ef ]
-"99 mcc_generated_files/mcc.h
-[; ;mcc_generated_files/mcc.h: 99: void PMD_Initialize(void);
-[v _PMD_Initialize `(v ~T0 @X0 0 ef ]
-"144 mcc_generated_files/pin_manager.h
-[; ;mcc_generated_files/pin_manager.h: 144: void PIN_MANAGER_Initialize (void);
-[v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
-"86 mcc_generated_files/mcc.h
-[; ;mcc_generated_files/mcc.h: 86: void OSCILLATOR_Initialize(void);
-[v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
-"100 mcc_generated_files/tmr0.h
-[; ;mcc_generated_files/tmr0.h: 100: void TMR0_Initialize(void);
-[v _TMR0_Initialize `(v ~T0 @X0 0 ef ]
-"6186 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 6186: extern volatile unsigned char OSCCON1 __attribute__((address(0xE43)));
-[v _OSCCON1 `Vuc ~T0 @X0 0 e@3651 ]
-"6326
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 6326: extern volatile unsigned char OSCCON3 __attribute__((address(0xE45)));
-[v _OSCCON3 `Vuc ~T0 @X0 0 e@3653 ]
-"6478
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 6478: extern volatile unsigned char OSCEN __attribute__((address(0xE47)));
-[v _OSCEN `Vuc ~T0 @X0 0 e@3655 ]
-"6587
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 6587: extern volatile unsigned char OSCFRQ __attribute__((address(0xE49)));
-[v _OSCFRQ `Vuc ~T0 @X0 0 e@3657 ]
-"6529
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 6529: extern volatile unsigned char OSCTUNE __attribute__((address(0xE48)));
-[v _OSCTUNE `Vuc ~T0 @X0 0 e@3656 ]
-"6694
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 6694: extern volatile unsigned char PMD0 __attribute__((address(0xE4C)));
-[v _PMD0 `Vuc ~T0 @X0 0 e@3660 ]
-"6771
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 6771: extern volatile unsigned char PMD1 __attribute__((address(0xE4D)));
-[v _PMD1 `Vuc ~T0 @X0 0 e@3661 ]
-"6841
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 6841: extern volatile unsigned char PMD2 __attribute__((address(0xE4E)));
-[v _PMD2 `Vuc ~T0 @X0 0 e@3662 ]
-"6895
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 6895: extern volatile unsigned char PMD3 __attribute__((address(0xE4F)));
-[v _PMD3 `Vuc ~T0 @X0 0 e@3663 ]
-"6946
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 6946: extern volatile unsigned char PMD4 __attribute__((address(0xE50)));
-[v _PMD4 `Vuc ~T0 @X0 0 e@3664 ]
-"7002
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 7002: extern volatile unsigned char PMD5 __attribute__((address(0xE51)));
-[v _PMD5 `Vuc ~T0 @X0 0 e@3665 ]
+"40532 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40532:     struct {
+[s S1989 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1989 . INT0EDG INT1EDG INT2EDG INT3EDG . IPEN PEIE_GIEL GIE_GIEH ]
+"40542
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40542:     struct {
+[s S1990 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1990 . . PEIE GIE ]
+"40547
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40547:     struct {
+[s S1991 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1991 . . GIEL GIEH ]
+"40531
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40531: typedef union {
+[u S1988 `S1989 1 `S1990 1 `S1991 1 ]
+[n S1988 . . . . ]
+"40553
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40553: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
+[v _INTCONbits `VS1988 ~T0 @X0 0 e@4082 ]
+[t ~ __interrupt . k ]
+[t T1 __interrupt ]
+"4700
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 4700:     struct {
+[s S270 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S270 . SSP1IE BCL1IE SSP2IE BCL2IE TX1IE RC1IE TX2IE RC2IE ]
+"4710
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 4710:     struct {
+[s S271 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S271 . RXB0IE RXB1IE TXB0IE TXB1IE TXB2IE ]
+"4717
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 4717:     struct {
+[s S272 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S272 . . RXBNIE . TXBNIE ]
+"4699
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 4699: typedef union {
+[u S269 `S270 1 `S271 1 `S272 1 ]
+[n S269 . . . . ]
+"4724
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 4724: extern volatile PIE3bits_t PIE3bits __attribute__((address(0xE2C)));
+[v _PIE3bits `VS269 ~T0 @X0 0 e@3628 ]
+"5245
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 5245:     struct {
+[s S294 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S294 . SSP1IF BCL1IF SSP2IF BCL2IF TX1IF RC1IF TX2IF RC2IF ]
+"5255
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 5255:     struct {
+[s S295 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S295 . . RXBNIF . TXBNIF ]
+"5244
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 5244: typedef union {
+[u S293 `S294 1 `S295 1 ]
+[n S293 . . . ]
+"5262
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 5262: extern volatile PIR3bits_t PIR3bits __attribute__((address(0xE36)));
+[v _PIR3bits `VS293 ~T0 @X0 0 e@3638 ]
 "54 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 54: __asm("PPSLOCK equ 0DEFh");
 [; <" PPSLOCK equ 0DEFh ;# ">
@@ -2029,87 +2036,89 @@ Version 4.0 HI-TECH Software Intermediate Code
 "79
 [; ;mcc_generated_files/i2c1_driver.h: 79: void (*i2c1_driver_i2cISR)(void);
 [v _i2c1_driver_i2cISR `*F14628 ~T0 @X0 1 e ]
-"50 mcc_generated_files/mcc.c
-[; ;mcc_generated_files/mcc.c: 50: void SYSTEM_Initialize(void)
-[v _SYSTEM_Initialize `(v ~T0 @X0 1 ef ]
-"51
-[; ;mcc_generated_files/mcc.c: 51: {
-{
-[e :U _SYSTEM_Initialize ]
-[f ]
-"52
-[; ;mcc_generated_files/mcc.c: 52:     INTERRUPT_Initialize();
-[e ( _INTERRUPT_Initialize ..  ]
+"52 mcc_generated_files/interrupt_manager.c
+[; ;mcc_generated_files/interrupt_manager.c: 52: void INTERRUPT_Initialize (void)
+[v _INTERRUPT_Initialize `(v ~T0 @X0 1 ef ]
 "53
-[; ;mcc_generated_files/mcc.c: 53:     PMD_Initialize();
-[e ( _PMD_Initialize ..  ]
-"54
-[; ;mcc_generated_files/mcc.c: 54:     PIN_MANAGER_Initialize();
-[e ( _PIN_MANAGER_Initialize ..  ]
+[; ;mcc_generated_files/interrupt_manager.c: 53: {
+{
+[e :U _INTERRUPT_Initialize ]
+[f ]
 "55
-[; ;mcc_generated_files/mcc.c: 55:     OSCILLATOR_Initialize();
-[e ( _OSCILLATOR_Initialize ..  ]
+[; ;mcc_generated_files/interrupt_manager.c: 55:     INTCONbits.IPEN = 0;
+[e = . . _INTCONbits 0 5 -> -> 0 `i `uc ]
 "56
-[; ;mcc_generated_files/mcc.c: 56:     TMR0_Initialize();
-[e ( _TMR0_Initialize ..  ]
-"57
-[; ;mcc_generated_files/mcc.c: 57: }
+[; ;mcc_generated_files/interrupt_manager.c: 56: }
 [e :UE 2021 ]
 }
+[v $root$_INTERRUPT_InterruptManager `(v ~T0 @X0 0 e ]
+"58
+[; ;mcc_generated_files/interrupt_manager.c: 58: void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
+[v _INTERRUPT_InterruptManager `(v ~T1 @X0 1 ef ]
 "59
-[; ;mcc_generated_files/mcc.c: 59: void OSCILLATOR_Initialize(void)
-[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
-"60
-[; ;mcc_generated_files/mcc.c: 60: {
+[; ;mcc_generated_files/interrupt_manager.c: 59: {
 {
-[e :U _OSCILLATOR_Initialize ]
+[e :U _INTERRUPT_InterruptManager ]
 [f ]
+"61
+[; ;mcc_generated_files/interrupt_manager.c: 61:     if(INTCONbits.PEIE == 1)
+[e $ ! == -> . . _INTCONbits 1 1 `i -> 1 `i 2023  ]
 "62
-[; ;mcc_generated_files/mcc.c: 62:     OSCCON1 = 0x62;
-[e = _OSCCON1 -> -> 98 `i `uc ]
-"64
-[; ;mcc_generated_files/mcc.c: 64:     OSCCON3 = 0x00;
-[e = _OSCCON3 -> -> 0 `i `uc ]
-"66
-[; ;mcc_generated_files/mcc.c: 66:     OSCEN = 0x00;
-[e = _OSCEN -> -> 0 `i `uc ]
-"68
-[; ;mcc_generated_files/mcc.c: 68:     OSCFRQ = 0x06;
-[e = _OSCFRQ -> -> 6 `i `uc ]
-"70
-[; ;mcc_generated_files/mcc.c: 70:     OSCTUNE = 0x00;
-[e = _OSCTUNE -> -> 0 `i `uc ]
-"71
-[; ;mcc_generated_files/mcc.c: 71: }
-[e :UE 2022 ]
-}
-"73
-[; ;mcc_generated_files/mcc.c: 73: void PMD_Initialize(void)
-[v _PMD_Initialize `(v ~T0 @X0 1 ef ]
-"74
-[; ;mcc_generated_files/mcc.c: 74: {
+[; ;mcc_generated_files/interrupt_manager.c: 62:     {
 {
-[e :U _PMD_Initialize ]
-[f ]
+"63
+[; ;mcc_generated_files/interrupt_manager.c: 63:         if(PIE3bits.BCL1IE == 1 && PIR3bits.BCL1IF == 1)
+[e $ ! && == -> . . _PIE3bits 0 1 `i -> 1 `i == -> . . _PIR3bits 0 1 `i -> 1 `i 2024  ]
+"64
+[; ;mcc_generated_files/interrupt_manager.c: 64:         {
+{
+"65
+[; ;mcc_generated_files/interrupt_manager.c: 65:             i2c1_driver_busCollisionISR();
+[e ( *U _i2c1_driver_busCollisionISR ..  ]
+"66
+[; ;mcc_generated_files/interrupt_manager.c: 66:         }
+}
+[e $U 2025  ]
+"67
+[; ;mcc_generated_files/interrupt_manager.c: 67:         else if(PIE3bits.SSP1IE == 1 && PIR3bits.SSP1IF == 1)
+[e :U 2024 ]
+[e $ ! && == -> . . _PIE3bits 0 0 `i -> 1 `i == -> . . _PIR3bits 0 0 `i -> 1 `i 2026  ]
+"68
+[; ;mcc_generated_files/interrupt_manager.c: 68:         {
+{
+"69
+[; ;mcc_generated_files/interrupt_manager.c: 69:             i2c1_driver_i2cISR();
+[e ( *U _i2c1_driver_i2cISR ..  ]
+"70
+[; ;mcc_generated_files/interrupt_manager.c: 70:         }
+}
+[e $U 2027  ]
+"71
+[; ;mcc_generated_files/interrupt_manager.c: 71:         else
+[e :U 2026 ]
+"72
+[; ;mcc_generated_files/interrupt_manager.c: 72:         {
+{
+"74
+[; ;mcc_generated_files/interrupt_manager.c: 74:         }
+}
+[e :U 2027 ]
+[e :U 2025 ]
+"75
+[; ;mcc_generated_files/interrupt_manager.c: 75:     }
+}
+[e $U 2028  ]
 "76
-[; ;mcc_generated_files/mcc.c: 76:     PMD0 = 0x00;
-[e = _PMD0 -> -> 0 `i `uc ]
-"78
-[; ;mcc_generated_files/mcc.c: 78:     PMD1 = 0x00;
-[e = _PMD1 -> -> 0 `i `uc ]
+[; ;mcc_generated_files/interrupt_manager.c: 76:     else
+[e :U 2023 ]
+"77
+[; ;mcc_generated_files/interrupt_manager.c: 77:     {
+{
+"79
+[; ;mcc_generated_files/interrupt_manager.c: 79:     }
+}
+[e :U 2028 ]
 "80
-[; ;mcc_generated_files/mcc.c: 80:     PMD2 = 0x00;
-[e = _PMD2 -> -> 0 `i `uc ]
-"82
-[; ;mcc_generated_files/mcc.c: 82:     PMD3 = 0x00;
-[e = _PMD3 -> -> 0 `i `uc ]
-"84
-[; ;mcc_generated_files/mcc.c: 84:     PMD4 = 0x00;
-[e = _PMD4 -> -> 0 `i `uc ]
-"86
-[; ;mcc_generated_files/mcc.c: 86:     PMD5 = 0x00;
-[e = _PMD5 -> -> 0 `i `uc ]
-"87
-[; ;mcc_generated_files/mcc.c: 87: }
-[e :UE 2023 ]
+[; ;mcc_generated_files/interrupt_manager.c: 80: }
+[e :UE 2022 ]
 }

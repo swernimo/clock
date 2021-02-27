@@ -3,8 +3,8 @@
 #include <string.h>
 #include "mcc_generated_files/mcc.h"
 #include "mcc_generated_files/device_config.h"
-#include "I2C.h"
 #include "RTC.h"
+#include "mcc_generated_files/drivers/i2c_simple_master.h"
 
 static void rtcc_write(uint8_t addr, uint8_t data);
 static uint8_t rtcc_read(uint8_t addr);

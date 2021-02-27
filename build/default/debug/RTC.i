@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/i2c1.c"
+# 1 "RTC.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,133 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/i2c1.c" 2
-# 51 "mcc_generated_files/i2c1.c"
-# 1 "mcc_generated_files/i2c1.h" 1
-# 53 "mcc_generated_files/i2c1.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 1 3
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\musl_xc8.h" 1 3
-# 4 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
-# 22 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 127 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uintptr_t;
-# 142 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long intptr_t;
-# 158 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef signed char int8_t;
-
-
-
-
-typedef short int16_t;
-
-
-
-
-typedef __int24 int24_t;
-
-
-
-
-typedef long int32_t;
-
-
-
-
-
-typedef long long int64_t;
-# 188 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long intmax_t;
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-
-
-
-
-typedef __uint24 uint24_t;
-
-
-
-
-typedef unsigned long uint32_t;
-
-
-
-
-
-typedef unsigned long long uint64_t;
-# 229 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long long uintmax_t;
-# 22 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
-
-
-typedef int8_t int_fast8_t;
-
-typedef int64_t int_fast64_t;
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-
-typedef int24_t int_least24_t;
-typedef int24_t int_fast24_t;
-
-typedef int32_t int_least32_t;
-
-typedef int64_t int_least64_t;
-
-
-typedef uint8_t uint_fast8_t;
-
-typedef uint64_t uint_fast64_t;
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-
-typedef uint24_t uint_least24_t;
-typedef uint24_t uint_fast24_t;
-
-typedef uint32_t uint_least32_t;
-
-typedef uint64_t uint_least64_t;
-# 144 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/stdint.h" 1 3
-typedef int16_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint16_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 144 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
-# 53 "mcc_generated_files/i2c1.h" 2
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdbool.h" 1 3
-# 54 "mcc_generated_files/i2c1.h" 2
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stddef.h" 1 3
-# 19 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stddef.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 18 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long int wchar_t;
-# 122 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned size_t;
-# 132 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long ptrdiff_t;
-# 19 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stddef.h" 2 3
-# 55 "mcc_generated_files/i2c1.h" 2
-
+# 1 "RTC.c" 2
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -146,11 +20,29 @@ extern double __fpnormalize(double);
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdlib.h" 1 3
-# 10 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdlib.h" 3
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\musl_xc8.h" 1 3
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdlib.h" 2 3
+
+
+
+
+
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\features.h" 1 3
 # 10 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdlib.h" 2 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdlib.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 18 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long int wchar_t;
+# 122 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned size_t;
+# 168 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef __int24 int24_t;
+# 204 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef __uint24 uint24_t;
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdlib.h" 2 3
 
 
@@ -24283,672 +24175,491 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\\pic\\include\\xc.h" 2 3
-# 56 "mcc_generated_files/i2c1.h" 2
-# 86 "mcc_generated_files/i2c1.h"
-typedef enum
-{
-    I2C1_MESSAGE_COMPLETE,
-    I2C1_MESSAGE_FAIL,
-    I2C1_MESSAGE_PENDING,
-    I2C1_STUCK_START,
-    I2C1_MESSAGE_ADDRESS_NO_ACK,
-    I2C1_DATA_NO_ACK,
-    I2C1_LOST_STATE
-} I2C1_MESSAGE_STATUS;
-# 111 "mcc_generated_files/i2c1.h"
-typedef struct
-{
-    uint16_t address;
+# 1 "RTC.c" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 1 3
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 127 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uintptr_t;
+# 142 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long intptr_t;
+# 158 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef signed char int8_t;
 
 
-    uint8_t length;
-    uint8_t *pbuffer;
-} I2C1_TRANSACTION_REQUEST_BLOCK;
-# 223 "mcc_generated_files/i2c1.h"
-void I2C1_Initialize(void);
-# 262 "mcc_generated_files/i2c1.h"
-void I2C1_MasterWrite(
-                                uint8_t *pdata,
-                                uint8_t length,
-                                uint16_t address,
-                                I2C1_MESSAGE_STATUS *pstatus);
-# 409 "mcc_generated_files/i2c1.h"
-void I2C1_MasterRead(
-                                uint8_t *pdata,
-                                uint8_t length,
-                                uint16_t address,
-                                I2C1_MESSAGE_STATUS *pstatus);
-# 519 "mcc_generated_files/i2c1.h"
-void I2C1_MasterTRBInsert(
-                                uint8_t count,
-                                I2C1_TRANSACTION_REQUEST_BLOCK *ptrb_list,
-                                I2C1_MESSAGE_STATUS *pflag);
-# 563 "mcc_generated_files/i2c1.h"
-void I2C1_MasterReadTRBBuild(
-                                I2C1_TRANSACTION_REQUEST_BLOCK *ptrb,
-                                uint8_t *pdata,
-                                uint8_t length,
-                                uint16_t address);
-# 608 "mcc_generated_files/i2c1.h"
-void I2C1_MasterWriteTRBBuild(
-                                I2C1_TRANSACTION_REQUEST_BLOCK *ptrb,
-                                uint8_t *pdata,
-                                uint8_t length,
-                                uint16_t address);
-# 650 "mcc_generated_files/i2c1.h"
-_Bool I2C1_MasterQueueIsEmpty(void);
-# 688 "mcc_generated_files/i2c1.h"
-_Bool I2C1_MasterQueueIsFull(void);
-
-void I2C1_BusCollisionISR( void );
-void I2C1_ISR ( void );
-# 51 "mcc_generated_files/i2c1.c" 2
-# 63 "mcc_generated_files/i2c1.c"
-typedef union
-{
-    struct
-    {
-            uint8_t full:1;
-            uint8_t empty:1;
-            uint8_t reserved:6;
-    }s;
-    uint8_t status;
-}I2C_TR_QUEUE_STATUS;
-# 85 "mcc_generated_files/i2c1.c"
-typedef struct
-{
-    uint8_t count;
-    I2C1_TRANSACTION_REQUEST_BLOCK *ptrb_list;
-    I2C1_MESSAGE_STATUS *pTrFlag;
 
 
-} I2C_TR_QUEUE_ENTRY;
-# 105 "mcc_generated_files/i2c1.c"
-typedef struct
-{
-
-    I2C_TR_QUEUE_ENTRY *pTrTail;
-    I2C_TR_QUEUE_ENTRY *pTrHead;
-    I2C_TR_QUEUE_STATUS trStatus;
-    uint8_t i2cDoneFlag;
-
-    uint8_t i2cErrors;
-
-
-} I2C_OBJECT ;
-# 129 "mcc_generated_files/i2c1.c"
-typedef enum
-{
-    S_MASTER_IDLE,
-    S_MASTER_RESTART,
-    S_MASTER_SEND_ADDR,
-    S_MASTER_SEND_DATA,
-    S_MASTER_SEND_STOP,
-    S_MASTER_ACK_ADDR,
-    S_MASTER_RCV_DATA,
-    S_MASTER_RCV_STOP,
-    S_MASTER_ACK_RCV_DATA,
-    S_MASTER_NOACK_STOP,
-    S_MASTER_SEND_ADDR_10BIT_LSB,
-    S_MASTER_10BIT_RESTART,
-
-} I2C_MASTER_STATES;
-# 178 "mcc_generated_files/i2c1.c"
-void I2C1_FunctionComplete(void);
-void I2C1_Stop(I2C1_MESSAGE_STATUS completion_code);
+typedef short int16_t;
+# 173 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long int32_t;
 
 
 
 
 
-static I2C_TR_QUEUE_ENTRY i2c1_tr_queue[1];
-static I2C_OBJECT i2c1_object;
-static I2C_MASTER_STATES i2c1_state = S_MASTER_IDLE;
-static uint8_t i2c1_trb_count = 0;
-
-static I2C1_TRANSACTION_REQUEST_BLOCK *p_i2c1_trb_current = ((void*)0);
-static volatile I2C_TR_QUEUE_ENTRY *p_i2c1_current = ((void*)0);
+typedef long long int64_t;
+# 188 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long intmax_t;
 
 
 
 
 
-
-void I2C1_Initialize(void)
-{
-    i2c1_object.pTrHead = i2c1_tr_queue;
-    i2c1_object.pTrTail = i2c1_tr_queue;
-    i2c1_object.trStatus.s.empty = 1;
-    i2c1_object.trStatus.s.full = 0;
-
-    i2c1_object.i2cErrors = 0;
+typedef unsigned char uint8_t;
 
 
-    SSP1STAT = 0x00;
-
-    SSP1CON1 = 0x38;
-
-    SSP1CON3 = 0x00;
-
-    SSP1ADD = 0x09;
 
 
-    PIR3bits.SSP1IF = 0;
-    PIR3bits.BCL1IF = 0;
+typedef unsigned short uint16_t;
+# 209 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uint32_t;
 
 
-    PIE3bits.SSP1IE = 1;
-    PIE3bits.BCL1IE = 1;
+
+
+
+typedef unsigned long long uint64_t;
+# 229 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long long uintmax_t;
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
+
+
+typedef int8_t int_fast8_t;
+
+typedef int64_t int_fast64_t;
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+
+typedef int24_t int_least24_t;
+typedef int24_t int_fast24_t;
+
+typedef int32_t int_least32_t;
+
+typedef int64_t int_least64_t;
+
+
+typedef uint8_t uint_fast8_t;
+
+typedef uint64_t uint_fast64_t;
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+
+typedef uint24_t uint_least24_t;
+typedef uint24_t uint_fast24_t;
+
+typedef uint32_t uint_least32_t;
+
+typedef uint64_t uint_least64_t;
+# 144 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/stdint.h" 1 3
+typedef int16_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint16_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 144 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
+# 2 "RTC.c" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\string.h" 1 3
+# 25 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\string.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 411 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct __locale_struct * locale_t;
+# 25 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\string.h" 2 3
+
+
+void *memcpy (void *restrict, const void *restrict, size_t);
+void *memmove (void *, const void *, size_t);
+void *memset (void *, int, size_t);
+int memcmp (const void *, const void *, size_t);
+void *memchr (const void *, int, size_t);
+
+char *strcpy (char *restrict, const char *restrict);
+char *strncpy (char *restrict, const char *restrict, size_t);
+
+char *strcat (char *restrict, const char *restrict);
+char *strncat (char *restrict, const char *restrict, size_t);
+
+int strcmp (const char *, const char *);
+int strncmp (const char *, const char *, size_t);
+
+int strcoll (const char *, const char *);
+size_t strxfrm (char *restrict, const char *restrict, size_t);
+
+char *strchr (const char *, int);
+char *strrchr (const char *, int);
+
+size_t strcspn (const char *, const char *);
+size_t strspn (const char *, const char *);
+char *strpbrk (const char *, const char *);
+char *strstr (const char *, const char *);
+char *strtok (char *restrict, const char *restrict);
+
+size_t strlen (const char *);
+
+char *strerror (int);
+# 65 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\string.h" 3
+char *strtok_r (char *restrict, const char *restrict, char **restrict);
+int strerror_r (int, char *, size_t);
+char *stpcpy(char *restrict, const char *restrict);
+char *stpncpy(char *restrict, const char *restrict, size_t);
+size_t strnlen (const char *, size_t);
+char *strdup (const char *);
+char *strndup (const char *, size_t);
+char *strsignal(int);
+char *strerror_l (int, locale_t);
+int strcoll_l (const char *, const char *, locale_t);
+size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
+
+
+
+
+void *memccpy (void *restrict, const void *restrict, int, size_t);
+# 3 "RTC.c" 2
+
+# 1 "./mcc_generated_files/mcc.h" 1
+# 50 "./mcc_generated_files/mcc.h"
+# 1 "./mcc_generated_files/device_config.h" 1
+# 50 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/pin_manager.h" 1
+# 110 "./mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_Initialize (void);
+# 122 "./mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_IOC(void);
+# 51 "./mcc_generated_files/mcc.h" 2
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdbool.h" 1 3
+# 53 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/tmr0.h" 1
+# 100 "./mcc_generated_files/tmr0.h"
+void TMR0_Initialize(void);
+# 129 "./mcc_generated_files/tmr0.h"
+void TMR0_StartTimer(void);
+# 161 "./mcc_generated_files/tmr0.h"
+void TMR0_StopTimer(void);
+# 196 "./mcc_generated_files/tmr0.h"
+uint8_t TMR0_ReadTimer(void);
+# 235 "./mcc_generated_files/tmr0.h"
+void TMR0_WriteTimer(uint8_t timerVal);
+# 272 "./mcc_generated_files/tmr0.h"
+void TMR0_Reload(uint8_t periodVal);
+# 308 "./mcc_generated_files/tmr0.h"
+_Bool TMR0_HasOverflowOccured(void);
+# 54 "./mcc_generated_files/mcc.h" 2
+# 69 "./mcc_generated_files/mcc.h"
+void SYSTEM_Initialize(void);
+# 82 "./mcc_generated_files/mcc.h"
+void OSCILLATOR_Initialize(void);
+# 95 "./mcc_generated_files/mcc.h"
+void PMD_Initialize(void);
+# 4 "RTC.c" 2
+
+
+# 1 "./I2C.h" 1
+
+
+
+
+
+
+
+
+void I2C_Initialize();
+void I2C_Master_Idle (void);
+void I2C_Master_Wait (void);
+void I2C_Master_Start(void);
+void I2C_Master_Restart(void);
+void I2C_Master_Stop (void);
+void I2C_Master_NAK (void);
+void I2C_Master_Write (uint8_t data);
+uint8_t I2C_Master_Read (void);
+# 6 "RTC.c" 2
+
+# 1 "./RTC.h" 1
+
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\time.h" 1 3
+# 33 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\time.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 76 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long time_t;
+# 293 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef void * timer_t;
+
+
+
+
+typedef int clockid_t;
+
+
+
+
+typedef unsigned long clock_t;
+# 313 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+struct timespec { time_t tv_sec; long tv_nsec; };
+
+
+
+
+
+typedef int pid_t;
+# 33 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\time.h" 2 3
+
+
+
+
+
+
+
+struct tm {
+ int tm_sec;
+ int tm_min;
+ int tm_hour;
+ int tm_mday;
+ int tm_mon;
+ int tm_year;
+ int tm_wday;
+ int tm_yday;
+ int tm_isdst;
+ long __tm_gmtoff;
+ const char *__tm_zone;
+};
+
+clock_t clock (void);
+time_t time (time_t *);
+double difftime (time_t, time_t);
+time_t mktime (struct tm *);
+size_t strftime (char *restrict, size_t, const char *restrict, const struct tm *restrict);
+struct tm *gmtime (const time_t *);
+struct tm *localtime (const time_t *);
+char *asctime (const struct tm *);
+char *ctime (const time_t *);
+int timespec_get(struct timespec *, int);
+# 73 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\time.h" 3
+size_t strftime_l (char * restrict, size_t, const char * restrict, const struct tm * restrict, locale_t);
+
+struct tm *gmtime_r (const time_t *restrict, struct tm *restrict);
+struct tm *localtime_r (const time_t *restrict, struct tm *restrict);
+char *asctime_r (const struct tm *restrict, char *restrict);
+char *ctime_r (const time_t *, char *);
+
+void tzset (void);
+
+struct itimerspec {
+ struct timespec it_interval;
+ struct timespec it_value;
+};
+# 102 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\time.h" 3
+int nanosleep (const struct timespec *, struct timespec *);
+int clock_getres (clockid_t, struct timespec *);
+int clock_gettime (clockid_t, struct timespec *);
+int clock_settime (clockid_t, const struct timespec *);
+int clock_nanosleep (clockid_t, int, const struct timespec *, struct timespec *);
+int clock_getcpuclockid (pid_t, clockid_t *);
+
+struct sigevent;
+int timer_create (clockid_t, struct sigevent *restrict, timer_t *restrict);
+int timer_delete (timer_t);
+int timer_settime (timer_t, int, const struct itimerspec *restrict, struct itimerspec *restrict);
+int timer_gettime (timer_t, struct itimerspec *);
+int timer_getoverrun (timer_t);
+
+extern char *tzname[2];
+
+
+
+
+
+char *strptime (const char *restrict, const char *restrict, struct tm *restrict);
+extern int daylight;
+extern long timezone;
+extern int getdate_err;
+struct tm *getdate (const char *);
+# 7 "./RTC.h" 2
+# 69 "./RTC.h"
+typedef struct {
+    int sec, min, hr;
+    int year, month, date, day;
+} DateTime_t;
+
+void rtc6_Initialize(void);
+
+void rtc6_EnableAlarms(_Bool alarm0, _Bool alarm1);
+void rtc6_SetAlarm0(struct tm tm_t, _Bool almpol, uint8_t mask);
+void rtc6_SetAlarm1(struct tm tm_t, _Bool almpol, uint8_t mask);
+
+void rtc6_ClearAlarm0(void);
+void rtc6_ClearAlarm1(void);
+
+void rtc6_SetTime(time_t);
+time_t rtc6_GetTime(void);
+
+uint8_t rtc6_ReadByteEEPROM(uint8_t addr);
+void rtc6_WriteByteEEPROM(uint8_t addr, uint8_t data);
+# 7 "RTC.c" 2
+
+
+static void rtcc_write(uint8_t addr, uint8_t data);
+static uint8_t rtcc_read(uint8_t addr);
+static void rtc6_EEPRWriteLatchEnable(void);
+static void rtc6_EEPRWriteLatchDisable(void);
+static uint8_t rtc6_EEPRReadStatusRegister(void);
+
+
+
+DateTime_t dateTime;
+
+static uint8_t rtcc_read(uint8_t addr) {
 
 }
 
+static void rtcc_write(uint8_t addr, uint8_t data) {
 
-uint8_t I2C1_ErrorCountGet(void)
-{
-    uint8_t ret;
-
-    ret = i2c1_object.i2cErrors;
-    return ret;
+    _delay((unsigned long)((5)*(8000000/4000.0)));
 }
 
-void I2C1_ISR ( void )
-{
+void rtc6_Initialize(void) {
+    uint8_t reg = 0;
 
-    static uint8_t *pi2c_buf_ptr;
-    static uint16_t i2c_address = 0;
-    static uint8_t i2c_bytes_left = 0;
-    static uint8_t i2c_10bit_address_restart = 0;
-
-    PIR3bits.SSP1IF = 0;
+    dateTime.day = (rtcc_read(0x03) & 0x07);
+    rtcc_write(0x03, (dateTime.day | 0x08));
+    dateTime.sec = rtcc_read(0x00);
 
 
 
-    if(SSP1CON1bits.WCOL)
-    {
-
-        SSP1CON1bits.WCOL = 0;
-        i2c1_state = S_MASTER_IDLE;
-        *(p_i2c1_current->pTrFlag) = I2C1_MESSAGE_FAIL;
+    rtcc_write(0x07, 0x00 + 0x40 + 0x00);
 
 
-        p_i2c1_current = ((void*)0);
-
-        return;
+    rtcc_write(0x00, dateTime.sec | 0x80);
+    while (!reg) {
+        reg = rtcc_read(0x03);
+        reg &= 0x20;
     }
 
 
-    switch(i2c1_state)
-    {
-        case S_MASTER_IDLE:
-
-            if(i2c1_object.trStatus.s.empty != 1)
-            {
-
-                p_i2c1_current = i2c1_object.pTrHead;
-                i2c1_trb_count = i2c1_object.pTrHead->count;
-                p_i2c1_trb_current = i2c1_object.pTrHead->ptrb_list;
-
-                i2c1_object.pTrHead++;
-
-
-                if(i2c1_object.pTrHead == (i2c1_tr_queue + 1))
-                {
-
-                    i2c1_object.pTrHead = i2c1_tr_queue;
-                }
-
-
-
-                i2c1_object.trStatus.s.full = 0;
-
-
-                if(i2c1_object.pTrHead == i2c1_object.pTrTail)
-                {
-
-                    i2c1_object.trStatus.s.empty = 1;
-                }
-
-
-                SSP1CON2bits.SEN = 1;
-
-
-                i2c1_state = S_MASTER_SEND_ADDR;
-            }
-
-            break;
-
-        case S_MASTER_RESTART:
-
-
-
-
-            SSP1CON2bits.RSEN = 1;
-
-
-            i2c1_state = S_MASTER_SEND_ADDR;
-
-            break;
-
-        case S_MASTER_SEND_ADDR_10BIT_LSB:
-
-            if(SSP1CON2bits.ACKSTAT)
-            {
-                i2c1_object.i2cErrors++;
-                I2C1_Stop(I2C1_MESSAGE_ADDRESS_NO_ACK);
-            }
-            else
-            {
-
-                SSP1BUF = (i2c_address >> 1) & 0x00FF;
-
-
-                if(i2c_address & 0x01)
-                {
-
-
-                    i2c1_state = S_MASTER_10BIT_RESTART;
-                }
-                else
-                {
-
-                    i2c1_state = S_MASTER_SEND_DATA;
-                }
-            }
-
-            break;
-
-        case S_MASTER_10BIT_RESTART:
-
-            if(SSP1CON2bits.ACKSTAT)
-            {
-                i2c1_object.i2cErrors++;
-                I2C1_Stop(I2C1_MESSAGE_ADDRESS_NO_ACK);
-            }
-            else
-            {
-
-
-                SSP1CON2bits.RSEN = 1;
-
-
-
-                i2c_address = 0x00F0 | ((i2c_address >> 8) & 0x0006);
-
-
-                i2c_address |= 0x0001;
-
-
-                i2c_10bit_address_restart = 1;
-
-
-                i2c1_state = S_MASTER_SEND_ADDR;
-            }
-
-            break;
-
-        case S_MASTER_SEND_ADDR:
-# 383 "mcc_generated_files/i2c1.c"
-            if(i2c_10bit_address_restart != 1)
-            {
-
-                i2c_address = p_i2c1_trb_current->address;
-                pi2c_buf_ptr = p_i2c1_trb_current->pbuffer;
-                i2c_bytes_left = p_i2c1_trb_current->length;
-            }
-
-
-            if(!1 && (0x0 != i2c_address))
-            {
-                if (0 == i2c_10bit_address_restart)
-                {
-
-
-
-                    SSP1BUF = 0xF0 | ((i2c_address >> 8) & 0x0006);
-                    i2c1_state = S_MASTER_SEND_ADDR_10BIT_LSB;
-                }
-                else
-                {
-
-                    SSP1BUF = i2c_address;
-                    i2c1_state = S_MASTER_ACK_ADDR;
-
-                    i2c_10bit_address_restart = 0;
-                }
-            }
-            else
-            {
-
-                SSP1BUF = i2c_address;
-                if(i2c_address & 0x01)
-                {
-
-                    i2c1_state = S_MASTER_ACK_ADDR;
-                }
-                else
-                {
-
-                    i2c1_state = S_MASTER_SEND_DATA;
-                }
-            }
-            break;
-
-        case S_MASTER_SEND_DATA:
-
-
-            if(SSP1CON2bits.ACKSTAT)
-            {
-
-                i2c1_object.i2cErrors++;
-
-
-                SSP1CON2bits.ACKSTAT = 0;
-
-
-                I2C1_Stop(I2C1_DATA_NO_ACK);
-
-            }
-            else
-            {
-
-                if(i2c_bytes_left-- == 0U)
-                {
-
-
-
-                    p_i2c1_trb_current++;
-
-
-                    if(--i2c1_trb_count == 0)
-                    {
-                        I2C1_Stop(I2C1_MESSAGE_COMPLETE);
-                    }
-                    else
-                    {
-
-
-
-
-
-
-                        SSP1CON2bits.RSEN = 1;
-
-
-                        i2c1_state = S_MASTER_SEND_ADDR;
-
-                    }
-                }
-                else
-                {
-
-                    SSP1BUF = *pi2c_buf_ptr++;
-                }
-            }
-            break;
-
-        case S_MASTER_ACK_ADDR:
-
-
-            if(SSP1CON2bits.ACKSTAT)
-            {
-
-
-                i2c1_object.i2cErrors++;
-
-
-                I2C1_Stop(I2C1_MESSAGE_ADDRESS_NO_ACK);
-
-
-                SSP1CON2bits.ACKSTAT = 0;
-            }
-            else
-            {
-                SSP1CON2bits.RCEN = 1;
-                i2c1_state = S_MASTER_ACK_RCV_DATA;
-            }
-            break;
-
-        case S_MASTER_RCV_DATA:
-
-
-
-
-            i2c1_state = S_MASTER_ACK_RCV_DATA;
-
-
-            SSP1CON2bits.RCEN = 1;
-
-            break;
-
-        case S_MASTER_ACK_RCV_DATA:
-
-
-            *pi2c_buf_ptr++ = SSP1BUF;
-
-
-            if(--i2c_bytes_left)
-            {
-
-
-
-
-
-                SSP1CON2bits.ACKDT = 0;
-
-
-                i2c1_state = S_MASTER_RCV_DATA;
-            }
-            else
-            {
-
-
-
-                SSP1CON2bits.ACKDT = 1;
-
-                I2C1_FunctionComplete();
-            }
-
-
-            SSP1CON2bits.ACKEN = 1;
-            break;
-
-        case S_MASTER_RCV_STOP:
-        case S_MASTER_SEND_STOP:
-
-
-            I2C1_Stop(I2C1_MESSAGE_COMPLETE);
-            break;
-
-        default:
-
-
-
-            i2c1_object.i2cErrors++;
-            I2C1_Stop(I2C1_LOST_STATE);
-            break;
-
-    }
-}
-
-void I2C1_FunctionComplete(void)
-{
-
-
-    p_i2c1_trb_current++;
-
-
-    if(--i2c1_trb_count == 0)
-    {
-        i2c1_state = S_MASTER_SEND_STOP;
-    }
-    else
-    {
-        i2c1_state = S_MASTER_RESTART;
-    }
+    rtcc_write(0x03, dateTime.day | (0x08 & 0xEF));
 
 }
 
-void I2C1_Stop(I2C1_MESSAGE_STATUS completion_code)
-{
+void rtc6_EnableAlarms(_Bool alarm0, _Bool alarm1){
+    uint8_t reg = rtcc_read(0x07);
+    reg = (reg & 0xCF) | (alarm0 << 4) | (alarm1 << 5);
+    rtcc_write(0x07, reg);
+}
 
-    SSP1CON2bits.PEN = 1;
+static void rtc6_SetComponent(uint8_t location, uint8_t mask, uint8_t time){
+    uint8_t inMemory = rtcc_read(location) & mask;
+    rtcc_write(location, inMemory | (time % 10) | ((time / 10) << 4));
+}
+
+void rtc6_SetTime(time_t t) {
+
+    struct tm *tm_t;
+    memset(tm_t, 0, sizeof (tm_t));
+
+    tm_t = localtime(&t);
+    rtc6_SetComponent(0x06, 0x00, tm_t->tm_year % 100);
+    rtc6_SetComponent(0x05, 0xD0, tm_t->tm_mon + 1);
+    rtc6_SetComponent(0x04, 0x00, tm_t->tm_mday);
+    rtc6_SetComponent(0x01, 0x00, tm_t->tm_min);
+    rtc6_SetComponent(0x00, 0x80, tm_t->tm_sec);
+    rtc6_SetComponent(0x02, 0x00, tm_t->tm_hour);
+}
+
+static uint8_t rtc6_GetComponent(uint8_t location, uint8_t mask){
+    uint8_t working = rtcc_read(location) & mask;
+    return (working & 0x0F) + (((working & (mask & 0xF0)) >> 4) * 10);
+}
+
+time_t rtc6_GetTime(void) {
+    struct tm tm_t;
+    memset(&tm_t, 0, sizeof (tm_t));
+
+    tm_t.tm_year = rtc6_GetComponent(0x06, 0xFF) + 100;
+    tm_t.tm_mon = rtc6_GetComponent(0x05, 0x1F) - 1;
+    tm_t.tm_mday = rtc6_GetComponent(0x04, 0x3F);
+    tm_t.tm_hour = rtc6_GetComponent(0x02, 0x3F);
+    tm_t.tm_min = rtc6_GetComponent(0x01, 0x7F);
+    tm_t.tm_sec = rtc6_GetComponent(0x00, 0x7F);
+
+    return mktime(&tm_t);
+}
+
+void rtc6_SetAlarm0(struct tm tm_t, _Bool almpol, uint8_t mask){
+    rtcc_write(0x0A, tm_t.tm_sec);
+    rtcc_write(0x0B, tm_t.tm_min);
+    rtcc_write(0x0C, tm_t.tm_hour);
+    rtcc_write(0x0E, tm_t.tm_mday);
+    rtcc_write(0x0F, tm_t.tm_mon + 1);
+    rtcc_write(0x0D, tm_t.tm_wday | almpol << 7 | mask << 4);
+}
+
+void rtc6_ClearAlarm0(void){
+    uint8_t reg = rtcc_read(0x0D);
+    rtcc_write(0x0D, reg);
+}
+
+void rtc6_SetAlarm1(struct tm tm_t, _Bool almpol, uint8_t mask){
+    rtcc_write(0x11, tm_t.tm_sec);
+    rtcc_write(0x12, tm_t.tm_min);
+    rtcc_write(0x13, tm_t.tm_hour);
+    rtcc_write(0x15, tm_t.tm_mday);
+    rtcc_write(0x16, tm_t.tm_mon + 1);
+    rtcc_write(0x14, tm_t.tm_wday | almpol << 7 | mask << 4);
+}
+
+void rtc6_ClearAlarm1(void){
+    uint8_t reg = rtcc_read(0x14);
+    rtcc_write(0x14, reg);
+}
 
 
-    if (p_i2c1_current->pTrFlag != ((void*)0))
-    {
 
-        *(p_i2c1_current->pTrFlag) = completion_code;
-    }
-
-
-    i2c1_state = S_MASTER_IDLE;
+static void rtc6_EEPRWriteLatchEnable(void) {
 
 }
 
-void I2C1_MasterWrite(
-                                uint8_t *pdata,
-                                uint8_t length,
-                                uint16_t address,
-                                I2C1_MESSAGE_STATUS *pflag)
-{
-    static I2C1_TRANSACTION_REQUEST_BLOCK trBlock;
-
-
-    if (i2c1_object.trStatus.s.full != 1)
-    {
-        I2C1_MasterWriteTRBBuild(&trBlock, pdata, length, address);
-        I2C1_MasterTRBInsert(1, &trBlock, pflag);
-    }
-    else
-    {
-        *pflag = I2C1_MESSAGE_FAIL;
-    }
+static void rtc6_EEPRWriteLatchDisable(void) {
 
 }
 
-void I2C1_MasterRead(
-                                uint8_t *pdata,
-                                uint8_t length,
-                                uint16_t address,
-                                I2C1_MESSAGE_STATUS *pflag)
-{
-    static I2C1_TRANSACTION_REQUEST_BLOCK trBlock;
-
-
-
-    if (i2c1_object.trStatus.s.full != 1)
-    {
-        I2C1_MasterReadTRBBuild(&trBlock, pdata, length, address);
-        I2C1_MasterTRBInsert(1, &trBlock, pflag);
-    }
-    else
-    {
-        *pflag = I2C1_MESSAGE_FAIL;
-    }
+static uint8_t rtc6_EEPRReadStatusRegister(void) {
 
 }
 
+uint8_t rtc6_ReadByteEEPROM(uint8_t addr) {
+    uint8_t stat_reg;
 
-__attribute__((inline)) void I2C1_WaitForLastPacketToComplete()
-{
-    while(i2c1_state != S_MASTER_IDLE)
-    {
+    rtc6_EEPRWriteLatchDisable();
 
+    do {
+        stat_reg = rtc6_EEPRReadStatusRegister();
+    } while ((stat_reg & 0x03) != 0x00);
 
-
-    }
-}
-
-void I2C1_MasterTRBInsert(
-                                uint8_t count,
-                                I2C1_TRANSACTION_REQUEST_BLOCK *ptrb_list,
-                                I2C1_MESSAGE_STATUS *pflag)
-{
-
-
-    if (i2c1_object.trStatus.s.full != 1)
-    {
-        *pflag = I2C1_MESSAGE_PENDING;
-
-        i2c1_object.pTrTail->ptrb_list = ptrb_list;
-        i2c1_object.pTrTail->count = count;
-        i2c1_object.pTrTail->pTrFlag = pflag;
-        i2c1_object.pTrTail++;
-
-
-        if (i2c1_object.pTrTail == (i2c1_tr_queue + 1))
-        {
-
-            i2c1_object.pTrTail = i2c1_tr_queue;
-        }
-
-
-
-        i2c1_object.trStatus.s.empty = 0;
-
-
-        if (i2c1_object.pTrHead == i2c1_object.pTrTail)
-        {
-
-            i2c1_object.trStatus.s.full = 1;
-        }
-
-    }
-    else
-    {
-        *pflag = I2C1_MESSAGE_FAIL;
-    }
-
-
-    if (*pflag == I2C1_MESSAGE_PENDING)
-    {
-        I2C1_WaitForLastPacketToComplete();
-
-
-
-
-        PIR3bits.SSP1IF = 1;
-
-    }
 
 }
 
-void I2C1_MasterReadTRBBuild(
-                                I2C1_TRANSACTION_REQUEST_BLOCK *ptrb,
-                                uint8_t *pdata,
-                                uint8_t length,
-                                uint16_t address)
-{
-    ptrb->address = address << 1;
+void rtc6_WriteByteEEPROM(uint8_t addr, uint8_t data) {
+    uint8_t stat_reg;
 
-    ptrb->address |= 0x01;
-    ptrb->length = length;
-    ptrb->pbuffer = pdata;
-}
+    rtc6_EEPRWriteLatchEnable();
 
-void I2C1_MasterWriteTRBBuild(
-                                I2C1_TRANSACTION_REQUEST_BLOCK *ptrb,
-                                uint8_t *pdata,
-                                uint8_t length,
-                                uint16_t address)
-{
-    ptrb->address = address << 1;
-    ptrb->length = length;
-    ptrb->pbuffer = pdata;
-}
+    do {
+        stat_reg = rtc6_EEPRReadStatusRegister();
+    } while ((stat_reg & 0x03) != 0x02);
 
-_Bool I2C1_MasterQueueIsEmpty(void)
-{
-    return(i2c1_object.trStatus.s.empty);
-}
 
-_Bool I2C1_MasterQueueIsFull(void)
-{
-    return(i2c1_object.trStatus.s.full);
-}
 
-void I2C1_BusCollisionISR( void )
-{
-
- PIR3bits.BCL1IF = 0;
+    rtc6_EEPRWriteLatchDisable();
 }

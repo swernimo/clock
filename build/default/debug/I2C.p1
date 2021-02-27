@@ -1,65 +1,4 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"40532 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40532:     struct {
-[s S1989 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1989 . INT0EDG INT1EDG INT2EDG INT3EDG . IPEN PEIE_GIEL GIE_GIEH ]
-"40542
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40542:     struct {
-[s S1990 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1990 . . PEIE GIE ]
-"40547
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40547:     struct {
-[s S1991 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1991 . . GIEL GIEH ]
-"40531
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40531: typedef union {
-[u S1988 `S1989 1 `S1990 1 `S1991 1 ]
-[n S1988 . . . . ]
-"40553
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40553: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
-[v _INTCONbits `VS1988 ~T0 @X0 0 e@4082 ]
-[t ~ __interrupt . k ]
-[t T1 __interrupt ]
-"4700
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 4700:     struct {
-[s S270 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S270 . SSP1IE BCL1IE SSP2IE BCL2IE TX1IE RC1IE TX2IE RC2IE ]
-"4710
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 4710:     struct {
-[s S271 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S271 . RXB0IE RXB1IE TXB0IE TXB1IE TXB2IE ]
-"4717
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 4717:     struct {
-[s S272 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S272 . . RXBNIE . TXBNIE ]
-"4699
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 4699: typedef union {
-[u S269 `S270 1 `S271 1 `S272 1 ]
-[n S269 . . . . ]
-"4724
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 4724: extern volatile PIE3bits_t PIE3bits __attribute__((address(0xE2C)));
-[v _PIE3bits `VS269 ~T0 @X0 0 e@3628 ]
-"5245
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 5245:     struct {
-[s S294 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S294 . SSP1IF BCL1IF SSP2IF BCL2IF TX1IF RC1IF TX2IF RC2IF ]
-"5255
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 5255:     struct {
-[s S295 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S295 . . RXBNIF . TXBNIF ]
-"5244
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 5244: typedef union {
-[u S293 `S294 1 `S295 1 ]
-[n S293 . . . ]
-"5262
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 5262: extern volatile PIR3bits_t PIR3bits __attribute__((address(0xE36)));
-[v _PIR3bits `VS293 ~T0 @X0 0 e@3638 ]
-"690 mcc_generated_files/i2c1.h
-[; ;mcc_generated_files/i2c1.h: 690: void I2C1_BusCollisionISR( void );
-[v _I2C1_BusCollisionISR `(v ~T0 @X0 0 ef ]
-"691
-[; ;mcc_generated_files/i2c1.h: 691: void I2C1_ISR ( void );
-[v _I2C1_ISR `(v ~T0 @X0 0 ef ]
 "54 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 54: __asm("PPSLOCK equ 0DEFh");
 [; <" PPSLOCK equ 0DEFh ;# ">
@@ -2034,89 +1973,116 @@ Version 4.0 HI-TECH Software Intermediate Code
 "40981
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40981: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"52 mcc_generated_files/interrupt_manager.c
-[; ;mcc_generated_files/interrupt_manager.c: 52: void INTERRUPT_Initialize (void)
-[v _INTERRUPT_Initialize `(v ~T0 @X0 1 ef ]
-"53
-[; ;mcc_generated_files/interrupt_manager.c: 53: {
+"13 I2C.c
+[; ;I2C.c: 13: void I2C_Initialize()
+[v _I2C_Initialize `(v ~T0 @X0 1 ef ]
+"14
+[; ;I2C.c: 14: {
 {
-[e :U _INTERRUPT_Initialize ]
+[e :U _I2C_Initialize ]
 [f ]
-"55
-[; ;mcc_generated_files/interrupt_manager.c: 55:     INTCONbits.IPEN = 0;
-[e = . . _INTCONbits 0 5 -> -> 0 `i `uc ]
-"56
-[; ;mcc_generated_files/interrupt_manager.c: 56: }
+"22
+[; ;I2C.c: 22: }
+[e :UE 2019 ]
+}
+"24
+[; ;I2C.c: 24: void I2C_Master_Idle (void)
+[v _I2C_Master_Idle `(v ~T0 @X0 1 ef ]
+"25
+[; ;I2C.c: 25: {
+{
+[e :U _I2C_Master_Idle ]
+[f ]
+"27
+[; ;I2C.c: 27: }
 [e :UE 2020 ]
 }
-[v $root$_INTERRUPT_InterruptManager `(v ~T0 @X0 0 e ]
-"58
-[; ;mcc_generated_files/interrupt_manager.c: 58: void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
-[v _INTERRUPT_InterruptManager `(v ~T1 @X0 1 ef ]
-"59
-[; ;mcc_generated_files/interrupt_manager.c: 59: {
+"29
+[; ;I2C.c: 29: void I2C_Master_Wait (void)
+[v _I2C_Master_Wait `(v ~T0 @X0 1 ef ]
+"30
+[; ;I2C.c: 30: {
 {
-[e :U _INTERRUPT_InterruptManager ]
+[e :U _I2C_Master_Wait ]
 [f ]
-"61
-[; ;mcc_generated_files/interrupt_manager.c: 61:     if(INTCONbits.PEIE == 1)
-[e $ ! == -> . . _INTCONbits 1 1 `i -> 1 `i 2022  ]
-"62
-[; ;mcc_generated_files/interrupt_manager.c: 62:     {
-{
-"63
-[; ;mcc_generated_files/interrupt_manager.c: 63:         if(PIE3bits.BCL1IE == 1 && PIR3bits.BCL1IF == 1)
-[e $ ! && == -> . . _PIE3bits 0 1 `i -> 1 `i == -> . . _PIR3bits 0 1 `i -> 1 `i 2023  ]
-"64
-[; ;mcc_generated_files/interrupt_manager.c: 64:         {
-{
-"65
-[; ;mcc_generated_files/interrupt_manager.c: 65:             I2C1_BusCollisionISR();
-[e ( _I2C1_BusCollisionISR ..  ]
-"66
-[; ;mcc_generated_files/interrupt_manager.c: 66:         }
-}
-[e $U 2024  ]
-"67
-[; ;mcc_generated_files/interrupt_manager.c: 67:         else if(PIE3bits.SSP1IE == 1 && PIR3bits.SSP1IF == 1)
-[e :U 2023 ]
-[e $ ! && == -> . . _PIE3bits 0 0 `i -> 1 `i == -> . . _PIR3bits 0 0 `i -> 1 `i 2025  ]
-"68
-[; ;mcc_generated_files/interrupt_manager.c: 68:         {
-{
-"69
-[; ;mcc_generated_files/interrupt_manager.c: 69:             I2C1_ISR();
-[e ( _I2C1_ISR ..  ]
-"70
-[; ;mcc_generated_files/interrupt_manager.c: 70:         }
-}
-[e $U 2026  ]
-"71
-[; ;mcc_generated_files/interrupt_manager.c: 71:         else
-[e :U 2025 ]
-"72
-[; ;mcc_generated_files/interrupt_manager.c: 72:         {
-{
-"74
-[; ;mcc_generated_files/interrupt_manager.c: 74:         }
-}
-[e :U 2026 ]
-[e :U 2024 ]
-"75
-[; ;mcc_generated_files/interrupt_manager.c: 75:     }
-}
-[e $U 2027  ]
-"76
-[; ;mcc_generated_files/interrupt_manager.c: 76:     else
-[e :U 2022 ]
-"77
-[; ;mcc_generated_files/interrupt_manager.c: 77:     {
-{
-"79
-[; ;mcc_generated_files/interrupt_manager.c: 79:     }
-}
-[e :U 2027 ]
-"80
-[; ;mcc_generated_files/interrupt_manager.c: 80: }
+"33
+[; ;I2C.c: 33: }
 [e :UE 2021 ]
+}
+"35
+[; ;I2C.c: 35: void I2C_Master_Start(void)
+[v _I2C_Master_Start `(v ~T0 @X0 1 ef ]
+"36
+[; ;I2C.c: 36: {
+{
+[e :U _I2C_Master_Start ]
+[f ]
+"40
+[; ;I2C.c: 40: }
+[e :UE 2022 ]
+}
+"42
+[; ;I2C.c: 42: void I2C_Master_Restart(void)
+[v _I2C_Master_Restart `(v ~T0 @X0 1 ef ]
+"43
+[; ;I2C.c: 43: {
+{
+[e :U _I2C_Master_Restart ]
+[f ]
+"46
+[; ;I2C.c: 46: }
+[e :UE 2023 ]
+}
+"48
+[; ;I2C.c: 48: void I2C_Master_Stop (void)
+[v _I2C_Master_Stop `(v ~T0 @X0 1 ef ]
+"49
+[; ;I2C.c: 49: {
+{
+[e :U _I2C_Master_Stop ]
+[f ]
+"53
+[; ;I2C.c: 53: }
+[e :UE 2024 ]
+}
+"55
+[; ;I2C.c: 55: void I2C_Master_NAK (void)
+[v _I2C_Master_NAK `(v ~T0 @X0 1 ef ]
+"56
+[; ;I2C.c: 56: {
+{
+[e :U _I2C_Master_NAK ]
+[f ]
+"60
+[; ;I2C.c: 60: }
+[e :UE 2025 ]
+}
+"62
+[; ;I2C.c: 62: void I2C_Master_Write (uint8_t data)
+[v _I2C_Master_Write `(v ~T0 @X0 1 ef1`uc ]
+"63
+[; ;I2C.c: 63: {
+{
+[e :U _I2C_Master_Write ]
+"62
+[; ;I2C.c: 62: void I2C_Master_Write (uint8_t data)
+[v _data `uc ~T0 @X0 1 r1 ]
+"63
+[; ;I2C.c: 63: {
+[f ]
+"73
+[; ;I2C.c: 73: }
+[e :UE 2026 ]
+}
+"75
+[; ;I2C.c: 75: uint8_t I2C_Master_Read (void)
+[v _I2C_Master_Read `(uc ~T0 @X0 1 ef ]
+"76
+[; ;I2C.c: 76: {
+{
+[e :U _I2C_Master_Read ]
+[f ]
+"81
+[; ;I2C.c: 81: }
+[e :UE 2027 ]
 }

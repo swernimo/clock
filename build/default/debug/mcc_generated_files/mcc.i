@@ -24184,9 +24184,9 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 50 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/pin_manager.h" 1
-# 132 "mcc_generated_files/pin_manager.h"
+# 110 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 144 "mcc_generated_files/pin_manager.h"
+# 122 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "mcc_generated_files/mcc.h" 2
 
@@ -24280,80 +24280,6 @@ typedef uint32_t uint_fast32_t;
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdbool.h" 1 3
 # 53 "mcc_generated_files/mcc.h" 2
 
-# 1 "mcc_generated_files/interrupt_manager.h" 1
-# 110 "mcc_generated_files/interrupt_manager.h"
-void INTERRUPT_Initialize (void);
-# 54 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/i2c1.h" 1
-# 55 "mcc_generated_files/i2c1.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stddef.h" 1 3
-# 19 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stddef.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 132 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long ptrdiff_t;
-# 19 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stddef.h" 2 3
-# 55 "mcc_generated_files/i2c1.h" 2
-# 86 "mcc_generated_files/i2c1.h"
-typedef enum
-{
-    I2C1_MESSAGE_COMPLETE,
-    I2C1_MESSAGE_FAIL,
-    I2C1_MESSAGE_PENDING,
-    I2C1_STUCK_START,
-    I2C1_MESSAGE_ADDRESS_NO_ACK,
-    I2C1_DATA_NO_ACK,
-    I2C1_LOST_STATE
-} I2C1_MESSAGE_STATUS;
-# 111 "mcc_generated_files/i2c1.h"
-typedef struct
-{
-    uint16_t address;
-
-
-    uint8_t length;
-    uint8_t *pbuffer;
-} I2C1_TRANSACTION_REQUEST_BLOCK;
-# 223 "mcc_generated_files/i2c1.h"
-void I2C1_Initialize(void);
-# 262 "mcc_generated_files/i2c1.h"
-void I2C1_MasterWrite(
-                                uint8_t *pdata,
-                                uint8_t length,
-                                uint16_t address,
-                                I2C1_MESSAGE_STATUS *pstatus);
-# 409 "mcc_generated_files/i2c1.h"
-void I2C1_MasterRead(
-                                uint8_t *pdata,
-                                uint8_t length,
-                                uint16_t address,
-                                I2C1_MESSAGE_STATUS *pstatus);
-# 519 "mcc_generated_files/i2c1.h"
-void I2C1_MasterTRBInsert(
-                                uint8_t count,
-                                I2C1_TRANSACTION_REQUEST_BLOCK *ptrb_list,
-                                I2C1_MESSAGE_STATUS *pflag);
-# 563 "mcc_generated_files/i2c1.h"
-void I2C1_MasterReadTRBBuild(
-                                I2C1_TRANSACTION_REQUEST_BLOCK *ptrb,
-                                uint8_t *pdata,
-                                uint8_t length,
-                                uint16_t address);
-# 608 "mcc_generated_files/i2c1.h"
-void I2C1_MasterWriteTRBBuild(
-                                I2C1_TRANSACTION_REQUEST_BLOCK *ptrb,
-                                uint8_t *pdata,
-                                uint8_t length,
-                                uint16_t address);
-# 650 "mcc_generated_files/i2c1.h"
-_Bool I2C1_MasterQueueIsEmpty(void);
-# 688 "mcc_generated_files/i2c1.h"
-_Bool I2C1_MasterQueueIsFull(void);
-
-void I2C1_BusCollisionISR( void );
-void I2C1_ISR ( void );
-# 55 "mcc_generated_files/mcc.h" 2
-
 # 1 "mcc_generated_files/tmr0.h" 1
 # 100 "mcc_generated_files/tmr0.h"
 void TMR0_Initialize(void);
@@ -24369,12 +24295,12 @@ void TMR0_WriteTimer(uint8_t timerVal);
 void TMR0_Reload(uint8_t periodVal);
 # 308 "mcc_generated_files/tmr0.h"
 _Bool TMR0_HasOverflowOccured(void);
-# 56 "mcc_generated_files/mcc.h" 2
-# 71 "mcc_generated_files/mcc.h"
+# 54 "mcc_generated_files/mcc.h" 2
+# 69 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 84 "mcc_generated_files/mcc.h"
+# 82 "mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 97 "mcc_generated_files/mcc.h"
+# 95 "mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
 # 47 "mcc_generated_files/mcc.c" 2
 
@@ -24382,11 +24308,9 @@ void PMD_Initialize(void);
 
 void SYSTEM_Initialize(void)
 {
-    INTERRUPT_Initialize();
     PMD_Initialize();
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
-    I2C1_Initialize();
     TMR0_Initialize();
 }
 

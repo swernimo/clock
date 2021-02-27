@@ -24297,10 +24297,10 @@ void TMR0_Initialize(void)
 
 
 
-    T0CON1 = 0x4C;
+    T0CON1 = 0x0C;
 
 
-    TMR0H = 0x3C;
+    TMR0H = 0x06;
 
 
     TMR0L = 0x00;
@@ -24309,7 +24309,7 @@ void TMR0_Initialize(void)
     PIR0bits.TMR0IF = 0;
 
 
-    T0CON0 = 0x8F;
+    T0CON0 = 0x86;
 }
 
 void TMR0_StartTimer(void)

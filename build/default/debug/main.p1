@@ -1,7 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"71 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 71: void SYSTEM_Initialize(void);
+"69 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 69: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "129 ./mcc_generated_files/tmr0.h
 [; ;./mcc_generated_files/tmr0.h: 129: void TMR0_StartTimer(void);
@@ -2013,57 +2013,57 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40981: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 [v $root$_main `(v ~T0 @X0 0 e ]
-"41 main.c
-[; ;main.c: 41: void main(void)
+"8 main.c
+[; ;main.c: 8: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"42
-[; ;main.c: 42: {
+"9
+[; ;main.c: 9: {
 {
 [e :U _main ]
 [f ]
-"44
-[; ;main.c: 44:     SYSTEM_Initialize();
+"11
+[; ;main.c: 11:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"61
-[; ;main.c: 61:     TMR0_StartTimer();
+"28
+[; ;main.c: 28:     TMR0_StartTimer();
 [e ( _TMR0_StartTimer ..  ]
-"66
-[; ;main.c: 66:     while (1)
-[e :U 2022 ]
-"67
-[; ;main.c: 67:     {
+"33
+[; ;main.c: 33:     while (1)
+[e :U 2021 ]
+"34
+[; ;main.c: 34:     {
 {
-"69
-[; ;main.c: 69:         if(TMR0_HasOverflowOccured()){
-[e $ ! != -> ( _TMR0_HasOverflowOccured ..  `i -> 0 `i 2024  ]
+"36
+[; ;main.c: 36:         if(TMR0_HasOverflowOccured()){
+[e $ ! != -> ( _TMR0_HasOverflowOccured ..  `i -> 0 `i 2023  ]
 {
-"72
-[; ;main.c: 72:             TMR0_StopTimer();
+"39
+[; ;main.c: 39:             TMR0_StopTimer();
 [e ( _TMR0_StopTimer ..  ]
-"73
-[; ;main.c: 73:             PIR0bits.TMR0IF = 0;
+"40
+[; ;main.c: 40:             PIR0bits.TMR0IF = 0;
 [e = . . _PIR0bits 0 5 -> -> 0 `i `uc ]
-"74
-[; ;main.c: 74:             do { LATDbits.LATD1 = ~LATDbits.LATD1; } while(0);
-[e :U 2027 ]
+"41
+[; ;main.c: 41:             do { LATDbits.LATD1 = ~LATDbits.LATD1; } while(0);
+[e :U 2026 ]
 {
 [e = . . _LATDbits 0 1 -> ~ -> . . _LATDbits 0 1 `i `uc ]
 }
-[e :U 2026 ]
-"75
-[; ;main.c: 75:             TMR0_StartTimer();
+[e :U 2025 ]
+"42
+[; ;main.c: 42:             TMR0_StartTimer();
 [e ( _TMR0_StartTimer ..  ]
-"76
-[; ;main.c: 76:         }
+"43
+[; ;main.c: 43:         }
 }
-[e :U 2024 ]
-"77
-[; ;main.c: 77:     }
-}
-[e :U 2021 ]
-[e $U 2022  ]
 [e :U 2023 ]
-"78
-[; ;main.c: 78: }
-[e :UE 2020 ]
+"44
+[; ;main.c: 44:     }
+}
+[e :U 2020 ]
+[e $U 2021  ]
+[e :U 2022 ]
+"45
+[; ;main.c: 45: }
+[e :UE 2019 ]
 }

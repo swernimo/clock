@@ -5,6 +5,7 @@
 
 #include <xc.h> // include processor files - each processor file is guarded. 
 #include <stdint.h>
+#include "I2C_Types.h"
 
 void I2C_Initialize();
 void I2C_Master_Idle (void);
@@ -15,6 +16,7 @@ void I2C_Master_Stop (void);
 void I2C_Master_NAK (void);
 void I2C_Master_Write (uint8_t data);
 uint8_t I2C_Master_Read (void);
+i2c_error_t I2C_Master_Open(uint8_t addr);
 
 #endif
 

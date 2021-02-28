@@ -1,83 +1,10 @@
-/*
-    (c) 2016 Microchip Technology Inc. and its subsidiaries. You may use this
-    software and any derivatives exclusively with Microchip products.
-
-    THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
-    EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
-    WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
-    PARTICULAR PURPOSE, OR ITS INTERACTION WITH MICROCHIP PRODUCTS, COMBINATION
-    WITH ANY OTHER PRODUCTS, OR USE IN ANY APPLICATION.
-
-    IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE,
-    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND
-    WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS
-    BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE
-    FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
-    ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
-    THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-
-    MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE
-    TERMS.
-*/
 
 #include <xc.h>
 #include <stdbool.h>
 #include <stdlib.h>
-#include "i2c_master.h"
-#include "i2c_types.h"
-#include "../i2c1_driver.h"
-
-/***************************************************************************/
-// I2C STATES
-typedef enum {
-    I2C_IDLE = 0,
-    I2C_SEND_ADR_READ,
-    I2C_SEND_ADR_WRITE,
-    I2C_TX,
-    I2C_RX,
-    I2C_RCEN,
-    I2C_TX_EMPTY,
-    I2C_SEND_RESTART_READ,
-    I2C_SEND_RESTART_WRITE,
-    I2C_SEND_RESTART,
-    I2C_SEND_STOP,
-    I2C_RX_DO_ACK,
-    I2C_RX_DO_NACK_STOP,
-    I2C_RX_DO_NACK_RESTART,
-    I2C_RESET,
-    I2C_ADDRESS_NACK
-} i2c_fsm_states_t;
-
-// I2C Event Callback List
-typedef enum
-{
-    i2c_dataComplete = 0,
-    i2c_writeCollision,
-    i2c_addressNACK,
-    i2c_dataNACK,
-    i2c_timeOut,
-    i2c_NULL
-} i2c_callbackIndex;
-
-// I2C Status Structure
-typedef struct
-{
-    unsigned busy:1;
-    unsigned inUse:1;
-    unsigned bufferFree:1;
-    unsigned addressNACKCheck:1;
-    i2c_address_t address;       /// The I2C Address
-    uint8_t *data_ptr;           /// pointer to a data buffer
-    size_t data_length;          /// Bytes in the data buffer
-    uint16_t time_out;           /// I2C Timeout Counter between I2C Events.
-    uint16_t time_out_value;     /// Reload value for the timeouts
-    i2c_fsm_states_t state;      /// Driver State
-    i2c_error_t error;
-    i2c_callback callbackTable[6];
-    void *callbackPayload[6];    ///  each callback can have a payload
-} i2c_status_t;
-
-i2c_status_t i2c_status = {0};
+#include "I2C_Master.h"
+#include "I2C_Types.h"
+#include "I2C1_Driver.h"
 
 static void setCallBack(i2c_callbackIndex idx, i2c_callback cb, void *p);
 static i2c_operations_t returnStop(void *p);

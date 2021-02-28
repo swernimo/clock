@@ -1,4 +1,223 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"77 ./I2C_Types.h
+[; ;./I2C_Types.h: 77: i2c_status_t i2c_status = {0};
+[c E14225 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 .. ]
+[n E14225 . I2C_IDLE I2C_SEND_ADR_READ I2C_SEND_ADR_WRITE I2C_TX I2C_RX I2C_RCEN I2C_TX_EMPTY I2C_SEND_RESTART_READ I2C_SEND_RESTART_WRITE I2C_SEND_RESTART I2C_SEND_STOP I2C_RX_DO_ACK I2C_RX_DO_NACK_STOP I2C_RX_DO_NACK_RESTART I2C_RESET I2C_ADDRESS_NACK  ]
+[c E14251 0 1 2 .. ]
+[n E14251 . I2C_NOERR I2C_BUSY I2C_FAIL  ]
+[c E14256 1 2 3 4 5 .. ]
+[n E14256 . i2c_stop i2c_restart_read i2c_restart_write i2c_continue i2c_reset_link  ]
+[v F14279 `(E14256 ~T0 @X0 0 tf1`*v ]
+"61
+[; ;./I2C_Types.h: 61: {
+[s S2019 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 `uc 1 `*uc 1 `ui 1 `us 1 `us 1 `E14225 1 `E14251 1 `*F14279 -> 6 `i `*v -> 6 `i ]
+[n S2019 . busy inUse bufferFree addressNACKCheck address data_ptr data_length time_out time_out_value state error callbackTable callbackPayload ]
+[v F14705 `(v ~T0 @X0 0 tf ]
+[v F14707 `(v ~T0 @X0 0 tf ]
+"31481 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31481: extern volatile unsigned char SSP1CON1 __attribute__((address(0xF95)));
+[v _SSP1CON1 `Vuc ~T0 @X0 0 e@3989 ]
+"31601
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31601: extern volatile unsigned char SSP1CON2 __attribute__((address(0xF96)));
+[v _SSP1CON2 `Vuc ~T0 @X0 0 e@3990 ]
+"31027
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31027: extern volatile unsigned char SSP1STAT __attribute__((address(0xF94)));
+[v _SSP1STAT `Vuc ~T0 @X0 0 e@3988 ]
+"30837
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 30837: extern volatile unsigned char SSP1ADD __attribute__((address(0xF92)));
+[v _SSP1ADD `Vuc ~T0 @X0 0 e@3986 ]
+"31487
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31487:     struct {
+[s S1458 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1458 . SSPM CKP SSPEN SSPOV WCOL ]
+"31494
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31494:     struct {
+[s S1459 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1459 . SSPM0 SSPM1 SSPM2 SSPM3 ]
+"31500
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31500:     struct {
+[s S1460 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1460 . SSPM01 SSPM11 SSPM21 SSPM31 CKP1 SSPEN1 SSPOV1 WCOL1 ]
+"31486
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31486: typedef union {
+[u S1457 `S1458 1 `S1459 1 `S1460 1 ]
+[n S1457 . . . . ]
+"31511
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31511: extern volatile SSP1CON1bits_t SSP1CON1bits __attribute__((address(0xF95)));
+[v _SSP1CON1bits `VS1457 ~T0 @X0 0 e@3989 ]
+"31033
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31033:     struct {
+[s S1432 :2 `uc 1 :1 `uc 1 ]
+[n S1432 . . R_NOT_W ]
+"31037
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31037:     struct {
+[s S1433 :5 `uc 1 :1 `uc 1 ]
+[n S1433 . . D_NOT_A ]
+"31041
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31041:     struct {
+[s S1434 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1434 . BF UA R_nW S P D_nA CKE SMP ]
+"31051
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31051:     struct {
+[s S1435 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S1435 . . R_W . D_A ]
+"31057
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31057:     struct {
+[s S1436 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S1436 . . nW . nA ]
+"31063
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31063:     struct {
+[s S1437 :2 `uc 1 :1 `uc 1 ]
+[n S1437 . . NOT_WRITE ]
+"31067
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31067:     struct {
+[s S1438 :5 `uc 1 :1 `uc 1 ]
+[n S1438 . . NOT_ADDRESS ]
+"31071
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31071:     struct {
+[s S1439 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S1439 . . nWRITE . nADDRESS ]
+"31077
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31077:     struct {
+[s S1440 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S1440 . . READ_WRITE . DATA_ADDRESS ]
+"31083
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31083:     struct {
+[s S1441 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1441 . . I2C_READ I2C_START I2C_STOP I2C_DAT ]
+"31090
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31090:     struct {
+[s S1442 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1442 . BF1 UA1 R START STOP D CKE1 SMP1 ]
+"31100
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31100:     struct {
+[s S1443 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1443 . . RW START1 STOP1 DA ]
+"31107
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31107:     struct {
+[s S1444 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1444 . . RW1 I2C_START1 I2C_STOP2 DA1 ]
+"31114
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31114:     struct {
+[s S1445 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1445 . . I2C_READ1 S2 P2 DATA_ADDRESS1 ]
+"31121
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31121:     struct {
+[s S1446 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S1446 . . READ_WRITE1 . D_A1 ]
+"31127
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31127:     struct {
+[s S1447 :5 `uc 1 :1 `uc 1 ]
+[n S1447 . . D_NOT_A1 ]
+"31131
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31131:     struct {
+[s S1448 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S1448 . . R_W1 . D_nA1 ]
+"31137
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31137:     struct {
+[s S1449 :2 `uc 1 :1 `uc 1 ]
+[n S1449 . . R_NOT_W1 ]
+"31141
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31141:     struct {
+[s S1450 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S1450 . . R_nW1 . I2C_DAT1 ]
+"31147
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31147:     struct {
+[s S1451 :2 `uc 1 :1 `uc 1 ]
+[n S1451 . . NOT_W2 ]
+"31151
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31151:     struct {
+[s S1452 :5 `uc 1 :1 `uc 1 ]
+[n S1452 . . NOT_A2 ]
+"31155
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31155:     struct {
+[s S1453 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S1453 . . nW2 . nA2 ]
+"31161
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31161:     struct {
+[s S1454 :2 `uc 1 :1 `uc 1 ]
+[n S1454 . . NOT_WRITE1 ]
+"31165
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31165:     struct {
+[s S1455 :5 `uc 1 :1 `uc 1 ]
+[n S1455 . . NOT_ADDRESS1 ]
+"31169
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31169:     struct {
+[s S1456 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S1456 . . nWRITE1 . nADDRESS1 ]
+"31032
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31032: typedef union {
+[u S1431 `S1432 1 `S1433 1 `S1434 1 `S1435 1 `S1436 1 `S1437 1 `S1438 1 `S1439 1 `S1440 1 `S1441 1 `S1442 1 `S1443 1 `S1444 1 `S1445 1 `S1446 1 `S1447 1 `S1448 1 `S1449 1 `S1450 1 `S1451 1 `S1452 1 `S1453 1 `S1454 1 `S1455 1 `S1456 1 ]
+[n S1431 . . . . . . . . . . . . . . . . . . . . . . . . . . ]
+"31176
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31176: extern volatile SSP1STATbits_t SSP1STATbits __attribute__((address(0xF94)));
+[v _SSP1STATbits `VS1431 ~T0 @X0 0 e@3988 ]
+"48249
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 48249: extern volatile __bit SSP1IF __attribute__((address(0x71B0)));
+[v _SSP1IF `Vb ~T0 @X0 0 e@29104 ]
+"31607
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31607:     struct {
+[s S1462 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1462 . SEN RSEN PEN RCEN ACKEN ACKDT ACKSTAT GCEN ]
+"31617
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31617:     struct {
+[s S1463 :1 `uc 1 :5 `uc 1 ]
+[n S1463 . . ADMSK ]
+"31621
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31621:     struct {
+[s S1464 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1464 . . ADMSK1 ADMSK2 ADMSK3 ADMSK4 ADMSK5 ]
+"31629
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31629:     struct {
+[s S1465 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1465 . SEN1 ADMSK11 ADMSK21 ADMSK31 ACKEN1 ACKDT1 ACKSTAT1 GCEN1 ]
+"31639
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31639:     struct {
+[s S1466 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1466 . . RSEN1 PEN1 RCEN1 ADMSK41 ADMSK51 ]
+"31606
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31606: typedef union {
+[u S1461 `S1462 1 `S1463 1 `S1464 1 `S1465 1 `S1466 1 ]
+[n S1461 . . . . . . ]
+"31648
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 31648: extern volatile SSP1CON2bits_t SSP1CON2bits __attribute__((address(0xF96)));
+[v _SSP1CON2bits `VS1461 ~T0 @X0 0 e@3990 ]
+"30817
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 30817: extern volatile unsigned char SSP1BUF __attribute__((address(0xF91)));
+[v _SSP1BUF `Vuc ~T0 @X0 0 e@3985 ]
+"98 I2C.c
+[; ;I2C.c: 98:         i2c_status.callbackTable[i2c_dataComplete]=returnStop;
+[c E14243 0 1 2 3 4 5 .. ]
+[n E14243 . i2c_dataComplete i2c_writeCollision i2c_addressNACK i2c_dataNACK i2c_timeOut i2c_NULL  ]
+"10
+[; ;I2C.c: 10: static i2c_operations_t returnStop(void *p);
+[v _returnStop `(E14256 ~T0 @X0 0 sf1`*v ]
+"11
+[; ;I2C.c: 11: static i2c_operations_t returnReset(void *p);
+[v _returnReset `(E14256 ~T0 @X0 0 sf1`*v ]
+"25 ./I2C1_Driver.h
+[; ;./I2C1_Driver.h: 25: __bit i2c1_driver_open(void);
+[v _i2c1_driver_open `(b ~T0 @X0 0 ef ]
+[v F14635 `(v ~T0 @X0 1 tf ]
+"19
+[; ;./I2C1_Driver.h: 19: __attribute__((inline)) void mssp1_clearIRQ(void);
+[v _mssp1_clearIRQ `TF14635 ~T0 @X0 0 e ]
+[v F14695 `(v ~T0 @X0 0 tf ]
+[v F14696 `(v ~T0 @X0 1 tf1`*F14695 ]
+"52
+[; ;./I2C1_Driver.h: 52: __attribute__((inline)) void i2c1_driver_setBusCollisionISR(interruptHandler handler);
+[v _i2c1_driver_setBusCollisionISR `TF14696 ~T0 @X0 0 e ]
+"30 ./I2C_Master.h
+[; ;./I2C_Master.h: 30: void i2c_busCollisionISR(void);
+[v _i2c_busCollisionISR `(v ~T0 @X0 0 ef ]
+[v F14700 `(v ~T0 @X0 0 tf ]
+[v F14701 `(v ~T0 @X0 1 tf1`*F14700 ]
+"53 ./I2C1_Driver.h
+[; ;./I2C1_Driver.h: 53: __attribute__((inline)) void i2c1_driver_setI2cISR(interruptHandler handler);
+[v _i2c1_driver_setI2cISR `TF14701 ~T0 @X0 0 e ]
+"29 ./I2C_Master.h
+[; ;./I2C_Master.h: 29: void i2c_ISR(void);
+[v _i2c_ISR `(v ~T0 @X0 0 ef ]
 "54 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 54: __asm("PPSLOCK equ 0DEFh");
 [; <" PPSLOCK equ 0DEFh ;# ">
@@ -1973,6 +2192,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 "40981
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40981: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
+"77 ./I2C_Types.h
+[; ;./I2C_Types.h: 77: i2c_status_t i2c_status = {0};
+[v _i2c_status `S2019 ~T0 @X0 1 e ]
+[i _i2c_status
+:U ..
+:U ..
+-> -> 0 `i `uc
+..
+..
+]
+"54 ./I2C1_Driver.h
+[; ;./I2C1_Driver.h: 54: void (*i2c1_driver_busCollisionISR)(void);
+[v _i2c1_driver_busCollisionISR `*F14705 ~T0 @X0 1 e ]
+"55
+[; ;./I2C1_Driver.h: 55: void (*i2c1_driver_i2cISR)(void);
+[v _i2c1_driver_i2cISR `*F14707 ~T0 @X0 1 e ]
 "13 I2C.c
 [; ;I2C.c: 13: void I2C_Initialize()
 [v _I2C_Initialize `(v ~T0 @X0 1 ef ]
@@ -1981,81 +2216,152 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _I2C_Initialize ]
 [f ]
-"22
-[; ;I2C.c: 22: }
-[e :UE 2019 ]
+"15
+[; ;I2C.c: 15:     SSP1CON1 = 0x38;
+[e = _SSP1CON1 -> -> 56 `i `uc ]
+"16
+[; ;I2C.c: 16:     SSP1CON2 = 0x00;
+[e = _SSP1CON2 -> -> 0 `i `uc ]
+"17
+[; ;I2C.c: 17:     SSP1STAT = 0x40;
+[e = _SSP1STAT -> -> 64 `i `uc ]
+"18
+[; ;I2C.c: 18:     SSP1ADD = 0x19;
+[e = _SSP1ADD -> -> 25 `i `uc ]
+"19
+[; ;I2C.c: 19:     SSP1CON1bits.SSPEN = 0;
+[e = . . _SSP1CON1bits 0 2 -> -> 0 `i `uc ]
+"20
+[; ;I2C.c: 20: }
+[e :UE 2022 ]
 }
-"24
-[; ;I2C.c: 24: void I2C_Master_Idle (void)
+"22
+[; ;I2C.c: 22: void I2C_Master_Idle (void)
 [v _I2C_Master_Idle `(v ~T0 @X0 1 ef ]
-"25
-[; ;I2C.c: 25: {
+"23
+[; ;I2C.c: 23: {
 {
 [e :U _I2C_Master_Idle ]
 [f ]
-"27
-[; ;I2C.c: 27: }
-[e :UE 2020 ]
+"24
+[; ;I2C.c: 24:   while ((SSP1STATbits.RW) || (SSP1CON2 & 0x1F));
+[e $U 2024  ]
+[e :U 2025 ]
+[e :U 2024 ]
+[e $ || != -> . . _SSP1STATbits 11 1 `i -> 0 `i != & -> _SSP1CON2 `i -> 31 `i -> 0 `i 2025  ]
+[e :U 2026 ]
+"25
+[; ;I2C.c: 25: }
+[e :UE 2023 ]
 }
-"29
-[; ;I2C.c: 29: void I2C_Master_Wait (void)
+"27
+[; ;I2C.c: 27: void I2C_Master_Wait (void)
 [v _I2C_Master_Wait `(v ~T0 @X0 1 ef ]
-"30
-[; ;I2C.c: 30: {
+"28
+[; ;I2C.c: 28: {
 {
 [e :U _I2C_Master_Wait ]
 [f ]
-"33
-[; ;I2C.c: 33: }
-[e :UE 2021 ]
+"29
+[; ;I2C.c: 29:     while(!SSP1IF);
+[e $U 2028  ]
+[e :U 2029 ]
+[e :U 2028 ]
+[e $ ! _SSP1IF 2029  ]
+[e :U 2030 ]
+"30
+[; ;I2C.c: 30:     SSP1IF=0;
+[e = _SSP1IF -> -> 0 `i `b ]
+"31
+[; ;I2C.c: 31: }
+[e :UE 2027 ]
 }
-"35
-[; ;I2C.c: 35: void I2C_Master_Start(void)
+"33
+[; ;I2C.c: 33: void I2C_Master_Start(void)
 [v _I2C_Master_Start `(v ~T0 @X0 1 ef ]
-"36
-[; ;I2C.c: 36: {
+"34
+[; ;I2C.c: 34: {
 {
 [e :U _I2C_Master_Start ]
 [f ]
-"40
-[; ;I2C.c: 40: }
-[e :UE 2022 ]
+"35
+[; ;I2C.c: 35:     I2C_Master_Idle();
+[e ( _I2C_Master_Idle ..  ]
+"36
+[; ;I2C.c: 36:     SSP1CON2bits.SEN = 1;
+[e = . . _SSP1CON2bits 0 0 -> -> 1 `i `uc ]
+"37
+[; ;I2C.c: 37:     I2C_Master_Wait();
+[e ( _I2C_Master_Wait ..  ]
+"38
+[; ;I2C.c: 38: }
+[e :UE 2031 ]
 }
-"42
-[; ;I2C.c: 42: void I2C_Master_Restart(void)
+"40
+[; ;I2C.c: 40: void I2C_Master_Restart(void)
 [v _I2C_Master_Restart `(v ~T0 @X0 1 ef ]
-"43
-[; ;I2C.c: 43: {
+"41
+[; ;I2C.c: 41: {
 {
 [e :U _I2C_Master_Restart ]
 [f ]
-"46
-[; ;I2C.c: 46: }
-[e :UE 2023 ]
+"42
+[; ;I2C.c: 42:   SSP1CON2bits.RSEN = 1;
+[e = . . _SSP1CON2bits 0 1 -> -> 1 `i `uc ]
+"43
+[; ;I2C.c: 43:   I2C_Master_Wait();
+[e ( _I2C_Master_Wait ..  ]
+"44
+[; ;I2C.c: 44: }
+[e :UE 2032 ]
 }
-"48
-[; ;I2C.c: 48: void I2C_Master_Stop (void)
+"46
+[; ;I2C.c: 46: void I2C_Master_Stop (void)
 [v _I2C_Master_Stop `(v ~T0 @X0 1 ef ]
-"49
-[; ;I2C.c: 49: {
+"47
+[; ;I2C.c: 47: {
 {
 [e :U _I2C_Master_Stop ]
 [f ]
-"53
-[; ;I2C.c: 53: }
-[e :UE 2024 ]
+"48
+[; ;I2C.c: 48:     I2C_Master_Idle();
+[e ( _I2C_Master_Idle ..  ]
+"49
+[; ;I2C.c: 49:     SSP1CON2bits.PEN = 1;
+[e = . . _SSP1CON2bits 0 2 -> -> 1 `i `uc ]
+"50
+[; ;I2C.c: 50:     I2C_Master_Wait();
+[e ( _I2C_Master_Wait ..  ]
+"51
+[; ;I2C.c: 51:     SSP1CON1bits.SSPEN = 0;
+[e = . . _SSP1CON1bits 0 2 -> -> 0 `i `uc ]
+"52
+[; ;I2C.c: 52: }
+[e :UE 2033 ]
 }
-"55
-[; ;I2C.c: 55: void I2C_Master_NAK (void)
+"54
+[; ;I2C.c: 54: void I2C_Master_NAK (void)
 [v _I2C_Master_NAK `(v ~T0 @X0 1 ef ]
-"56
-[; ;I2C.c: 56: {
+"55
+[; ;I2C.c: 55: {
 {
 [e :U _I2C_Master_NAK ]
 [f ]
+"56
+[; ;I2C.c: 56:     I2C_Master_Idle();
+[e ( _I2C_Master_Idle ..  ]
+"57
+[; ;I2C.c: 57:     SSP1CON2bits.ACKDT = 0;
+[e = . . _SSP1CON2bits 0 5 -> -> 0 `i `uc ]
+"58
+[; ;I2C.c: 58:     SSP1CON2bits.ACKEN=1;
+[e = . . _SSP1CON2bits 0 4 -> -> 1 `i `uc ]
+"59
+[; ;I2C.c: 59:     I2C_Master_Wait();
+[e ( _I2C_Master_Wait ..  ]
 "60
 [; ;I2C.c: 60: }
-[e :UE 2025 ]
+[e :UE 2034 ]
 }
 "62
 [; ;I2C.c: 62: void I2C_Master_Write (uint8_t data)
@@ -2070,19 +2376,170 @@ Version 4.0 HI-TECH Software Intermediate Code
 "63
 [; ;I2C.c: 63: {
 [f ]
-"73
-[; ;I2C.c: 73: }
-[e :UE 2026 ]
+"64
+[; ;I2C.c: 64:     while (1)
+[e :U 2037 ]
+"65
+[; ;I2C.c: 65:     {
+{
+"66
+[; ;I2C.c: 66:         SSP1BUF = data;
+[e = _SSP1BUF _data ]
+"67
+[; ;I2C.c: 67:         I2C_Master_Wait();
+[e ( _I2C_Master_Wait ..  ]
+"68
+[; ;I2C.c: 68:         if (SSP1CON2bits.ACKSTAT)
+[e $ ! != -> . . _SSP1CON2bits 0 6 `i -> 0 `i 2039  ]
+"69
+[; ;I2C.c: 69:         {
+{
+"70
+[; ;I2C.c: 70:             I2C_Master_Restart();
+[e ( _I2C_Master_Restart ..  ]
+"71
+[; ;I2C.c: 71:         } else break;
 }
-"75
-[; ;I2C.c: 75: uint8_t I2C_Master_Read (void)
-[v _I2C_Master_Read `(uc ~T0 @X0 1 ef ]
+[e $U 2040  ]
+[e :U 2039 ]
+[e $U 2038  ]
+[e :U 2040 ]
+"72
+[; ;I2C.c: 72:     }
+}
+[e :U 2036 ]
+[e $U 2037  ]
+[e :U 2038 ]
+"73
+[; ;I2C.c: 73:     I2C_Master_Idle();
+[e ( _I2C_Master_Idle ..  ]
+"74
+[; ;I2C.c: 74: }
+[e :UE 2035 ]
+}
 "76
-[; ;I2C.c: 76: {
+[; ;I2C.c: 76: uint8_t I2C_Master_Read (void)
+[v _I2C_Master_Read `(uc ~T0 @X0 1 ef ]
+"77
+[; ;I2C.c: 77: {
 {
 [e :U _I2C_Master_Read ]
 [f ]
+"78
+[; ;I2C.c: 78:   SSP1CON2bits.RCEN = 1;
+[e = . . _SSP1CON2bits 0 3 -> -> 1 `i `uc ]
+"79
+[; ;I2C.c: 79:   while (!SSP1STATbits.BF) {}
+[e $U 2042  ]
+[e :U 2043 ]
+{
+}
+[e :U 2042 ]
+[e $ ! != -> . . _SSP1STATbits 2 0 `i -> 0 `i 2043  ]
+[e :U 2044 ]
+"80
+[; ;I2C.c: 80:   SSP1CON2bits.RCEN = 0;
+[e = . . _SSP1CON2bits 0 3 -> -> 0 `i `uc ]
 "81
-[; ;I2C.c: 81: }
-[e :UE 2027 ]
+[; ;I2C.c: 81:   return SSP1BUF;
+[e ) _SSP1BUF ]
+[e $UE 2041  ]
+"82
+[; ;I2C.c: 82: }
+[e :UE 2041 ]
+}
+"84
+[; ;I2C.c: 84: i2c_error_t I2C_Master_Open(uint8_t addr){
+[v _I2C_Master_Open `(E14251 ~T0 @X0 1 ef1`uc ]
+{
+[e :U _I2C_Master_Open ]
+[v _addr `uc ~T0 @X0 1 r1 ]
+[f ]
+"85
+[; ;I2C.c: 85:      i2c_error_t ret = I2C_BUSY;
+[v _ret `E14251 ~T0 @X0 1 a ]
+[e = _ret . `E14251 1 ]
+"87
+[; ;I2C.c: 87:     if(!i2c_status.inUse)
+[e $ ! ! != -> . _i2c_status 1 `i -> 0 `i 2046  ]
+"88
+[; ;I2C.c: 88:     {
+{
+"89
+[; ;I2C.c: 89:         i2c_status.address = addr;
+[e = . _i2c_status 4 _addr ]
+"90
+[; ;I2C.c: 90:         i2c_status.busy = 0;
+[e = . _i2c_status 0 -> -> 0 `i `uc ]
+"91
+[; ;I2C.c: 91:         i2c_status.inUse = 1;
+[e = . _i2c_status 1 -> -> 1 `i `uc ]
+"92
+[; ;I2C.c: 92:         i2c_status.addressNACKCheck = 0;
+[e = . _i2c_status 3 -> -> 0 `i `uc ]
+"93
+[; ;I2C.c: 93:         i2c_status.state = I2C_RESET;
+[e = . _i2c_status 9 . `E14225 14 ]
+"94
+[; ;I2C.c: 94:         i2c_status.time_out_value = 500;
+[e = . _i2c_status 8 -> -> 500 `i `us ]
+"95
+[; ;I2C.c: 95:         i2c_status.bufferFree = 1;
+[e = . _i2c_status 2 -> -> 1 `i `uc ]
+"98
+[; ;I2C.c: 98:         i2c_status.callbackTable[i2c_dataComplete]=returnStop;
+[e = *U + &U . _i2c_status 11 * -> . `E14243 0 `ux -> -> # *U &U . _i2c_status 11 `ui `ux &U _returnStop ]
+"99
+[; ;I2C.c: 99:         i2c_status.callbackPayload[i2c_dataComplete] = ((void*)0);
+[e = *U + &U . _i2c_status 12 * -> . `E14243 0 `ux -> -> # *U &U . _i2c_status 12 `ui `ux -> -> 0 `i `*v ]
+"100
+[; ;I2C.c: 100:         i2c_status.callbackTable[i2c_writeCollision]=returnStop;
+[e = *U + &U . _i2c_status 11 * -> . `E14243 1 `ux -> -> # *U &U . _i2c_status 11 `ui `ux &U _returnStop ]
+"101
+[; ;I2C.c: 101:         i2c_status.callbackPayload[i2c_writeCollision] = ((void*)0);
+[e = *U + &U . _i2c_status 12 * -> . `E14243 1 `ux -> -> # *U &U . _i2c_status 12 `ui `ux -> -> 0 `i `*v ]
+"102
+[; ;I2C.c: 102:         i2c_status.callbackTable[i2c_addressNACK]=returnStop;
+[e = *U + &U . _i2c_status 11 * -> . `E14243 2 `ux -> -> # *U &U . _i2c_status 11 `ui `ux &U _returnStop ]
+"103
+[; ;I2C.c: 103:         i2c_status.callbackPayload[i2c_addressNACK] = ((void*)0);
+[e = *U + &U . _i2c_status 12 * -> . `E14243 2 `ux -> -> # *U &U . _i2c_status 12 `ui `ux -> -> 0 `i `*v ]
+"104
+[; ;I2C.c: 104:         i2c_status.callbackTable[i2c_dataNACK]=returnStop;
+[e = *U + &U . _i2c_status 11 * -> . `E14243 3 `ux -> -> # *U &U . _i2c_status 11 `ui `ux &U _returnStop ]
+"105
+[; ;I2C.c: 105:         i2c_status.callbackPayload[i2c_dataNACK] = ((void*)0);
+[e = *U + &U . _i2c_status 12 * -> . `E14243 3 `ux -> -> # *U &U . _i2c_status 12 `ui `ux -> -> 0 `i `*v ]
+"106
+[; ;I2C.c: 106:         i2c_status.callbackTable[i2c_timeOut]=returnReset;
+[e = *U + &U . _i2c_status 11 * -> . `E14243 4 `ux -> -> # *U &U . _i2c_status 11 `ui `ux &U _returnReset ]
+"107
+[; ;I2C.c: 107:         i2c_status.callbackPayload[i2c_timeOut] = ((void*)0);
+[e = *U + &U . _i2c_status 12 * -> . `E14243 4 `ux -> -> # *U &U . _i2c_status 12 `ui `ux -> -> 0 `i `*v ]
+"109
+[; ;I2C.c: 109:         i2c1_driver_open();
+[e ( _i2c1_driver_open ..  ]
+"110
+[; ;I2C.c: 110:         mssp1_clearIRQ();
+[e ( _mssp1_clearIRQ ..  ]
+"112
+[; ;I2C.c: 112:         i2c1_driver_setBusCollisionISR(i2c_busCollisionISR);
+[e ( _i2c1_driver_setBusCollisionISR (1 &U _i2c_busCollisionISR ]
+"113
+[; ;I2C.c: 113:         i2c1_driver_setI2cISR(i2c_ISR);
+[e ( _i2c1_driver_setI2cISR (1 &U _i2c_ISR ]
+"118
+[; ;I2C.c: 118:         ret = I2C_NOERR;
+[e = _ret . `E14251 0 ]
+"119
+[; ;I2C.c: 119:     }
+}
+[e :U 2046 ]
+"120
+[; ;I2C.c: 120:     return ret;
+[e ) _ret ]
+[e $UE 2045  ]
+"121
+[; ;I2C.c: 121: }
+[e :UE 2045 ]
 }

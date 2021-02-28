@@ -7,14 +7,6 @@
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "I2C.c" 2
-
-
-
-
-
-
-
-
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -24183,7 +24175,10 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\\pic\\include\\xc.h" 2 3
-# 9 "I2C.c" 2
+# 1 "I2C.c" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdbool.h" 1 3
+# 2 "I2C.c" 2
 
 # 1 "./I2C.h" 1
 
@@ -24279,6 +24274,91 @@ typedef uint32_t uint_fast32_t;
 # 144 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
 # 7 "./I2C.h" 2
 
+# 1 "./I2C_Types.h" 1
+
+
+
+
+
+
+typedef uint8_t i2c_address_t;
+
+
+typedef enum {
+    I2C_IDLE = 0,
+    I2C_SEND_ADR_READ,
+    I2C_SEND_ADR_WRITE,
+    I2C_TX,
+    I2C_RX,
+    I2C_RCEN,
+    I2C_TX_EMPTY,
+    I2C_SEND_RESTART_READ,
+    I2C_SEND_RESTART_WRITE,
+    I2C_SEND_RESTART,
+    I2C_SEND_STOP,
+    I2C_RX_DO_ACK,
+    I2C_RX_DO_NACK_STOP,
+    I2C_RX_DO_NACK_RESTART,
+    I2C_RESET,
+    I2C_ADDRESS_NACK
+} i2c_fsm_states_t;
+
+
+typedef enum
+{
+    i2c_dataComplete = 0,
+    i2c_writeCollision,
+    i2c_addressNACK,
+    i2c_dataNACK,
+    i2c_timeOut,
+    i2c_NULL
+} i2c_callbackIndex;
+
+typedef enum {
+    I2C_NOERR,
+    I2C_BUSY,
+    I2C_FAIL
+
+
+} i2c_error_t;
+
+typedef enum
+{
+    i2c_stop=1,
+    i2c_restart_read,
+    i2c_restart_write,
+    i2c_continue,
+    i2c_reset_link
+} i2c_operations_t;
+
+typedef i2c_operations_t (*i2c_callback)(void *p);
+
+
+typedef struct
+{
+    unsigned busy:1;
+    unsigned inUse:1;
+    unsigned bufferFree:1;
+    unsigned addressNACKCheck:1;
+    i2c_address_t address;
+    uint8_t *data_ptr;
+    size_t data_length;
+    uint16_t time_out;
+    uint16_t time_out_value;
+    i2c_fsm_states_t state;
+    i2c_error_t error;
+    i2c_callback callbackTable[6];
+    void *callbackPayload[6];
+} i2c_status_t;
+
+i2c_status_t i2c_status = {0};
+
+i2c_operations_t i2c_returnStop(void *p);
+i2c_operations_t i2c_returnReset(void *p);
+i2c_operations_t i2c_restartWrite(void *p);
+i2c_operations_t i2c_restartRead(void *p);
+# 8 "./I2C.h" 2
+
 
 void I2C_Initialize();
 void I2C_Master_Idle (void);
@@ -24289,74 +24369,351 @@ void I2C_Master_Stop (void);
 void I2C_Master_NAK (void);
 void I2C_Master_Write (uint8_t data);
 uint8_t I2C_Master_Read (void);
-# 10 "I2C.c" 2
+i2c_error_t I2C_Master_Open(uint8_t addr);
+# 3 "I2C.c" 2
+
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 144 "./mcc_generated_files/pin_manager.h"
+# 110 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 156 "./mcc_generated_files/pin_manager.h"
+# 122 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 11 "I2C.c" 2
+# 5 "I2C.c" 2
 
+# 1 "./mcc_generated_files/device_config.h" 1
+# 6 "I2C.c" 2
+
+# 1 "./I2C1_Driver.h" 1
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 1 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
+
+
+
+
+
+typedef void * va_list[1];
+
+
+
+
+typedef void * __isoc_va_list[1];
+# 137 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long ssize_t;
+# 246 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long off_t;
+# 399 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct _IO_FILE FILE;
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 2 3
+# 52 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 3
+typedef union _G_fpos64_t {
+ char __opaque[16];
+ double __align;
+} fpos_t;
+
+extern FILE *const stdin;
+extern FILE *const stdout;
+extern FILE *const stderr;
+
+
+
+
+
+FILE *fopen(const char *restrict, const char *restrict);
+FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
+int fclose(FILE *);
+
+int remove(const char *);
+int rename(const char *, const char *);
+
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+void clearerr(FILE *);
+
+int fseek(FILE *, long, int);
+long ftell(FILE *);
+void rewind(FILE *);
+
+int fgetpos(FILE *restrict, fpos_t *restrict);
+int fsetpos(FILE *, const fpos_t *);
+
+size_t fread(void *restrict, size_t, size_t, FILE *restrict);
+size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
+
+int fgetc(FILE *);
+int getc(FILE *);
+int getchar(void);
+int ungetc(int, FILE *);
+
+int fputc(int, FILE *);
+int putc(int, FILE *);
+int putchar(int);
+
+char *fgets(char *restrict, int, FILE *restrict);
+
+char *gets(char *);
+
+
+int fputs(const char *restrict, FILE *restrict);
+int puts(const char *);
+
+#pragma printf_check(printf) const
+#pragma printf_check(vprintf) const
+#pragma printf_check(sprintf) const
+#pragma printf_check(snprintf) const
+#pragma printf_check(vsprintf) const
+#pragma printf_check(vsnprintf) const
+
+int printf(const char *restrict, ...);
+int fprintf(FILE *restrict, const char *restrict, ...);
+int sprintf(char *restrict, const char *restrict, ...);
+int snprintf(char *restrict, size_t, const char *restrict, ...);
+
+int vprintf(const char *restrict, __isoc_va_list);
+int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
+int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
+int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+
+int scanf(const char *restrict, ...);
+int fscanf(FILE *restrict, const char *restrict, ...);
+int sscanf(const char *restrict, const char *restrict, ...);
+int vscanf(const char *restrict, __isoc_va_list);
+int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
+int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+
+void perror(const char *);
+
+int setvbuf(FILE *restrict, char *restrict, int, size_t);
+void setbuf(FILE *restrict, char *restrict);
+
+char *tmpnam(char *);
+FILE *tmpfile(void);
+
+
+
+
+FILE *fmemopen(void *restrict, size_t, const char *restrict);
+FILE *open_memstream(char **, size_t *);
+FILE *fdopen(int, const char *);
+FILE *popen(const char *, const char *);
+int pclose(FILE *);
+int fileno(FILE *);
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+int dprintf(int, const char *restrict, ...);
+int vdprintf(int, const char *restrict, __isoc_va_list);
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
+ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
+int renameat(int, const char *, int, const char *);
+char *ctermid(char *);
+
+
+
+
+
+
+
+char *tempnam(const char *, const char *);
+# 4 "./I2C1_Driver.h" 2
+
+
+
+
+
+
+typedef void (*interruptHandler)(void);
+
+
+__attribute__((inline)) void i2c1_driver_close(void);
+
+
+__attribute__((inline)) void mssp1_enableIRQ(void);
+__attribute__((inline)) __bit mssp1_IRQisEnabled(void);
+__attribute__((inline)) void mssp1_disableIRQ(void);
+__attribute__((inline)) void mssp1_clearIRQ(void);
+__attribute__((inline)) void mssp1_setIRQ(void);
+__attribute__((inline)) __bit mssp1_IRQisSet(void);
+__attribute__((inline)) void mssp1_waitForEvent(uint16_t*);
+
+
+__bit i2c1_driver_open(void);
+__attribute__((inline)) char i2c1_driver_getRXData(void);
+__attribute__((inline)) char i2c1_driver_getAddr(void);
+__attribute__((inline)) void i2c1_driver_setAddr(char addr);
+__attribute__((inline)) void i2c1_driver_setMask(char mask);
+__attribute__((inline)) void i2c1_driver_TXData(char d);
+__attribute__((inline)) void i2c1_driver_resetBus(void);
+__attribute__((inline)) void i2c1_driver_start(void);
+__attribute__((inline)) void i2c1_driver_restart(void);
+__attribute__((inline)) void i2c1_driver_stop(void);
+__attribute__((inline)) __bit i2c1_driver_isNACK(void);
+__attribute__((inline)) void i2c1_driver_startRX(void);
+__attribute__((inline)) void i2c1_driver_sendACK(void);
+__attribute__((inline)) void i2c1_driver_sendNACK(void);
+__attribute__((inline)) void i2c1_driver_clearBusCollision(void);
+
+__bit i2c1_driver_initSlaveHardware(void);
+__attribute__((inline)) void i2c1_driver_releaseClock(void);
+__attribute__((inline)) __bit i2c1_driver_isBufferFull(void);
+__attribute__((inline)) __bit i2c1_driver_isStart(void);
+__attribute__((inline)) __bit i2c1_driver_isStop(void);
+__attribute__((inline)) __bit i2c1_driver_isAddress(void);
+__attribute__((inline)) __bit i2c1_driver_isData(void);
+__attribute__((inline)) __bit i2c1_driver_isRead(void);
+__attribute__((inline)) __bit i2c1_driver_isWriteCollision(void);
+__attribute__((inline)) __bit i2c1_driver_isReceiveOverflow(void);
+
+__attribute__((inline)) void i2c1_driver_setBusCollisionISR(interruptHandler handler);
+__attribute__((inline)) void i2c1_driver_setI2cISR(interruptHandler handler);
+void (*i2c1_driver_busCollisionISR)(void);
+void (*i2c1_driver_i2cISR)(void);
+# 7 "I2C.c" 2
+
+# 1 "./I2C_Master.h" 1
+# 11 "./I2C_Master.h"
+i2c_error_t i2c_open(i2c_address_t address);
+void i2c_setAddress(i2c_address_t address);
+i2c_error_t i2c_close(void);
+i2c_error_t i2c_masterOperation(_Bool read);
+i2c_error_t i2c_masterWrite(void);
+i2c_error_t i2c_masterRead(void);
+
+void i2c_setTimeOut(uint8_t to);
+void i2c_setBuffer(void *buffer, size_t bufferSize);
+
+
+void i2c_setDataCompleteCallback(i2c_callback cb, void *p);
+void i2c_setWriteCollisionCallback(i2c_callback cb, void *p);
+void i2c_setAddressNACKCallback(i2c_callback cb, void *p);
+void i2c_setDataNACKCallback(i2c_callback cb, void *p);
+void i2c_setTimeOutCallback(i2c_callback cb, void *p);
+
+
+void i2c_ISR(void);
+void i2c_busCollisionISR(void);
+# 8 "I2C.c" 2
+
+
+static i2c_operations_t returnStop(void *p);
+static i2c_operations_t returnReset(void *p);
 
 void I2C_Initialize()
 {
-
-
-
-
-
-
-
+    SSP1CON1 = 0x38;
+    SSP1CON2 = 0x00;
+    SSP1STAT = 0x40;
+    SSP1ADD = 0x19;
+    SSP1CON1bits.SSPEN = 0;
 }
 
 void I2C_Master_Idle (void)
 {
-
+  while ((SSP1STATbits.RW) || (SSP1CON2 & 0x1F));
 }
 
 void I2C_Master_Wait (void)
 {
-
-
+    while(!SSP1IF);
+    SSP1IF=0;
 }
 
 void I2C_Master_Start(void)
 {
-
-
-
+    I2C_Master_Idle();
+    SSP1CON2bits.SEN = 1;
+    I2C_Master_Wait();
 }
 
 void I2C_Master_Restart(void)
 {
-
-
+  SSP1CON2bits.RSEN = 1;
+  I2C_Master_Wait();
 }
 
 void I2C_Master_Stop (void)
 {
-
-
-
+    I2C_Master_Idle();
+    SSP1CON2bits.PEN = 1;
+    I2C_Master_Wait();
+    SSP1CON1bits.SSPEN = 0;
 }
 
 void I2C_Master_NAK (void)
 {
-
-
-
+    I2C_Master_Idle();
+    SSP1CON2bits.ACKDT = 0;
+    SSP1CON2bits.ACKEN=1;
+    I2C_Master_Wait();
 }
 
 void I2C_Master_Write (uint8_t data)
 {
-# 73 "I2C.c"
+    while (1)
+    {
+        SSP1BUF = data;
+        I2C_Master_Wait();
+        if (SSP1CON2bits.ACKSTAT)
+        {
+            I2C_Master_Restart();
+        } else break;
+    }
+    I2C_Master_Idle();
 }
 
 uint8_t I2C_Master_Read (void)
 {
+  SSP1CON2bits.RCEN = 1;
+  while (!SSP1STATbits.BF) {}
+  SSP1CON2bits.RCEN = 0;
+  return SSP1BUF;
+}
+
+i2c_error_t I2C_Master_Open(uint8_t addr){
+     i2c_error_t ret = I2C_BUSY;
+
+    if(!i2c_status.inUse)
+    {
+        i2c_status.address = addr;
+        i2c_status.busy = 0;
+        i2c_status.inUse = 1;
+        i2c_status.addressNACKCheck = 0;
+        i2c_status.state = I2C_RESET;
+        i2c_status.time_out_value = 500;
+        i2c_status.bufferFree = 1;
+
+
+        i2c_status.callbackTable[i2c_dataComplete]=returnStop;
+        i2c_status.callbackPayload[i2c_dataComplete] = ((void*)0);
+        i2c_status.callbackTable[i2c_writeCollision]=returnStop;
+        i2c_status.callbackPayload[i2c_writeCollision] = ((void*)0);
+        i2c_status.callbackTable[i2c_addressNACK]=returnStop;
+        i2c_status.callbackPayload[i2c_addressNACK] = ((void*)0);
+        i2c_status.callbackTable[i2c_dataNACK]=returnStop;
+        i2c_status.callbackPayload[i2c_dataNACK] = ((void*)0);
+        i2c_status.callbackTable[i2c_timeOut]=returnReset;
+        i2c_status.callbackPayload[i2c_timeOut] = ((void*)0);
+
+        i2c1_driver_open();
+        mssp1_clearIRQ();
+
+        i2c1_driver_setBusCollisionISR(i2c_busCollisionISR);
+        i2c1_driver_setI2cISR(i2c_ISR);
 
 
 
 
+        ret = I2C_NOERR;
+    }
+    return ret;
 }

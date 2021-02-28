@@ -6,7 +6,7 @@
   200010h - 2FFFFFh
   30000Ch - 30003Fh
   
- dist/default/debug\Clock.X.debug.hex ranges:
+ dist/default/production\Clock.X.production.hex ranges:
   0h - 3h
   1FE8Ah - 1FFFFh
   200000h - 20000Fh
@@ -23,7 +23,7 @@
   T = Trailing code
   & = Find & replace opcode
   X = Find & delete opcode
-  1 = dist/default/debug\Clock.X.debug.hex
+  1 = dist/default/production\Clock.X.production.hex
 00000000: 1111------------------------------------------------------------
 0001FE80: ----------111111111111111111111111111111111111111111111111111111
 0001FEC0: 1111111111111111111111111111111111111111111111111111111111111111

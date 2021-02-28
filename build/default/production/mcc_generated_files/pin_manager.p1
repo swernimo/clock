@@ -1,17 +1,166 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"78 ./I2C_Types.h
-[; ;./I2C_Types.h: 78: i2c_status_t i2c_status = {0};
-[c E14543 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 .. ]
-[n E14543 . I2C_IDLE I2C_SEND_ADR_READ I2C_SEND_ADR_WRITE I2C_TX I2C_RX I2C_RCEN I2C_TX_EMPTY I2C_SEND_RESTART_READ I2C_SEND_RESTART_WRITE I2C_SEND_RESTART I2C_SEND_STOP I2C_RX_DO_ACK I2C_RX_DO_NACK_STOP I2C_RX_DO_NACK_RESTART I2C_RESET I2C_ADDRESS_NACK  ]
-[c E14569 0 1 2 .. ]
-[n E14569 . I2C_NOERR I2C_BUSY I2C_FAIL  ]
-[c E14574 1 2 3 4 5 .. ]
-[n E14574 . i2c_stop i2c_restart_read i2c_restart_write i2c_continue i2c_reset_link  ]
-[v F14597 `(E14574 ~T0 @X0 0 tf1`*v ]
-"62
-[; ;./I2C_Types.h: 62: {
-[s S2021 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 `uc 1 `*uc 1 `ui 1 `us 1 `us 1 `E14543 1 `E14569 1 `*F14597 -> 6 `i `*v -> 6 `i ]
-[n S2021 . busy inUse bufferFree addressNACKCheck address data_ptr data_length time_out time_out_value state error callbackTable callbackPayload ]
+"28961 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28961: extern volatile unsigned char LATE __attribute__((address(0xF7D)));
+[v _LATE `Vuc ~T0 @X0 0 e@3965 ]
+"28849
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28849: extern volatile unsigned char LATD __attribute__((address(0xF7C)));
+[v _LATD `Vuc ~T0 @X0 0 e@3964 ]
+"28513
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28513: extern volatile unsigned char LATA __attribute__((address(0xF79)));
+[v _LATA `Vuc ~T0 @X0 0 e@3961 ]
+"29073
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 29073: extern volatile unsigned char LATF __attribute__((address(0xF7E)));
+[v _LATF `Vuc ~T0 @X0 0 e@3966 ]
+"28625
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28625: extern volatile unsigned char LATB __attribute__((address(0xF7A)));
+[v _LATB `Vuc ~T0 @X0 0 e@3962 ]
+"29185
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 29185: extern volatile unsigned char LATG __attribute__((address(0xF7F)));
+[v _LATG `Vuc ~T0 @X0 0 e@3967 ]
+"28737
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28737: extern volatile unsigned char LATC __attribute__((address(0xF7B)));
+[v _LATC `Vuc ~T0 @X0 0 e@3963 ]
+"29274
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 29274: extern volatile unsigned char LATH __attribute__((address(0xF80)));
+[v _LATH `Vuc ~T0 @X0 0 e@3968 ]
+"29862
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 29862: extern volatile unsigned char TRISE __attribute__((address(0xF85)));
+[v _TRISE `Vuc ~T0 @X0 0 e@3973 ]
+"29984
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 29984: extern volatile unsigned char TRISF __attribute__((address(0xF86)));
+[v _TRISF `Vuc ~T0 @X0 0 e@3974 ]
+"29374
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 29374: extern volatile unsigned char TRISA __attribute__((address(0xF81)));
+[v _TRISA `Vuc ~T0 @X0 0 e@3969 ]
+"30046
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 30046: extern volatile unsigned char TRISG __attribute__((address(0xF87)));
+[v _TRISG `Vuc ~T0 @X0 0 e@3975 ]
+"29496
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 29496: extern volatile unsigned char TRISB __attribute__((address(0xF82)));
+[v _TRISB `Vuc ~T0 @X0 0 e@3970 ]
+"30103
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 30103: extern volatile unsigned char TRISH __attribute__((address(0xF88)));
+[v _TRISH `Vuc ~T0 @X0 0 e@3976 ]
+"29618
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 29618: extern volatile unsigned char TRISC __attribute__((address(0xF83)));
+[v _TRISC `Vuc ~T0 @X0 0 e@3971 ]
+"29740
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 29740: extern volatile unsigned char TRISD __attribute__((address(0xF84)));
+[v _TRISD `Vuc ~T0 @X0 0 e@3972 ]
+"11496
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 11496: extern volatile unsigned char ANSELD __attribute__((address(0xEA7)));
+[v _ANSELD `Vuc ~T0 @X0 0 e@3751 ]
+"10752
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 10752: extern volatile unsigned char ANSELB __attribute__((address(0xE9A)));
+[v _ANSELB `Vuc ~T0 @X0 0 e@3738 ]
+"11992
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 11992: extern volatile unsigned char ANSELE __attribute__((address(0xEAF)));
+[v _ANSELE `Vuc ~T0 @X0 0 e@3759 ]
+"12665
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 12665: extern volatile unsigned char ANSELG __attribute__((address(0xEBC)));
+[v _ANSELG `Vuc ~T0 @X0 0 e@3772 ]
+"12302
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 12302: extern volatile unsigned char ANSELF __attribute__((address(0xEB4)));
+[v _ANSELF `Vuc ~T0 @X0 0 e@3764 ]
+"10256
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 10256: extern volatile unsigned char ANSELA __attribute__((address(0xE92)));
+[v _ANSELA `Vuc ~T0 @X0 0 e@3730 ]
+"11434
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 11434: extern volatile unsigned char WPUD __attribute__((address(0xEA6)));
+[v _WPUD `Vuc ~T0 @X0 0 e@3750 ]
+"12240
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 12240: extern volatile unsigned char WPUF __attribute__((address(0xEB3)));
+[v _WPUF `Vuc ~T0 @X0 0 e@3763 ]
+"11930
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 11930: extern volatile unsigned char WPUE __attribute__((address(0xEAE)));
+[v _WPUE `Vuc ~T0 @X0 0 e@3758 ]
+"10690
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 10690: extern volatile unsigned char WPUB __attribute__((address(0xE99)));
+[v _WPUB `Vuc ~T0 @X0 0 e@3737 ]
+"12603
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 12603: extern volatile unsigned char WPUG __attribute__((address(0xEBB)));
+[v _WPUG `Vuc ~T0 @X0 0 e@3771 ]
+"10194
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 10194: extern volatile unsigned char WPUA __attribute__((address(0xE91)));
+[v _WPUA `Vuc ~T0 @X0 0 e@3729 ]
+"11186
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 11186: extern volatile unsigned char WPUC __attribute__((address(0xEA1)));
+[v _WPUC `Vuc ~T0 @X0 0 e@3745 ]
+"12908
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 12908: extern volatile unsigned char WPUH __attribute__((address(0xEC0)));
+[v _WPUH `Vuc ~T0 @X0 0 e@3776 ]
+"11868
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 11868: extern volatile unsigned char ODCONE __attribute__((address(0xEAD)));
+[v _ODCONE `Vuc ~T0 @X0 0 e@3757 ]
+"12178
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 12178: extern volatile unsigned char ODCONF __attribute__((address(0xEB2)));
+[v _ODCONF `Vuc ~T0 @X0 0 e@3762 ]
+"10132
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 10132: extern volatile unsigned char ODCONA __attribute__((address(0xE90)));
+[v _ODCONA `Vuc ~T0 @X0 0 e@3728 ]
+"12546
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 12546: extern volatile unsigned char ODCONG __attribute__((address(0xEBA)));
+[v _ODCONG `Vuc ~T0 @X0 0 e@3770 ]
+"10628
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 10628: extern volatile unsigned char ODCONB __attribute__((address(0xE98)));
+[v _ODCONB `Vuc ~T0 @X0 0 e@3736 ]
+"12846
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 12846: extern volatile unsigned char ODCONH __attribute__((address(0xEBF)));
+[v _ODCONH `Vuc ~T0 @X0 0 e@3775 ]
+"11124
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 11124: extern volatile unsigned char ODCONC __attribute__((address(0xEA0)));
+[v _ODCONC `Vuc ~T0 @X0 0 e@3744 ]
+"11372
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 11372: extern volatile unsigned char ODCOND __attribute__((address(0xEA5)));
+[v _ODCOND `Vuc ~T0 @X0 0 e@3749 ]
+"10070
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 10070: extern volatile unsigned char SLRCONA __attribute__((address(0xE8F)));
+[v _SLRCONA `Vuc ~T0 @X0 0 e@3727 ]
+"10566
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 10566: extern volatile unsigned char SLRCONB __attribute__((address(0xE97)));
+[v _SLRCONB `Vuc ~T0 @X0 0 e@3735 ]
+"11062
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 11062: extern volatile unsigned char SLRCONC __attribute__((address(0xE9F)));
+[v _SLRCONC `Vuc ~T0 @X0 0 e@3743 ]
+"11310
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 11310: extern volatile unsigned char SLRCOND __attribute__((address(0xEA4)));
+[v _SLRCOND `Vuc ~T0 @X0 0 e@3748 ]
+"11806
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 11806: extern volatile unsigned char SLRCONE __attribute__((address(0xEAC)));
+[v _SLRCONE `Vuc ~T0 @X0 0 e@3756 ]
+"12116
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 12116: extern volatile unsigned char SLRCONF __attribute__((address(0xEB1)));
+[v _SLRCONF `Vuc ~T0 @X0 0 e@3761 ]
+"12489
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 12489: extern volatile unsigned char SLRCONG __attribute__((address(0xEB9)));
+[v _SLRCONG `Vuc ~T0 @X0 0 e@3769 ]
+"12784
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 12784: extern volatile unsigned char SLRCONH __attribute__((address(0xEBE)));
+[v _SLRCONH `Vuc ~T0 @X0 0 e@3774 ]
+"10008
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 10008: extern volatile unsigned char INLVLA __attribute__((address(0xE8E)));
+[v _INLVLA `Vuc ~T0 @X0 0 e@3726 ]
+"10504
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 10504: extern volatile unsigned char INLVLB __attribute__((address(0xE96)));
+[v _INLVLB `Vuc ~T0 @X0 0 e@3734 ]
+"11000
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 11000: extern volatile unsigned char INLVLC __attribute__((address(0xE9E)));
+[v _INLVLC `Vuc ~T0 @X0 0 e@3742 ]
+"11248
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 11248: extern volatile unsigned char INLVLD __attribute__((address(0xEA3)));
+[v _INLVLD `Vuc ~T0 @X0 0 e@3747 ]
+"11744
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 11744: extern volatile unsigned char INLVLE __attribute__((address(0xEAB)));
+[v _INLVLE `Vuc ~T0 @X0 0 e@3755 ]
+"12054
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 12054: extern volatile unsigned char INLVLF __attribute__((address(0xEB0)));
+[v _INLVLF `Vuc ~T0 @X0 0 e@3760 ]
+"12427
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 12427: extern volatile unsigned char INLVLG __attribute__((address(0xEB8)));
+[v _INLVLG `Vuc ~T0 @X0 0 e@3768 ]
+"12722
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 12722: extern volatile unsigned char INLVLH __attribute__((address(0xEBD)));
+[v _INLVLH `Vuc ~T0 @X0 0 e@3773 ]
 "54 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 54: __asm("PPSLOCK equ 0DEFh");
 [; <" PPSLOCK equ 0DEFh ;# ">
@@ -1986,97 +2135,189 @@ Version 4.0 HI-TECH Software Intermediate Code
 "40981
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40981: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"78 ./I2C_Types.h
-[; ;./I2C_Types.h: 78: i2c_status_t i2c_status = {0};
-[v _i2c_status `S2021 ~T0 @X0 1 e ]
-[i _i2c_status
-:U ..
-:U ..
--> -> 0 `i `uc
-..
-..
-]
-"3 I2C_Types.c
-[; ;I2C_Types.c: 3: i2c_operations_t i2c_returnStop(void *p)
-[v _i2c_returnStop `(E14574 ~T0 @X0 1 ef1`*v ]
-"4
-[; ;I2C_Types.c: 4: {
+"55 mcc_generated_files/pin_manager.c
+[; ;mcc_generated_files/pin_manager.c: 55: void PIN_MANAGER_Initialize(void)
+[v _PIN_MANAGER_Initialize `(v ~T0 @X0 1 ef ]
+"56
+[; ;mcc_generated_files/pin_manager.c: 56: {
 {
-[e :U _i2c_returnStop ]
-"3
-[; ;I2C_Types.c: 3: i2c_operations_t i2c_returnStop(void *p)
-[v _p `*v ~T0 @X0 1 r1 ]
-"4
-[; ;I2C_Types.c: 4: {
+[e :U _PIN_MANAGER_Initialize ]
 [f ]
-"5
-[; ;I2C_Types.c: 5:     return i2c_stop;
-[e ) . `E14574 0 ]
-[e $UE 2022  ]
-"6
-[; ;I2C_Types.c: 6: }
-[e :UE 2022 ]
+"60
+[; ;mcc_generated_files/pin_manager.c: 60:     LATE = 0x00;
+[e = _LATE -> -> 0 `i `uc ]
+"61
+[; ;mcc_generated_files/pin_manager.c: 61:     LATD = 0x02;
+[e = _LATD -> -> 2 `i `uc ]
+"62
+[; ;mcc_generated_files/pin_manager.c: 62:     LATA = 0x00;
+[e = _LATA -> -> 0 `i `uc ]
+"63
+[; ;mcc_generated_files/pin_manager.c: 63:     LATF = 0x00;
+[e = _LATF -> -> 0 `i `uc ]
+"64
+[; ;mcc_generated_files/pin_manager.c: 64:     LATB = 0x00;
+[e = _LATB -> -> 0 `i `uc ]
+"65
+[; ;mcc_generated_files/pin_manager.c: 65:     LATG = 0x00;
+[e = _LATG -> -> 0 `i `uc ]
+"66
+[; ;mcc_generated_files/pin_manager.c: 66:     LATC = 0x80;
+[e = _LATC -> -> 128 `i `uc ]
+"67
+[; ;mcc_generated_files/pin_manager.c: 67:     LATH = 0x00;
+[e = _LATH -> -> 0 `i `uc ]
+"72
+[; ;mcc_generated_files/pin_manager.c: 72:     TRISE = 0xFF;
+[e = _TRISE -> -> 255 `i `uc ]
+"73
+[; ;mcc_generated_files/pin_manager.c: 73:     TRISF = 0xFF;
+[e = _TRISF -> -> 255 `i `uc ]
+"74
+[; ;mcc_generated_files/pin_manager.c: 74:     TRISA = 0xFF;
+[e = _TRISA -> -> 255 `i `uc ]
+"75
+[; ;mcc_generated_files/pin_manager.c: 75:     TRISG = 0xDF;
+[e = _TRISG -> -> 223 `i `uc ]
+"76
+[; ;mcc_generated_files/pin_manager.c: 76:     TRISB = 0xFF;
+[e = _TRISB -> -> 255 `i `uc ]
+"77
+[; ;mcc_generated_files/pin_manager.c: 77:     TRISH = 0x0F;
+[e = _TRISH -> -> 15 `i `uc ]
+"78
+[; ;mcc_generated_files/pin_manager.c: 78:     TRISC = 0xFF;
+[e = _TRISC -> -> 255 `i `uc ]
+"79
+[; ;mcc_generated_files/pin_manager.c: 79:     TRISD = 0xFD;
+[e = _TRISD -> -> 253 `i `uc ]
+"84
+[; ;mcc_generated_files/pin_manager.c: 84:     ANSELD = 0xFD;
+[e = _ANSELD -> -> 253 `i `uc ]
+"85
+[; ;mcc_generated_files/pin_manager.c: 85:     ANSELB = 0xFF;
+[e = _ANSELB -> -> 255 `i `uc ]
+"86
+[; ;mcc_generated_files/pin_manager.c: 86:     ANSELE = 0xFF;
+[e = _ANSELE -> -> 255 `i `uc ]
+"87
+[; ;mcc_generated_files/pin_manager.c: 87:     ANSELG = 0xFF;
+[e = _ANSELG -> -> 255 `i `uc ]
+"88
+[; ;mcc_generated_files/pin_manager.c: 88:     ANSELF = 0xFF;
+[e = _ANSELF -> -> 255 `i `uc ]
+"89
+[; ;mcc_generated_files/pin_manager.c: 89:     ANSELA = 0xFF;
+[e = _ANSELA -> -> 255 `i `uc ]
+"94
+[; ;mcc_generated_files/pin_manager.c: 94:     WPUD = 0x00;
+[e = _WPUD -> -> 0 `i `uc ]
+"95
+[; ;mcc_generated_files/pin_manager.c: 95:     WPUF = 0x00;
+[e = _WPUF -> -> 0 `i `uc ]
+"96
+[; ;mcc_generated_files/pin_manager.c: 96:     WPUE = 0x00;
+[e = _WPUE -> -> 0 `i `uc ]
+"97
+[; ;mcc_generated_files/pin_manager.c: 97:     WPUB = 0x00;
+[e = _WPUB -> -> 0 `i `uc ]
+"98
+[; ;mcc_generated_files/pin_manager.c: 98:     WPUG = 0x00;
+[e = _WPUG -> -> 0 `i `uc ]
+"99
+[; ;mcc_generated_files/pin_manager.c: 99:     WPUA = 0x00;
+[e = _WPUA -> -> 0 `i `uc ]
+"100
+[; ;mcc_generated_files/pin_manager.c: 100:     WPUC = 0x00;
+[e = _WPUC -> -> 0 `i `uc ]
+"101
+[; ;mcc_generated_files/pin_manager.c: 101:     WPUH = 0x00;
+[e = _WPUH -> -> 0 `i `uc ]
+"106
+[; ;mcc_generated_files/pin_manager.c: 106:     ODCONE = 0x00;
+[e = _ODCONE -> -> 0 `i `uc ]
+"107
+[; ;mcc_generated_files/pin_manager.c: 107:     ODCONF = 0x00;
+[e = _ODCONF -> -> 0 `i `uc ]
+"108
+[; ;mcc_generated_files/pin_manager.c: 108:     ODCONA = 0x00;
+[e = _ODCONA -> -> 0 `i `uc ]
+"109
+[; ;mcc_generated_files/pin_manager.c: 109:     ODCONG = 0x00;
+[e = _ODCONG -> -> 0 `i `uc ]
+"110
+[; ;mcc_generated_files/pin_manager.c: 110:     ODCONB = 0x00;
+[e = _ODCONB -> -> 0 `i `uc ]
+"111
+[; ;mcc_generated_files/pin_manager.c: 111:     ODCONH = 0x00;
+[e = _ODCONH -> -> 0 `i `uc ]
+"112
+[; ;mcc_generated_files/pin_manager.c: 112:     ODCONC = 0x00;
+[e = _ODCONC -> -> 0 `i `uc ]
+"113
+[; ;mcc_generated_files/pin_manager.c: 113:     ODCOND = 0x00;
+[e = _ODCOND -> -> 0 `i `uc ]
+"118
+[; ;mcc_generated_files/pin_manager.c: 118:     SLRCONA = 0xFF;
+[e = _SLRCONA -> -> 255 `i `uc ]
+"119
+[; ;mcc_generated_files/pin_manager.c: 119:     SLRCONB = 0xFF;
+[e = _SLRCONB -> -> 255 `i `uc ]
+"120
+[; ;mcc_generated_files/pin_manager.c: 120:     SLRCONC = 0xFF;
+[e = _SLRCONC -> -> 255 `i `uc ]
+"121
+[; ;mcc_generated_files/pin_manager.c: 121:     SLRCOND = 0xFF;
+[e = _SLRCOND -> -> 255 `i `uc ]
+"122
+[; ;mcc_generated_files/pin_manager.c: 122:     SLRCONE = 0xFF;
+[e = _SLRCONE -> -> 255 `i `uc ]
+"123
+[; ;mcc_generated_files/pin_manager.c: 123:     SLRCONF = 0xFF;
+[e = _SLRCONF -> -> 255 `i `uc ]
+"124
+[; ;mcc_generated_files/pin_manager.c: 124:     SLRCONG = 0xFF;
+[e = _SLRCONG -> -> 255 `i `uc ]
+"125
+[; ;mcc_generated_files/pin_manager.c: 125:     SLRCONH = 0xFF;
+[e = _SLRCONH -> -> 255 `i `uc ]
+"130
+[; ;mcc_generated_files/pin_manager.c: 130:     INLVLA = 0xFF;
+[e = _INLVLA -> -> 255 `i `uc ]
+"131
+[; ;mcc_generated_files/pin_manager.c: 131:     INLVLB = 0xFF;
+[e = _INLVLB -> -> 255 `i `uc ]
+"132
+[; ;mcc_generated_files/pin_manager.c: 132:     INLVLC = 0xFF;
+[e = _INLVLC -> -> 255 `i `uc ]
+"133
+[; ;mcc_generated_files/pin_manager.c: 133:     INLVLD = 0xFF;
+[e = _INLVLD -> -> 255 `i `uc ]
+"134
+[; ;mcc_generated_files/pin_manager.c: 134:     INLVLE = 0xFF;
+[e = _INLVLE -> -> 255 `i `uc ]
+"135
+[; ;mcc_generated_files/pin_manager.c: 135:     INLVLF = 0xFF;
+[e = _INLVLF -> -> 255 `i `uc ]
+"136
+[; ;mcc_generated_files/pin_manager.c: 136:     INLVLG = 0xFF;
+[e = _INLVLG -> -> 255 `i `uc ]
+"137
+[; ;mcc_generated_files/pin_manager.c: 137:     INLVLH = 0xFF;
+[e = _INLVLH -> -> 255 `i `uc ]
+"145
+[; ;mcc_generated_files/pin_manager.c: 145: }
+[e :UE 2019 ]
 }
-"8
-[; ;I2C_Types.c: 8: i2c_operations_t i2c_returnReset(void *p)
-[v _i2c_returnReset `(E14574 ~T0 @X0 1 ef1`*v ]
-"9
-[; ;I2C_Types.c: 9: {
+"147
+[; ;mcc_generated_files/pin_manager.c: 147: void PIN_MANAGER_IOC(void)
+[v _PIN_MANAGER_IOC `(v ~T0 @X0 1 ef ]
+"148
+[; ;mcc_generated_files/pin_manager.c: 148: {
 {
-[e :U _i2c_returnReset ]
-"8
-[; ;I2C_Types.c: 8: i2c_operations_t i2c_returnReset(void *p)
-[v _p `*v ~T0 @X0 1 r1 ]
-"9
-[; ;I2C_Types.c: 9: {
+[e :U _PIN_MANAGER_IOC ]
 [f ]
-"10
-[; ;I2C_Types.c: 10:     return i2c_reset_link;
-[e ) . `E14574 4 ]
-[e $UE 2023  ]
-"11
-[; ;I2C_Types.c: 11: }
-[e :UE 2023 ]
-}
-"13
-[; ;I2C_Types.c: 13: i2c_operations_t i2c_restartWrite(void *p)
-[v _i2c_restartWrite `(E14574 ~T0 @X0 1 ef1`*v ]
-"14
-[; ;I2C_Types.c: 14: {
-{
-[e :U _i2c_restartWrite ]
-"13
-[; ;I2C_Types.c: 13: i2c_operations_t i2c_restartWrite(void *p)
-[v _p `*v ~T0 @X0 1 r1 ]
-"14
-[; ;I2C_Types.c: 14: {
-[f ]
-"15
-[; ;I2C_Types.c: 15:     return i2c_restart_write;
-[e ) . `E14574 2 ]
-[e $UE 2024  ]
-"16
-[; ;I2C_Types.c: 16: }
-[e :UE 2024 ]
-}
-"18
-[; ;I2C_Types.c: 18: i2c_operations_t i2c_restartRead(void *p)
-[v _i2c_restartRead `(E14574 ~T0 @X0 1 ef1`*v ]
-"19
-[; ;I2C_Types.c: 19: {
-{
-[e :U _i2c_restartRead ]
-"18
-[; ;I2C_Types.c: 18: i2c_operations_t i2c_restartRead(void *p)
-[v _p `*v ~T0 @X0 1 r1 ]
-"19
-[; ;I2C_Types.c: 19: {
-[f ]
-"20
-[; ;I2C_Types.c: 20:     return i2c_restart_read;
-[e ) . `E14574 1 ]
-[e $UE 2025  ]
-"21
-[; ;I2C_Types.c: 21: }
-[e :UE 2025 ]
+"149
+[; ;mcc_generated_files/pin_manager.c: 149: }
+[e :UE 2020 ]
 }

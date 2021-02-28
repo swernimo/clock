@@ -3,13 +3,14 @@ Microchip MPLAB XC8 Compiler V2.31
 Linker command line:
 
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.31\pic\dat\en_msgs.txt -cn \
-  -h+dist/default/debug\Clock.X.debug.sym \
-  --cmf=dist/default/debug\Clock.X.debug.cmf -z -Q18F67K40 \
-  -oC:\Users\swern\AppData\Local\Temp\sc40.2 --defsym=__MPLAB_BUILD=1 \
-  -Mdist/default/debug/Clock.X.debug.map -E1 -ver=XC8 Compiler --acfsm=1493 \
-  -ASTACK=060h-0DE9h -pstack=STACK -ACODE=00h-01FFFFh -ACONST=00h-01FFFFh \
-  -ASMALLCONST=0E00h-0EFFhx498 -AMEDIUMCONST=0E00h-0FFFFh,010E00h-01FFFFh \
-  -ACOMRAM=01h-05Fh -AABS1=00h-0DE9h -ABIGRAM=01h-0DE9h \
+  -h+dist/default/production\Clock.X.production.sym \
+  --cmf=dist/default/production\Clock.X.production.cmf -z -Q18F67K40 \
+  -oC:\Users\swern\AppData\Local\Temp\s6u4.2 --defsym=__MPLAB_BUILD=1 \
+  -Mdist/default/production/Clock.X.production.map -E1 -ver=XC8 Compiler \
+  --acfsm=1493 -ASTACK=060h-0DE9h -pstack=STACK -ACODE=00h-01FFFFh \
+  -ACONST=00h-01FFFFh -ASMALLCONST=0E00h-0EFFhx498 \
+  -AMEDIUMCONST=0E00h-0FFFFh,010E00h-01FFFFh -ACOMRAM=01h-05Fh \
+  -AABS1=00h-0DE9h -ABIGRAM=01h-0DE9h \
   -ARAM=060h-0FFh,0100h-01FFhx12,0D00h-0DE9h -ABANK0=060h-0FFh \
   -ABANK1=0100h-01FFh -ABANK2=0200h-02FFh -ABANK3=0300h-03FFh \
   -ABANK4=0400h-04FFh -ABANK5=0500h-05FFh -ABANK6=0600h-06FFh \
@@ -26,8 +27,8 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\swern\AppData\Local\Temp\sc40.o \
-  dist/default/debug\Clock.X.debug.o 
+  C:\Users\swern\AppData\Local\Temp\s6u4.o \
+  dist/default/production\Clock.X.production.o 
 
 Object code version is 3.11
 
@@ -36,11 +37,11 @@ Machine type is 18F67K40
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\swern\AppData\Local\Temp\sc40.o
+C:\Users\swern\AppData\Local\Temp\s6u4.o
                 idloc                            200000   200000       10        0       5
                 config                           300000   300000        C        0       4
                 init                                  0        0        4        0       0
-dist/default/debug\Clock.X.debug.o
+dist/default/production\Clock.X.production.o
                 idloc                            200000   200000       10        0       5
                 config                           300000   300000        C        0       4
                 text8                             1FED6    1FED6       18     FF6B       0

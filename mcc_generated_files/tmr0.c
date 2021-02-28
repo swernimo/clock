@@ -13,12 +13,12 @@
   @Description
     This source file provides APIs for TMR0.
     Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.77
+        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.7
         Device            :  PIC18F67K40
         Driver Version    :  3.10
     The generated drivers are tested against the following:
-        Compiler          :  XC8 2.05 and above
-        MPLAB 	          :  MPLAB X 5.20
+        Compiler          :  XC8 2.31 and above
+        MPLAB 	          :  MPLAB X 5.45
 */
 
 /*
@@ -61,11 +61,11 @@ void TMR0_Initialize(void)
 {
     // Set TMR0 to the options selected in the User Interface
 
-    // T0CS T0CKI_PIN; T0CKPS 1:4096; T0ASYNC synchronised; 
-    T0CON1 = 0x0C;
+    // T0CS FOSC/4; T0CKPS 1:4096; T0ASYNC synchronised; 
+    T0CON1 = 0x4C;
 
-    // TMR0H 6; 
-    TMR0H = 0x06;
+    // TMR0H 139; 
+    TMR0H = 0x8B;
 
     // TMR0L 0; 
     TMR0L = 0x00;

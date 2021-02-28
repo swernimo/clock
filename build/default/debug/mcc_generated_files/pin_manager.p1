@@ -161,9 +161,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12722
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 12722: extern volatile unsigned char INLVLH __attribute__((address(0xEBD)));
 [v _INLVLH `Vuc ~T0 @X0 0 e@3773 ]
-"336
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 336: extern volatile unsigned char T0CKIPPS __attribute__((address(0xDF4)));
-[v _T0CKIPPS `Vuc ~T0 @X0 0 e@3572 ]
 "54 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 54: __asm("PPSLOCK equ 0DEFh");
 [; <" PPSLOCK equ 0DEFh ;# ">
@@ -2210,8 +2207,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 88:     ANSELF = 0xFF;
 [e = _ANSELF -> -> 255 `i `uc ]
 "89
-[; ;mcc_generated_files/pin_manager.c: 89:     ANSELA = 0xEF;
-[e = _ANSELA -> -> 239 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 89:     ANSELA = 0xFF;
+[e = _ANSELA -> -> 255 `i `uc ]
 "94
 [; ;mcc_generated_files/pin_manager.c: 94:     WPUD = 0x00;
 [e = _WPUD -> -> 0 `i `uc ]
@@ -2308,22 +2305,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 "137
 [; ;mcc_generated_files/pin_manager.c: 137:     INLVLH = 0xFF;
 [e = _INLVLH -> -> 255 `i `uc ]
-"146
-[; ;mcc_generated_files/pin_manager.c: 146:     T0CKIPPS = 0x04;
-[e = _T0CKIPPS -> -> 4 `i `uc ]
-"147
-[; ;mcc_generated_files/pin_manager.c: 147: }
+"145
+[; ;mcc_generated_files/pin_manager.c: 145: }
 [e :UE 2019 ]
 }
-"149
-[; ;mcc_generated_files/pin_manager.c: 149: void PIN_MANAGER_IOC(void)
+"147
+[; ;mcc_generated_files/pin_manager.c: 147: void PIN_MANAGER_IOC(void)
 [v _PIN_MANAGER_IOC `(v ~T0 @X0 1 ef ]
-"150
-[; ;mcc_generated_files/pin_manager.c: 150: {
+"148
+[; ;mcc_generated_files/pin_manager.c: 148: {
 {
 [e :U _PIN_MANAGER_IOC ]
 [f ]
-"151
-[; ;mcc_generated_files/pin_manager.c: 151: }
+"149
+[; ;mcc_generated_files/pin_manager.c: 149: }
 [e :UE 2020 ]
 }

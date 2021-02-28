@@ -296,9 +296,9 @@ cinit 1FE92 1FE97 CODE 1FE92 0
 text1 1FE8E 1FE91 CODE 1FE8E 0
 text2 1FE8A 1FE8D CODE 1FE8A 0
 %locals
-dist/default/debug\Clock.X.debug.o
+dist/default/production\Clock.X.production.o
 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
-C:\Users\swern\AppData\Local\Temp\sc40.s
+C:\Users\swern\AppData\Local\Temp\s6u4.s
 5578 1FE92 0 CODE 0
 5580 1FE92 0 CODE 0
 5583 1FE92 0 CODE 0

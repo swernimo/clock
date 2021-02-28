@@ -1,52 +1,43 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"78 ./I2C_Types.h
-[; ;./I2C_Types.h: 78: i2c_status_t i2c_status = {0};
-[c E14543 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 .. ]
-[n E14543 . I2C_IDLE I2C_SEND_ADR_READ I2C_SEND_ADR_WRITE I2C_TX I2C_RX I2C_RCEN I2C_TX_EMPTY I2C_SEND_RESTART_READ I2C_SEND_RESTART_WRITE I2C_SEND_RESTART I2C_SEND_STOP I2C_RX_DO_ACK I2C_RX_DO_NACK_STOP I2C_RX_DO_NACK_RESTART I2C_RESET I2C_ADDRESS_NACK  ]
-[c E14569 0 1 2 .. ]
-[n E14569 . I2C_NOERR I2C_BUSY I2C_FAIL  ]
-[c E14574 1 2 3 4 5 .. ]
-[n E14574 . i2c_stop i2c_restart_read i2c_restart_write i2c_continue i2c_reset_link  ]
-[v F14597 `(E14574 ~T0 @X0 0 tf1`*v ]
-"62
-[; ;./I2C_Types.h: 62: {
-[s S2021 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 `uc 1 `*uc 1 `ui 1 `us 1 `us 1 `E14543 1 `E14569 1 `*F14597 -> 6 `i `*v -> 6 `i ]
-[n S2021 . busy inUse bufferFree addressNACKCheck address data_ptr data_length time_out time_out_value state error callbackTable callbackPayload ]
-"19 ./I2C_Master.h
-[; ;./I2C_Master.h: 19: void i2c_setBuffer(void *buffer, size_t bufferSize);
-[v _i2c_setBuffer `(v ~T0 @X0 0 ef2`*v`ui ]
-[v F14653 `(E14574 ~T0 @X0 0 tf1`*v ]
-"22
-[; ;./I2C_Master.h: 22: void i2c_setDataCompleteCallback(i2c_callback cb, void *p);
-[v _i2c_setDataCompleteCallback `(v ~T0 @X0 0 ef2`*F14653`*v ]
-[v F14691 `(E14574 ~T0 @X0 0 tf1`*v ]
-"11
-[; ;./I2C_Master.h: 11: i2c_error_t i2c_open(i2c_address_t address);
-[v _i2c_open `(E14569 ~T0 @X0 0 ef1`uc ]
-[v F14667 `(E14574 ~T0 @X0 0 tf1`*v ]
-"24
-[; ;./I2C_Master.h: 24: void i2c_setAddressNACKCallback(i2c_callback cb, void *p);
-[v _i2c_setAddressNACKCallback `(v ~T0 @X0 0 ef2`*F14667`*v ]
-"82 ./I2C_Types.h
-[; ;./I2C_Types.h: 82: i2c_operations_t i2c_restartWrite(void *p);
-[v _i2c_restartWrite `(E14574 ~T0 @X0 0 ef1`*v ]
-"15 ./I2C_Master.h
-[; ;./I2C_Master.h: 15: i2c_error_t i2c_masterWrite(void);
-[v _i2c_masterWrite `(E14569 ~T0 @X0 0 ef ]
-"13
-[; ;./I2C_Master.h: 13: i2c_error_t i2c_close(void);
-[v _i2c_close `(E14569 ~T0 @X0 0 ef ]
-[v F14709 `(E14574 ~T0 @X0 0 tf1`*v ]
-[v F14723 `(E14574 ~T0 @X0 0 tf1`*v ]
-[v F14735 `(E14574 ~T0 @X0 0 tf1`*v ]
-"103 I2C_Simple_Master.c
-[; ;I2C_Simple_Master.c: 103: {
-[s S2065 `ui 1 `*uc 1 ]
-[n S2065 . len data ]
-[v F14751 `(E14574 ~T0 @X0 0 tf1`*v ]
-"16 ./I2C_Master.h
-[; ;./I2C_Master.h: 16: i2c_error_t i2c_masterRead(void);
-[v _i2c_masterRead `(E14569 ~T0 @X0 0 ef ]
+[p mainexit ]
+"70 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 70: void SYSTEM_Initialize(void);
+[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+"129 ./mcc_generated_files/tmr0.h
+[; ;./mcc_generated_files/tmr0.h: 129: void TMR0_StartTimer(void);
+[v _TMR0_StartTimer `(v ~T0 @X0 0 ef ]
+"308
+[; ;./mcc_generated_files/tmr0.h: 308: _Bool TMR0_HasOverflowOccured(void);
+[v _TMR0_HasOverflowOccured `(a ~T0 @X0 0 ef ]
+"161
+[; ;./mcc_generated_files/tmr0.h: 161: void TMR0_StopTimer(void);
+[v _TMR0_StopTimer `(v ~T0 @X0 0 ef ]
+"28855 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28855:     struct {
+[s S1352 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1352 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
+"28865
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28865:     struct {
+[s S1353 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1353 . LD0 LD1 LD2 LD3 LD4 LD5 LD6 LD7 ]
+"28854
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28854: typedef union {
+[u S1351 `S1352 1 `S1353 1 ]
+[n S1351 . . . ]
+"28876
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28876: extern volatile LATDbits_t LATDbits __attribute__((address(0xF7C)));
+[v _LATDbits `VS1351 ~T0 @X0 0 e@3964 ]
+"5093
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 5093:     struct {
+[s S286 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S286 . INT0IF INT1IF INT2IF INT3IF IOCIF TMR0IF ]
+"5092
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 5092: typedef union {
+[u S285 `S286 1 ]
+[n S285 . . ]
+"5102
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 5102: extern volatile PIR0bits_t PIR0bits __attribute__((address(0xE33)));
+[v _PIR0bits `VS285 ~T0 @X0 0 e@3635 ]
 "54 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 54: __asm("PPSLOCK equ 0DEFh");
 [; <" PPSLOCK equ 0DEFh ;# ">
@@ -2021,505 +2012,58 @@ Version 4.0 HI-TECH Software Intermediate Code
 "40981
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40981: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"78 ./I2C_Types.h
-[; ;./I2C_Types.h: 78: i2c_status_t i2c_status = {0};
-[v _i2c_status `S2021 ~T0 @X0 1 e ]
-[i _i2c_status
-:U ..
-:U ..
--> -> 0 `i `uc
-..
-..
-]
-"5 I2C_Simple_Master.c
-[; ;I2C_Simple_Master.c: 5: static i2c_operations_t wr1RegCompleteHandler(void *p)
-[v _wr1RegCompleteHandler `(E14574 ~T0 @X0 1 sf1`*v ]
-"6
-[; ;I2C_Simple_Master.c: 6: {
-{
-[e :U _wr1RegCompleteHandler ]
-"5
-[; ;I2C_Simple_Master.c: 5: static i2c_operations_t wr1RegCompleteHandler(void *p)
-[v _p `*v ~T0 @X0 1 r1 ]
-"6
-[; ;I2C_Simple_Master.c: 6: {
-[f ]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"6 main.c
+[; ;main.c: 6: void main(void)
+[v _main `(v ~T0 @X0 1 ef ]
 "7
-[; ;I2C_Simple_Master.c: 7:     i2c_setBuffer(p,1);
-[e ( _i2c_setBuffer (2 , _p -> -> 1 `i `ui ]
-"8
-[; ;I2C_Simple_Master.c: 8:     i2c_setDataCompleteCallback(((void*)0),((void*)0));
-[e ( _i2c_setDataCompleteCallback (2 , -> -> -> 0 `i `*v `*F14691 -> -> 0 `i `*v ]
+[; ;main.c: 7: {
+{
+[e :U _main ]
+[f ]
 "9
-[; ;I2C_Simple_Master.c: 9:     return i2c_continue;
-[e ) . `E14574 3 ]
-[e $UE 2022  ]
-"10
-[; ;I2C_Simple_Master.c: 10: }
-[e :UE 2022 ]
-}
-"12
-[; ;I2C_Simple_Master.c: 12: void i2c_write1ByteRegister(i2c_address_t address, uint8_t reg, uint8_t data)
-[v _i2c_write1ByteRegister `(v ~T0 @X0 1 ef3`uc`uc`uc ]
-"13
-[; ;I2C_Simple_Master.c: 13: {
-{
-[e :U _i2c_write1ByteRegister ]
-"12
-[; ;I2C_Simple_Master.c: 12: void i2c_write1ByteRegister(i2c_address_t address, uint8_t reg, uint8_t data)
-[v _address `uc ~T0 @X0 1 r1 ]
-[v _reg `uc ~T0 @X0 1 r2 ]
-[v _data `uc ~T0 @X0 1 r3 ]
-"13
-[; ;I2C_Simple_Master.c: 13: {
-[f ]
-"14
-[; ;I2C_Simple_Master.c: 14:     while(!i2c_open(address));
-[e $U 2024  ]
-[e :U 2025 ]
-[e :U 2024 ]
-[e $ ! != -> ( _i2c_open (1 _address `ui -> -> 0 `i `ui 2025  ]
-[e :U 2026 ]
-"15
-[; ;I2C_Simple_Master.c: 15:     i2c_setDataCompleteCallback(wr1RegCompleteHandler,&data);
-[e ( _i2c_setDataCompleteCallback (2 , &U _wr1RegCompleteHandler -> &U _data `*v ]
-"16
-[; ;I2C_Simple_Master.c: 16:     i2c_setBuffer(&reg,1);
-[e ( _i2c_setBuffer (2 , -> &U _reg `*v -> -> 1 `i `ui ]
-"17
-[; ;I2C_Simple_Master.c: 17:     i2c_setAddressNACKCallback(i2c_restartWrite,((void*)0));
-[e ( _i2c_setAddressNACKCallback (2 , &U _i2c_restartWrite -> -> 0 `i `*v ]
-"18
-[; ;I2C_Simple_Master.c: 18:     i2c_masterWrite();
-[e ( _i2c_masterWrite ..  ]
-"19
-[; ;I2C_Simple_Master.c: 19:     while(I2C_BUSY == i2c_close());
-[e $U 2027  ]
-[e :U 2028 ]
-[e :U 2027 ]
-[e $ == -> . `E14569 1 `ui -> ( _i2c_close ..  `ui 2028  ]
-[e :U 2029 ]
-"20
-[; ;I2C_Simple_Master.c: 20: }
-[e :UE 2023 ]
-}
-"22
-[; ;I2C_Simple_Master.c: 22: void i2c_writeNBytes(i2c_address_t address, void* data, size_t len)
-[v _i2c_writeNBytes `(v ~T0 @X0 1 ef3`uc`*v`ui ]
-"23
-[; ;I2C_Simple_Master.c: 23: {
-{
-[e :U _i2c_writeNBytes ]
-"22
-[; ;I2C_Simple_Master.c: 22: void i2c_writeNBytes(i2c_address_t address, void* data, size_t len)
-[v _address `uc ~T0 @X0 1 r1 ]
-[v _data `*v ~T0 @X0 1 r2 ]
-[v _len `ui ~T0 @X0 1 r3 ]
-"23
-[; ;I2C_Simple_Master.c: 23: {
-[f ]
-"24
-[; ;I2C_Simple_Master.c: 24:     while(!i2c_open(address));
-[e $U 2031  ]
-[e :U 2032 ]
-[e :U 2031 ]
-[e $ ! != -> ( _i2c_open (1 _address `ui -> -> 0 `i `ui 2032  ]
-[e :U 2033 ]
-"25
-[; ;I2C_Simple_Master.c: 25:     i2c_setBuffer(data,len);
-[e ( _i2c_setBuffer (2 , _data _len ]
+[; ;main.c: 9:     SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
 "26
-[; ;I2C_Simple_Master.c: 26:     i2c_setAddressNACKCallback(i2c_restartWrite,((void*)0));
-[e ( _i2c_setAddressNACKCallback (2 , &U _i2c_restartWrite -> -> 0 `i `*v ]
+[; ;main.c: 26:     TMR0_StartTimer();
+[e ( _TMR0_StartTimer ..  ]
 "27
-[; ;I2C_Simple_Master.c: 27:     i2c_masterWrite();
-[e ( _i2c_masterWrite ..  ]
+[; ;main.c: 27:     while (1)
+[e :U 2021 ]
 "28
-[; ;I2C_Simple_Master.c: 28:     while(I2C_BUSY == i2c_close());
-[e $U 2034  ]
-[e :U 2035 ]
-[e :U 2034 ]
-[e $ == -> . `E14569 1 `ui -> ( _i2c_close ..  `ui 2035  ]
-[e :U 2036 ]
+[; ;main.c: 28:     {
+{
 "29
-[; ;I2C_Simple_Master.c: 29: }
-[e :UE 2030 ]
-}
-"32
-[; ;I2C_Simple_Master.c: 32: static i2c_operations_t rd1RegCompleteHandler(void *p)
-[v _rd1RegCompleteHandler `(E14574 ~T0 @X0 1 sf1`*v ]
-"33
-[; ;I2C_Simple_Master.c: 33: {
+[; ;main.c: 29:         if(TMR0_HasOverflowOccured()) {
+[e $ ! != -> ( _TMR0_HasOverflowOccured ..  `i -> 0 `i 2023  ]
 {
-[e :U _rd1RegCompleteHandler ]
+"30
+[; ;main.c: 30:             TMR0_StopTimer();
+[e ( _TMR0_StopTimer ..  ]
+"31
+[; ;main.c: 31:             do { LATDbits.LATD1 = ~LATDbits.LATD1; } while(0);
+[e :U 2026 ]
+{
+[e = . . _LATDbits 0 1 -> ~ -> . . _LATDbits 0 1 `i `uc ]
+}
+[e :U 2025 ]
 "32
-[; ;I2C_Simple_Master.c: 32: static i2c_operations_t rd1RegCompleteHandler(void *p)
-[v _p `*v ~T0 @X0 1 r1 ]
+[; ;main.c: 32:             PIR0bits.TMR0IF = 0;
+[e = . . _PIR0bits 0 5 -> -> 0 `i `uc ]
 "33
-[; ;I2C_Simple_Master.c: 33: {
-[f ]
+[; ;main.c: 33:             TMR0_StartTimer();
+[e ( _TMR0_StartTimer ..  ]
 "34
-[; ;I2C_Simple_Master.c: 34:     i2c_setBuffer(p,1);
-[e ( _i2c_setBuffer (2 , _p -> -> 1 `i `ui ]
+[; ;main.c: 34:         }
+}
+[e :U 2023 ]
 "35
-[; ;I2C_Simple_Master.c: 35:     i2c_setDataCompleteCallback(((void*)0),((void*)0));
-[e ( _i2c_setDataCompleteCallback (2 , -> -> -> 0 `i `*v `*F14709 -> -> 0 `i `*v ]
+[; ;main.c: 35:     }
+}
+[e :U 2020 ]
+[e $U 2021  ]
+[e :U 2022 ]
 "36
-[; ;I2C_Simple_Master.c: 36:     return i2c_restart_read;
-[e ) . `E14574 1 ]
-[e $UE 2037  ]
-"37
-[; ;I2C_Simple_Master.c: 37: }
-[e :UE 2037 ]
-}
-"39
-[; ;I2C_Simple_Master.c: 39: uint8_t i2c_read1ByteRegister(i2c_address_t address, uint8_t reg)
-[v _i2c_read1ByteRegister `(uc ~T0 @X0 1 ef2`uc`uc ]
-"40
-[; ;I2C_Simple_Master.c: 40: {
-{
-[e :U _i2c_read1ByteRegister ]
-"39
-[; ;I2C_Simple_Master.c: 39: uint8_t i2c_read1ByteRegister(i2c_address_t address, uint8_t reg)
-[v _address `uc ~T0 @X0 1 r1 ]
-[v _reg `uc ~T0 @X0 1 r2 ]
-"40
-[; ;I2C_Simple_Master.c: 40: {
-[f ]
-"41
-[; ;I2C_Simple_Master.c: 41:     uint8_t d2=42;
-[v _d2 `uc ~T0 @X0 1 a ]
-[e = _d2 -> -> 42 `i `uc ]
-"42
-[; ;I2C_Simple_Master.c: 42:     i2c_error_t e;
-[v _e `E14569 ~T0 @X0 1 a ]
-"43
-[; ;I2C_Simple_Master.c: 43:     int x;
-[v _x `i ~T0 @X0 1 a ]
-"45
-[; ;I2C_Simple_Master.c: 45:     for(x = 2; x != 0; x--)
-{
-[e = _x -> 2 `i ]
-[e $ != _x -> 0 `i 2039  ]
-[e $U 2040  ]
-[e :U 2039 ]
-"46
-[; ;I2C_Simple_Master.c: 46:     {
-{
-"47
-[; ;I2C_Simple_Master.c: 47:         while(!i2c_open(address));
-[e $U 2042  ]
-[e :U 2043 ]
-[e :U 2042 ]
-[e $ ! != -> ( _i2c_open (1 _address `ui -> -> 0 `i `ui 2043  ]
-[e :U 2044 ]
-"48
-[; ;I2C_Simple_Master.c: 48:         i2c_setDataCompleteCallback(rd1RegCompleteHandler,&d2);
-[e ( _i2c_setDataCompleteCallback (2 , &U _rd1RegCompleteHandler -> &U _d2 `*v ]
-"49
-[; ;I2C_Simple_Master.c: 49:         i2c_setBuffer(&reg,1);
-[e ( _i2c_setBuffer (2 , -> &U _reg `*v -> -> 1 `i `ui ]
-"50
-[; ;I2C_Simple_Master.c: 50:         i2c_setAddressNACKCallback(i2c_restartWrite,((void*)0));
-[e ( _i2c_setAddressNACKCallback (2 , &U _i2c_restartWrite -> -> 0 `i `*v ]
-"51
-[; ;I2C_Simple_Master.c: 51:         i2c_masterWrite();
-[e ( _i2c_masterWrite ..  ]
-"52
-[; ;I2C_Simple_Master.c: 52:         while(I2C_BUSY == (e = i2c_close()));
-[e $U 2045  ]
-[e :U 2046 ]
-[e :U 2045 ]
-[e $ == -> . `E14569 1 `ui -> = _e ( _i2c_close ..  `ui 2046  ]
-[e :U 2047 ]
-"53
-[; ;I2C_Simple_Master.c: 53:         if(e==I2C_NOERR) break;
-[e $ ! == -> _e `ui -> . `E14569 0 `ui 2048  ]
-[e $U 2040  ]
-[e :U 2048 ]
-"54
-[; ;I2C_Simple_Master.c: 54:     }
-}
-[e -- _x -> 1 `i ]
-[e $ != _x -> 0 `i 2039  ]
-[e :U 2040 ]
-}
-"57
-[; ;I2C_Simple_Master.c: 57:     return d2;
-[e ) _d2 ]
-[e $UE 2038  ]
-"58
-[; ;I2C_Simple_Master.c: 58: }
-[e :UE 2038 ]
-}
-"61
-[; ;I2C_Simple_Master.c: 61: static i2c_operations_t rd2RegCompleteHandler(void *p)
-[v _rd2RegCompleteHandler `(E14574 ~T0 @X0 1 sf1`*v ]
-"62
-[; ;I2C_Simple_Master.c: 62: {
-{
-[e :U _rd2RegCompleteHandler ]
-"61
-[; ;I2C_Simple_Master.c: 61: static i2c_operations_t rd2RegCompleteHandler(void *p)
-[v _p `*v ~T0 @X0 1 r1 ]
-"62
-[; ;I2C_Simple_Master.c: 62: {
-[f ]
-"63
-[; ;I2C_Simple_Master.c: 63:     i2c_setBuffer(p,2);
-[e ( _i2c_setBuffer (2 , _p -> -> 2 `i `ui ]
-"64
-[; ;I2C_Simple_Master.c: 64:     i2c_setDataCompleteCallback(((void*)0),((void*)0));
-[e ( _i2c_setDataCompleteCallback (2 , -> -> -> 0 `i `*v `*F14723 -> -> 0 `i `*v ]
-"65
-[; ;I2C_Simple_Master.c: 65:     return i2c_restart_read;
-[e ) . `E14574 1 ]
-[e $UE 2049  ]
-"66
-[; ;I2C_Simple_Master.c: 66: }
-[e :UE 2049 ]
-}
-"68
-[; ;I2C_Simple_Master.c: 68: uint16_t i2c_read2ByteRegister(i2c_address_t address, uint8_t reg)
-[v _i2c_read2ByteRegister `(us ~T0 @X0 1 ef2`uc`uc ]
-"69
-[; ;I2C_Simple_Master.c: 69: {
-{
-[e :U _i2c_read2ByteRegister ]
-"68
-[; ;I2C_Simple_Master.c: 68: uint16_t i2c_read2ByteRegister(i2c_address_t address, uint8_t reg)
-[v _address `uc ~T0 @X0 1 r1 ]
-[v _reg `uc ~T0 @X0 1 r2 ]
-"69
-[; ;I2C_Simple_Master.c: 69: {
-[f ]
-"71
-[; ;I2C_Simple_Master.c: 71:     uint16_t result;
-[v _result `us ~T0 @X0 1 a ]
-"73
-[; ;I2C_Simple_Master.c: 73:     while(!i2c_open(address));
-[e $U 2051  ]
-[e :U 2052 ]
-[e :U 2051 ]
-[e $ ! != -> ( _i2c_open (1 _address `ui -> -> 0 `i `ui 2052  ]
-[e :U 2053 ]
-"74
-[; ;I2C_Simple_Master.c: 74:     i2c_setDataCompleteCallback(rd2RegCompleteHandler,&result);
-[e ( _i2c_setDataCompleteCallback (2 , &U _rd2RegCompleteHandler -> &U _result `*v ]
-"75
-[; ;I2C_Simple_Master.c: 75:     i2c_setBuffer(&reg,1);
-[e ( _i2c_setBuffer (2 , -> &U _reg `*v -> -> 1 `i `ui ]
-"76
-[; ;I2C_Simple_Master.c: 76:     i2c_setAddressNACKCallback(i2c_restartWrite,((void*)0));
-[e ( _i2c_setAddressNACKCallback (2 , &U _i2c_restartWrite -> -> 0 `i `*v ]
-"77
-[; ;I2C_Simple_Master.c: 77:     i2c_masterWrite();
-[e ( _i2c_masterWrite ..  ]
-"78
-[; ;I2C_Simple_Master.c: 78:     while(I2C_BUSY == i2c_close());
-[e $U 2054  ]
-[e :U 2055 ]
-[e :U 2054 ]
-[e $ == -> . `E14569 1 `ui -> ( _i2c_close ..  `ui 2055  ]
-[e :U 2056 ]
-"80
-[; ;I2C_Simple_Master.c: 80:     return (result << 8 | result >> 8);
-[e ) -> | << -> _result `ui -> 8 `i >> -> _result `ui -> 8 `i `us ]
-[e $UE 2050  ]
-"81
-[; ;I2C_Simple_Master.c: 81: }
-[e :UE 2050 ]
-}
-"84
-[; ;I2C_Simple_Master.c: 84: static i2c_operations_t wr2RegCompleteHandler(void *p)
-[v _wr2RegCompleteHandler `(E14574 ~T0 @X0 1 sf1`*v ]
-"85
-[; ;I2C_Simple_Master.c: 85: {
-{
-[e :U _wr2RegCompleteHandler ]
-"84
-[; ;I2C_Simple_Master.c: 84: static i2c_operations_t wr2RegCompleteHandler(void *p)
-[v _p `*v ~T0 @X0 1 r1 ]
-"85
-[; ;I2C_Simple_Master.c: 85: {
-[f ]
-"86
-[; ;I2C_Simple_Master.c: 86:     i2c_setBuffer(p,2);
-[e ( _i2c_setBuffer (2 , _p -> -> 2 `i `ui ]
-"87
-[; ;I2C_Simple_Master.c: 87:     i2c_setDataCompleteCallback(((void*)0),((void*)0));
-[e ( _i2c_setDataCompleteCallback (2 , -> -> -> 0 `i `*v `*F14735 -> -> 0 `i `*v ]
-"88
-[; ;I2C_Simple_Master.c: 88:     return i2c_continue;
-[e ) . `E14574 3 ]
-[e $UE 2057  ]
-"89
-[; ;I2C_Simple_Master.c: 89: }
-[e :UE 2057 ]
-}
-"91
-[; ;I2C_Simple_Master.c: 91: void i2c_write2ByteRegister(i2c_address_t address, uint8_t reg, uint16_t data)
-[v _i2c_write2ByteRegister `(v ~T0 @X0 1 ef3`uc`uc`us ]
-"92
-[; ;I2C_Simple_Master.c: 92: {
-{
-[e :U _i2c_write2ByteRegister ]
-"91
-[; ;I2C_Simple_Master.c: 91: void i2c_write2ByteRegister(i2c_address_t address, uint8_t reg, uint16_t data)
-[v _address `uc ~T0 @X0 1 r1 ]
-[v _reg `uc ~T0 @X0 1 r2 ]
-[v _data `us ~T0 @X0 1 r3 ]
-"92
-[; ;I2C_Simple_Master.c: 92: {
-[f ]
-"93
-[; ;I2C_Simple_Master.c: 93:     while(!i2c_open(address));
-[e $U 2059  ]
-[e :U 2060 ]
-[e :U 2059 ]
-[e $ ! != -> ( _i2c_open (1 _address `ui -> -> 0 `i `ui 2060  ]
-[e :U 2061 ]
-"94
-[; ;I2C_Simple_Master.c: 94:     i2c_setDataCompleteCallback(wr2RegCompleteHandler,&data);
-[e ( _i2c_setDataCompleteCallback (2 , &U _wr2RegCompleteHandler -> &U _data `*v ]
-"95
-[; ;I2C_Simple_Master.c: 95:     i2c_setBuffer(&reg,1);
-[e ( _i2c_setBuffer (2 , -> &U _reg `*v -> -> 1 `i `ui ]
-"96
-[; ;I2C_Simple_Master.c: 96:     i2c_setAddressNACKCallback(i2c_restartWrite,((void*)0));
-[e ( _i2c_setAddressNACKCallback (2 , &U _i2c_restartWrite -> -> 0 `i `*v ]
-"97
-[; ;I2C_Simple_Master.c: 97:     i2c_masterWrite();
-[e ( _i2c_masterWrite ..  ]
-"98
-[; ;I2C_Simple_Master.c: 98:     while(I2C_BUSY == i2c_close());
-[e $U 2062  ]
-[e :U 2063 ]
-[e :U 2062 ]
-[e $ == -> . `E14569 1 `ui -> ( _i2c_close ..  `ui 2063  ]
-[e :U 2064 ]
-"99
-[; ;I2C_Simple_Master.c: 99: }
-[e :UE 2058 ]
-}
-"108
-[; ;I2C_Simple_Master.c: 108: static i2c_operations_t rdBlkRegCompleteHandler(void *p)
-[v _rdBlkRegCompleteHandler `(E14574 ~T0 @X0 1 sf1`*v ]
-"109
-[; ;I2C_Simple_Master.c: 109: {
-{
-[e :U _rdBlkRegCompleteHandler ]
-"108
-[; ;I2C_Simple_Master.c: 108: static i2c_operations_t rdBlkRegCompleteHandler(void *p)
-[v _p `*v ~T0 @X0 1 r1 ]
-"109
-[; ;I2C_Simple_Master.c: 109: {
-[f ]
-"110
-[; ;I2C_Simple_Master.c: 110:     i2c_setBuffer(((buf_t *)p)->data,((buf_t*)p)->len);
-[e ( _i2c_setBuffer (2 , -> . *U -> _p `*S2065 1 `*v . *U -> _p `*S2065 0 ]
-"111
-[; ;I2C_Simple_Master.c: 111:     i2c_setDataCompleteCallback(((void*)0),((void*)0));
-[e ( _i2c_setDataCompleteCallback (2 , -> -> -> 0 `i `*v `*F14751 -> -> 0 `i `*v ]
-"112
-[; ;I2C_Simple_Master.c: 112:     return i2c_restart_read;
-[e ) . `E14574 1 ]
-[e $UE 2066  ]
-"113
-[; ;I2C_Simple_Master.c: 113: }
-[e :UE 2066 ]
-}
-"115
-[; ;I2C_Simple_Master.c: 115: void i2c_readDataBlock(i2c_address_t address, uint8_t reg, void *data, size_t len)
-[v _i2c_readDataBlock `(v ~T0 @X0 1 ef4`uc`uc`*v`ui ]
-"116
-[; ;I2C_Simple_Master.c: 116: {
-{
-[e :U _i2c_readDataBlock ]
-"115
-[; ;I2C_Simple_Master.c: 115: void i2c_readDataBlock(i2c_address_t address, uint8_t reg, void *data, size_t len)
-[v _address `uc ~T0 @X0 1 r1 ]
-[v _reg `uc ~T0 @X0 1 r2 ]
-[v _data `*v ~T0 @X0 1 r3 ]
-[v _len `ui ~T0 @X0 1 r4 ]
-"116
-[; ;I2C_Simple_Master.c: 116: {
-[f ]
-"118
-[; ;I2C_Simple_Master.c: 118:     buf_t d;
-[v _d `S2065 ~T0 @X0 1 a ]
-"119
-[; ;I2C_Simple_Master.c: 119:     d.data = data;
-[e = . _d 1 -> _data `*uc ]
-"120
-[; ;I2C_Simple_Master.c: 120:     d.len = len;
-[e = . _d 0 _len ]
-"122
-[; ;I2C_Simple_Master.c: 122:     while(!i2c_open(address));
-[e $U 2068  ]
-[e :U 2069 ]
-[e :U 2068 ]
-[e $ ! != -> ( _i2c_open (1 _address `ui -> -> 0 `i `ui 2069  ]
-[e :U 2070 ]
-"123
-[; ;I2C_Simple_Master.c: 123:     i2c_setDataCompleteCallback(rdBlkRegCompleteHandler,&d);
-[e ( _i2c_setDataCompleteCallback (2 , &U _rdBlkRegCompleteHandler -> &U _d `*v ]
-"124
-[; ;I2C_Simple_Master.c: 124:     i2c_setBuffer(&reg,1);
-[e ( _i2c_setBuffer (2 , -> &U _reg `*v -> -> 1 `i `ui ]
-"125
-[; ;I2C_Simple_Master.c: 125:     i2c_setAddressNACKCallback(i2c_restartWrite,((void*)0));
-[e ( _i2c_setAddressNACKCallback (2 , &U _i2c_restartWrite -> -> 0 `i `*v ]
-"126
-[; ;I2C_Simple_Master.c: 126:     i2c_masterWrite();
-[e ( _i2c_masterWrite ..  ]
-"127
-[; ;I2C_Simple_Master.c: 127:     while(I2C_BUSY == i2c_close());
-[e $U 2071  ]
-[e :U 2072 ]
-[e :U 2071 ]
-[e $ == -> . `E14569 1 `ui -> ( _i2c_close ..  `ui 2072  ]
-[e :U 2073 ]
-"128
-[; ;I2C_Simple_Master.c: 128: }
-[e :UE 2067 ]
-}
-"130
-[; ;I2C_Simple_Master.c: 130: void i2c_readNBytes(i2c_address_t address, void *data, size_t len)
-[v _i2c_readNBytes `(v ~T0 @X0 1 ef3`uc`*v`ui ]
-"131
-[; ;I2C_Simple_Master.c: 131: {
-{
-[e :U _i2c_readNBytes ]
-"130
-[; ;I2C_Simple_Master.c: 130: void i2c_readNBytes(i2c_address_t address, void *data, size_t len)
-[v _address `uc ~T0 @X0 1 r1 ]
-[v _data `*v ~T0 @X0 1 r2 ]
-[v _len `ui ~T0 @X0 1 r3 ]
-"131
-[; ;I2C_Simple_Master.c: 131: {
-[f ]
-"132
-[; ;I2C_Simple_Master.c: 132:     while(!i2c_open(address));
-[e $U 2075  ]
-[e :U 2076 ]
-[e :U 2075 ]
-[e $ ! != -> ( _i2c_open (1 _address `ui -> -> 0 `i `ui 2076  ]
-[e :U 2077 ]
-"133
-[; ;I2C_Simple_Master.c: 133:     i2c_setBuffer(data,len);
-[e ( _i2c_setBuffer (2 , _data _len ]
-"134
-[; ;I2C_Simple_Master.c: 134:     i2c_masterRead();
-[e ( _i2c_masterRead ..  ]
-"135
-[; ;I2C_Simple_Master.c: 135:     while(I2C_BUSY == i2c_close());
-[e $U 2078  ]
-[e :U 2079 ]
-[e :U 2078 ]
-[e $ == -> . `E14569 1 `ui -> ( _i2c_close ..  `ui 2079  ]
-[e :U 2080 ]
-"136
-[; ;I2C_Simple_Master.c: 136: }
-[e :UE 2074 ]
+[; ;main.c: 36: }
+[e :UE 2019 ]
 }

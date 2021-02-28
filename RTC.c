@@ -4,7 +4,6 @@
 #include "mcc_generated_files/mcc.h"
 #include "mcc_generated_files/device_config.h"
 #include "RTC.h"
-//#include "mcc_generated_files/drivers/i2c_simple_master.h"
 
 static void rtcc_write(uint8_t addr, uint8_t data);
 static uint8_t rtcc_read(uint8_t addr);
@@ -17,11 +16,11 @@ static uint8_t rtc6_EEPRReadStatusRegister(void);
 DateTime_t dateTime;
 
 static uint8_t rtcc_read(uint8_t addr) {
-//    return i2c_read1ByteRegister(RTCC_ADDR, addr);
+    return i2c_read1ByteRegister(RTCC_ADDR, addr);
 }
 
 static void rtcc_write(uint8_t addr, uint8_t data) {
-//    i2c_write1ByteRegister(RTCC_ADDR, addr, data);
+    i2c_write1ByteRegister(RTCC_ADDR, addr, data);
     __delay_ms(5);
 }
 
@@ -123,15 +122,15 @@ void rtc6_ClearAlarm1(void){
 /******************************************************************************/
 
 static void rtc6_EEPRWriteLatchEnable(void) {
-//    i2c_write1ByteRegister(EEADDR, STATUS, EEPROM_UNLOCK);
+    i2c_write1ByteRegister(EEADDR, STATUS, EEPROM_UNLOCK);
 }
 
 static void rtc6_EEPRWriteLatchDisable(void) {
-//    i2c_write1ByteRegister(EEADDR, STATUS, EEPROM_LOCK);
+    i2c_write1ByteRegister(EEADDR, STATUS, EEPROM_LOCK);
 }
 
 static uint8_t rtc6_EEPRReadStatusRegister(void) {
-//    i2c_read1ByteRegister(EEADDR, STATUS);
+    i2c_read1ByteRegister(EEADDR, STATUS);
 }
 
 uint8_t rtc6_ReadByteEEPROM(uint8_t addr) {
@@ -143,7 +142,7 @@ uint8_t rtc6_ReadByteEEPROM(uint8_t addr) {
         stat_reg = rtc6_EEPRReadStatusRegister(); //Read Status Register
     } while ((stat_reg & 0x03) != 0x00);
 
-//    return i2c_read1ByteRegister(EEADDR, addr);
+    return i2c_read1ByteRegister(EEADDR, addr);
 }
 
 void rtc6_WriteByteEEPROM(uint8_t addr, uint8_t data) {
@@ -155,7 +154,7 @@ void rtc6_WriteByteEEPROM(uint8_t addr, uint8_t data) {
         stat_reg = rtc6_EEPRReadStatusRegister(); //Read Status Register
     } while ((stat_reg & 0x03) != 0x02);
 
-//    i2c_write1ByteRegister(EEADDR, addr, data);
+    i2c_write1ByteRegister(EEADDR, addr, data);
 
     rtc6_EEPRWriteLatchDisable(); //Disable write latch
 }

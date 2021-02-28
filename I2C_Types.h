@@ -3,6 +3,7 @@
 
 #include <xc.h> // include processor files - each processor file is guarded.
 #include <stdint.h>
+#include <stdio.h>
 
 typedef uint8_t i2c_address_t;
 

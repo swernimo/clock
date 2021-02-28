@@ -6,6 +6,11 @@
 #include "mcc_generated_files/device_config.h"
 #include <time.h>
 #include <stdbool.h>
+#include "I2C_Simple_Master.h"
+//#include "I2C.h"
+#include "I2C1_Driver.h"
+#include "I2C_Master.h"
+#include "I2C_Types.h"
 
 #define EEADDR 0x64
 #define RTCC_ADDR 0x6F //0x57

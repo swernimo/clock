@@ -1,7 +1,7 @@
 #include "mcc_generated_files/mcc.h"
 #include "mcc_generated_files/pin_manager.h"
 #include "mcc_generated_files/tmr0.h"
-#include "I2C.h"
+#include "I2C_Master.h"
 #include "RTC.h"
 #include <xc.h>
 #include <stdint.h>

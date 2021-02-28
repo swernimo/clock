@@ -1,8 +1,29 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"69 ./RTC.h
-[; ;./RTC.h: 69: typedef struct {
-[s S2024 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 ]
-[n S2024 . sec min hr year month date day ]
+"78 ./I2C_Types.h
+[; ;./I2C_Types.h: 78: i2c_status_t i2c_status = {0};
+[c E14875 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 .. ]
+[n E14875 . I2C_IDLE I2C_SEND_ADR_READ I2C_SEND_ADR_WRITE I2C_TX I2C_RX I2C_RCEN I2C_TX_EMPTY I2C_SEND_RESTART_READ I2C_SEND_RESTART_WRITE I2C_SEND_RESTART I2C_SEND_STOP I2C_RX_DO_ACK I2C_RX_DO_NACK_STOP I2C_RX_DO_NACK_RESTART I2C_RESET I2C_ADDRESS_NACK  ]
+[c E14901 0 1 2 .. ]
+[n E14901 . I2C_NOERR I2C_BUSY I2C_FAIL  ]
+[c E14906 1 2 3 4 5 .. ]
+[n E14906 . i2c_stop i2c_restart_read i2c_restart_write i2c_continue i2c_reset_link  ]
+[v F14929 `(E14906 ~T0 @X0 0 tf1`*v ]
+"62
+[; ;./I2C_Types.h: 62: {
+[s S2026 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 `uc 1 `*uc 1 `ui 1 `us 1 `us 1 `E14875 1 `E14901 1 `*F14929 -> 6 `i `*v -> 6 `i ]
+[n S2026 . busy inUse bufferFree addressNACKCheck address data_ptr data_length time_out time_out_value state error callbackTable callbackPayload ]
+[v F15050 `(v ~T0 @X0 0 tf ]
+[v F15052 `(v ~T0 @X0 0 tf ]
+"74 ./RTC.h
+[; ;./RTC.h: 74: typedef struct {
+[s S2027 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 ]
+[n S2027 . sec min hr year month date day ]
+"8 ./I2C_Simple_Master.h
+[; ;./I2C_Simple_Master.h: 8: uint8_t i2c_read1ByteRegister(i2c_address_t address, uint8_t reg);
+[v _i2c_read1ByteRegister `(uc ~T0 @X0 0 ef2`uc`uc ]
+"10
+[; ;./I2C_Simple_Master.h: 10: void i2c_write1ByteRegister(i2c_address_t address, uint8_t reg, uint8_t data);
+[v _i2c_write1ByteRegister `(v ~T0 @X0 0 ef3`uc`uc`uc ]
 [v F14184 `(v ~T0 @X0 1 tf1`ul ]
 "203 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\pic18.h
 [v __delay `JF14184 ~T0 @X0 0 e ]
@@ -20,6 +41,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "57
 [; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\c99\time.h: 57: time_t mktime (struct tm *);
 [v _mktime `(o ~T0 @X0 0 ef1`*S2021 ]
+"39963 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 39963: extern volatile unsigned char STATUS __attribute__((address(0xFD8)));
+[v _STATUS `Vuc ~T0 @X0 0 e@4056 ]
 "54 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 54: __asm("PPSLOCK equ 0DEFh");
 [; <" PPSLOCK equ 0DEFh ;# ">
@@ -1994,110 +2018,133 @@ Version 4.0 HI-TECH Software Intermediate Code
 "40981
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40981: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"17 RTC.c
-[; ;RTC.c: 17: DateTime_t dateTime;
-[v _dateTime `S2024 ~T0 @X0 1 e ]
-"19
-[; ;RTC.c: 19: static uint8_t rtcc_read(uint8_t addr) {
+"78 ./I2C_Types.h
+[; ;./I2C_Types.h: 78: i2c_status_t i2c_status = {0};
+[v _i2c_status `S2026 ~T0 @X0 1 e ]
+[i _i2c_status
+:U ..
+:U ..
+-> -> 0 `i `uc
+..
+..
+]
+"54 ./I2C1_Driver.h
+[; ;./I2C1_Driver.h: 54: void (*i2c1_driver_busCollisionISR)(void);
+[v _i2c1_driver_busCollisionISR `*F15050 ~T0 @X0 1 e ]
+"55
+[; ;./I2C1_Driver.h: 55: void (*i2c1_driver_i2cISR)(void);
+[v _i2c1_driver_i2cISR `*F15052 ~T0 @X0 1 e ]
+"16 RTC.c
+[; ;RTC.c: 16: DateTime_t dateTime;
+[v _dateTime `S2027 ~T0 @X0 1 e ]
+"18
+[; ;RTC.c: 18: static uint8_t rtcc_read(uint8_t addr) {
 [v _rtcc_read `(uc ~T0 @X0 1 sf1`uc ]
 {
 [e :U _rtcc_read ]
 [v _addr `uc ~T0 @X0 1 r1 ]
 [f ]
-"21
-[; ;RTC.c: 21: }
-[e :UE 2025 ]
+"19
+[; ;RTC.c: 19:     return i2c_read1ByteRegister(0x6F, addr);
+[e ) ( _i2c_read1ByteRegister (2 , -> -> 111 `i `uc _addr ]
+[e $UE 2028  ]
+"20
+[; ;RTC.c: 20: }
+[e :UE 2028 ]
 }
-"23
-[; ;RTC.c: 23: static void rtcc_write(uint8_t addr, uint8_t data) {
+"22
+[; ;RTC.c: 22: static void rtcc_write(uint8_t addr, uint8_t data) {
 [v _rtcc_write `(v ~T0 @X0 1 sf2`uc`uc ]
 {
 [e :U _rtcc_write ]
 [v _addr `uc ~T0 @X0 1 r1 ]
 [v _data `uc ~T0 @X0 1 r2 ]
 [f ]
-"25
-[; ;RTC.c: 25:     _delay((unsigned long)((5)*(8000000/4000.0)));
+"23
+[; ;RTC.c: 23:     i2c_write1ByteRegister(0x6F, addr, data);
+[e ( _i2c_write1ByteRegister (3 , , -> -> 111 `i `uc _addr _data ]
+"24
+[; ;RTC.c: 24:     _delay((unsigned long)((5)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"26
-[; ;RTC.c: 26: }
-[e :UE 2026 ]
+"25
+[; ;RTC.c: 25: }
+[e :UE 2029 ]
 }
-"28
-[; ;RTC.c: 28: void rtc6_Initialize(void) {
+"27
+[; ;RTC.c: 27: void rtc6_Initialize(void) {
 [v _rtc6_Initialize `(v ~T0 @X0 1 ef ]
 {
 [e :U _rtc6_Initialize ]
 [f ]
-"29
-[; ;RTC.c: 29:     uint8_t reg = 0;
+"28
+[; ;RTC.c: 28:     uint8_t reg = 0;
 [v _reg `uc ~T0 @X0 1 a ]
 [e = _reg -> -> 0 `i `uc ]
-"31
-[; ;RTC.c: 31:     dateTime.day = (rtcc_read(0x03) & 0x07);
+"30
+[; ;RTC.c: 30:     dateTime.day = (rtcc_read(0x03) & 0x07);
 [e = . _dateTime 6 & -> ( _rtcc_read (1 -> -> 3 `i `uc `i -> 7 `i ]
-"32
-[; ;RTC.c: 32:     rtcc_write(0x03, (dateTime.day | 0x08));
+"31
+[; ;RTC.c: 31:     rtcc_write(0x03, (dateTime.day | 0x08));
 [e ( _rtcc_write (2 , -> -> 3 `i `uc -> | . _dateTime 6 -> 8 `i `uc ]
-"33
-[; ;RTC.c: 33:     dateTime.sec = rtcc_read(0x00);
+"32
+[; ;RTC.c: 32:     dateTime.sec = rtcc_read(0x00);
 [e = . _dateTime 0 -> ( _rtcc_read (1 -> -> 0 `i `uc `i ]
-"37
-[; ;RTC.c: 37:     rtcc_write(0x07, 0x00 + 0x40 + 0x00);
+"36
+[; ;RTC.c: 36:     rtcc_write(0x07, 0x00 + 0x40 + 0x00);
 [e ( _rtcc_write (2 , -> -> 7 `i `uc -> + + -> 0 `i -> 64 `i -> 0 `i `uc ]
-"40
-[; ;RTC.c: 40:     rtcc_write(0x00, dateTime.sec | 0x80);
+"39
+[; ;RTC.c: 39:     rtcc_write(0x00, dateTime.sec | 0x80);
 [e ( _rtcc_write (2 , -> -> 0 `i `uc -> | . _dateTime 0 -> 128 `i `uc ]
-"41
-[; ;RTC.c: 41:     while (!reg) {
-[e $U 2028  ]
-[e :U 2029 ]
+"40
+[; ;RTC.c: 40:     while (!reg) {
+[e $U 2031  ]
+[e :U 2032 ]
 {
-"42
-[; ;RTC.c: 42:         reg = rtcc_read(0x03);
-[e = _reg ( _rtcc_read (1 -> -> 3 `i `uc ]
-"43
-[; ;RTC.c: 43:         reg &= 0x20;
-[e =& _reg -> -> 32 `i `uc ]
-"44
-[; ;RTC.c: 44:     }
-}
-[e :U 2028 ]
 "41
-[; ;RTC.c: 41:     while (!reg) {
-[e $ ! != -> _reg `i -> 0 `i 2029  ]
-[e :U 2030 ]
-"47
-[; ;RTC.c: 47:     rtcc_write(0x03, dateTime.day | (0x08 & 0xEF));
-[e ( _rtcc_write (2 , -> -> 3 `i `uc -> | . _dateTime 6 & -> 8 `i -> 239 `i `uc ]
-"49
-[; ;RTC.c: 49: }
-[e :UE 2027 ]
+[; ;RTC.c: 41:         reg = rtcc_read(0x03);
+[e = _reg ( _rtcc_read (1 -> -> 3 `i `uc ]
+"42
+[; ;RTC.c: 42:         reg &= 0x20;
+[e =& _reg -> -> 32 `i `uc ]
+"43
+[; ;RTC.c: 43:     }
 }
-"51
-[; ;RTC.c: 51: void rtc6_EnableAlarms(_Bool alarm0, _Bool alarm1){
+[e :U 2031 ]
+"40
+[; ;RTC.c: 40:     while (!reg) {
+[e $ ! != -> _reg `i -> 0 `i 2032  ]
+[e :U 2033 ]
+"46
+[; ;RTC.c: 46:     rtcc_write(0x03, dateTime.day | (0x08 & 0xEF));
+[e ( _rtcc_write (2 , -> -> 3 `i `uc -> | . _dateTime 6 & -> 8 `i -> 239 `i `uc ]
+"48
+[; ;RTC.c: 48: }
+[e :UE 2030 ]
+}
+"50
+[; ;RTC.c: 50: void rtc6_EnableAlarms(_Bool alarm0, _Bool alarm1){
 [v _rtc6_EnableAlarms `(v ~T0 @X0 1 ef2`a`a ]
 {
 [e :U _rtc6_EnableAlarms ]
 [v _alarm0 `a ~T0 @X0 1 r1 ]
 [v _alarm1 `a ~T0 @X0 1 r2 ]
 [f ]
-"52
-[; ;RTC.c: 52:     uint8_t reg = rtcc_read(0x07);
+"51
+[; ;RTC.c: 51:     uint8_t reg = rtcc_read(0x07);
 [v _reg `uc ~T0 @X0 1 a ]
 [e = _reg ( _rtcc_read (1 -> -> 7 `i `uc ]
-"53
-[; ;RTC.c: 53:     reg = (reg & 0xCF) | (alarm0 << 4) | (alarm1 << 5);
+"52
+[; ;RTC.c: 52:     reg = (reg & 0xCF) | (alarm0 << 4) | (alarm1 << 5);
 [e = _reg -> | | & -> _reg `i -> 207 `i << -> _alarm0 `i -> 4 `i << -> _alarm1 `i -> 5 `i `uc ]
-"54
-[; ;RTC.c: 54:     rtcc_write(0x07, reg);
+"53
+[; ;RTC.c: 53:     rtcc_write(0x07, reg);
 [e ( _rtcc_write (2 , -> -> 7 `i `uc _reg ]
-"55
-[; ;RTC.c: 55: }
-[e :UE 2031 ]
+"54
+[; ;RTC.c: 54: }
+[e :UE 2034 ]
 }
-"57
-[; ;RTC.c: 57: static void rtc6_SetComponent(uint8_t location, uint8_t mask, uint8_t time){
+"56
+[; ;RTC.c: 56: static void rtc6_SetComponent(uint8_t location, uint8_t mask, uint8_t time){
 [v _rtc6_SetComponent `(v ~T0 @X0 1 sf3`uc`uc`uc ]
 {
 [e :U _rtc6_SetComponent ]
@@ -2105,115 +2152,115 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _mask `uc ~T0 @X0 1 r2 ]
 [v _time `uc ~T0 @X0 1 r3 ]
 [f ]
-"58
-[; ;RTC.c: 58:     uint8_t inMemory = rtcc_read(location) & mask;
+"57
+[; ;RTC.c: 57:     uint8_t inMemory = rtcc_read(location) & mask;
 [v _inMemory `uc ~T0 @X0 1 a ]
 [e = _inMemory -> & -> ( _rtcc_read (1 _location `i -> _mask `i `uc ]
-"59
-[; ;RTC.c: 59:     rtcc_write(location, inMemory | (time % 10) | ((time / 10) << 4));
+"58
+[; ;RTC.c: 58:     rtcc_write(location, inMemory | (time % 10) | ((time / 10) << 4));
 [e ( _rtcc_write (2 , _location -> | | -> _inMemory `i % -> _time `i -> 10 `i << / -> _time `i -> 10 `i -> 4 `i `uc ]
-"60
-[; ;RTC.c: 60: }
-[e :UE 2032 ]
+"59
+[; ;RTC.c: 59: }
+[e :UE 2035 ]
 }
-"62
-[; ;RTC.c: 62: void rtc6_SetTime(time_t t) {
+"61
+[; ;RTC.c: 61: void rtc6_SetTime(time_t t) {
 [v _rtc6_SetTime `(v ~T0 @X0 1 ef1`o ]
 {
 [e :U _rtc6_SetTime ]
 [v _t `o ~T0 @X0 1 r1 ]
 [f ]
-"64
-[; ;RTC.c: 64:     struct tm *tm_t;
+"63
+[; ;RTC.c: 63:     struct tm *tm_t;
 [v _tm_t `*S2021 ~T0 @X0 1 a ]
-"65
-[; ;RTC.c: 65:     memset(tm_t, 0, sizeof (tm_t));
+"64
+[; ;RTC.c: 64:     memset(tm_t, 0, sizeof (tm_t));
 [e ( _memset (3 , , -> _tm_t `*v -> 0 `i -> # _tm_t `ui ]
-"67
-[; ;RTC.c: 67:     tm_t = localtime(&t);
+"66
+[; ;RTC.c: 66:     tm_t = localtime(&t);
 [e = _tm_t ( _localtime (1 -> &U _t `*Co ]
-"68
-[; ;RTC.c: 68:     rtc6_SetComponent(0x06, 0x00, tm_t->tm_year % 100);
+"67
+[; ;RTC.c: 67:     rtc6_SetComponent(0x06, 0x00, tm_t->tm_year % 100);
 [e ( _rtc6_SetComponent (3 , , -> -> 6 `i `uc -> -> 0 `i `uc -> % . *U _tm_t 5 -> 100 `i `uc ]
-"69
-[; ;RTC.c: 69:     rtc6_SetComponent(0x05, 0xD0, tm_t->tm_mon + 1);
+"68
+[; ;RTC.c: 68:     rtc6_SetComponent(0x05, 0xD0, tm_t->tm_mon + 1);
 [e ( _rtc6_SetComponent (3 , , -> -> 5 `i `uc -> -> 208 `i `uc -> + . *U _tm_t 4 -> 1 `i `uc ]
-"70
-[; ;RTC.c: 70:     rtc6_SetComponent(0x04, 0x00, tm_t->tm_mday);
+"69
+[; ;RTC.c: 69:     rtc6_SetComponent(0x04, 0x00, tm_t->tm_mday);
 [e ( _rtc6_SetComponent (3 , , -> -> 4 `i `uc -> -> 0 `i `uc -> . *U _tm_t 3 `uc ]
-"71
-[; ;RTC.c: 71:     rtc6_SetComponent(0x01, 0x00, tm_t->tm_min);
+"70
+[; ;RTC.c: 70:     rtc6_SetComponent(0x01, 0x00, tm_t->tm_min);
 [e ( _rtc6_SetComponent (3 , , -> -> 1 `i `uc -> -> 0 `i `uc -> . *U _tm_t 1 `uc ]
-"72
-[; ;RTC.c: 72:     rtc6_SetComponent(0x00, 0x80, tm_t->tm_sec);
+"71
+[; ;RTC.c: 71:     rtc6_SetComponent(0x00, 0x80, tm_t->tm_sec);
 [e ( _rtc6_SetComponent (3 , , -> -> 0 `i `uc -> -> 128 `i `uc -> . *U _tm_t 0 `uc ]
-"73
-[; ;RTC.c: 73:     rtc6_SetComponent(0x02, 0x00, tm_t->tm_hour);
+"72
+[; ;RTC.c: 72:     rtc6_SetComponent(0x02, 0x00, tm_t->tm_hour);
 [e ( _rtc6_SetComponent (3 , , -> -> 2 `i `uc -> -> 0 `i `uc -> . *U _tm_t 2 `uc ]
-"74
-[; ;RTC.c: 74: }
-[e :UE 2033 ]
+"73
+[; ;RTC.c: 73: }
+[e :UE 2036 ]
 }
-"76
-[; ;RTC.c: 76: static uint8_t rtc6_GetComponent(uint8_t location, uint8_t mask){
+"75
+[; ;RTC.c: 75: static uint8_t rtc6_GetComponent(uint8_t location, uint8_t mask){
 [v _rtc6_GetComponent `(uc ~T0 @X0 1 sf2`uc`uc ]
 {
 [e :U _rtc6_GetComponent ]
 [v _location `uc ~T0 @X0 1 r1 ]
 [v _mask `uc ~T0 @X0 1 r2 ]
 [f ]
-"77
-[; ;RTC.c: 77:     uint8_t working = rtcc_read(location) & mask;
+"76
+[; ;RTC.c: 76:     uint8_t working = rtcc_read(location) & mask;
 [v _working `uc ~T0 @X0 1 a ]
 [e = _working -> & -> ( _rtcc_read (1 _location `i -> _mask `i `uc ]
-"78
-[; ;RTC.c: 78:     return (working & 0x0F) + (((working & (mask & 0xF0)) >> 4) * 10);
+"77
+[; ;RTC.c: 77:     return (working & 0x0F) + (((working & (mask & 0xF0)) >> 4) * 10);
 [e ) -> + & -> _working `i -> 15 `i * >> & -> _working `i & -> _mask `i -> 240 `i -> 4 `i -> 10 `i `uc ]
-[e $UE 2034  ]
-"79
-[; ;RTC.c: 79: }
-[e :UE 2034 ]
+[e $UE 2037  ]
+"78
+[; ;RTC.c: 78: }
+[e :UE 2037 ]
 }
-"81
-[; ;RTC.c: 81: time_t rtc6_GetTime(void) {
+"80
+[; ;RTC.c: 80: time_t rtc6_GetTime(void) {
 [v _rtc6_GetTime `(o ~T0 @X0 1 ef ]
 {
 [e :U _rtc6_GetTime ]
 [f ]
-"82
-[; ;RTC.c: 82:     struct tm tm_t;
+"81
+[; ;RTC.c: 81:     struct tm tm_t;
 [v _tm_t `S2021 ~T0 @X0 1 a ]
-"83
-[; ;RTC.c: 83:     memset(&tm_t, 0, sizeof (tm_t));
+"82
+[; ;RTC.c: 82:     memset(&tm_t, 0, sizeof (tm_t));
 [e ( _memset (3 , , -> &U _tm_t `*v -> 0 `i -> # _tm_t `ui ]
-"85
-[; ;RTC.c: 85:     tm_t.tm_year = rtc6_GetComponent(0x06, 0xFF) + 100;
+"84
+[; ;RTC.c: 84:     tm_t.tm_year = rtc6_GetComponent(0x06, 0xFF) + 100;
 [e = . _tm_t 5 + -> ( _rtc6_GetComponent (2 , -> -> 6 `i `uc -> -> 255 `i `uc `i -> 100 `i ]
-"86
-[; ;RTC.c: 86:     tm_t.tm_mon = rtc6_GetComponent(0x05, 0x1F) - 1;
+"85
+[; ;RTC.c: 85:     tm_t.tm_mon = rtc6_GetComponent(0x05, 0x1F) - 1;
 [e = . _tm_t 4 - -> ( _rtc6_GetComponent (2 , -> -> 5 `i `uc -> -> 31 `i `uc `i -> 1 `i ]
-"87
-[; ;RTC.c: 87:     tm_t.tm_mday = rtc6_GetComponent(0x04, 0x3F);
+"86
+[; ;RTC.c: 86:     tm_t.tm_mday = rtc6_GetComponent(0x04, 0x3F);
 [e = . _tm_t 3 -> ( _rtc6_GetComponent (2 , -> -> 4 `i `uc -> -> 63 `i `uc `i ]
-"88
-[; ;RTC.c: 88:     tm_t.tm_hour = rtc6_GetComponent(0x02, 0x3F);
+"87
+[; ;RTC.c: 87:     tm_t.tm_hour = rtc6_GetComponent(0x02, 0x3F);
 [e = . _tm_t 2 -> ( _rtc6_GetComponent (2 , -> -> 2 `i `uc -> -> 63 `i `uc `i ]
-"89
-[; ;RTC.c: 89:     tm_t.tm_min = rtc6_GetComponent(0x01, 0x7F);
+"88
+[; ;RTC.c: 88:     tm_t.tm_min = rtc6_GetComponent(0x01, 0x7F);
 [e = . _tm_t 1 -> ( _rtc6_GetComponent (2 , -> -> 1 `i `uc -> -> 127 `i `uc `i ]
-"90
-[; ;RTC.c: 90:     tm_t.tm_sec = rtc6_GetComponent(0x00, 0x7F);
+"89
+[; ;RTC.c: 89:     tm_t.tm_sec = rtc6_GetComponent(0x00, 0x7F);
 [e = . _tm_t 0 -> ( _rtc6_GetComponent (2 , -> -> 0 `i `uc -> -> 127 `i `uc `i ]
-"92
-[; ;RTC.c: 92:     return mktime(&tm_t);
+"91
+[; ;RTC.c: 91:     return mktime(&tm_t);
 [e ) ( _mktime (1 &U _tm_t ]
-[e $UE 2035  ]
-"93
-[; ;RTC.c: 93: }
-[e :UE 2035 ]
+[e $UE 2038  ]
+"92
+[; ;RTC.c: 92: }
+[e :UE 2038 ]
 }
-"95
-[; ;RTC.c: 95: void rtc6_SetAlarm0(struct tm tm_t, _Bool almpol, uint8_t mask){
+"94
+[; ;RTC.c: 94: void rtc6_SetAlarm0(struct tm tm_t, _Bool almpol, uint8_t mask){
 [v _rtc6_SetAlarm0 `(v ~T0 @X0 1 ef3`S2021`a`uc ]
 {
 [e :U _rtc6_SetAlarm0 ]
@@ -2221,47 +2268,47 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _almpol `a ~T0 @X0 1 r2 ]
 [v _mask `uc ~T0 @X0 1 r3 ]
 [f ]
-"96
-[; ;RTC.c: 96:     rtcc_write(0x0A, tm_t.tm_sec);
+"95
+[; ;RTC.c: 95:     rtcc_write(0x0A, tm_t.tm_sec);
 [e ( _rtcc_write (2 , -> -> 10 `i `uc -> . _tm_t 0 `uc ]
-"97
-[; ;RTC.c: 97:     rtcc_write(0x0B, tm_t.tm_min);
+"96
+[; ;RTC.c: 96:     rtcc_write(0x0B, tm_t.tm_min);
 [e ( _rtcc_write (2 , -> -> 11 `i `uc -> . _tm_t 1 `uc ]
-"98
-[; ;RTC.c: 98:     rtcc_write(0x0C, tm_t.tm_hour);
+"97
+[; ;RTC.c: 97:     rtcc_write(0x0C, tm_t.tm_hour);
 [e ( _rtcc_write (2 , -> -> 12 `i `uc -> . _tm_t 2 `uc ]
-"99
-[; ;RTC.c: 99:     rtcc_write(0x0E, tm_t.tm_mday);
+"98
+[; ;RTC.c: 98:     rtcc_write(0x0E, tm_t.tm_mday);
 [e ( _rtcc_write (2 , -> -> 14 `i `uc -> . _tm_t 3 `uc ]
-"100
-[; ;RTC.c: 100:     rtcc_write(0x0F, tm_t.tm_mon + 1);
+"99
+[; ;RTC.c: 99:     rtcc_write(0x0F, tm_t.tm_mon + 1);
 [e ( _rtcc_write (2 , -> -> 15 `i `uc -> + . _tm_t 4 -> 1 `i `uc ]
-"101
-[; ;RTC.c: 101:     rtcc_write(0x0D, tm_t.tm_wday | almpol << 7 | mask << 4);
+"100
+[; ;RTC.c: 100:     rtcc_write(0x0D, tm_t.tm_wday | almpol << 7 | mask << 4);
 [e ( _rtcc_write (2 , -> -> 13 `i `uc -> | | . _tm_t 6 << -> _almpol `i -> 7 `i << -> _mask `i -> 4 `i `uc ]
-"102
-[; ;RTC.c: 102: }
-[e :UE 2036 ]
+"101
+[; ;RTC.c: 101: }
+[e :UE 2039 ]
 }
-"104
-[; ;RTC.c: 104: void rtc6_ClearAlarm0(void){
+"103
+[; ;RTC.c: 103: void rtc6_ClearAlarm0(void){
 [v _rtc6_ClearAlarm0 `(v ~T0 @X0 1 ef ]
 {
 [e :U _rtc6_ClearAlarm0 ]
 [f ]
-"105
-[; ;RTC.c: 105:     uint8_t reg = rtcc_read(0x0D);
+"104
+[; ;RTC.c: 104:     uint8_t reg = rtcc_read(0x0D);
 [v _reg `uc ~T0 @X0 1 a ]
 [e = _reg ( _rtcc_read (1 -> -> 13 `i `uc ]
-"106
-[; ;RTC.c: 106:     rtcc_write(0x0D, reg);
+"105
+[; ;RTC.c: 105:     rtcc_write(0x0D, reg);
 [e ( _rtcc_write (2 , -> -> 13 `i `uc _reg ]
-"107
-[; ;RTC.c: 107: }
-[e :UE 2037 ]
+"106
+[; ;RTC.c: 106: }
+[e :UE 2040 ]
 }
-"109
-[; ;RTC.c: 109: void rtc6_SetAlarm1(struct tm tm_t, _Bool almpol, uint8_t mask){
+"108
+[; ;RTC.c: 108: void rtc6_SetAlarm1(struct tm tm_t, _Bool almpol, uint8_t mask){
 [v _rtc6_SetAlarm1 `(v ~T0 @X0 1 ef3`S2021`a`uc ]
 {
 [e :U _rtc6_SetAlarm1 ]
@@ -2269,134 +2316,150 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _almpol `a ~T0 @X0 1 r2 ]
 [v _mask `uc ~T0 @X0 1 r3 ]
 [f ]
-"110
-[; ;RTC.c: 110:     rtcc_write(0x11, tm_t.tm_sec);
+"109
+[; ;RTC.c: 109:     rtcc_write(0x11, tm_t.tm_sec);
 [e ( _rtcc_write (2 , -> -> 17 `i `uc -> . _tm_t 0 `uc ]
-"111
-[; ;RTC.c: 111:     rtcc_write(0x12, tm_t.tm_min);
+"110
+[; ;RTC.c: 110:     rtcc_write(0x12, tm_t.tm_min);
 [e ( _rtcc_write (2 , -> -> 18 `i `uc -> . _tm_t 1 `uc ]
-"112
-[; ;RTC.c: 112:     rtcc_write(0x13, tm_t.tm_hour);
+"111
+[; ;RTC.c: 111:     rtcc_write(0x13, tm_t.tm_hour);
 [e ( _rtcc_write (2 , -> -> 19 `i `uc -> . _tm_t 2 `uc ]
-"113
-[; ;RTC.c: 113:     rtcc_write(0x15, tm_t.tm_mday);
+"112
+[; ;RTC.c: 112:     rtcc_write(0x15, tm_t.tm_mday);
 [e ( _rtcc_write (2 , -> -> 21 `i `uc -> . _tm_t 3 `uc ]
-"114
-[; ;RTC.c: 114:     rtcc_write(0x16, tm_t.tm_mon + 1);
+"113
+[; ;RTC.c: 113:     rtcc_write(0x16, tm_t.tm_mon + 1);
 [e ( _rtcc_write (2 , -> -> 22 `i `uc -> + . _tm_t 4 -> 1 `i `uc ]
-"115
-[; ;RTC.c: 115:     rtcc_write(0x14, tm_t.tm_wday | almpol << 7 | mask << 4);
+"114
+[; ;RTC.c: 114:     rtcc_write(0x14, tm_t.tm_wday | almpol << 7 | mask << 4);
 [e ( _rtcc_write (2 , -> -> 20 `i `uc -> | | . _tm_t 6 << -> _almpol `i -> 7 `i << -> _mask `i -> 4 `i `uc ]
-"116
-[; ;RTC.c: 116: }
-[e :UE 2038 ]
+"115
+[; ;RTC.c: 115: }
+[e :UE 2041 ]
 }
-"118
-[; ;RTC.c: 118: void rtc6_ClearAlarm1(void){
+"117
+[; ;RTC.c: 117: void rtc6_ClearAlarm1(void){
 [v _rtc6_ClearAlarm1 `(v ~T0 @X0 1 ef ]
 {
 [e :U _rtc6_ClearAlarm1 ]
 [f ]
-"119
-[; ;RTC.c: 119:     uint8_t reg = rtcc_read(0x14);
+"118
+[; ;RTC.c: 118:     uint8_t reg = rtcc_read(0x14);
 [v _reg `uc ~T0 @X0 1 a ]
 [e = _reg ( _rtcc_read (1 -> -> 20 `i `uc ]
-"120
-[; ;RTC.c: 120:     rtcc_write(0x14, reg);
+"119
+[; ;RTC.c: 119:     rtcc_write(0x14, reg);
 [e ( _rtcc_write (2 , -> -> 20 `i `uc _reg ]
-"121
-[; ;RTC.c: 121: }
-[e :UE 2039 ]
+"120
+[; ;RTC.c: 120: }
+[e :UE 2042 ]
 }
-"125
-[; ;RTC.c: 125: static void rtc6_EEPRWriteLatchEnable(void) {
+"124
+[; ;RTC.c: 124: static void rtc6_EEPRWriteLatchEnable(void) {
 [v _rtc6_EEPRWriteLatchEnable `(v ~T0 @X0 1 sf ]
 {
 [e :U _rtc6_EEPRWriteLatchEnable ]
 [f ]
-"127
-[; ;RTC.c: 127: }
-[e :UE 2040 ]
+"125
+[; ;RTC.c: 125:     i2c_write1ByteRegister(0x64, STATUS, 0x00);
+[e ( _i2c_write1ByteRegister (3 , , -> -> 100 `i `uc _STATUS -> -> 0 `i `uc ]
+"126
+[; ;RTC.c: 126: }
+[e :UE 2043 ]
 }
-"129
-[; ;RTC.c: 129: static void rtc6_EEPRWriteLatchDisable(void) {
+"128
+[; ;RTC.c: 128: static void rtc6_EEPRWriteLatchDisable(void) {
 [v _rtc6_EEPRWriteLatchDisable `(v ~T0 @X0 1 sf ]
 {
 [e :U _rtc6_EEPRWriteLatchDisable ]
 [f ]
-"131
-[; ;RTC.c: 131: }
-[e :UE 2041 ]
+"129
+[; ;RTC.c: 129:     i2c_write1ByteRegister(0x64, STATUS, 0x0C);
+[e ( _i2c_write1ByteRegister (3 , , -> -> 100 `i `uc _STATUS -> -> 12 `i `uc ]
+"130
+[; ;RTC.c: 130: }
+[e :UE 2044 ]
 }
-"133
-[; ;RTC.c: 133: static uint8_t rtc6_EEPRReadStatusRegister(void) {
+"132
+[; ;RTC.c: 132: static uint8_t rtc6_EEPRReadStatusRegister(void) {
 [v _rtc6_EEPRReadStatusRegister `(uc ~T0 @X0 1 sf ]
 {
 [e :U _rtc6_EEPRReadStatusRegister ]
 [f ]
-"135
-[; ;RTC.c: 135: }
-[e :UE 2042 ]
+"133
+[; ;RTC.c: 133:     i2c_read1ByteRegister(0x64, STATUS);
+[e ( _i2c_read1ByteRegister (2 , -> -> 100 `i `uc _STATUS ]
+"134
+[; ;RTC.c: 134: }
+[e :UE 2045 ]
 }
-"137
-[; ;RTC.c: 137: uint8_t rtc6_ReadByteEEPROM(uint8_t addr) {
+"136
+[; ;RTC.c: 136: uint8_t rtc6_ReadByteEEPROM(uint8_t addr) {
 [v _rtc6_ReadByteEEPROM `(uc ~T0 @X0 1 ef1`uc ]
 {
 [e :U _rtc6_ReadByteEEPROM ]
 [v _addr `uc ~T0 @X0 1 r1 ]
 [f ]
-"138
-[; ;RTC.c: 138:     uint8_t stat_reg;
+"137
+[; ;RTC.c: 137:     uint8_t stat_reg;
 [v _stat_reg `uc ~T0 @X0 1 a ]
-"140
-[; ;RTC.c: 140:     rtc6_EEPRWriteLatchDisable();
+"139
+[; ;RTC.c: 139:     rtc6_EEPRWriteLatchDisable();
 [e ( _rtc6_EEPRWriteLatchDisable ..  ]
-"142
-[; ;RTC.c: 142:     do {
-[e :U 2046 ]
+"141
+[; ;RTC.c: 141:     do {
+[e :U 2049 ]
 {
-"143
-[; ;RTC.c: 143:         stat_reg = rtc6_EEPRReadStatusRegister();
+"142
+[; ;RTC.c: 142:         stat_reg = rtc6_EEPRReadStatusRegister();
 [e = _stat_reg ( _rtc6_EEPRReadStatusRegister ..  ]
-"144
-[; ;RTC.c: 144:     } while ((stat_reg & 0x03) != 0x00);
+"143
+[; ;RTC.c: 143:     } while ((stat_reg & 0x03) != 0x00);
 }
-[e $ != & -> _stat_reg `i -> 3 `i -> 0 `i 2046  ]
-[e :U 2045 ]
-"147
-[; ;RTC.c: 147: }
-[e :UE 2043 ]
+[e $ != & -> _stat_reg `i -> 3 `i -> 0 `i 2049  ]
+[e :U 2048 ]
+"145
+[; ;RTC.c: 145:     return i2c_read1ByteRegister(0x64, addr);
+[e ) ( _i2c_read1ByteRegister (2 , -> -> 100 `i `uc _addr ]
+[e $UE 2046  ]
+"146
+[; ;RTC.c: 146: }
+[e :UE 2046 ]
 }
-"149
-[; ;RTC.c: 149: void rtc6_WriteByteEEPROM(uint8_t addr, uint8_t data) {
+"148
+[; ;RTC.c: 148: void rtc6_WriteByteEEPROM(uint8_t addr, uint8_t data) {
 [v _rtc6_WriteByteEEPROM `(v ~T0 @X0 1 ef2`uc`uc ]
 {
 [e :U _rtc6_WriteByteEEPROM ]
 [v _addr `uc ~T0 @X0 1 r1 ]
 [v _data `uc ~T0 @X0 1 r2 ]
 [f ]
-"150
-[; ;RTC.c: 150:     uint8_t stat_reg;
+"149
+[; ;RTC.c: 149:     uint8_t stat_reg;
 [v _stat_reg `uc ~T0 @X0 1 a ]
-"152
-[; ;RTC.c: 152:     rtc6_EEPRWriteLatchEnable();
+"151
+[; ;RTC.c: 151:     rtc6_EEPRWriteLatchEnable();
 [e ( _rtc6_EEPRWriteLatchEnable ..  ]
-"154
-[; ;RTC.c: 154:     do {
-[e :U 2050 ]
+"153
+[; ;RTC.c: 153:     do {
+[e :U 2053 ]
 {
-"155
-[; ;RTC.c: 155:         stat_reg = rtc6_EEPRReadStatusRegister();
+"154
+[; ;RTC.c: 154:         stat_reg = rtc6_EEPRReadStatusRegister();
 [e = _stat_reg ( _rtc6_EEPRReadStatusRegister ..  ]
-"156
-[; ;RTC.c: 156:     } while ((stat_reg & 0x03) != 0x02);
+"155
+[; ;RTC.c: 155:     } while ((stat_reg & 0x03) != 0x02);
 }
-[e $ != & -> _stat_reg `i -> 3 `i -> 2 `i 2050  ]
-[e :U 2049 ]
-"160
-[; ;RTC.c: 160:     rtc6_EEPRWriteLatchDisable();
+[e $ != & -> _stat_reg `i -> 3 `i -> 2 `i 2053  ]
+[e :U 2052 ]
+"157
+[; ;RTC.c: 157:     i2c_write1ByteRegister(0x64, addr, data);
+[e ( _i2c_write1ByteRegister (3 , , -> -> 100 `i `uc _addr _data ]
+"159
+[; ;RTC.c: 159:     rtc6_EEPRWriteLatchDisable();
 [e ( _rtc6_EEPRWriteLatchDisable ..  ]
-"161
-[; ;RTC.c: 161: }
-[e :UE 2047 ]
+"160
+[; ;RTC.c: 160: }
+[e :UE 2050 ]
 }

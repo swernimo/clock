@@ -7,7 +7,7 @@
 #include "I2C_Types.h"
 
 // These functions are the I2C API
-
+void I2C_Initialize();
 i2c_error_t i2c_open(i2c_address_t address);
 void        i2c_setAddress(i2c_address_t address);
 i2c_error_t i2c_close(void);

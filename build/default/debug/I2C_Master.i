@@ -24421,6 +24421,7 @@ char *tempnam(const char *, const char *);
 
 
 
+
 typedef uint8_t i2c_address_t;
 
 
@@ -24501,7 +24502,7 @@ i2c_operations_t i2c_restartRead(void *p);
 
 
 
-
+void I2C_Initialize();
 i2c_error_t i2c_open(i2c_address_t address);
 void i2c_setAddress(i2c_address_t address);
 i2c_error_t i2c_close(void);
@@ -24582,6 +24583,14 @@ static i2c_operations_t returnReset(void *p);
 
 __attribute__((inline)) void i2c_poller(void);
 
+void I2C_Initialize()
+{
+    SSP1CON1 = 0x38;
+    SSP1CON2 = 0x00;
+    SSP1STAT = 0x40;
+    SSP1ADD = 0x19;
+    SSP1CON1bits.SSPEN = 0;
+}
 
 void i2c_setDataCompleteCallback(i2c_callback cb, void *p)
 {

@@ -2391,17 +2391,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _I2C1_Initialize ]
 [f ]
 "169
-[; ;mcc_generated_files/i2c1_master.c: 169:     SSP1STAT = 0xC0;
-[e = _SSP1STAT -> -> 192 `i `uc ]
+[; ;mcc_generated_files/i2c1_master.c: 169:     SSP1STAT = 0x00;
+[e = _SSP1STAT -> -> 0 `i `uc ]
 "170
-[; ;mcc_generated_files/i2c1_master.c: 170:     SSP1CON1 = 0x18;
-[e = _SSP1CON1 -> -> 24 `i `uc ]
+[; ;mcc_generated_files/i2c1_master.c: 170:     SSP1CON1 = 0x08;
+[e = _SSP1CON1 -> -> 8 `i `uc ]
 "171
-[; ;mcc_generated_files/i2c1_master.c: 171:     SSP1CON2 = 0x10;
-[e = _SSP1CON2 -> -> 16 `i `uc ]
+[; ;mcc_generated_files/i2c1_master.c: 171:     SSP1CON2 = 0x00;
+[e = _SSP1CON2 -> -> 0 `i `uc ]
 "172
-[; ;mcc_generated_files/i2c1_master.c: 172:     SSP1ADD = 0x0F;
-[e = _SSP1ADD -> -> 15 `i `uc ]
+[; ;mcc_generated_files/i2c1_master.c: 172:     SSP1ADD = 0x27;
+[e = _SSP1ADD -> -> 39 `i `uc ]
 "173
 [; ;mcc_generated_files/i2c1_master.c: 173:     SSP1CON1bits.SSPEN = 0;
 [e = . . _SSP1CON1bits 0 2 -> -> 0 `i `uc ]
@@ -3667,17 +3667,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/i2c1_master.c: 546:     {
 {
 "547
-[; ;mcc_generated_files/i2c1_master.c: 547:         SSP1STAT = 0xC0;
-[e = _SSP1STAT -> -> 192 `i `uc ]
+[; ;mcc_generated_files/i2c1_master.c: 547:         SSP1STAT = 0x00;
+[e = _SSP1STAT -> -> 0 `i `uc ]
 "548
-[; ;mcc_generated_files/i2c1_master.c: 548:         SSP1CON1 = 0x18;
-[e = _SSP1CON1 -> -> 24 `i `uc ]
+[; ;mcc_generated_files/i2c1_master.c: 548:         SSP1CON1 = 0x08;
+[e = _SSP1CON1 -> -> 8 `i `uc ]
 "549
-[; ;mcc_generated_files/i2c1_master.c: 549:         SSP1CON2 = 0x10;
-[e = _SSP1CON2 -> -> 16 `i `uc ]
+[; ;mcc_generated_files/i2c1_master.c: 549:         SSP1CON2 = 0x00;
+[e = _SSP1CON2 -> -> 0 `i `uc ]
 "550
-[; ;mcc_generated_files/i2c1_master.c: 550:         SSP1ADD = 0x0F;
-[e = _SSP1ADD -> -> 15 `i `uc ]
+[; ;mcc_generated_files/i2c1_master.c: 550:         SSP1ADD = 0x27;
+[e = _SSP1ADD -> -> 39 `i `uc ]
 "551
 [; ;mcc_generated_files/i2c1_master.c: 551:         SSP1CON1bits.SSPEN = 1;
 [e = . . _SSP1CON1bits 0 2 -> -> 1 `i `uc ]

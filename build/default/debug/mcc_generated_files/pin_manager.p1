@@ -2207,8 +2207,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 84:     ANSELD = 0xFD;
 [e = _ANSELD -> -> 253 `i `uc ]
 "85
-[; ;mcc_generated_files/pin_manager.c: 85:     ANSELB = 0xDF;
-[e = _ANSELB -> -> 223 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 85:     ANSELB = 0xFF;
+[e = _ANSELB -> -> 255 `i `uc ]
 "86
 [; ;mcc_generated_files/pin_manager.c: 86:     ANSELE = 0xFF;
 [e = _ANSELE -> -> 255 `i `uc ]

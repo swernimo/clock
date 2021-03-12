@@ -18,7 +18,6 @@
         <itemPath>mcc_generated_files/mcc.h</itemPath>
         <itemPath>mcc_generated_files/tmr0.h</itemPath>
         <itemPath>mcc_generated_files/i2c1_master.h</itemPath>
-        <itemPath>mcc_generated_files/RTC6_example.h</itemPath>
         <itemPath>mcc_generated_files/RTC6.h</itemPath>
       </logicalFolder>
     </logicalFolder>
@@ -46,7 +45,6 @@
         <itemPath>mcc_generated_files/pin_manager.c</itemPath>
         <itemPath>mcc_generated_files/tmr0.c</itemPath>
         <itemPath>mcc_generated_files/i2c1_master.c</itemPath>
-        <itemPath>mcc_generated_files/RTC6_example.c</itemPath>
         <itemPath>mcc_generated_files/RTC6.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>

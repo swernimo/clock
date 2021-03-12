@@ -24462,9 +24462,9 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 50 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/pin_manager.h" 1
-# 138 "mcc_generated_files/pin_manager.h"
+# 118 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 150 "mcc_generated_files/pin_manager.h"
+# 130 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "mcc_generated_files/mcc.h" 2
 
@@ -24765,7 +24765,7 @@ static uint8_t rtcc_read(uint8_t addr) {
 
 static void rtcc_write(uint8_t addr, uint8_t data) {
     i2c_write1ByteRegister(0x6F, addr, data);
-    _delay((unsigned long)((5)*(64000000/4000.0)));
+    _delay((unsigned long)((5)*(16000000/4000.0)));
 }
 
 void rtc6_Initialize(void) {

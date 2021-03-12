@@ -125,19 +125,17 @@ I2C1_NULL 5
 "19 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 4 0 ]
 "40 C:\Program Files\Microchip\xc8\v2.31\pic\include\c99\time.h
-[s S1307 tm 24 `i 1 tm_sec 2 0 `i 1 tm_min 2 2 `i 1 tm_hour 2 4 `i 1 tm_mday 2 6 `i 1 tm_mon 2 8 `i 1 tm_year 2 10 `i 1 tm_wday 2 12 `i 1 tm_yday 2 14 `i 1 tm_isdst 2 16 `l 1 __tm_gmtoff 4 18 `*.2Cuc 1 __tm_zone 2 22 ]
+[s S1394 tm 24 `i 1 tm_sec 2 0 `i 1 tm_min 2 2 `i 1 tm_hour 2 4 `i 1 tm_mday 2 6 `i 1 tm_mon 2 8 `i 1 tm_year 2 10 `i 1 tm_wday 2 12 `i 1 tm_yday 2 14 `i 1 tm_isdst 2 16 `l 1 __tm_gmtoff 4 18 `*.2Cuc 1 __tm_zone 2 22 ]
 "5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\localtime.c
-[v _localtime localtime `(*.39S1307  1 e 2 0 ]
+[v _localtime localtime `(*.39S1394  1 e 2 0 ]
 "40 C:\Program Files\Microchip\xc8\v2.31\pic\include\c99\time.h
-[s S1307 tm 24 `i 1 tm_sec 2 0 `i 1 tm_min 2 2 `i 1 tm_hour 2 4 `i 1 tm_mday 2 6 `i 1 tm_mon 2 8 `i 1 tm_year 2 10 `i 1 tm_wday 2 12 `i 1 tm_yday 2 14 `i 1 tm_isdst 2 16 `l 1 __tm_gmtoff 4 18 `*.2Cuc 1 __tm_zone 2 22 ]
+[s S1394 tm 24 `i 1 tm_sec 2 0 `i 1 tm_min 2 2 `i 1 tm_hour 2 4 `i 1 tm_mday 2 6 `i 1 tm_mon 2 8 `i 1 tm_year 2 10 `i 1 tm_wday 2 12 `i 1 tm_yday 2 14 `i 1 tm_isdst 2 16 `l 1 __tm_gmtoff 4 18 `*.2Cuc 1 __tm_zone 2 22 ]
 "5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\localtime_r.c
-[v ___localtime_r __localtime_r `(*.39S1307  1 e 2 0 ]
+[v ___localtime_r __localtime_r `(*.39S1394  1 e 2 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
 [v _memset memset `(*.39v  1 e 2 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\mktime.c
 [v _mktime mktime `(o  1 e 8 0 ]
-"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\printf.c
-[v _printf printf `(i  1 e 2 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "245
@@ -290,12 +288,8 @@ I2C1_NULL 5
 [v _rtc6_Initialize rtc6_Initialize `(v  1 e 1 0 ]
 "140
 [v _rtc6_SetComponent rtc6_SetComponent `(v  1 s 1 rtc6_SetComponent ]
-"145
-[v _rtc6_SetTime rtc6_SetTime `(v  1 e 1 0 ]
 "159
 [v _rtc6_GetComponent rtc6_GetComponent `(uc  1 s 1 rtc6_GetComponent ]
-"164
-[v _rtc6_GetTime rtc6_GetTime `(o  1 e 8 0 ]
 "208
 [v _rtc6_EEPRWriteLatchEnable rtc6_EEPRWriteLatchEnable `(v  1 s 1 rtc6_EEPRWriteLatchEnable ]
 "212
@@ -474,7 +468,7 @@ I2C1_NULL 5
 [v _LATC LATC `VEuc  1 e 1 @3963 ]
 "28849
 [v _LATD LATD `VEuc  1 e 1 @3964 ]
-[s S1512 . 1 `uc 1 LATD0 1 0 :1:0 
+[s S1311 . 1 `uc 1 LATD0 1 0 :1:0 
 `uc 1 LATD1 1 0 :1:1 
 `uc 1 LATD2 1 0 :1:2 
 `uc 1 LATD3 1 0 :1:3 
@@ -484,7 +478,7 @@ I2C1_NULL 5
 `uc 1 LATD7 1 0 :1:7 
 ]
 "28876
-[s S1521 . 1 `uc 1 LD0 1 0 :1:0 
+[s S1320 . 1 `uc 1 LD0 1 0 :1:0 
 `uc 1 LD1 1 0 :1:1 
 `uc 1 LD2 1 0 :1:2 
 `uc 1 LD3 1 0 :1:3 
@@ -493,8 +487,8 @@ I2C1_NULL 5
 `uc 1 LD6 1 0 :1:6 
 `uc 1 LD7 1 0 :1:7 
 ]
-[u S1530 . 1 `S1512 1 . 1 0 `S1521 1 . 1 0 ]
-[v _LATDbits LATDbits `VES1530  1 e 1 @3964 ]
+[u S1329 . 1 `S1311 1 . 1 0 `S1320 1 . 1 0 ]
+[v _LATDbits LATDbits `VES1329  1 e 1 @3964 ]
 "28961
 [v _LATE LATE `VEuc  1 e 1 @3965 ]
 "29073
@@ -767,9 +761,9 @@ I2C1_NULL 5
 ]
 "165
 [v _I2C1_Status I2C1_Status `S493  1 e 42 0 ]
-[s S1368 . 14 `i 1 sec 2 0 `i 1 min 2 2 `i 1 hr 2 4 `i 1 year 2 6 `i 1 month 2 8 `i 1 date 2 10 `i 1 day 2 12 ]
+[s S1378 . 14 `i 1 sec 2 0 `i 1 min 2 2 `i 1 hr 2 4 `i 1 year 2 6 `i 1 month 2 8 `i 1 date 2 10 `i 1 day 2 12 ]
 "100 C:\Users\swern\MPLABXProjects\Clock.X\mcc_generated_files/RTC6.c
-[v _dateTime dateTime `S1368  1 e 14 0 ]
+[v _dateTime dateTime `S1378  1 e 14 0 ]
 "6 C:\Users\swern\MPLABXProjects\Clock.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {

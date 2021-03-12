@@ -65,6 +65,46 @@
 #define PULL_UP_ENABLED      1
 #define PULL_UP_DISABLED     0
 
+// get/set RTC6_INT aliases
+#define RTC6_INT_TRIS                 TRISBbits.TRISB5
+#define RTC6_INT_LAT                  LATBbits.LATB5
+#define RTC6_INT_PORT                 PORTBbits.RB5
+#define RTC6_INT_WPU                  WPUBbits.WPUB5
+#define RTC6_INT_OD                   ODCONBbits.ODCB5
+#define RTC6_INT_ANS                  ANSELBbits.ANSELB5
+#define RTC6_INT_SetHigh()            do { LATBbits.LATB5 = 1; } while(0)
+#define RTC6_INT_SetLow()             do { LATBbits.LATB5 = 0; } while(0)
+#define RTC6_INT_Toggle()             do { LATBbits.LATB5 = ~LATBbits.LATB5; } while(0)
+#define RTC6_INT_GetValue()           PORTBbits.RB5
+#define RTC6_INT_SetDigitalInput()    do { TRISBbits.TRISB5 = 1; } while(0)
+#define RTC6_INT_SetDigitalOutput()   do { TRISBbits.TRISB5 = 0; } while(0)
+#define RTC6_INT_SetPullup()          do { WPUBbits.WPUB5 = 1; } while(0)
+#define RTC6_INT_ResetPullup()        do { WPUBbits.WPUB5 = 0; } while(0)
+#define RTC6_INT_SetPushPull()        do { ODCONBbits.ODCB5 = 0; } while(0)
+#define RTC6_INT_SetOpenDrain()       do { ODCONBbits.ODCB5 = 1; } while(0)
+#define RTC6_INT_SetAnalogMode()      do { ANSELBbits.ANSELB5 = 1; } while(0)
+#define RTC6_INT_SetDigitalMode()     do { ANSELBbits.ANSELB5 = 0; } while(0)
+
+// get/set RC3 procedures
+#define RC3_SetHigh()            do { LATCbits.LATC3 = 1; } while(0)
+#define RC3_SetLow()             do { LATCbits.LATC3 = 0; } while(0)
+#define RC3_Toggle()             do { LATCbits.LATC3 = ~LATCbits.LATC3; } while(0)
+#define RC3_GetValue()              PORTCbits.RC3
+#define RC3_SetDigitalInput()    do { TRISCbits.TRISC3 = 1; } while(0)
+#define RC3_SetDigitalOutput()   do { TRISCbits.TRISC3 = 0; } while(0)
+#define RC3_SetPullup()             do { WPUCbits.WPUC3 = 1; } while(0)
+#define RC3_ResetPullup()           do { WPUCbits.WPUC3 = 0; } while(0)
+
+// get/set RC5 procedures
+#define RC5_SetHigh()            do { LATCbits.LATC5 = 1; } while(0)
+#define RC5_SetLow()             do { LATCbits.LATC5 = 0; } while(0)
+#define RC5_Toggle()             do { LATCbits.LATC5 = ~LATCbits.LATC5; } while(0)
+#define RC5_GetValue()              PORTCbits.RC5
+#define RC5_SetDigitalInput()    do { TRISCbits.TRISC5 = 1; } while(0)
+#define RC5_SetDigitalOutput()   do { TRISCbits.TRISC5 = 0; } while(0)
+#define RC5_SetPullup()             do { WPUCbits.WPUC5 = 1; } while(0)
+#define RC5_ResetPullup()           do { WPUCbits.WPUC5 = 0; } while(0)
+
 // get/set LED aliases
 #define LED_TRIS                 TRISDbits.TRISD1
 #define LED_LAT                  LATDbits.LATD1

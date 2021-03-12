@@ -2020,11 +2020,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _TMR0_Initialize ]
 [f ]
 "65
-[; ;mcc_generated_files/tmr0.c: 65:     T0CON1 = 0x4C;
-[e = _T0CON1 -> -> 76 `i `uc ]
+[; ;mcc_generated_files/tmr0.c: 65:     T0CON1 = 0x4D;
+[e = _T0CON1 -> -> 77 `i `uc ]
 "68
-[; ;mcc_generated_files/tmr0.c: 68:     TMR0H = 0x8B;
-[e = _TMR0H -> -> 139 `i `uc ]
+[; ;mcc_generated_files/tmr0.c: 68:     TMR0H = 0xF3;
+[e = _TMR0H -> -> 243 `i `uc ]
 "71
 [; ;mcc_generated_files/tmr0.c: 71:     TMR0L = 0x00;
 [e = _TMR0L -> -> 0 `i `uc ]
@@ -2032,8 +2032,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/tmr0.c: 74:     PIR0bits.TMR0IF = 0;
 [e = . . _PIR0bits 0 5 -> -> 0 `i `uc ]
 "77
-[; ;mcc_generated_files/tmr0.c: 77:     T0CON0 = 0x86;
-[e = _T0CON0 -> -> 134 `i `uc ]
+[; ;mcc_generated_files/tmr0.c: 77:     T0CON0 = 0x8F;
+[e = _T0CON0 -> -> 143 `i `uc ]
 "78
 [; ;mcc_generated_files/tmr0.c: 78: }
 [e :UE 2019 ]

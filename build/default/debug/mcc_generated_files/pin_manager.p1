@@ -161,18 +161,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12722
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 12722: extern volatile unsigned char INLVLH __attribute__((address(0xEBD)));
 [v _INLVLH `Vuc ~T0 @X0 0 e@3773 ]
-"3592
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 3592: extern volatile unsigned char SSP1CLKPPS __attribute__((address(0xE19)));
-[v _SSP1CLKPPS `Vuc ~T0 @X0 0 e@3609 ]
-"8008
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 8008: extern volatile unsigned char RC3PPS __attribute__((address(0xE65)));
-[v _RC3PPS `Vuc ~T0 @X0 0 e@3685 ]
-"8058
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 8058: extern volatile unsigned char RC4PPS __attribute__((address(0xE66)));
-[v _RC4PPS `Vuc ~T0 @X0 0 e@3686 ]
-"3658
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 3658: extern volatile unsigned char SSP1DATPPS __attribute__((address(0xE1A)));
-[v _SSP1DATPPS `Vuc ~T0 @X0 0 e@3610 ]
 "54 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 54: __asm("PPSLOCK equ 0DEFh");
 [; <" PPSLOCK equ 0DEFh ;# ">
@@ -2156,8 +2144,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _PIN_MANAGER_Initialize ]
 [f ]
 "60
-[; ;mcc_generated_files/pin_manager.c: 60:     LATE = 0x00;
-[e = _LATE -> -> 0 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 60:     LATE = 0x01;
+[e = _LATE -> -> 1 `i `uc ]
 "61
 [; ;mcc_generated_files/pin_manager.c: 61:     LATD = 0x02;
 [e = _LATD -> -> 2 `i `uc ]
@@ -2317,31 +2305,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 "137
 [; ;mcc_generated_files/pin_manager.c: 137:     INLVLH = 0xFF;
 [e = _INLVLH -> -> 255 `i `uc ]
-"146
-[; ;mcc_generated_files/pin_manager.c: 146:     SSP1CLKPPS = 0x13;
-[e = _SSP1CLKPPS -> -> 19 `i `uc ]
-"147
-[; ;mcc_generated_files/pin_manager.c: 147:     RC3PPS = 0x19;
-[e = _RC3PPS -> -> 25 `i `uc ]
-"148
-[; ;mcc_generated_files/pin_manager.c: 148:     RC4PPS = 0x1A;
-[e = _RC4PPS -> -> 26 `i `uc ]
-"149
-[; ;mcc_generated_files/pin_manager.c: 149:     SSP1DATPPS = 0x14;
-[e = _SSP1DATPPS -> -> 20 `i `uc ]
-"150
-[; ;mcc_generated_files/pin_manager.c: 150: }
+"145
+[; ;mcc_generated_files/pin_manager.c: 145: }
 [e :UE 2019 ]
 }
-"152
-[; ;mcc_generated_files/pin_manager.c: 152: void PIN_MANAGER_IOC(void)
+"147
+[; ;mcc_generated_files/pin_manager.c: 147: void PIN_MANAGER_IOC(void)
 [v _PIN_MANAGER_IOC `(v ~T0 @X0 1 ef ]
-"153
-[; ;mcc_generated_files/pin_manager.c: 153: {
+"148
+[; ;mcc_generated_files/pin_manager.c: 148: {
 {
 [e :U _PIN_MANAGER_IOC ]
 [f ]
-"154
-[; ;mcc_generated_files/pin_manager.c: 154: }
+"149
+[; ;mcc_generated_files/pin_manager.c: 149: }
 [e :UE 2020 ]
 }

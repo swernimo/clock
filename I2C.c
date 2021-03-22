@@ -7,6 +7,10 @@ void I2C_Initialize(){
     SSP1CON2 = 0x00;
     SSP1ADD  = 0x06;
     SSP1CON1bits.SSPEN = 0;
+    SSP1CLKPPS = 0x13;   //RC3->MSSP1:SCL1;    
+    RC3PPS = 0x19;   //RC3->MSSP1:SCL1;    
+    RC4PPS = 0x1A;   //RC4->MSSP1:SDA1;    
+    SSP1DATPPS = 0x14;   //RC4->MSSP1:SDA1;    
 }
 
 void I2C_Start(){

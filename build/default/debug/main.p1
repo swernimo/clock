@@ -36,6 +36,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "28876
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28876: extern volatile LATDbits_t LATDbits __attribute__((address(0xF7C)));
 [v _LATDbits `VS1351 ~T0 @X0 0 e@3964 ]
+"28967
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28967:     struct {
+[s S1355 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1355 . LATE0 LATE1 LATE2 LATE3 LATE4 LATE5 LATE6 LATE7 ]
+"28977
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28977:     struct {
+[s S1356 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1356 . LE0 LE1 LE2 LE3 LE4 LE5 LE6 LE7 ]
+"28966
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28966: typedef union {
+[u S1354 `S1355 1 `S1356 1 ]
+[n S1354 . . . ]
+"28988
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28988: extern volatile LATEbits_t LATEbits __attribute__((address(0xF7D)));
+[v _LATEbits `VS1354 ~T0 @X0 0 e@3965 ]
 "5093
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 5093:     struct {
 [s S286 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -2067,22 +2082,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 2033 ]
 "21
-[; ;main.c: 21:             PIR0bits.TMR0IF = 0;
-[e = . . _PIR0bits 0 5 -> -> 0 `i `uc ]
+[; ;main.c: 21:             do { LATEbits.LATE0 = ~LATEbits.LATE0; } while(0);
+[e :U 2037 ]
+{
+[e = . . _LATEbits 0 0 -> ~ -> . . _LATEbits 0 0 `i `uc ]
+}
+[e :U 2036 ]
 "22
-[; ;main.c: 22:             TMR0_StartTimer();
-[e ( _TMR0_StartTimer ..  ]
+[; ;main.c: 22:             PIR0bits.TMR0IF = 0;
+[e = . . _PIR0bits 0 5 -> -> 0 `i `uc ]
 "23
-[; ;main.c: 23:         }
+[; ;main.c: 23:             TMR0_StartTimer();
+[e ( _TMR0_StartTimer ..  ]
+"24
+[; ;main.c: 24:         }
 }
 [e :U 2031 ]
-"24
-[; ;main.c: 24:     }
+"25
+[; ;main.c: 25:     }
 }
 [e :U 2028 ]
 [e $U 2029  ]
 [e :U 2030 ]
-"25
-[; ;main.c: 25: }
+"26
+[; ;main.c: 26: }
 [e :UE 2027 ]
 }

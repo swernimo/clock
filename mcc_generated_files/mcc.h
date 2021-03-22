@@ -52,10 +52,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <conio.h>
-#include "i2c1_master.h"
 #include "tmr0.h"
-#include "RTC6.h"
-#include "drivers/i2c_simple_master.h"
 
 
 

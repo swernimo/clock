@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.31\pic\dat\en_msgs.txt -cn \
   -h+dist/default/debug\Clock.X.debug.sym \
   --cmf=dist/default/debug\Clock.X.debug.cmf -z -Q18F67K40 \
-  -oC:\Users\swern\AppData\Local\Temp\s7n0.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\swern\AppData\Local\Temp\sj3g.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/debug/Clock.X.debug.map -E1 -ver=XC8 Compiler --acfsm=1493 \
   -ASTACK=0CEh-0DE9h -pstack=STACK -ACODE=00h-01FFFFh -ACONST=00h-01FFFFh \
   -ASMALLCONST=0E00h-0EFFhx498 -AMEDIUMCONST=0E00h-0FFFFh,010E00h-01FFFFh \
@@ -26,7 +26,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\swern\AppData\Local\Temp\s7n0.o \
+  C:\Users\swern\AppData\Local\Temp\sj3g.o \
   dist/default/debug\Clock.X.debug.o 
 
 Object code version is 3.11
@@ -36,7 +36,7 @@ Machine type is 18F67K40
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\swern\AppData\Local\Temp\s7n0.o
+C:\Users\swern\AppData\Local\Temp\sj3g.o
                 idloc                            200000   200000       10        0       5
                 config                           300000   300000        C        0       4
                 init                                  0        0        4        0       0
@@ -44,48 +44,48 @@ dist/default/debug\Clock.X.debug.o
                 idloc                            200000   200000       10        0       5
                 config                           300000   300000        C        0       4
                 smallconst                          E00      E00       74      700       0
-                text13                             11F8     11F8       14      73A       0
-                text12                             119E     119E       18      73A       0
-                text11                             11E2     11E2       16      73A       0
+                text13                             1220     1220       14      73A       0
+                text12                             11C6     11C6       18      73A       0
+                text11                             120A     120A       16      73A       0
                 text10                              E74      E74       F8      73A       0
-                text9                              1024     1024       9E      73A       0
-                text8                              1186     1186       18      73A       0
-                text7                               F6C      F6C       B8      73A       0
-                text6                              116A     116A       1C      73A       0
-                text5                              11CC     11CC       16      73A       0
-                text4                              120C     120C       12      73A       0
-                text3                              11B6     11B6       16      73A       0
-                text2                              1226     1226        4      73A       0
-                text1                              1222     1222        4      73A       0
-                text0                              10C2     10C2       6A      73A       0
+                text9                              1028     1028       9E      73A       0
+                text8                              11AE     11AE       18      73A       0
+                text7                               F6C      F6C       BC      73A       0
+                text6                              1192     1192       1C      73A       0
+                text5                              11F4     11F4       16      73A       0
+                text4                              1234     1234       12      73A       0
+                text3                              11DE     11DE       16      73A       0
+                text2                              124E     124E        4      73A       0
+                text1                              124A     124A        4      73A       0
+                text0                              10C6     10C6       8E      73A       0
                 cstackCOMRAM                         53       53        5        1       1
                 bssBANK0                             60       60       6E       60       1
                 dataCOMRAM                           58       58        4        1       1
                 bssCOMRAM                             1        1       52        1       1
-                cinit                              112C     112C       3E      73A       0
-                idataCOMRAM                        121E     121E        4      73A       0
+                cinit                              1154     1154       3E      73A       0
+                idataCOMRAM                        1246     1246        4      73A       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
                 init                                  0        0        4         0
-                text13                             11F8     11F8       14         0
-                text12                             119E     119E       18         0
-                text11                             11E2     11E2       16         0
+                text13                             1220     1220       14         0
+                text12                             11C6     11C6       18         0
+                text11                             120A     120A       16         0
                 text10                              E74      E74       F8         0
-                text9                              1024     1024       9E         0
-                text8                              1186     1186       18         0
-                text7                               F6C      F6C       B8         0
-                text6                              116A     116A       1C         0
-                text5                              11CC     11CC       16         0
-                text4                              120C     120C       12         0
-                text3                              11B6     11B6       16         0
-                text2                              1226     1226        4         0
-                text1                              1222     1222        4         0
-                text0                              10C2     10C2       6A         0
-                cinit                              112C     112C       3E         0
-                idataCOMRAM                        121E     121E        4         0
+                text9                              1028     1028       9E         0
+                text8                              11AE     11AE       18         0
+                text7                               F6C      F6C       BC         0
+                text6                              1192     1192       1C         0
+                text5                              11F4     11F4       16         0
+                text4                              1234     1234       12         0
+                text3                              11DE     11DE       16         0
+                text2                              124E     124E        4         0
+                text1                              124A     124A        4         0
+                text0                              10C6     10C6       8E         0
+                cinit                              1154     1154       3E         0
+                idataCOMRAM                        1246     1246        4         0
 
         CLASS   CONST          
 
@@ -154,7 +154,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 bssCOMRAM                      000001  00005B  00005C         1       1  COMRAM  
                 bssBANK0                       000060  00006E  0000CE        60       1  BANK0   
                 smallconst                     000E00  000074  000E74       700       0  SMALLCON
-                text10                         000E74  0003B6  00122A       73A       0  CODE    
+                text10                         000E74  0003DE  001252       73A       0  CODE    
 
 
 UNUSED ADDRESS RANGES
@@ -177,16 +177,16 @@ UNUSED ADDRESS RANGES
         BIGRAM           00005C-00005F                4
                          0000CE-000DE9              D1C
         CODE             000004-000DFF              DFC
-                         00122A-01FFFF            1EDD6
+                         001252-01FFFF            1EDAE
         COMRAM           00005C-00005F                4
         CONST            000004-000DFF              DFC
-                         00122A-01FFFF            1EDD6
+                         001252-01FFFF            1EDAE
         EEDATA           310000-3103FF              400
-        MEDIUMCONST      00122A-00FFFF             EDD6
+        MEDIUMCONST      001252-00FFFF             EDAE
                          010E00-01FFFF             F200
         RAM              0000CE-000DE9              100
         SFR              000DEF-000FFF              100
-        SMALLCONST       00122A-01FFFF              100
+        SMALLCONST       001252-01FFFF              100
         STACK            0000CE-000DE9              D1C
 
                                   Symbol Table
@@ -222,11 +222,11 @@ _I2C1_DO_SEND_STOP                                (abs)        000000
 _I2C1_DO_TX                                       (abs)        000000
 _I2C1_DO_TX_EMPTY                                 (abs)        000000
 _I2C1_Status                                      bssCOMRAM    000001
-_I2C_Initialize                                   text13       0011F8
+_I2C_Initialize                                   text13       001220
 _I2C_Read                                         text10       000E74
-_I2C_Start                                        text12       00119E
-_I2C_Stop                                         text11       0011E2
-_I2C_Write                                        text9        001024
+_I2C_Start                                        text12       0011C6
+_I2C_Stop                                         text11       00120A
+_I2C_Write                                        text9        001028
 _INLVLA                                           (abs)        000E8E
 _INLVLB                                           (abs)        000E96
 _INLVLC                                           (abs)        000E9E
@@ -241,6 +241,7 @@ _LATC                                             (abs)        000F7B
 _LATD                                             (abs)        000F7C
 _LATDbits                                         (abs)        000F7C
 _LATE                                             (abs)        000F7D
+_LATEbits                                         (abs)        000F7D
 _LATF                                             (abs)        000F7E
 _LATG                                             (abs)        000F7F
 _LATH                                             (abs)        000F80
@@ -256,7 +257,7 @@ _OSCCON1                                          (abs)        000E43
 _OSCCON3                                          (abs)        000E45
 _OSCEN                                            (abs)        000E47
 _OSCFRQ                                           (abs)        000E49
-_OSCILLATOR_Initialize                            text8        001186
+_OSCILLATOR_Initialize                            text8        0011AE
 _OSCTUNE                                          (abs)        000E48
 _PIE3bits                                         (abs)        000E2C
 _PIN_MANAGER_Initialize                           text7        000F6C
@@ -268,7 +269,7 @@ _PMD2                                             (abs)        000E4E
 _PMD3                                             (abs)        000E4F
 _PMD4                                             (abs)        000E50
 _PMD5                                             (abs)        000E51
-_PMD_Initialize                                   text6        00116A
+_PMD_Initialize                                   text6        001192
 _RC3PPS                                           (abs)        000E65
 _RC4PPS                                           (abs)        000E66
 _SLRCONA                                          (abs)        000E8F
@@ -290,16 +291,16 @@ _SSP1DATPPS                                       (abs)        000E1A
 _SSP1STAT                                         (abs)        000F94
 _SSP1STATbits                                     (abs)        000F94
 _STATUS                                           (abs)        000FD8
-_SYSTEM_Initialize                                text4        00120C
+_SYSTEM_Initialize                                text4        001234
 _T0CON0                                           (abs)        000FD5
 _T0CON0bits                                       (abs)        000FD5
 _T0CON1                                           (abs)        000FD6
 _TMR0H                                            (abs)        000FD4
 _TMR0L                                            (abs)        000FD3
-_TMR0_HasOverflowOccured                          text3        0011B6
-_TMR0_Initialize                                  text5        0011CC
-_TMR0_StartTimer                                  text2        001226
-_TMR0_StopTimer                                   text1        001222
+_TMR0_HasOverflowOccured                          text3        0011DE
+_TMR0_Initialize                                  text5        0011F4
+_TMR0_StartTimer                                  text2        00124E
+_TMR0_StopTimer                                   text1        00124A
 _TRISA                                            (abs)        000F81
 _TRISB                                            (abs)        000F82
 _TRISC                                            (abs)        000F83
@@ -377,7 +378,7 @@ __Hreset_vec                                      reset_vec    000000
 __Hrparam                                         rparam       000000
 __Hsfr                                            sfr          000000
 __Hsmallconst                                     smallconst   000E74
-__Hspace_0                                        (abs)        00122A
+__Hspace_0                                        (abs)        001252
 __Hspace_1                                        (abs)        0000CE
 __Hspace_2                                        (abs)        000000
 __Hspace_4                                        (abs)        60000C
@@ -482,7 +483,7 @@ __Ltext6                                          text6        000000
 __Ltext7                                          text7        000000
 __Ltext8                                          text8        000000
 __Ltext9                                          text9        000000
-__S0                                              (abs)        00122A
+__S0                                              (abs)        001252
 __S1                                              (abs)        0000CE
 __S2                                              (abs)        000000
 __S4                                              (abs)        000000
@@ -500,48 +501,48 @@ ___timezone                                       bssCOMRAM    00003B
 ___tzname                                         bssCOMRAM    000037
 __accesstop                                       (abs)        000060
 __activetblptr                                    (abs)        000003
-__end_of_I2C_Initialize                           text13       00120C
+__end_of_I2C_Initialize                           text13       001234
 __end_of_I2C_Read                                 text10       000F6C
-__end_of_I2C_Start                                text12       0011B6
-__end_of_I2C_Stop                                 text11       0011F8
-__end_of_I2C_Write                                text9        0010C2
-__end_of_OSCILLATOR_Initialize                    text8        00119E
-__end_of_PIN_MANAGER_Initialize                   text7        001024
-__end_of_PMD_Initialize                           text6        001186
-__end_of_SYSTEM_Initialize                        text4        00121E
-__end_of_TMR0_HasOverflowOccured                  text3        0011CC
-__end_of_TMR0_Initialize                          text5        0011E2
-__end_of_TMR0_StartTimer                          text2        00122A
-__end_of_TMR0_StopTimer                           text1        001226
+__end_of_I2C_Start                                text12       0011DE
+__end_of_I2C_Stop                                 text11       001220
+__end_of_I2C_Write                                text9        0010C6
+__end_of_OSCILLATOR_Initialize                    text8        0011C6
+__end_of_PIN_MANAGER_Initialize                   text7        001028
+__end_of_PMD_Initialize                           text6        0011AE
+__end_of_SYSTEM_Initialize                        text4        001246
+__end_of_TMR0_HasOverflowOccured                  text3        0011F4
+__end_of_TMR0_Initialize                          text5        00120A
+__end_of_TMR0_StartTimer                          text2        001252
+__end_of_TMR0_StopTimer                           text1        00124E
 __end_of___gmt                                    smallconst   000E71
 __end_of___month_to_secs@secs_through_month       smallconst   000E31
 __end_of___secs_to_tm@days_in_month               smallconst   000E6D
-__end_of__initialization                          cinit        001164
+__end_of__initialization                          cinit        00118C
 __end_of_i2c1_fsmStateTable                       smallconst   000E61
-__end_of_main                                     text0        00112C
-__initialization                                  cinit        00112C
+__end_of_main                                     text0        001154
+__initialization                                  cinit        001154
 __mediumconst                                     mediumconst  000000
 __pbssBANK0                                       bssBANK0     000060
 __pbssCOMRAM                                      bssCOMRAM    000001
-__pcinit                                          cinit        00112C
+__pcinit                                          cinit        001154
 __pcstackCOMRAM                                   cstackCOMRAM 000053
 __pdataCOMRAM                                     dataCOMRAM   000058
-__pidataCOMRAM                                    idataCOMRAM  00121E
+__pidataCOMRAM                                    idataCOMRAM  001246
 __psmallconst                                     smallconst   000E00
-__ptext0                                          text0        0010C2
-__ptext1                                          text1        001222
+__ptext0                                          text0        0010C6
+__ptext1                                          text1        00124A
 __ptext10                                         text10       000E74
-__ptext11                                         text11       0011E2
-__ptext12                                         text12       00119E
-__ptext13                                         text13       0011F8
-__ptext2                                          text2        001226
-__ptext3                                          text3        0011B6
-__ptext4                                          text4        00120C
-__ptext5                                          text5        0011CC
-__ptext6                                          text6        00116A
+__ptext11                                         text11       00120A
+__ptext12                                         text12       0011C6
+__ptext13                                         text13       001220
+__ptext2                                          text2        00124E
+__ptext3                                          text3        0011DE
+__ptext4                                          text4        001234
+__ptext5                                          text5        0011F4
+__ptext6                                          text6        001192
 __ptext7                                          text7        000F6C
-__ptext8                                          text8        001186
-__ptext9                                          text9        001024
+__ptext8                                          text8        0011AE
+__ptext9                                          text9        001028
 __ramtop                                          ramtop       000E00
 __size_of_I2C_Initialize                          (abs)        000000
 __size_of_I2C_Read                                (abs)        000000
@@ -565,7 +566,7 @@ _dst_off                                          bssCOMRAM    00002F
 _errno                                            bssCOMRAM    000051
 _i2c1_fsmStateTable                               smallconst   000E31
 _lock                                             bssCOMRAM    00002B
-_main                                             text0        0010C2
+_main                                             text0        0010C6
 _r0                                               bssBANK0     0000B6
 _r1                                               bssBANK0     0000AC
 _rd1RegCompleteHandler                            (abs)        000000
@@ -581,7 +582,7 @@ _wr1RegCompleteHandler                            (abs)        000000
 _wr1RegCompleteHandler@i2c1_master_example$F162   (abs)        000000
 _wr2RegCompleteHandler                            (abs)        000000
 _wr2RegCompleteHandler@i2c1_master_example$F168   (abs)        000000
-end_of_initialization                             cinit        001164
+end_of_initialization                             cinit        00118C
 intlevel0                                         text         000000
 intlevel1                                         text         000000
 intlevel2                                         text         000000
@@ -590,7 +591,7 @@ localtime@tm                                      bssBANK0     000094
 stackhi                                           (abs)        000DE9
 stacklo                                           (abs)        0000CE
 start                                             init         000000
-start_initialization                              cinit        00112C
+start_initialization                              cinit        001154
 
 
 FUNCTION INFORMATION:
@@ -1026,30 +1027,30 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 mcc_generated_files/tmr0.c
-		_TMR0_StopTimer		CODE           	1222	0000	4
-		_TMR0_StartTimer		CODE           	1226	0000	4
-		_TMR0_HasOverflowOccured		CODE           	11B6	0000	22
-		_TMR0_Initialize		CODE           	11CC	0000	22
+		_TMR0_StopTimer		CODE           	124A	0000	4
+		_TMR0_StartTimer		CODE           	124E	0000	4
+		_TMR0_HasOverflowOccured		CODE           	11DE	0000	22
+		_TMR0_Initialize		CODE           	11F4	0000	22
 
 mcc_generated_files/tmr0.c estimated size: 52
 
 I2C.c
-		_I2C_Write     		CODE           	1024	0000	158
-		_I2C_Stop      		CODE           	11E2	0000	22
+		_I2C_Write     		CODE           	1028	0000	158
+		_I2C_Stop      		CODE           	120A	0000	22
 		_I2C_Read      		CODE           	0E74	0000	248
-		_I2C_Initialize		CODE           	11F8	0000	20
-		_I2C_Start     		CODE           	119E	0000	24
+		_I2C_Initialize		CODE           	1220	0000	20
+		_I2C_Start     		CODE           	11C6	0000	24
 
 I2C.c estimated size: 472
 
 mcc_generated_files/pin_manager.c
-		_PIN_MANAGER_Initialize		CODE           	0F6C	0000	184
+		_PIN_MANAGER_Initialize		CODE           	0F6C	0000	188
 
-mcc_generated_files/pin_manager.c estimated size: 184
+mcc_generated_files/pin_manager.c estimated size: 188
 
 shared
 		___secs_to_tm@days_in_month		SMALLCONST     	0E61	0000	12
-		__initialization		CODE           	112C	0000	56
+		__initialization		CODE           	1154	0000	56
 		_i2c1_fsmStateTable		SMALLCONST     	0E31	0000	48
 		___month_to_secs@secs_through_month		SMALLCONST     	0E01	0000	48
 		___gmt         		SMALLCONST     	0E6D	0000	4
@@ -1057,14 +1058,14 @@ shared
 shared estimated size: 168
 
 mcc_generated_files/mcc.c
-		_PMD_Initialize		CODE           	116A	0000	28
-		_OSCILLATOR_Initialize		CODE           	1186	0000	24
-		_SYSTEM_Initialize		CODE           	120C	0000	18
+		_PMD_Initialize		CODE           	1192	0000	28
+		_OSCILLATOR_Initialize		CODE           	11AE	0000	24
+		_SYSTEM_Initialize		CODE           	1234	0000	18
 
 mcc_generated_files/mcc.c estimated size: 70
 
 main.c
-		_main          		CODE           	10C2	0000	106
+		_main          		CODE           	10C6	0000	142
 
-main.c estimated size: 106
+main.c estimated size: 142
 

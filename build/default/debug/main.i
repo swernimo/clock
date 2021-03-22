@@ -24183,9 +24183,9 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 118 "./mcc_generated_files/pin_manager.h"
+# 138 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 130 "./mcc_generated_files/pin_manager.h"
+# 150 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -24716,6 +24716,7 @@ void main(void)
         if(TMR0_HasOverflowOccured()) {
             TMR0_StopTimer();
             do { LATDbits.LATD1 = ~LATDbits.LATD1; } while(0);
+            do { LATEbits.LATE0 = ~LATEbits.LATE0; } while(0);
             PIR0bits.TMR0IF = 0;
             TMR0_StartTimer();
         }

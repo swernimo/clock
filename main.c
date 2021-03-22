@@ -18,6 +18,7 @@ void main(void)
         if(TMR0_HasOverflowOccured()) {
             TMR0_StopTimer();
             LED_Toggle();
+            Display_Col_Toggle();
             PIR0bits.TMR0IF = 0;
             TMR0_StartTimer();
         }

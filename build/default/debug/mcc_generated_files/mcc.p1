@@ -2,8 +2,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "99 mcc_generated_files/mcc.h
 [; ;mcc_generated_files/mcc.h: 99: void PMD_Initialize(void);
 [v _PMD_Initialize `(v ~T0 @X0 0 ef ]
-"89 mcc_generated_files/drivers/.././i2c1_master.h
-[v _I2C1_Initialize `(v ~T0 @X0 0 ef ]
 "118 mcc_generated_files/pin_manager.h
 [; ;mcc_generated_files/pin_manager.h: 118: void PIN_MANAGER_Initialize (void);
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
@@ -13,9 +11,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "100 mcc_generated_files/tmr0.h
 [; ;mcc_generated_files/tmr0.h: 100: void TMR0_Initialize(void);
 [v _TMR0_Initialize `(v ~T0 @X0 0 ef ]
-"35 mcc_generated_files/RTC6.h
-[; ;mcc_generated_files/RTC6.h: 35: void rtc6_Initialize(void);
-[v _rtc6_Initialize `(v ~T0 @X0 0 ef ]
 "6186 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 6186: extern volatile unsigned char OSCCON1 __attribute__((address(0xE43)));
 [v _OSCCON1 `Vuc ~T0 @X0 0 e@3651 ]
@@ -2034,9 +2029,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "52
 [; ;mcc_generated_files/mcc.c: 52:     PMD_Initialize();
 [e ( _PMD_Initialize ..  ]
-"53
-[; ;mcc_generated_files/mcc.c: 53:     I2C1_Initialize();
-[e ( _I2C1_Initialize ..  ]
 "54
 [; ;mcc_generated_files/mcc.c: 54:     PIN_MANAGER_Initialize();
 [e ( _PIN_MANAGER_Initialize ..  ]
@@ -2046,9 +2038,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "56
 [; ;mcc_generated_files/mcc.c: 56:     TMR0_Initialize();
 [e ( _TMR0_Initialize ..  ]
-"57
-[; ;mcc_generated_files/mcc.c: 57:     rtc6_Initialize();
-[e ( _rtc6_Initialize ..  ]
 "58
 [; ;mcc_generated_files/mcc.c: 58: }
 [e :UE 2027 ]
@@ -2071,8 +2060,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/mcc.c: 67:     OSCEN = 0x00;
 [e = _OSCEN -> -> 0 `i `uc ]
 "69
-[; ;mcc_generated_files/mcc.c: 69:     OSCFRQ = 0x08;
-[e = _OSCFRQ -> -> 8 `i `uc ]
+[; ;mcc_generated_files/mcc.c: 69:     OSCFRQ = 0x04;
+[e = _OSCFRQ -> -> 4 `i `uc ]
 "71
 [; ;mcc_generated_files/mcc.c: 71:     OSCTUNE = 0x00;
 [e = _OSCTUNE -> -> 0 `i `uc ]

@@ -24300,7 +24300,7 @@ void TMR0_Initialize(void)
     T0CON1 = 0x4D;
 
 
-    TMR0H = 0x1E;
+    TMR0H = 0x05;
 
 
     TMR0L = 0x00;

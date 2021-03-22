@@ -145,8 +145,8 @@ void PIN_MANAGER_Initialize(void)
 	
     SSP1CLKPPS = 0x13;   //RC3->MSSP1:SCL1;    
     RC3PPS = 0x19;   //RC3->MSSP1:SCL1;    
-    RC5PPS = 0x1A;   //RC5->MSSP1:SDA1;    
-    SSP1DATPPS = 0x15;   //RC5->MSSP1:SDA1;    
+    RC4PPS = 0x1A;   //RC4->MSSP1:SDA1;    
+    SSP1DATPPS = 0x14;   //RC4->MSSP1:SDA1;    
 }
   
 void PIN_MANAGER_IOC(void)

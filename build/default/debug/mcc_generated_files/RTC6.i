@@ -24765,7 +24765,7 @@ static uint8_t rtcc_read(uint8_t addr) {
 
 static void rtcc_write(uint8_t addr, uint8_t data) {
     i2c_write1ByteRegister(0x6F, addr, data);
-    _delay((unsigned long)((5)*(16000000/4000.0)));
+    _delay((unsigned long)((5)*(3000000/4000.0)));
 }
 
 void rtc6_Initialize(void) {

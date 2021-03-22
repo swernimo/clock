@@ -50,11 +50,11 @@
 void SYSTEM_Initialize(void)
 {
     PMD_Initialize();
-    I2C1_Initialize();
+  //  I2C1_Initialize();
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
     TMR0_Initialize();
-    rtc6_Initialize();
+ //   rtc6_Initialize();
 }
 
 void OSCILLATOR_Initialize(void)
@@ -65,8 +65,8 @@ void OSCILLATOR_Initialize(void)
     OSCCON3 = 0x00;
     // MFOEN disabled; LFOEN disabled; ADOEN disabled; SOSCEN disabled; EXTOEN disabled; HFOEN disabled; 
     OSCEN = 0x00;
-    // HFFRQ 64_MHz; 
-    OSCFRQ = 0x08;
+    // HFFRQ 12_MHz; 
+    OSCFRQ = 0x04;
     // TUN 0; 
     OSCTUNE = 0x00;
 }

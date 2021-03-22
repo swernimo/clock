@@ -24276,8 +24276,8 @@ void PIN_MANAGER_Initialize(void)
 # 146 "mcc_generated_files/pin_manager.c"
     SSP1CLKPPS = 0x13;
     RC3PPS = 0x19;
-    RC5PPS = 0x1A;
-    SSP1DATPPS = 0x15;
+    RC4PPS = 0x1A;
+    SSP1DATPPS = 0x14;
 }
 
 void PIN_MANAGER_IOC(void)

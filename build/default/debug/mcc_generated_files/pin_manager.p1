@@ -167,9 +167,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8008
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 8008: extern volatile unsigned char RC3PPS __attribute__((address(0xE65)));
 [v _RC3PPS `Vuc ~T0 @X0 0 e@3685 ]
-"8108
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 8108: extern volatile unsigned char RC5PPS __attribute__((address(0xE67)));
-[v _RC5PPS `Vuc ~T0 @X0 0 e@3687 ]
+"8058
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 8058: extern volatile unsigned char RC4PPS __attribute__((address(0xE66)));
+[v _RC4PPS `Vuc ~T0 @X0 0 e@3686 ]
 "3658
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 3658: extern volatile unsigned char SSP1DATPPS __attribute__((address(0xE1A)));
 [v _SSP1DATPPS `Vuc ~T0 @X0 0 e@3610 ]
@@ -2324,11 +2324,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 147:     RC3PPS = 0x19;
 [e = _RC3PPS -> -> 25 `i `uc ]
 "148
-[; ;mcc_generated_files/pin_manager.c: 148:     RC5PPS = 0x1A;
-[e = _RC5PPS -> -> 26 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 148:     RC4PPS = 0x1A;
+[e = _RC4PPS -> -> 26 `i `uc ]
 "149
-[; ;mcc_generated_files/pin_manager.c: 149:     SSP1DATPPS = 0x15;
-[e = _SSP1DATPPS -> -> 21 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 149:     SSP1DATPPS = 0x14;
+[e = _SSP1DATPPS -> -> 20 `i `uc ]
 "150
 [; ;mcc_generated_files/pin_manager.c: 150: }
 [e :UE 2019 ]

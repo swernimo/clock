@@ -1,29 +1,17 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"78 ./I2C_Types.h
-[; ;./I2C_Types.h: 78: i2c_status_t i2c_status = {0};
-[c E14557 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 .. ]
-[n E14557 . I2C_IDLE I2C_SEND_ADR_READ I2C_SEND_ADR_WRITE I2C_TX I2C_RX I2C_RCEN I2C_TX_EMPTY I2C_SEND_RESTART_READ I2C_SEND_RESTART_WRITE I2C_SEND_RESTART I2C_SEND_STOP I2C_RX_DO_ACK I2C_RX_DO_NACK_STOP I2C_RX_DO_NACK_RESTART I2C_RESET I2C_ADDRESS_NACK  ]
-[c E14583 0 1 2 .. ]
-[n E14583 . I2C_NOERR I2C_BUSY I2C_FAIL  ]
-[c E14588 1 2 3 4 5 .. ]
-[n E14588 . i2c_stop i2c_restart_read i2c_restart_write i2c_continue i2c_reset_link  ]
-[v F14611 `(E14588 ~T0 @X0 0 tf1`*v ]
-"62
-[; ;./I2C_Types.h: 62: {
-[s S2021 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 `uc 1 `*uc 1 `ui 1 `us 1 `us 1 `E14557 1 `E14583 1 `*F14611 -> 6 `i `*v -> 6 `i ]
-[n S2021 . busy inUse bufferFree addressNACKCheck address data_ptr data_length time_out time_out_value state error callbackTable callbackPayload ]
-[v F14937 `(v ~T0 @X0 0 tf ]
-[v F14939 `(v ~T0 @X0 0 tf ]
 [p mainexit ]
-"69 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 69: void SYSTEM_Initialize(void);
+"73 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 73: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"10 ./I2C_Master.h
-[; ;./I2C_Master.h: 10: void I2C_Initialize();
-[v _I2C_Initialize `(v ~T0 @X0 0 e? ]
-"79 ./RTC.h
-[; ;./RTC.h: 79: void rtc6_Initialize(void);
-[v _rtc6_Initialize `(v ~T0 @X0 0 ef ]
+"7 ./I2C.h
+[; ;./I2C.h: 7: void I2C_Initialize(void);
+[v _I2C_Initialize `(v ~T0 @X0 0 ef ]
+"9
+[; ;./I2C.h: 9: void I2C_Write(uint8_t address, uint8_t reg, uint8_t data);
+[v _I2C_Write `(v ~T0 @X0 0 ef3`uc`uc`uc ]
+"10
+[; ;./I2C.h: 10: uint8_t I2C_Read(uint8_t address, uint8_t reg);
+[v _I2C_Read `(uc ~T0 @X0 0 ef2`uc`uc ]
 "129 ./mcc_generated_files/tmr0.h
 [; ;./mcc_generated_files/tmr0.h: 129: void TMR0_StartTimer(void);
 [v _TMR0_StartTimer `(v ~T0 @X0 0 ef ]
@@ -33,18 +21,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "161
 [; ;./mcc_generated_files/tmr0.h: 161: void TMR0_StopTimer(void);
 [v _TMR0_StopTimer `(v ~T0 @X0 0 ef ]
-"5093 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 5093:     struct {
-[s S286 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S286 . INT0IF INT1IF INT2IF INT3IF IOCIF TMR0IF ]
-"5092
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 5092: typedef union {
-[u S285 `S286 1 ]
-[n S285 . . ]
-"5102
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 5102: extern volatile PIR0bits_t PIR0bits __attribute__((address(0xE33)));
-[v _PIR0bits `VS285 ~T0 @X0 0 e@3635 ]
-"28855
+"28855 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28855:     struct {
 [s S1352 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S1352 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
@@ -59,6 +36,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "28876
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28876: extern volatile LATDbits_t LATDbits __attribute__((address(0xF7C)));
 [v _LATDbits `VS1351 ~T0 @X0 0 e@3964 ]
+"5093
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 5093:     struct {
+[s S286 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S286 . INT0IF INT1IF INT2IF INT3IF IOCIF TMR0IF ]
+"5092
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 5092: typedef union {
+[u S285 `S286 1 ]
+[n S285 . . ]
+"5102
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 5102: extern volatile PIR0bits_t PIR0bits __attribute__((address(0xE33)));
+[v _PIR0bits `VS285 ~T0 @X0 0 e@3635 ]
 "54 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 54: __asm("PPSLOCK equ 0DEFh");
 [; <" PPSLOCK equ 0DEFh ;# ">
@@ -2033,80 +2021,68 @@ Version 4.0 HI-TECH Software Intermediate Code
 "40981
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40981: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"78 ./I2C_Types.h
-[; ;./I2C_Types.h: 78: i2c_status_t i2c_status = {0};
-[v _i2c_status `S2021 ~T0 @X0 1 e ]
-[i _i2c_status
-:U ..
-:U ..
--> -> 0 `i `uc
-..
-..
-]
-"54 ./I2C1_Driver.h
-[; ;./I2C1_Driver.h: 54: void (*i2c1_driver_busCollisionISR)(void);
-[v _i2c1_driver_busCollisionISR `*F14937 ~T0 @X0 1 e ]
-"55
-[; ;./I2C1_Driver.h: 55: void (*i2c1_driver_i2cISR)(void);
-[v _i2c1_driver_i2cISR `*F14939 ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"10 main.c
-[; ;main.c: 10: void main(void)
+"8 main.c
+[; ;main.c: 8: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"11
-[; ;main.c: 11: {
+"9
+[; ;main.c: 9: {
 {
 [e :U _main ]
 [f ]
-"13
-[; ;main.c: 13:     SYSTEM_Initialize();
+"11
+[; ;main.c: 11:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"14
-[; ;main.c: 14:     I2C_Initialize();
+"12
+[; ;main.c: 12:     I2C_Initialize();
 [e ( _I2C_Initialize ..  ]
+"13
+[; ;main.c: 13:     I2C_Write(0x6F, 0x02, 0x38);
+[e ( _I2C_Write (3 , , -> -> 111 `i `uc -> -> 2 `i `uc -> -> 56 `i `uc ]
+"14
+[; ;main.c: 14:     uint8_t data = I2C_Read(0x6F, 0x02);
+[v _data `uc ~T0 @X0 1 a ]
+[e = _data ( _I2C_Read (2 , -> -> 111 `i `uc -> -> 2 `i `uc ]
 "15
-[; ;main.c: 15:     rtc6_Initialize();
-[e ( _rtc6_Initialize ..  ]
-"31
-[; ;main.c: 31:     TMR0_StartTimer();
+[; ;main.c: 15:     TMR0_StartTimer();
 [e ( _TMR0_StartTimer ..  ]
-"32
-[; ;main.c: 32:     while (1)
-[e :U 2030 ]
-"33
-[; ;main.c: 33:     {
+"16
+[; ;main.c: 16:     while (1)
+[e :U 2029 ]
+"17
+[; ;main.c: 17:     {
 {
-"35
-[; ;main.c: 35:         if(TMR0_HasOverflowOccured()){
-[e $ ! != -> ( _TMR0_HasOverflowOccured ..  `i -> 0 `i 2032  ]
+"18
+[; ;main.c: 18:         if(TMR0_HasOverflowOccured()) {
+[e $ ! != -> ( _TMR0_HasOverflowOccured ..  `i -> 0 `i 2031  ]
 {
-"36
-[; ;main.c: 36:             TMR0_StopTimer();
+"19
+[; ;main.c: 19:             TMR0_StopTimer();
 [e ( _TMR0_StopTimer ..  ]
-"37
-[; ;main.c: 37:             PIR0bits.TMR0IF = 0;
-[e = . . _PIR0bits 0 5 -> -> 0 `i `uc ]
-"38
-[; ;main.c: 38:             do { LATDbits.LATD1 = ~LATDbits.LATD1; } while(0);
-[e :U 2035 ]
+"20
+[; ;main.c: 20:             do { LATDbits.LATD1 = ~LATDbits.LATD1; } while(0);
+[e :U 2034 ]
 {
 [e = . . _LATDbits 0 1 -> ~ -> . . _LATDbits 0 1 `i `uc ]
 }
-[e :U 2034 ]
-"39
-[; ;main.c: 39:             TMR0_StartTimer();
+[e :U 2033 ]
+"21
+[; ;main.c: 21:             PIR0bits.TMR0IF = 0;
+[e = . . _PIR0bits 0 5 -> -> 0 `i `uc ]
+"22
+[; ;main.c: 22:             TMR0_StartTimer();
 [e ( _TMR0_StartTimer ..  ]
-"40
-[; ;main.c: 40:         }
+"23
+[; ;main.c: 23:         }
 }
-[e :U 2032 ]
-"41
-[; ;main.c: 41:     }
-}
-[e :U 2029 ]
-[e $U 2030  ]
 [e :U 2031 ]
-"42
-[; ;main.c: 42: }
-[e :UE 2028 ]
+"24
+[; ;main.c: 24:     }
+}
+[e :U 2028 ]
+[e $U 2029  ]
+[e :U 2030 ]
+"25
+[; ;main.c: 25: }
+[e :UE 2027 ]
 }

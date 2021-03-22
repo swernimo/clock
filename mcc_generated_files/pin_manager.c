@@ -13,12 +13,12 @@
   Description:
     This header file provides implementations for pin APIs for all pins selected in the GUI.
     Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.77
+        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.7
         Device            :  PIC18F67K40
         Driver Version    :  2.11
     The generated drivers are tested against the following:
-        Compiler          :  XC8 2.05 and above
-        MPLAB             :  MPLAB X 5.20
+        Compiler          :  XC8 2.31 and above
+        MPLAB             :  MPLAB X 5.45
 
     Copyright (c) 2013 - 2015 released Microchip Technology Inc.  All rights reserved.
 */
@@ -86,7 +86,7 @@ void PIN_MANAGER_Initialize(void)
     ANSELE = 0xFF;
     ANSELG = 0xFF;
     ANSELF = 0xFF;
-    ANSELA = 0xEF;
+    ANSELA = 0xFF;
 
     /**
     WPUx registers
@@ -143,7 +143,10 @@ void PIN_MANAGER_Initialize(void)
    
     
 	
-    T0CKIPPS = 0x04;   //RA4->TMR0:T0CKI;    
+    SSP1CLKPPS = 0x13;   //RC3->MSSP1:SCL1;    
+    RC3PPS = 0x19;   //RC3->MSSP1:SCL1;    
+    RC4PPS = 0x1A;   //RC4->MSSP1:SDA1;    
+    SSP1DATPPS = 0x14;   //RC4->MSSP1:SDA1;    
 }
   
 void PIN_MANAGER_IOC(void)

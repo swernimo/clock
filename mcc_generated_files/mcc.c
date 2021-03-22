@@ -13,12 +13,12 @@
   @Description:
     This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.77
+        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.7
         Device            :  PIC18F67K40
         Driver Version    :  2.00
     The generated drivers are tested against the following:
-        Compiler          :  XC8 2.05 and above or later
-        MPLAB             :  MPLAB X 5.20
+        Compiler          :  XC8 2.31 and above or later
+        MPLAB             :  MPLAB X 5.45
 */
 
 /*
@@ -50,9 +50,11 @@
 void SYSTEM_Initialize(void)
 {
     PMD_Initialize();
+  //  I2C1_Initialize();
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
     TMR0_Initialize();
+ //   rtc6_Initialize();
 }
 
 void OSCILLATOR_Initialize(void)
@@ -63,8 +65,8 @@ void OSCILLATOR_Initialize(void)
     OSCCON3 = 0x00;
     // MFOEN disabled; LFOEN disabled; ADOEN disabled; SOSCEN disabled; EXTOEN disabled; HFOEN disabled; 
     OSCEN = 0x00;
-    // HFFRQ 32_MHz; 
-    OSCFRQ = 0x06;
+    // HFFRQ 12_MHz; 
+    OSCFRQ = 0x04;
     // TUN 0; 
     OSCTUNE = 0x00;
 }

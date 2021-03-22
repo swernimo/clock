@@ -35,7 +35,7 @@ smallconst SMALLCONST 0 E00 E00 44 1
 dataCOMRAM COMRAM 1 5A 5A 4 1
 bssCOMRAM COMRAM 1 1 1 54 1
 config CONFIG 4 300000 300000 C 1
-$C:\Users\swern\AppData\Local\Temp\si1k.o
+$C:\Users\swern\AppData\Local\Temp\sjss.o
 idloc IDLOC 5 200000 200000 10 1
 init CODE 0 0 0 4 1
 config CONFIG 4 300000 300000 C 1
@@ -275,38 +275,38 @@ FE6 text7 CODE >145:C:\Users\swern\MPLABXProjects\Clock.X\mcc_generated_files/pi
 10E4 text0 CODE >21:C:\Users\swern\MPLABXProjects\Clock.X\main.c
 1104 text0 CODE >22:C:\Users\swern\MPLABXProjects\Clock.X\main.c
 1108 text0 CODE >23:C:\Users\swern\MPLABXProjects\Clock.X\main.c
-1114 cinit CODE >8344:C:\Users\swern\AppData\Local\Temp\si1k.s
-1114 cinit CODE >8346:C:\Users\swern\AppData\Local\Temp\si1k.s
-1114 cinit CODE >8349:C:\Users\swern\AppData\Local\Temp\si1k.s
-1114 cinit CODE >8431:C:\Users\swern\AppData\Local\Temp\si1k.s
-1116 cinit CODE >8432:C:\Users\swern\AppData\Local\Temp\si1k.s
-1118 cinit CODE >8433:C:\Users\swern\AppData\Local\Temp\si1k.s
-111A cinit CODE >8434:C:\Users\swern\AppData\Local\Temp\si1k.s
-111C cinit CODE >8435:C:\Users\swern\AppData\Local\Temp\si1k.s
-111E cinit CODE >8436:C:\Users\swern\AppData\Local\Temp\si1k.s
-1120 cinit CODE >8437:C:\Users\swern\AppData\Local\Temp\si1k.s
-1124 cinit CODE >8438:C:\Users\swern\AppData\Local\Temp\si1k.s
-1128 cinit CODE >8439:C:\Users\swern\AppData\Local\Temp\si1k.s
-1128 cinit CODE >8440:C:\Users\swern\AppData\Local\Temp\si1k.s
-112A cinit CODE >8441:C:\Users\swern\AppData\Local\Temp\si1k.s
-112E cinit CODE >8442:C:\Users\swern\AppData\Local\Temp\si1k.s
-1130 cinit CODE >8443:C:\Users\swern\AppData\Local\Temp\si1k.s
-1132 cinit CODE >8444:C:\Users\swern\AppData\Local\Temp\si1k.s
-1134 cinit CODE >8448:C:\Users\swern\AppData\Local\Temp\si1k.s
-1138 cinit CODE >8449:C:\Users\swern\AppData\Local\Temp\si1k.s
-113A cinit CODE >8450:C:\Users\swern\AppData\Local\Temp\si1k.s
-113A cinit CODE >8451:C:\Users\swern\AppData\Local\Temp\si1k.s
-113C cinit CODE >8452:C:\Users\swern\AppData\Local\Temp\si1k.s
-113E cinit CODE >8453:C:\Users\swern\AppData\Local\Temp\si1k.s
-1140 cinit CODE >8456:C:\Users\swern\AppData\Local\Temp\si1k.s
-1144 cinit CODE >8457:C:\Users\swern\AppData\Local\Temp\si1k.s
-1146 cinit CODE >8458:C:\Users\swern\AppData\Local\Temp\si1k.s
-1146 cinit CODE >8459:C:\Users\swern\AppData\Local\Temp\si1k.s
-1148 cinit CODE >8460:C:\Users\swern\AppData\Local\Temp\si1k.s
-114A cinit CODE >8461:C:\Users\swern\AppData\Local\Temp\si1k.s
-114C cinit CODE >8467:C:\Users\swern\AppData\Local\Temp\si1k.s
-114C cinit CODE >8469:C:\Users\swern\AppData\Local\Temp\si1k.s
-114E cinit CODE >8470:C:\Users\swern\AppData\Local\Temp\si1k.s
+1114 cinit CODE >8344:C:\Users\swern\AppData\Local\Temp\sjss.s
+1114 cinit CODE >8346:C:\Users\swern\AppData\Local\Temp\sjss.s
+1114 cinit CODE >8349:C:\Users\swern\AppData\Local\Temp\sjss.s
+1114 cinit CODE >8431:C:\Users\swern\AppData\Local\Temp\sjss.s
+1116 cinit CODE >8432:C:\Users\swern\AppData\Local\Temp\sjss.s
+1118 cinit CODE >8433:C:\Users\swern\AppData\Local\Temp\sjss.s
+111A cinit CODE >8434:C:\Users\swern\AppData\Local\Temp\sjss.s
+111C cinit CODE >8435:C:\Users\swern\AppData\Local\Temp\sjss.s
+111E cinit CODE >8436:C:\Users\swern\AppData\Local\Temp\sjss.s
+1120 cinit CODE >8437:C:\Users\swern\AppData\Local\Temp\sjss.s
+1124 cinit CODE >8438:C:\Users\swern\AppData\Local\Temp\sjss.s
+1128 cinit CODE >8439:C:\Users\swern\AppData\Local\Temp\sjss.s
+1128 cinit CODE >8440:C:\Users\swern\AppData\Local\Temp\sjss.s
+112A cinit CODE >8441:C:\Users\swern\AppData\Local\Temp\sjss.s
+112E cinit CODE >8442:C:\Users\swern\AppData\Local\Temp\sjss.s
+1130 cinit CODE >8443:C:\Users\swern\AppData\Local\Temp\sjss.s
+1132 cinit CODE >8444:C:\Users\swern\AppData\Local\Temp\sjss.s
+1134 cinit CODE >8448:C:\Users\swern\AppData\Local\Temp\sjss.s
+1138 cinit CODE >8449:C:\Users\swern\AppData\Local\Temp\sjss.s
+113A cinit CODE >8450:C:\Users\swern\AppData\Local\Temp\sjss.s
+113A cinit CODE >8451:C:\Users\swern\AppData\Local\Temp\sjss.s
+113C cinit CODE >8452:C:\Users\swern\AppData\Local\Temp\sjss.s
+113E cinit CODE >8453:C:\Users\swern\AppData\Local\Temp\sjss.s
+1140 cinit CODE >8456:C:\Users\swern\AppData\Local\Temp\sjss.s
+1144 cinit CODE >8457:C:\Users\swern\AppData\Local\Temp\sjss.s
+1146 cinit CODE >8458:C:\Users\swern\AppData\Local\Temp\sjss.s
+1146 cinit CODE >8459:C:\Users\swern\AppData\Local\Temp\sjss.s
+1148 cinit CODE >8460:C:\Users\swern\AppData\Local\Temp\sjss.s
+114A cinit CODE >8461:C:\Users\swern\AppData\Local\Temp\sjss.s
+114C cinit CODE >8467:C:\Users\swern\AppData\Local\Temp\sjss.s
+114C cinit CODE >8469:C:\Users\swern\AppData\Local\Temp\sjss.s
+114E cinit CODE >8470:C:\Users\swern\AppData\Local\Temp\sjss.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -327,7 +327,7 @@ __Hspace_2 0 0 ABS 0 - dist/default/debug\Clock.X.debug.o
 __Hspace_4 60000C 0 ABS 0 - dist/default/debug\Clock.X.debug.o
 _SSP1STATbits F94 0 ABS 0 - dist/default/debug\Clock.X.debug.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/debug\Clock.X.debug.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\swern\AppData\Local\Temp\si1k.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\swern\AppData\Local\Temp\sjss.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\Clock.X.debug.o
 _PMD_Initialize 1178 0 CODE 0 text6 dist/default/debug\Clock.X.debug.o
 _r0 3D 0 COMRAM 1 bssCOMRAM dist/default/debug\Clock.X.debug.o
@@ -358,13 +358,13 @@ _WPUE EAE 0 ABS 0 - dist/default/debug\Clock.X.debug.o
 _WPUF EB3 0 ABS 0 - dist/default/debug\Clock.X.debug.o
 _WPUG EBB 0 ABS 0 - dist/default/debug\Clock.X.debug.o
 _WPUH EC0 0 ABS 0 - dist/default/debug\Clock.X.debug.o
-___sp 0 0 STACK 2 stack C:\Users\swern\AppData\Local\Temp\si1k.o
+___sp 0 0 STACK 2 stack C:\Users\swern\AppData\Local\Temp\sjss.o
 _lock 15 0 COMRAM 1 bssCOMRAM dist/default/debug\Clock.X.debug.o
 _main 1086 0 CODE 0 text0 dist/default/debug\Clock.X.debug.o
 __size_of_I2C_Start 0 0 ABS 0 - dist/default/debug\Clock.X.debug.o
 __size_of_I2C_Write 0 0 ABS 0 - dist/default/debug\Clock.X.debug.o
 localtime@tm 80 0 BANK0 1 bssBANK0 dist/default/debug\Clock.X.debug.o
-start 0 0 CODE 0 init C:\Users\swern\AppData\Local\Temp\si1k.o
+start 0 0 CODE 0 init C:\Users\swern\AppData\Local\Temp\sjss.o
 __size_of_main 0 0 ABS 0 - dist/default/debug\Clock.X.debug.o
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug\Clock.X.debug.o
 __size_of_I2C_Read 0 0 ABS 0 - dist/default/debug\Clock.X.debug.o
@@ -376,11 +376,11 @@ _std_name 4E 0 COMRAM 1 bssCOMRAM dist/default/debug\Clock.X.debug.o
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/debug\Clock.X.debug.o
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/debug\Clock.X.debug.o
 _dst_name 47 0 COMRAM 1 bssCOMRAM dist/default/debug\Clock.X.debug.o
-__accesstop 60 0 ABS 0 - C:\Users\swern\AppData\Local\Temp\si1k.o
-intlevel0 0 0 CODE 0 text C:\Users\swern\AppData\Local\Temp\si1k.o
-intlevel1 0 0 CODE 0 text C:\Users\swern\AppData\Local\Temp\si1k.o
-intlevel2 0 0 CODE 0 text C:\Users\swern\AppData\Local\Temp\si1k.o
-intlevel3 0 0 CODE 0 text C:\Users\swern\AppData\Local\Temp\si1k.o
+__accesstop 60 0 ABS 0 - C:\Users\swern\AppData\Local\Temp\sjss.o
+intlevel0 0 0 CODE 0 text C:\Users\swern\AppData\Local\Temp\sjss.o
+intlevel1 0 0 CODE 0 text C:\Users\swern\AppData\Local\Temp\sjss.o
+intlevel2 0 0 CODE 0 text C:\Users\swern\AppData\Local\Temp\sjss.o
+intlevel3 0 0 CODE 0 text C:\Users\swern\AppData\Local\Temp\sjss.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug\Clock.X.debug.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\Clock.X.debug.o
 __Hifardata 0 0 CODE 0 ifardata dist/default/debug\Clock.X.debug.o
@@ -393,8 +393,8 @@ _ANSELD EA7 0 ABS 0 - dist/default/debug\Clock.X.debug.o
 _ANSELE EAF 0 ABS 0 - dist/default/debug\Clock.X.debug.o
 _ANSELF EB4 0 ABS 0 - dist/default/debug\Clock.X.debug.o
 _ANSELG EBC 0 ABS 0 - dist/default/debug\Clock.X.debug.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\swern\AppData\Local\Temp\si1k.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\swern\AppData\Local\Temp\si1k.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\swern\AppData\Local\Temp\sjss.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\swern\AppData\Local\Temp\sjss.o
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/debug\Clock.X.debug.o
 _I2C_Read E44 0 CODE 0 text10 dist/default/debug\Clock.X.debug.o
 _I2C_Stop 11F0 0 CODE 0 text11 dist/default/debug\Clock.X.debug.o
@@ -472,7 +472,7 @@ __Hbank12 0 0 ABS 0 bank12 dist/default/debug\Clock.X.debug.o
 __Hbank13 0 0 ABS 0 bank13 dist/default/debug\Clock.X.debug.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\Clock.X.debug.o
 __Hbigram 0 0 ABS 0 bigram dist/default/debug\Clock.X.debug.o
-__smallconst E00 0 SMALLCONST 0 smallconst C:\Users\swern\AppData\Local\Temp\si1k.o
+__smallconst E00 0 SMALLCONST 0 smallconst C:\Users\swern\AppData\Local\Temp\sjss.o
 __Hcomram 0 0 ABS 0 comram dist/default/debug\Clock.X.debug.o
 __Hconfig 30000C 0 CONFIG 4 config dist/default/debug\Clock.X.debug.o
 __size_of_TMR0_HasOverflowOccured 0 0 ABS 0 - dist/default/debug\Clock.X.debug.o
@@ -573,8 +573,8 @@ I2C_Read@data 56 0 COMRAM 1 cstackCOMRAM dist/default/debug\Clock.X.debug.o
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/debug\Clock.X.debug.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/debug\Clock.X.debug.o
 _tzname F 0 COMRAM 1 bssCOMRAM dist/default/debug\Clock.X.debug.o
-stackhi DE9 0 ABS 0 - C:\Users\swern\AppData\Local\Temp\si1k.o
-stacklo A2 0 ABS 0 - C:\Users\swern\AppData\Local\Temp\si1k.o
+stackhi DE9 0 ABS 0 - C:\Users\swern\AppData\Local\Temp\sjss.o
+stacklo A2 0 ABS 0 - C:\Users\swern\AppData\Local\Temp\sjss.o
 _SSP1CLKPPS E19 0 ABS 0 - dist/default/debug\Clock.X.debug.o
 __Lintcode 0 0 CODE 0 intcode dist/default/debug\Clock.X.debug.o
 _OSCCON1 E43 0 ABS 0 - dist/default/debug\Clock.X.debug.o
@@ -621,7 +621,7 @@ __Ltext11 0 0 ABS 0 text11 dist/default/debug\Clock.X.debug.o
 __Ltext12 0 0 ABS 0 text12 dist/default/debug\Clock.X.debug.o
 __Ltext13 0 0 ABS 0 text13 dist/default/debug\Clock.X.debug.o
 ___timezone 25 0 COMRAM 1 bssCOMRAM dist/default/debug\Clock.X.debug.o
-__ramtop E00 0 RAM 0 ramtop C:\Users\swern\AppData\Local\Temp\si1k.o
+__ramtop E00 0 RAM 0 ramtop C:\Users\swern\AppData\Local\Temp\sjss.o
 __Lpowerup 0 0 CODE 0 powerup dist/default/debug\Clock.X.debug.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\Clock.X.debug.o
 __psmallconst E00 0 SMALLCONST 0 smallconst dist/default/debug\Clock.X.debug.o

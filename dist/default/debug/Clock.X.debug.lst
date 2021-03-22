@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Sun Mar 21 21:13:33 2021
+                                                                                               Sun Mar 21 21:16:01 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	18F67K40
@@ -762,12 +762,12 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    718  0011DA                     _TMR0_Initialize:
    719                           	callstack 29
    720  0011DA                     
-   721                           ;mcc_generated_files/tmr0.c: 65:     T0CON1 = 0x4D;
-   722  0011DA  0E4D               	movlw	77
+   721                           ;mcc_generated_files/tmr0.c: 65:     T0CON1 = 0x48;
+   722  0011DA  0E48               	movlw	72
    723  0011DC  6ED6               	movwf	214,c	;volatile
    724                           
-   725                           ;mcc_generated_files/tmr0.c: 68:     TMR0H = 0x02;
-   726  0011DE  0E02               	movlw	2
+   725                           ;mcc_generated_files/tmr0.c: 68:     TMR0H = 0x8D;
+   726  0011DE  0E8D               	movlw	141
    727  0011E0  6ED4               	movwf	212,c	;volatile
    728                           
    729                           ;mcc_generated_files/tmr0.c: 71:     TMR0L = 0x00;
@@ -2296,7 +2296,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Sun Mar 21 21:13:33 2021
+Symbol Table                                                                                   Sun Mar 21 21:16:01 2021
 
                         __size_of_I2C_Start 0018             __end_of_TMR0_HasOverflowOccured 11DA  
                         __size_of_I2C_Write 009E                                          l33 1216  

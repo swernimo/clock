@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.31\pic\dat\en_msgs.txt -cn \
   -h+dist/default/debug\Clock.X.debug.sym \
   --cmf=dist/default/debug\Clock.X.debug.cmf -z -Q18F67K40 \
-  -oC:\Users\swern\AppData\Local\Temp\si1k.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\swern\AppData\Local\Temp\sjss.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/debug/Clock.X.debug.map -E1 -ver=XC8 Compiler --acfsm=1493 \
   -ASTACK=0A2h-0DE9h -pstack=STACK -ACODE=00h-01FFFFh -ACONST=00h-01FFFFh \
   -ASMALLCONST=0E00h-0EFFhx498 -AMEDIUMCONST=0E00h-0FFFFh,010E00h-01FFFFh \
@@ -26,7 +26,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\swern\AppData\Local\Temp\si1k.o \
+  C:\Users\swern\AppData\Local\Temp\sjss.o \
   dist/default/debug\Clock.X.debug.o 
 
 Object code version is 3.11
@@ -36,7 +36,7 @@ Machine type is 18F67K40
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\swern\AppData\Local\Temp\si1k.o
+C:\Users\swern\AppData\Local\Temp\sjss.o
                 idloc                            200000   200000       10        0       5
                 config                           300000   300000        C        0       4
                 init                                  0        0        4        0       0

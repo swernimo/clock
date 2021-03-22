@@ -2020,11 +2020,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _TMR0_Initialize ]
 [f ]
 "65
-[; ;mcc_generated_files/tmr0.c: 65:     T0CON1 = 0x4D;
-[e = _T0CON1 -> -> 77 `i `uc ]
+[; ;mcc_generated_files/tmr0.c: 65:     T0CON1 = 0x48;
+[e = _T0CON1 -> -> 72 `i `uc ]
 "68
-[; ;mcc_generated_files/tmr0.c: 68:     TMR0H = 0x02;
-[e = _TMR0H -> -> 2 `i `uc ]
+[; ;mcc_generated_files/tmr0.c: 68:     TMR0H = 0x8D;
+[e = _TMR0H -> -> 141 `i `uc ]
 "71
 [; ;mcc_generated_files/tmr0.c: 71:     TMR0L = 0x00;
 [e = _TMR0L -> -> 0 `i `uc ]

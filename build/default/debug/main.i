@@ -24183,9 +24183,9 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 152 "./mcc_generated_files/pin_manager.h"
+# 574 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 164 "./mcc_generated_files/pin_manager.h"
+# 586 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -24351,8 +24351,135 @@ uint8_t I2C_Read(uint8_t address, uint8_t reg);
 void I2C_Stop();
 # 3 "main.c" 2
 
+# 1 "./RTCC.h" 1
+# 23 "./RTCC.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\time.h" 1 3
+# 33 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\time.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 76 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long time_t;
+# 293 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef void * timer_t;
 
 
+
+
+typedef int clockid_t;
+
+
+
+
+typedef unsigned long clock_t;
+# 313 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+struct timespec { time_t tv_sec; long tv_nsec; };
+
+
+
+
+
+typedef int pid_t;
+# 411 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct __locale_struct * locale_t;
+# 33 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\time.h" 2 3
+
+
+
+
+
+
+
+struct tm {
+ int tm_sec;
+ int tm_min;
+ int tm_hour;
+ int tm_mday;
+ int tm_mon;
+ int tm_year;
+ int tm_wday;
+ int tm_yday;
+ int tm_isdst;
+ long __tm_gmtoff;
+ const char *__tm_zone;
+};
+
+clock_t clock (void);
+time_t time (time_t *);
+double difftime (time_t, time_t);
+time_t mktime (struct tm *);
+size_t strftime (char *restrict, size_t, const char *restrict, const struct tm *restrict);
+struct tm *gmtime (const time_t *);
+struct tm *localtime (const time_t *);
+char *asctime (const struct tm *);
+char *ctime (const time_t *);
+int timespec_get(struct timespec *, int);
+# 73 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\time.h" 3
+size_t strftime_l (char * restrict, size_t, const char * restrict, const struct tm * restrict, locale_t);
+
+struct tm *gmtime_r (const time_t *restrict, struct tm *restrict);
+struct tm *localtime_r (const time_t *restrict, struct tm *restrict);
+char *asctime_r (const struct tm *restrict, char *restrict);
+char *ctime_r (const time_t *, char *);
+
+void tzset (void);
+
+struct itimerspec {
+ struct timespec it_interval;
+ struct timespec it_value;
+};
+# 102 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\time.h" 3
+int nanosleep (const struct timespec *, struct timespec *);
+int clock_getres (clockid_t, struct timespec *);
+int clock_gettime (clockid_t, struct timespec *);
+int clock_settime (clockid_t, const struct timespec *);
+int clock_nanosleep (clockid_t, int, const struct timespec *, struct timespec *);
+int clock_getcpuclockid (pid_t, clockid_t *);
+
+struct sigevent;
+int timer_create (clockid_t, struct sigevent *restrict, timer_t *restrict);
+int timer_delete (timer_t);
+int timer_settime (timer_t, int, const struct itimerspec *restrict, struct itimerspec *restrict);
+int timer_gettime (timer_t, struct itimerspec *);
+int timer_getoverrun (timer_t);
+
+extern char *tzname[2];
+
+
+
+
+
+char *strptime (const char *restrict, const char *restrict, struct tm *restrict);
+extern int daylight;
+extern long timezone;
+extern int getdate_err;
+struct tm *getdate (const char *);
+# 23 "./RTCC.h" 2
+
+
+
+
+typedef struct {
+    int sec, min, hr;
+    int year, month, date, day;
+} DateTime_t;
+
+void rtc6_Initialize(void);
+
+void rtc6_EnableAlarms(_Bool alarm0, _Bool alarm1);
+void rtc6_SetAlarm0(struct tm tm_t, _Bool almpol, uint8_t mask);
+void rtc6_SetAlarm1(struct tm tm_t, _Bool almpol, uint8_t mask);
+
+void rtc6_ClearAlarm0(void);
+void rtc6_ClearAlarm1(void);
+
+void rtc6_SetTime(time_t);
+time_t rtc6_GetTime(void);
+
+uint8_t rtc6_ReadByteEEPROM(uint8_t addr);
+void rtc6_WriteByteEEPROM(uint8_t addr, uint8_t data);
+# 4 "main.c" 2
+
+# 1 "./Utilities.h" 1
+# 5 "main.c" 2
 
 
 void main(void)
@@ -24360,15 +24487,16 @@ void main(void)
 
     SYSTEM_Initialize();
     I2C_Initialize();
-    I2C_Write(0x6F, 0x02, 0x38);
-    uint8_t data = I2C_Read(0x6F, 0x02);
+    rtc6_Initialize();
+
+
     TMR0_StartTimer();
     while (1)
     {
         if(TMR0_HasOverflowOccured()) {
             TMR0_StopTimer();
             do { LATDbits.LATD1 = ~LATDbits.LATD1; } while(0);
-            do { LATEbits.LATE0 = ~LATEbits.LATE0; } while(0);
+            do { LATDbits.LATD0 = ~LATDbits.LATD0; } while(0);
             PIR0bits.TMR0IF = 0;
             TMR0_StartTimer();
         }

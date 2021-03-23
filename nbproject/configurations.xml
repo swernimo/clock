@@ -14,6 +14,8 @@
       </logicalFolder>
       <itemPath>I2C.h</itemPath>
       <itemPath>RTCC.h</itemPath>
+      <itemPath>Utilities.h</itemPath>
+      <itemPath>Display.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -33,6 +35,8 @@
       <itemPath>main.c</itemPath>
       <itemPath>I2C.c</itemPath>
       <itemPath>RTCC.c</itemPath>
+      <itemPath>Utilities.c</itemPath>
+      <itemPath>Display.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

@@ -6,12 +6,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7 ./I2C.h
 [; ;./I2C.h: 7: void I2C_Initialize(void);
 [v _I2C_Initialize `(v ~T0 @X0 0 ef ]
-"9
-[; ;./I2C.h: 9: void I2C_Write(uint8_t address, uint8_t reg, uint8_t data);
-[v _I2C_Write `(v ~T0 @X0 0 ef3`uc`uc`uc ]
-"10
-[; ;./I2C.h: 10: uint8_t I2C_Read(uint8_t address, uint8_t reg);
-[v _I2C_Read `(uc ~T0 @X0 0 ef2`uc`uc ]
+"32 ./RTCC.h
+[; ;./RTCC.h: 32: void rtc6_Initialize(void);
+[v _rtc6_Initialize `(v ~T0 @X0 0 ef ]
 "129 ./mcc_generated_files/tmr0.h
 [; ;./mcc_generated_files/tmr0.h: 129: void TMR0_StartTimer(void);
 [v _TMR0_StartTimer `(v ~T0 @X0 0 ef ]
@@ -36,21 +33,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "28876
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28876: extern volatile LATDbits_t LATDbits __attribute__((address(0xF7C)));
 [v _LATDbits `VS1351 ~T0 @X0 0 e@3964 ]
-"28967
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28967:     struct {
-[s S1355 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1355 . LATE0 LATE1 LATE2 LATE3 LATE4 LATE5 LATE6 LATE7 ]
-"28977
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28977:     struct {
-[s S1356 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1356 . LE0 LE1 LE2 LE3 LE4 LE5 LE6 LE7 ]
-"28966
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28966: typedef union {
-[u S1354 `S1355 1 `S1356 1 ]
-[n S1354 . . . ]
-"28988
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28988: extern volatile LATEbits_t LATEbits __attribute__((address(0xF7D)));
-[v _LATEbits `VS1354 ~T0 @X0 0 e@3965 ]
 "5093
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 5093:     struct {
 [s S286 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -2037,57 +2019,53 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40981: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 [v $root$_main `(v ~T0 @X0 0 e ]
-"8 main.c
-[; ;main.c: 8: void main(void)
+"7 main.c
+[; ;main.c: 7: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"9
-[; ;main.c: 9: {
+"8
+[; ;main.c: 8: {
 {
 [e :U _main ]
 [f ]
-"11
-[; ;main.c: 11:     SYSTEM_Initialize();
+"10
+[; ;main.c: 10:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"12
-[; ;main.c: 12:     I2C_Initialize();
+"11
+[; ;main.c: 11:     I2C_Initialize();
 [e ( _I2C_Initialize ..  ]
-"13
-[; ;main.c: 13:     I2C_Write(0x6F, 0x02, 0x38);
-[e ( _I2C_Write (3 , , -> -> 111 `i `uc -> -> 2 `i `uc -> -> 56 `i `uc ]
-"14
-[; ;main.c: 14:     uint8_t data = I2C_Read(0x6F, 0x02);
-[v _data `uc ~T0 @X0 1 a ]
-[e = _data ( _I2C_Read (2 , -> -> 111 `i `uc -> -> 2 `i `uc ]
+"12
+[; ;main.c: 12:     rtc6_Initialize();
+[e ( _rtc6_Initialize ..  ]
 "15
 [; ;main.c: 15:     TMR0_StartTimer();
 [e ( _TMR0_StartTimer ..  ]
 "16
 [; ;main.c: 16:     while (1)
-[e :U 2021 ]
+[e :U 2027 ]
 "17
 [; ;main.c: 17:     {
 {
 "18
 [; ;main.c: 18:         if(TMR0_HasOverflowOccured()) {
-[e $ ! != -> ( _TMR0_HasOverflowOccured ..  `i -> 0 `i 2023  ]
+[e $ ! != -> ( _TMR0_HasOverflowOccured ..  `i -> 0 `i 2029  ]
 {
 "19
 [; ;main.c: 19:             TMR0_StopTimer();
 [e ( _TMR0_StopTimer ..  ]
 "20
 [; ;main.c: 20:             do { LATDbits.LATD1 = ~LATDbits.LATD1; } while(0);
-[e :U 2026 ]
+[e :U 2032 ]
 {
 [e = . . _LATDbits 0 1 -> ~ -> . . _LATDbits 0 1 `i `uc ]
 }
-[e :U 2025 ]
+[e :U 2031 ]
 "21
-[; ;main.c: 21:             do { LATEbits.LATE0 = ~LATEbits.LATE0; } while(0);
-[e :U 2029 ]
+[; ;main.c: 21:             do { LATDbits.LATD0 = ~LATDbits.LATD0; } while(0);
+[e :U 2035 ]
 {
-[e = . . _LATEbits 0 0 -> ~ -> . . _LATEbits 0 0 `i `uc ]
+[e = . . _LATDbits 0 0 -> ~ -> . . _LATDbits 0 0 `i `uc ]
 }
-[e :U 2028 ]
+[e :U 2034 ]
 "22
 [; ;main.c: 22:             PIR0bits.TMR0IF = 0;
 [e = . . _PIR0bits 0 5 -> -> 0 `i `uc ]
@@ -2097,14 +2075,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "24
 [; ;main.c: 24:         }
 }
-[e :U 2023 ]
+[e :U 2029 ]
 "25
 [; ;main.c: 25:     }
 }
-[e :U 2020 ]
-[e $U 2021  ]
-[e :U 2022 ]
+[e :U 2026 ]
+[e $U 2027  ]
+[e :U 2028 ]
 "26
 [; ;main.c: 26: }
-[e :UE 2019 ]
+[e :UE 2025 ]
 }

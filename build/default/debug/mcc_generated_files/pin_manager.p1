@@ -2168,35 +2168,35 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 67:     LATH = 0x00;
 [e = _LATH -> -> 0 `i `uc ]
 "72
-[; ;mcc_generated_files/pin_manager.c: 72:     TRISE = 0xFE;
-[e = _TRISE -> -> 254 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 72:     TRISE = 0xFF;
+[e = _TRISE -> -> 255 `i `uc ]
 "73
 [; ;mcc_generated_files/pin_manager.c: 73:     TRISF = 0xFF;
 [e = _TRISF -> -> 255 `i `uc ]
 "74
-[; ;mcc_generated_files/pin_manager.c: 74:     TRISA = 0xFF;
-[e = _TRISA -> -> 255 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 74:     TRISA = 0x00;
+[e = _TRISA -> -> 0 `i `uc ]
 "75
 [; ;mcc_generated_files/pin_manager.c: 75:     TRISG = 0xDF;
 [e = _TRISG -> -> 223 `i `uc ]
 "76
-[; ;mcc_generated_files/pin_manager.c: 76:     TRISB = 0xFF;
-[e = _TRISB -> -> 255 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 76:     TRISB = 0x00;
+[e = _TRISB -> -> 0 `i `uc ]
 "77
 [; ;mcc_generated_files/pin_manager.c: 77:     TRISH = 0x0F;
 [e = _TRISH -> -> 15 `i `uc ]
 "78
-[; ;mcc_generated_files/pin_manager.c: 78:     TRISC = 0xFF;
-[e = _TRISC -> -> 255 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 78:     TRISC = 0x38;
+[e = _TRISC -> -> 56 `i `uc ]
 "79
-[; ;mcc_generated_files/pin_manager.c: 79:     TRISD = 0xFD;
-[e = _TRISD -> -> 253 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 79:     TRISD = 0xFC;
+[e = _TRISD -> -> 252 `i `uc ]
 "84
-[; ;mcc_generated_files/pin_manager.c: 84:     ANSELD = 0xFD;
-[e = _ANSELD -> -> 253 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 84:     ANSELD = 0xFC;
+[e = _ANSELD -> -> 252 `i `uc ]
 "85
-[; ;mcc_generated_files/pin_manager.c: 85:     ANSELB = 0xFF;
-[e = _ANSELB -> -> 255 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 85:     ANSELB = 0x00;
+[e = _ANSELB -> -> 0 `i `uc ]
 "86
 [; ;mcc_generated_files/pin_manager.c: 86:     ANSELE = 0xFE;
 [e = _ANSELE -> -> 254 `i `uc ]
@@ -2207,8 +2207,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 88:     ANSELF = 0xFF;
 [e = _ANSELF -> -> 255 `i `uc ]
 "89
-[; ;mcc_generated_files/pin_manager.c: 89:     ANSELA = 0xFF;
-[e = _ANSELA -> -> 255 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 89:     ANSELA = 0x00;
+[e = _ANSELA -> -> 0 `i `uc ]
 "94
 [; ;mcc_generated_files/pin_manager.c: 94:     WPUD = 0x00;
 [e = _WPUD -> -> 0 `i `uc ]

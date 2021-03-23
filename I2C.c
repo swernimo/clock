@@ -1,5 +1,7 @@
 #include "I2C.h"
 #include "./mcc_generated_files/mcc.h"
+#include "Utilities.h"
+#include <stdint.h>
 
 void I2C_Initialize(){
     SSP1STAT = 0x80;
@@ -74,7 +76,7 @@ uint8_t I2C_Read(uint8_t address, uint8_t reg){
     PIR3bits.SSP1IF = 0;
     
     address = (address << 1); //shift left 1 bit to clear 7th bit
-    address |= 0x01; //bitwise OR to set 7th bit a 1 (read is 1))    
+    address |= 0x01; //bitwise OR to set 7th bit a 1 (read is 1))
     SSP1BUF = address;
     while(!PIR3bits.SSP1IF);
     PIR3bits.SSP1IF = 0;

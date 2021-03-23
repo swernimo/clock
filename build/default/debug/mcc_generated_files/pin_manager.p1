@@ -2189,11 +2189,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 78:     TRISC = 0x38;
 [e = _TRISC -> -> 56 `i `uc ]
 "79
-[; ;mcc_generated_files/pin_manager.c: 79:     TRISD = 0xFC;
-[e = _TRISD -> -> 252 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 79:     TRISD = 0xF8;
+[e = _TRISD -> -> 248 `i `uc ]
 "84
-[; ;mcc_generated_files/pin_manager.c: 84:     ANSELD = 0xFC;
-[e = _ANSELD -> -> 252 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 84:     ANSELD = 0xF8;
+[e = _ANSELD -> -> 248 `i `uc ]
 "85
 [; ;mcc_generated_files/pin_manager.c: 85:     ANSELB = 0x00;
 [e = _ANSELB -> -> 0 `i `uc ]

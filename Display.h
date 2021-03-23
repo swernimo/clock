@@ -3,6 +3,7 @@
 
 #include <xc.h>
 #include <stdint.h>
+#include <stdbool.h>
 
 void DisplayTime(int hour, int minute, bool isAm);
 

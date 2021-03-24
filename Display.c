@@ -3,8 +3,7 @@
 #include "./mcc_generated_files/mcc.h"
 #include <string.h>
 
-static void DisplayHour_1() {    
-    Display_One_SetLow();
+static void DisplayHour_1() {
     Display_2a_LAT = LOW;
     Display_2b_LAT = HIGH;
     Display_2c_LAT = HIGH;
@@ -14,8 +13,7 @@ static void DisplayHour_1() {
     Display_2g_LAT = LOW;
 }
 
-static void DisplayHour_2() {    
-    Display_One_SetLow();
+static void DisplayHour_2() {
     Display_2a_LAT = HIGH;
     Display_2b_LAT = HIGH;
     Display_2c_LAT = LOW;
@@ -25,8 +23,7 @@ static void DisplayHour_2() {
     Display_2g_LAT = HIGH;
 }
 
-static void DisplayHour_3() {    
-    Display_One_SetLow();
+static void DisplayHour_3() {
     Display_2a_LAT = HIGH;
     Display_2b_LAT = HIGH;
     Display_2c_LAT = HIGH;
@@ -36,8 +33,7 @@ static void DisplayHour_3() {
     Display_2g_LAT = HIGH;
 }
 
-static void DisplayHour_4() {    
-    Display_One_SetLow();
+static void DisplayHour_4() {
     Display_2a_LAT = LOW;
     Display_2b_LAT = HIGH;
     Display_2c_LAT = HIGH;
@@ -48,7 +44,6 @@ static void DisplayHour_4() {
 }
 
 static void DisplayHour_5() {
-    Display_One_SetLow();
     Display_2a_LAT = HIGH;
     Display_2b_LAT = LOW;
     Display_2c_LAT = HIGH;
@@ -59,7 +54,6 @@ static void DisplayHour_5() {
 }
 
 static void DisplayHour_6() {
-    Display_One_SetLow();
     Display_2a_LAT = LOW;
     Display_2b_LAT = LOW;
     Display_2c_LAT = HIGH;
@@ -70,7 +64,6 @@ static void DisplayHour_6() {
 }
 
 static void DisplayHour_7() {
-    Display_One_SetLow();
     Display_2a_LAT = HIGH;
     Display_2b_LAT = HIGH;
     Display_2c_LAT = HIGH;
@@ -81,7 +74,6 @@ static void DisplayHour_7() {
 }
 
 static void DisplayHour_8() {
-    Display_One_SetLow();
     Display_2a_LAT = HIGH;
     Display_2b_LAT = HIGH;
     Display_2c_LAT = HIGH;
@@ -92,7 +84,6 @@ static void DisplayHour_8() {
 }
 
 static void DisplayHour_9() {
-    Display_One_SetLow();
     Display_2a_LAT = HIGH;
     Display_2b_LAT = HIGH;
     Display_2c_LAT = HIGH;
@@ -102,30 +93,7 @@ static void DisplayHour_9() {
     Display_2g_LAT = HIGH;
 }
 
-static void DisplayHour_12() {
-    Display_One_SetHigh();
-    Display_2a_LAT = HIGH;
-    Display_2b_LAT = HIGH;
-    Display_2c_LAT = LOW;
-    Display_2d_LAT = HIGH;
-    Display_2e_LAT = HIGH;
-    Display_2f_LAT = LOW;
-    Display_2g_LAT = HIGH;
-}
-
-static void DisplayHour_11() {
-    Display_One_SetHigh();
-    Display_2a_LAT = LOW;
-    Display_2b_LAT = HIGH;
-    Display_2c_LAT = HIGH;
-    Display_2d_LAT = LOW;
-    Display_2e_LAT = LOW;
-    Display_2f_LAT = LOW;
-    Display_2g_LAT = LOW;
-}
-
-static void DisplayHour_10() {
-    Display_One_SetHigh();
+static void DisplayHour_0() {
     Display_2a_LAT = HIGH;
     Display_2b_LAT = HIGH;
     Display_2c_LAT = HIGH;
@@ -136,6 +104,7 @@ static void DisplayHour_10() {
 }
 
 static void DisplayHour(int hour) {
+    Display_One_SetLow();
     switch(hour) {
         case 1:
             DisplayHour_1();
@@ -165,21 +134,21 @@ static void DisplayHour(int hour) {
             DisplayHour_9();
             break;
         case 10:
-            DisplayHour_10();
+            Display_One_SetHigh();
+            DisplayHour_0();
             break;
         case 11:
-            DisplayHour_11();
+            Display_One_SetHigh();
+            DisplayHour_1();
             break;
         case 12:
-            DisplayHour_12();
+            Display_One_SetHigh();
+            DisplayHour_2();
             break;
     }
 }
 
 void DisplayTime(int hour, int minute, bool isPm){
     DisplayHour(hour);
-//    DisplayHourOnes(hour);
-//    DisplayTensMinute(minute);
-//    DisplayOneMinute(minute);
     LED_PM_LAT = isPm;
 }

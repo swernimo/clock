@@ -2,7 +2,7 @@
 #include "mcc_generated_files/tmr0.h"
 #include "I2C.h"
 #include "RTCC.h"
-#include "Utilities.h"
+#include "Display.h"
 
 void main(void)
 {
@@ -13,6 +13,7 @@ void main(void)
 //    I2C_Write(RTCC_ADDR, RTCC_HOUR, 0x38);
 //    uint8_t data = I2C_Read(RTCC_ADDR, RTCC_HOUR);
     TMR0_StartTimer();
+    DisplayTime(12, 1, true);
     while (1)
     {
         if(TMR0_HasOverflowOccured()) {

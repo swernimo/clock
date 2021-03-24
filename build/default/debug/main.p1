@@ -12,7 +12,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "129 ./mcc_generated_files/tmr0.h
 [; ;./mcc_generated_files/tmr0.h: 129: void TMR0_StartTimer(void);
 [v _TMR0_StartTimer `(v ~T0 @X0 0 ef ]
-"308
+"8 ./Display.h
+[; ;./Display.h: 8: void DisplayTime(int hour, int minute, _Bool isAm);
+[v _DisplayTime `(v ~T0 @X0 0 ef3`i`i`a ]
+"308 ./mcc_generated_files/tmr0.h
 [; ;./mcc_generated_files/tmr0.h: 308: _Bool TMR0_HasOverflowOccured(void);
 [v _TMR0_HasOverflowOccured `(a ~T0 @X0 0 ef ]
 "161
@@ -2040,49 +2043,52 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 15:     TMR0_StartTimer();
 [e ( _TMR0_StartTimer ..  ]
 "16
-[; ;main.c: 16:     while (1)
-[e :U 2027 ]
+[; ;main.c: 16:     DisplayTime(12, 1, 1);
+[e ( _DisplayTime (3 , , -> 12 `i -> 1 `i -> -> 1 `i `a ]
 "17
-[; ;main.c: 17:     {
-{
+[; ;main.c: 17:     while (1)
+[e :U 2027 ]
 "18
-[; ;main.c: 18:         if(TMR0_HasOverflowOccured()) {
-[e $ ! != -> ( _TMR0_HasOverflowOccured ..  `i -> 0 `i 2029  ]
+[; ;main.c: 18:     {
 {
 "19
-[; ;main.c: 19:             TMR0_StopTimer();
-[e ( _TMR0_StopTimer ..  ]
+[; ;main.c: 19:         if(TMR0_HasOverflowOccured()) {
+[e $ ! != -> ( _TMR0_HasOverflowOccured ..  `i -> 0 `i 2029  ]
+{
 "20
-[; ;main.c: 20:             do { LATDbits.LATD1 = ~LATDbits.LATD1; } while(0);
+[; ;main.c: 20:             TMR0_StopTimer();
+[e ( _TMR0_StopTimer ..  ]
+"21
+[; ;main.c: 21:             do { LATDbits.LATD1 = ~LATDbits.LATD1; } while(0);
 [e :U 2032 ]
 {
 [e = . . _LATDbits 0 1 -> ~ -> . . _LATDbits 0 1 `i `uc ]
 }
 [e :U 2031 ]
-"21
-[; ;main.c: 21:             do { LATDbits.LATD0 = ~LATDbits.LATD0; } while(0);
+"22
+[; ;main.c: 22:             do { LATDbits.LATD0 = ~LATDbits.LATD0; } while(0);
 [e :U 2035 ]
 {
 [e = . . _LATDbits 0 0 -> ~ -> . . _LATDbits 0 0 `i `uc ]
 }
 [e :U 2034 ]
-"22
-[; ;main.c: 22:             PIR0bits.TMR0IF = 0;
-[e = . . _PIR0bits 0 5 -> -> 0 `i `uc ]
 "23
-[; ;main.c: 23:             TMR0_StartTimer();
-[e ( _TMR0_StartTimer ..  ]
+[; ;main.c: 23:             PIR0bits.TMR0IF = 0;
+[e = . . _PIR0bits 0 5 -> -> 0 `i `uc ]
 "24
-[; ;main.c: 24:         }
+[; ;main.c: 24:             TMR0_StartTimer();
+[e ( _TMR0_StartTimer ..  ]
+"25
+[; ;main.c: 25:         }
 }
 [e :U 2029 ]
-"25
-[; ;main.c: 25:     }
+"26
+[; ;main.c: 26:     }
 }
 [e :U 2026 ]
 [e $U 2027  ]
 [e :U 2028 ]
-"26
-[; ;main.c: 26: }
+"27
+[; ;main.c: 27: }
 [e :UE 2025 ]
 }

@@ -24478,7 +24478,15 @@ uint8_t rtc6_ReadByteEEPROM(uint8_t addr);
 void rtc6_WriteByteEEPROM(uint8_t addr, uint8_t data);
 # 4 "main.c" 2
 
-# 1 "./Utilities.h" 1
+# 1 "./Display.h" 1
+
+
+
+
+
+
+
+void DisplayTime(int hour, int minute, _Bool isAm);
 # 5 "main.c" 2
 
 
@@ -24491,6 +24499,7 @@ void main(void)
 
 
     TMR0_StartTimer();
+    DisplayTime(12, 1, 1);
     while (1)
     {
         if(TMR0_HasOverflowOccured()) {

@@ -52,6 +52,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <conio.h>
+#include "tmr2.h"
 #include "tmr0.h"
 
 

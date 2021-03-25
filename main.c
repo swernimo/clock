@@ -23,5 +23,19 @@ void main(void)
             PIR0bits.TMR0IF = 0;
             TMR0_StartTimer();
         }
+        if(SW_On_GetValue() == LOW) {
+//            LED_PM_SetHigh();
+            if(T2CONbits.TMR2ON == 0) {
+                TMR2_StartTimer();                
+            }
+        }
+        if(SW_On_GetValue() == HIGH) {
+            LED_PM_SetLow();
+            TMR2_StopTimer();
+        }
+        if(TMR2_HasOverflowOccured()){
+            LED_PM_SetHigh();
+            PIR5bits.TMR1IF = 0;
+        }
     }
 }

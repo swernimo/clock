@@ -581,6 +581,26 @@
 #define LED_PM_SetAnalogMode()      do { ANSELDbits.ANSELD2 = 1; } while(0)
 #define LED_PM_SetDigitalMode()     do { ANSELDbits.ANSELD2 = 0; } while(0)
 
+// get/set SW_On aliases
+#define SW_On_TRIS                 TRISDbits.TRISD3
+#define SW_On_LAT                  LATDbits.LATD3
+#define SW_On_PORT                 PORTDbits.RD3
+#define SW_On_WPU                  WPUDbits.WPUD3
+#define SW_On_OD                   ODCONDbits.ODCD3
+#define SW_On_ANS                  ANSELDbits.ANSELD3
+#define SW_On_SetHigh()            do { LATDbits.LATD3 = 1; } while(0)
+#define SW_On_SetLow()             do { LATDbits.LATD3 = 0; } while(0)
+#define SW_On_Toggle()             do { LATDbits.LATD3 = ~LATDbits.LATD3; } while(0)
+#define SW_On_GetValue()           PORTDbits.RD3
+#define SW_On_SetDigitalInput()    do { TRISDbits.TRISD3 = 1; } while(0)
+#define SW_On_SetDigitalOutput()   do { TRISDbits.TRISD3 = 0; } while(0)
+#define SW_On_SetPullup()          do { WPUDbits.WPUD3 = 1; } while(0)
+#define SW_On_ResetPullup()        do { WPUDbits.WPUD3 = 0; } while(0)
+#define SW_On_SetPushPull()        do { ODCONDbits.ODCD3 = 0; } while(0)
+#define SW_On_SetOpenDrain()       do { ODCONDbits.ODCD3 = 1; } while(0)
+#define SW_On_SetAnalogMode()      do { ANSELDbits.ANSELD3 = 1; } while(0)
+#define SW_On_SetDigitalMode()     do { ANSELDbits.ANSELD3 = 0; } while(0)
+
 /**
    @Param
     none

@@ -36,6 +36,7 @@ void main(void)
         if(TMR2_HasOverflowOccured()){
             LED_PM_SetHigh();
             PIR5bits.TMR1IF = 0;
+            TMR2_StopTimer();
         }
     }
 }

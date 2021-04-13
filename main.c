@@ -14,8 +14,15 @@ void main(void)
 //    uint8_t data = I2C_Read(RTCC_ADDR, RTCC_HOUR);
     TMR0_StartTimer();
     DisplayTime(12, 1, true);
+//    rtcc_set_custom_register(0x21, 0x01);
+    bool alreadyProgrammed = rtcc_already_programmed();
+    LED_PM_SetLow();
     while (1)
     {
+        alreadyProgrammed = rtcc_already_programmed();
+        if(!!alreadyProgrammed) {
+            //flash midnight
+        }
         if(TMR0_HasOverflowOccured()) {
             TMR0_StopTimer();
             LED_Toggle();
@@ -37,6 +44,7 @@ void main(void)
             LED_PM_SetHigh();
             PIR5bits.TMR1IF = 0;
             TMR2_StopTimer();
+            //    rtcc_set_custom_register(0x21, 0x01);
         }
     }
 }

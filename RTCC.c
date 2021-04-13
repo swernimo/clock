@@ -22,6 +22,7 @@
 #include "RTCC.h"
 #include "mcc_generated_files/mcc.h"
 #include "I2C.h"
+#include "Utilities.h"
 
 #define EEADDR 0x64
 #define RTCC_ADDR 0x6F //0x57
@@ -83,6 +84,9 @@
 #define EEPROM_UNLOCK 0x00
 
 #define EEPR_PAGE_SIZE               8
+
+#define Program_Set_Reg 0x21
+#define Program_Mode_Reg 0x20
 
 /******************************************************************************/
 
@@ -201,40 +205,50 @@ void rtc6_ClearAlarm1(void){
 
 /******************************************************************************/
 
-static void rtc6_EEPRWriteLatchEnable(void) {    
-    I2C_Write(EEADDR, STATUS, EEPROM_UNLOCK);
+//static void rtc6_EEPRWriteLatchEnable(void) {    
+//    I2C_Write(EEADDR, STATUS, EEPROM_UNLOCK);
+//}
+//
+//static void rtc6_EEPRWriteLatchDisable(void) {
+//    I2C_Write(EEADDR, STATUS, EEPROM_LOCK);
+//}
+//
+//static uint8_t rtc6_EEPRReadStatusRegister(void) {
+//    return I2C_Read(EEADDR, STATUS);
+//}
+//
+//uint8_t rtc6_ReadByteEEPROM(uint8_t addr) {
+//    uint8_t stat_reg;
+//
+//    rtc6_EEPRWriteLatchDisable(); //Disable write latch
+//
+//    do {
+//        stat_reg = rtc6_EEPRReadStatusRegister(); //Read Status Register
+//    } while ((stat_reg & 0x03) != 0x00);
+//
+//    return I2C_Read(EEADDR, addr);
+//}
+
+//void rtc6_WriteByteEEPROM(uint8_t addr, uint8_t data) {
+//    uint8_t stat_reg;
+//
+//    rtc6_EEPRWriteLatchEnable(); //Enable write latch
+//
+//    do {
+//        stat_reg = rtc6_EEPRReadStatusRegister(); //Read Status Register
+//    } while ((stat_reg & 0x03) != 0x02);
+//
+//    I2C_Write(EEADDR, addr, data);
+//
+//    rtc6_EEPRWriteLatchDisable(); //Disable write latch
+//}
+
+bool rtcc_already_programmed(){
+    uint8_t progSetReg = rtcc_read(Program_Set_Reg);
+    bool result = CHECK_BIT(progSetReg, 0);
+    return result;
 }
 
-static void rtc6_EEPRWriteLatchDisable(void) {
-    I2C_Write(EEADDR, STATUS, EEPROM_LOCK);
-}
-
-static uint8_t rtc6_EEPRReadStatusRegister(void) {
-    return I2C_Read(EEADDR, STATUS);
-}
-
-uint8_t rtc6_ReadByteEEPROM(uint8_t addr) {
-    uint8_t stat_reg;
-
-    rtc6_EEPRWriteLatchDisable(); //Disable write latch
-
-    do {
-        stat_reg = rtc6_EEPRReadStatusRegister(); //Read Status Register
-    } while ((stat_reg & 0x03) != 0x00);
-
-    return I2C_Read(EEADDR, addr);
-}
-
-void rtc6_WriteByteEEPROM(uint8_t addr, uint8_t data) {
-    uint8_t stat_reg;
-
-    rtc6_EEPRWriteLatchEnable(); //Enable write latch
-
-    do {
-        stat_reg = rtc6_EEPRReadStatusRegister(); //Read Status Register
-    } while ((stat_reg & 0x03) != 0x02);
-
-    I2C_Write(EEADDR, addr, data);
-
-    rtc6_EEPRWriteLatchDisable(); //Disable write latch
+void rtcc_set_custom_register(uint8_t reg, uint8_t data) {
+    rtcc_write(reg, data);
 }

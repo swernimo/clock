@@ -41,7 +41,7 @@ void rtc6_ClearAlarm1(void);
 void rtc6_SetTime(time_t);
 time_t rtc6_GetTime(void);
 
-uint8_t rtc6_ReadByteEEPROM(uint8_t addr);
-void rtc6_WriteByteEEPROM(uint8_t addr, uint8_t data);
+bool rtcc_already_programmed();
+void rtcc_set_custom_register(uint8_t reg, uint8_t data);
 
 #endif

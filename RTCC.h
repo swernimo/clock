@@ -41,7 +41,9 @@ void rtc6_ClearAlarm1(void);
 void rtc6_SetTime(time_t);
 time_t rtc6_GetTime(void);
 
-bool rtcc_already_programmed();
+bool rtcc_clock_programmed();
 void rtcc_set_custom_register(uint8_t reg, uint8_t data);
+bool rtcc_alarm0_programmed();
+bool rtcc_alarm1_programmed();
 
 #endif

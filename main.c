@@ -14,13 +14,14 @@ void main(void)
 //    uint8_t data = I2C_Read(RTCC_ADDR, RTCC_HOUR);
     TMR0_StartTimer();
     DisplayTime(12, 1, true);
-//    rtcc_set_custom_register(0x21, 0x01);
-    bool alreadyProgrammed = rtcc_already_programmed();
+    rtcc_set_custom_register(0x21, 0x07);
     LED_PM_SetLow();
+    bool clockProgrammed = rtcc_clock_programmed();
+    bool alarm1Programmed = rtcc_alarm1_programmed();
+    bool alarm0Programmed = rtcc_alarm0_programmed();
     while (1)
     {
-        alreadyProgrammed = rtcc_already_programmed();
-        if(!!alreadyProgrammed) {
+        if(!!clockProgrammed) {
             //flash midnight
         }
         if(TMR0_HasOverflowOccured()) {

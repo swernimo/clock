@@ -109,11 +109,13 @@ static void rtcc_write(uint8_t addr, uint8_t data) {
 }
 
 void rtc6_Initialize(void) {
-    uint8_t reg = 0;
-
-    dateTime.day = (rtcc_read(RTCC_DAY) & 0x07);
-    rtcc_write(RTCC_DAY, (dateTime.day | 0x08));
-    dateTime.sec = rtcc_read(RTCC_SECONDS);
+    
+    /*
+     check if device has been programmed already
+     * if not default time to midnight
+     * clear the alarms
+     * if yes no need to do anything
+     */
 
     //Configure Control Register - SQWE=1, ALM0 = 00 {No Alarms Activated},
     //                             RS2, RS1, RS0 = 000 {1 HZ}
@@ -121,6 +123,7 @@ void rtc6_Initialize(void) {
 
     // Start the external crystal and check OSCON to know when it is running
     rtcc_write(RTCC_SECONDS, dateTime.sec | ST_SET);
+    uint8_t reg;
     while (!reg) {
         reg = rtcc_read(RTCC_DAY);
         reg &= OSCON;
@@ -128,7 +131,6 @@ void rtc6_Initialize(void) {
 
     // Configure external battery enable BIT and clear the VBAT flag
     rtcc_write(RTCC_DAY, dateTime.day | (VBATEN & VBAT_CLR));
-
 }
 
 void rtc6_EnableAlarms(bool alarm0, bool alarm1){
@@ -203,52 +205,23 @@ void rtc6_ClearAlarm1(void){
     rtcc_write(ALARM1_DAY, reg);
 }
 
-/******************************************************************************/
-
-//static void rtc6_EEPRWriteLatchEnable(void) {    
-//    I2C_Write(EEADDR, STATUS, EEPROM_UNLOCK);
-//}
-//
-//static void rtc6_EEPRWriteLatchDisable(void) {
-//    I2C_Write(EEADDR, STATUS, EEPROM_LOCK);
-//}
-//
-//static uint8_t rtc6_EEPRReadStatusRegister(void) {
-//    return I2C_Read(EEADDR, STATUS);
-//}
-//
-//uint8_t rtc6_ReadByteEEPROM(uint8_t addr) {
-//    uint8_t stat_reg;
-//
-//    rtc6_EEPRWriteLatchDisable(); //Disable write latch
-//
-//    do {
-//        stat_reg = rtc6_EEPRReadStatusRegister(); //Read Status Register
-//    } while ((stat_reg & 0x03) != 0x00);
-//
-//    return I2C_Read(EEADDR, addr);
-//}
-
-//void rtc6_WriteByteEEPROM(uint8_t addr, uint8_t data) {
-//    uint8_t stat_reg;
-//
-//    rtc6_EEPRWriteLatchEnable(); //Enable write latch
-//
-//    do {
-//        stat_reg = rtc6_EEPRReadStatusRegister(); //Read Status Register
-//    } while ((stat_reg & 0x03) != 0x02);
-//
-//    I2C_Write(EEADDR, addr, data);
-//
-//    rtc6_EEPRWriteLatchDisable(); //Disable write latch
-//}
-
-bool rtcc_already_programmed(){
+bool rtcc_clock_programmed(){
     uint8_t progSetReg = rtcc_read(Program_Set_Reg);
     bool result = CHECK_BIT(progSetReg, 0);
     return result;
 }
 
+bool rtcc_alarm0_programmed(){
+    uint8_t progSetReg = rtcc_read(Program_Set_Reg);
+    bool result = CHECK_BIT(progSetReg, 1);
+    return result;
+}
+
+bool rtcc_alarm1_programmed(){
+    uint8_t progSetReg = rtcc_read(Program_Set_Reg);
+    bool result = CHECK_BIT(progSetReg, 2);
+    return result;
+}
 void rtcc_set_custom_register(uint8_t reg, uint8_t data) {
     rtcc_write(reg, data);
 }

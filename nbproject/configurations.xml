@@ -11,12 +11,12 @@
         <itemPath>mcc_generated_files/pin_manager.h</itemPath>
         <itemPath>mcc_generated_files/mcc.h</itemPath>
         <itemPath>mcc_generated_files/tmr0.h</itemPath>
-        <itemPath>mcc_generated_files/tmr2.h</itemPath>
       </logicalFolder>
       <itemPath>I2C.h</itemPath>
       <itemPath>RTCC.h</itemPath>
       <itemPath>Utilities.h</itemPath>
       <itemPath>Display.h</itemPath>
+      <itemPath>mcc_generated_files/TMR_3s.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -32,13 +32,13 @@
         <itemPath>mcc_generated_files/mcc.c</itemPath>
         <itemPath>mcc_generated_files/pin_manager.c</itemPath>
         <itemPath>mcc_generated_files/tmr0.c</itemPath>
-        <itemPath>mcc_generated_files/tmr2.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>I2C.c</itemPath>
       <itemPath>RTCC.c</itemPath>
       <itemPath>Utilities.c</itemPath>
       <itemPath>Display.c</itemPath>
+      <itemPath>mcc_generated_files/TMR_3s.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

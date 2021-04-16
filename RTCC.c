@@ -1,22 +1,3 @@
-/*
-     (c) 2016 Microchip Technology Inc. and its subsidiaries. You may use this
-    software and any derivatives exclusively with Microchip products.
-    THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
-    EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
-    WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
-    PARTICULAR PURPOSE, OR ITS INTERACTION WITH MICROCHIP PRODUCTS, COMBINATION
-    WITH ANY OTHER PRODUCTS, OR USE IN ANY APPLICATION.
-    IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE,
-    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND
-    WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS
-    BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE
-    FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
-    ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
-    THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-    MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE
-    TERMS.
- */
-
 #include <stdint.h>
 #include <string.h>
 #include "RTCC.h"
@@ -109,14 +90,6 @@ static void rtcc_write(uint8_t addr, uint8_t data) {
 }
 
 void rtc6_Initialize(void) {
-    
-    /*
-     check if device has been programmed already
-     * if not default time to midnight
-     * clear the alarms
-     * if yes no need to do anything
-     */
-
     //Configure Control Register - SQWE=1, ALM0 = 00 {No Alarms Activated},
     //                             RS2, RS1, RS0 = 000 {1 HZ}
     rtcc_write(CONTROL_REG, ALM_NO + SQWE + MFP_01H);
@@ -131,6 +104,25 @@ void rtc6_Initialize(void) {
 
     // Configure external battery enable BIT and clear the VBAT flag
     rtcc_write(RTCC_DAY, dateTime.day | (VBATEN & VBAT_CLR));
+    rtcc_set_custom_register(Program_Mode_Reg, 0x00);
+    /*
+     check if device has been programmed already
+     * if not default time to midnight
+     * clear the alarms
+     * if yes no need to do anything
+     */
+    bool clockProgrammed = rtcc_clock_programmed();
+    if(!clockProgrammed) {
+        rtcc_set_custom_register(Program_Set_Reg, 0x00);
+        rtc6_ClearAlarm0();
+        rtc6_ClearAlarm1();
+        //disable both alarms 
+        struct tm midnight = { 0, 0, 12, 1, 0, 121 }; 
+        time_t now = time(NULL);
+//        now.tm_hour = 12;
+//        time_t rawtime = mktime(&midnight);
+//        rtc6_SetTime(rawtime);
+    }
 }
 
 void rtc6_EnableAlarms(bool alarm0, bool alarm1){

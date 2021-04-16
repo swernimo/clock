@@ -3,28 +3,30 @@
 #include "I2C.h"
 #include "RTCC.h"
 #include "Display.h"
+#include "mxx_generated_files/TMR_3s.h"
 
 void main(void)
 {
     // Initialize the device
     SYSTEM_Initialize();
+    TMR_3s_Initialize();
     I2C_Initialize();
+    rtcc_set_custom_register(0x21, 0x00);
     rtc6_Initialize();
 //    I2C_Write(RTCC_ADDR, RTCC_HOUR, 0x38);
 //    uint8_t data = I2C_Read(RTCC_ADDR, RTCC_HOUR);
     TMR0_StartTimer();
     DisplayTime(12, 1, true);
-    rtcc_set_custom_register(0x21, 0x07);
     LED_PM_SetLow();
-    bool clockProgrammed = rtcc_clock_programmed();
-    bool alarm1Programmed = rtcc_alarm1_programmed();
-    bool alarm0Programmed = rtcc_alarm0_programmed();
+//    bool alarm1Programmed = rtcc_alarm1_programmed();
+//    bool alarm0Programmed = rtcc_alarm0_programmed();
     while (1)
     {
-        if(!!clockProgrammed) {
-            //flash midnight
-        }
         if(TMR0_HasOverflowOccured()) {
+            bool clockProgrammed = rtcc_clock_programmed();
+            if(!!clockProgrammed) {
+                //flash midnight
+            }
             TMR0_StopTimer();
             LED_Toggle();
             Display_Col_Toggle();
@@ -34,17 +36,17 @@ void main(void)
         if(SW_On_GetValue() == LOW) {
 //            LED_PM_SetHigh();
             if(T2CONbits.TMR2ON == 0) {
-                TMR2_StartTimer();                
+                TMR_3s_StartTimer();                
             }
         }
         if(SW_On_GetValue() == HIGH) {
             LED_PM_SetLow();
-            TMR2_StopTimer();
+            TMR_3s_StopTimer();
         }
-        if(TMR2_HasOverflowOccured()){
+        if(TMR_3s_HasOverflowOccured()){
             LED_PM_SetHigh();
             PIR5bits.TMR1IF = 0;
-            TMR2_StopTimer();
+            TMR_3s_StopTimer();
             //    rtcc_set_custom_register(0x21, 0x01);
         }
     }

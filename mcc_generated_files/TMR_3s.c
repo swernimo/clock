@@ -3,6 +3,19 @@
 
 volatile uint16_t timer1ReloadVal;
 
+
+static void TMR_3s_WriteTimer(uint16_t timerVal)
+{
+    // Write to the Timer1 register
+    TMR1H = (uint8_t)(timerVal >> 8);
+    TMR1L = (uint8_t)timerVal;
+}
+
+static void TMR_3s_Reload(void)
+{
+    TMR_3s_WriteTimer(timer1ReloadVal);
+}
+
 void TMR_3s_Initialize(void)
 {
     //Set the Timer to the options selected in the GUI
@@ -41,6 +54,7 @@ void TMR_3s_StopTimer(void)
 {
     T1CONbits.TMR1ON = 0;
     PIR5bits.TMR1IF = 0;
+    TMR_3s_Reload();
 }
 
 bool TMR_3s_IsRunning(void) {

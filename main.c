@@ -28,11 +28,11 @@ void main(void)
         if(TMR_775ms_HasOverflowOccured()) {
             bool clockProgrammed = rtcc_clock_programmed();
             if(!!clockProgrammed) {
-                //flash midnight
+                FlashMidnight();
             }
             TMR_775ms_StopTimer();
             LED_Toggle();
-            Display_Col_Toggle();
+//            Display_Col_Toggle();
             PIR0bits.TMR0IF = 0;
             TMR_775ms_StartTimer();
         }

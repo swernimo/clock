@@ -549,3 +549,29 @@ void DisplayTime(int hour, int minute, bool isPm){
         LED_PM_LAT = LOW;
     }
 }
+
+void FlashMidnight() {
+    Display_One_Toggle();
+    Display_2a_Toggle();
+    Display_2b_Toggle();
+    Display_2c_LAT = LOW;
+    Display_2d_Toggle();
+    Display_2e_Toggle();
+    Display_2f_LAT = LOW;
+    Display_2g_Toggle();
+    Display_Col_Toggle();
+    Display_4a_Toggle();
+    Display_4b_Toggle();
+    Display_4c_Toggle();
+    Display_4d_Toggle();
+    Display_4e_Toggle();
+    Display_4f_Toggle();
+    Display_4g_LAT = LOW;
+    Display_3a_Toggle();
+    Display_3b_Toggle();
+    Display_3c_Toggle();
+    Display_3d_Toggle();
+    Display_3e_Toggle();
+    Display_3f_Toggle();
+    Display_3g_LAT = LOW;
+}

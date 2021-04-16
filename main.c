@@ -4,11 +4,13 @@
 #include "RTCC.h"
 #include "Display.h"
 #include "mcc_generated_files/TMR_3s.h"
+#include "TMR_5m.h"
 
 void main(void)
 {
     // Initialize the device
     SYSTEM_Initialize();
+    TMR_5m_Initialize();
     TMR_3s_Initialize();
     TMR_775ms_Initialize();
     I2C_Initialize();

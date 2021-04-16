@@ -216,29 +216,29 @@ typedef enum
 
 void TMR_3s_Initialize(void);
 
-void TMR_3s_ModeSet(TMR2_HLT_MODE mode);
+//void TMR_3s_ModeSet(TMR2_HLT_MODE mode);
+//
+//void TMR_3s_ExtResetSourceSet(TMR2_HLT_EXT_RESET_SOURCE reset);
 
-void TMR_3s_ExtResetSourceSet(TMR2_HLT_EXT_RESET_SOURCE reset);
-
-void TMR_3s_Start(void);
+//void TMR_3s_Start(void);
 
 void TMR_3s_StartTimer(void);
 
-void TMR_3s_Stop(void);
+//void TMR_3s_Stop(void);
 
 void TMR_3s_StopTimer(void);
 
-uint8_t TMR_3s_Counter8BitGet(void);
-
-uint8_t TMR_3s_ReadTimer(void);
-
-void TMR_3s_Counter8BitSet(uint8_t timerVal);
-
-void TMR_3s_WriteTimer(uint8_t timerVal);
-
-void TMR_3s_Period8BitSet(uint8_t periodVal);
-
-void TMR_3s_LoadPeriodRegister(uint8_t periodVal);
+//uint8_t TMR_3s_Counter8BitGet(void);
+//
+//uint8_t TMR_3s_ReadTimer(void);
+//
+//void TMR_3s_Counter8BitSet(uint8_t timerVal);
+//
+//void TMR_3s_WriteTimer(uint8_t timerVal);
+//
+//void TMR_3s_Period8BitSet(uint8_t periodVal);
+//
+//void TMR_3s_LoadPeriodRegister(uint8_t periodVal);
 
 bool TMR_3s_HasOverflowOccured(void);
 

@@ -34,71 +34,20 @@ void TMR_3s_Initialize(void)
 
 void TMR_3s_StartTimer(void)
 {
-    // Start the Timer by writing to TMRxON bit
     T1CONbits.TMR1ON = 1;
 }
 
 void TMR_3s_StopTimer(void)
 {
-    // Stop the Timer by writing to TMRxON bit
     T1CONbits.TMR1ON = 0;
+    PIR5bits.TMR1IF = 0;
 }
-//
-//uint16_t TMR_3s_ReadTimer(void)
-//{
-//    uint16_t readVal;
-//    uint8_t readValHigh;
-//    uint8_t readValLow;
-//    
-//    T1CONbits.T1RD16 = 1;
-//	
-//    readValLow = TMR1L;
-//    readValHigh = TMR1H;
-//    
-//    readVal = ((uint16_t)readValHigh << 8) | readValLow;
-//
-//    return readVal;
-//}
-//
-//void TMR_3s_WriteTimer(uint16_t timerVal)
-//{
-//    if (T1CONbits.nT1SYNC == 1)
-//    {
-//        // Stop the Timer by writing to TMRxON bit
-//        T1CONbits.TMR1ON = 0;
-//
-//        // Write to the Timer1 register
-//        TMR1H = (uint8_t)(timerVal >> 8);
-//        TMR1L = (uint8_t)timerVal;
-//
-//        // Start the Timer after writing to the register
-//        T1CONbits.TMR1ON =1;
-//    }
-//    else
-//    {
-//        // Write to the Timer1 register
-//        TMR1H = (uint8_t)(timerVal >> 8);
-//        TMR1L = (uint8_t)timerVal;
-//    }
-//}
-//
-//void TMR_3s_Reload(void)
-//{
-//    TMR1_WriteTimer(timer1ReloadVal);
-//}
-//
-//void TMR_3s_StartSinglePulseAcquisition(void)
-//{
-//    T1GCONbits.T1GGO = 1;
-//}
-//
-//uint8_t TMR_3s_CheckGateValueStatus(void)
-//{
-//    return (T1GCONbits.T1GVAL);
-//}
+
+bool TMR_3s_IsRunning(void) {
+    return (T1CONbits.TMR1ON == 1);
+}
 
 bool TMR_3s_HasOverflowOccured(void)
 {
-    // check if  overflow has occurred by checking the TMRIF bit
     return(PIR5bits.TMR1IF);
 }

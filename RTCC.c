@@ -104,7 +104,7 @@ void rtc6_Initialize(void) {
 
     // Configure external battery enable BIT and clear the VBAT flag
     rtcc_write(RTCC_DAY, dateTime.day | (VBATEN & VBAT_CLR));
-    rtcc_set_custom_register(Program_Mode_Reg, 0x00);
+    rtcc_write(Program_Mode_Reg, 0x00);
     /*
      check if device has been programmed already
      * if not default time to midnight
@@ -113,12 +113,12 @@ void rtc6_Initialize(void) {
      */
     bool clockProgrammed = rtcc_clock_programmed();
     if(!clockProgrammed) {
-        rtcc_set_custom_register(Program_Set_Reg, 0x00);
+        rtcc_write(Program_Mode_Reg, 0x00);
         rtc6_ClearAlarm0();
         rtc6_ClearAlarm1();
         //disable both alarms 
-        struct tm midnight = { 0, 0, 12, 1, 0, 121 }; 
-        time_t now = time(NULL);
+//        struct tm midnight = { 0, 0, 12, 1, 0, 121 }; 
+//        time_t now = time(NULL);
 //        now.tm_hour = 12;
 //        time_t rawtime = mktime(&midnight);
 //        rtc6_SetTime(rawtime);
@@ -136,18 +136,11 @@ static void rtc6_SetComponent(uint8_t location, uint8_t mask, uint8_t time){
     rtcc_write(location, inMemory | (time % 10) | ((time / 10) << 4)); 
 }
 
-void rtc6_SetTime(time_t t) {
-
-    struct tm *tm_t;
-    memset(tm_t, 0, sizeof (tm_t));
-
-    tm_t = localtime(&t);
-    rtc6_SetComponent(RTCC_YEAR, 0x00, tm_t->tm_year % 100); // RTC only has two digits for year
-    rtc6_SetComponent(RTCC_MONTH, 0xD0, tm_t->tm_mon + 1); // time.h gives January as zero, clock expects 1
-    rtc6_SetComponent(RTCC_DATE, 0x00, tm_t->tm_mday);
-    rtc6_SetComponent(RTCC_MINUTES, 0x00, tm_t->tm_min);
-    rtc6_SetComponent(RTCC_SECONDS, 0x80, tm_t->tm_sec);
-    rtc6_SetComponent(RTCC_HOUR, 0x00, tm_t->tm_hour);
+void rtc6_SetTime(int hour, int minute, bool isAM) {
+    rtc6_SetComponent(RTCC_MINUTES, 0x00, minute);
+    rtc6_SetComponent(RTCC_SECONDS, 0x80, 0);
+    rtc6_SetComponent(RTCC_HOUR, 0x00, hour);
+    //set AM/PM flag
 }
 
 static uint8_t rtc6_GetComponent(uint8_t location, uint8_t mask){
@@ -214,6 +207,9 @@ bool rtcc_alarm1_programmed(){
     bool result = CHECK_BIT(progSetReg, 2);
     return result;
 }
-void rtcc_set_custom_register(uint8_t reg, uint8_t data) {
-    rtcc_write(reg, data);
+
+void rtcc_set_clock_programmed() {
+    uint8_t reg = rtcc_read(Program_Mode_Reg);
+    reg |= (0x01);
+    rtcc_write(Program_Mode_Reg, reg);
 }

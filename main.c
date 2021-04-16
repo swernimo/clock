@@ -14,15 +14,10 @@ void main(void)
     TMR_3s_Initialize();
     TMR_775ms_Initialize();
     I2C_Initialize();
-    rtcc_set_custom_register(0x21, 0x00);
     rtc6_Initialize();
-//    I2C_Write(RTCC_ADDR, RTCC_HOUR, 0x38);
-//    uint8_t data = I2C_Read(RTCC_ADDR, RTCC_HOUR);
     TMR_775ms_StartTimer();
     DisplayTime(12, 1, true);
     LED_PM_SetLow();
-//    bool alarm1Programmed = rtcc_alarm1_programmed();
-//    bool alarm0Programmed = rtcc_alarm0_programmed();
     while (1)
     {
         if(TMR_775ms_HasOverflowOccured()) {
@@ -32,25 +27,23 @@ void main(void)
             }
             TMR_775ms_StopTimer();
             LED_Toggle();
-//            Display_Col_Toggle();
             PIR0bits.TMR0IF = 0;
             TMR_775ms_StartTimer();
         }
         if(SW_On_GetValue() == LOW) {
-//            LED_PM_SetHigh();
-            if(T2CONbits.TMR2ON == 0) {
+            if(!TMR_3s_IsRunning()) {
                 TMR_3s_StartTimer();                
             }
         }
         if(SW_On_GetValue() == HIGH) {
+            //restart 3 second timer to exit programming mode
             LED_PM_SetLow();
             TMR_3s_StopTimer();
         }
         if(TMR_3s_HasOverflowOccured()){
             LED_PM_SetHigh();
-            PIR5bits.TMR1IF = 0;
             TMR_3s_StopTimer();
-            //    rtcc_set_custom_register(0x21, 0x01);
+            rtcc_set_clock_programmed();
         }
     }
 }

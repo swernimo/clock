@@ -38,11 +38,11 @@ void rtc6_SetAlarm1(struct tm tm_t, bool almpol, uint8_t mask);
 void rtc6_ClearAlarm0(void);
 void rtc6_ClearAlarm1(void);
 
-void rtc6_SetTime(time_t);
+void rtc6_SetTime(int hour, int minute, bool isAM);
 time_t rtc6_GetTime(void);
 
 bool rtcc_clock_programmed();
-void rtcc_set_custom_register(uint8_t reg, uint8_t data);
+void rtcc_set_clock_programmed();
 bool rtcc_alarm0_programmed();
 bool rtcc_alarm1_programmed();
 

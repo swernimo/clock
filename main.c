@@ -26,7 +26,7 @@ void main(void)
     LED_PM_SetLow();
     bool currentlyProgramming = false;
     while (1)
-    {
+    {        
         if(TMR_775ms_HasOverflowOccured()) {
             bool clockProgrammed = rtcc_clock_programmed();
             if(!!clockProgrammed) {
@@ -50,24 +50,22 @@ void main(void)
         }
         
         if(!SW_On_Pressed) {
-            LED_PM_SetLow();
             TMR_3s_StopTimer();
-            if (currentlyProgramming && TMR_ProgMode_HasOverflowOccured()) {
-                TMR_ProgMode_StopTimer();
-                LED_PM_SetLow();
-                rtcc_set_clock_programmed();
-                currentlyProgramming = false; 
-            } else if (currentlyProgramming && !TMR_ProgMode_HasOverflowOccured()) {
-                TMR_ProgMode_StartTimer();
+            if (currentlyProgramming) {
+                if(TMR_ProgMode_HasOverflowOccured()) {
+                    TMR_ProgMode_StopTimer();
+                    LED_PM_SetLow();
+                    rtcc_set_clock_programmed();
+                    currentlyProgramming = false;
+                } else {                    
+                    TMR_ProgMode_StartTimer();
+                }                
             }
         }
         if(TMR_3s_HasOverflowOccured()){
             if (!currentlyProgramming) {
                 LED_PM_SetHigh();
                 currentlyProgramming = true;
-            } else {
-                TMR_3s_StopTimer();
-                LED_PM_SetLow();               
             }
         }
     }

@@ -27,26 +27,25 @@ void TMR_ProgMode_Initialize(void)
     //CS LFINTOSC; 
     T5CLK = 0x04;
 
-    //TMR5H 13; 
-    TMR5H = 0x0D;
+    TMR5H = 0x68;
 
-    //TMR5L 208; 
-    TMR5L = 0xD0;
+    TMR5L = 0xA2;
 
-    // Clearing IF flag.
-    PIR5bits.TMR5IF = 0;
-	
     // Load the TMR value to reload variable
     timer5ReloadVal=(uint16_t)((TMR5H << 8) | TMR5L);
 
     // CKPS 1:1; nT5SYNC synchronize; TMR5ON enabled; T5RD16 disabled; 
     T5CON = 0x01;
+    T5CONbits.TMR5ON = 0;
+    
+    // Clearing IF flag.
+    PIR5bits.TMR5IF = 0;
 }
 
 void TMR_ProgMode_StartTimer(void)
 {
-    // Start the Timer by writing to TMRxON bit
     T5CONbits.TMR5ON = 1;
+    PIR5bits.TMR5IF = 0;
 }
 
 void TMR_ProgMode_StopTimer(void)

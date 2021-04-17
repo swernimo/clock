@@ -58,5 +58,5 @@ void TMR_775ms_Reload(uint8_t periodVal)
 bool TMR_775ms_HasOverflowOccured(void)
 {
     // check if  overflow has occurred by checking the TMRIF bit
-    return(PIR0bits.TMR0IF);
+    return(PIR0bits.TMR0IF == 1);
 }

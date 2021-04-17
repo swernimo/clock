@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=mcc_generated_files/device_config.c mcc_generated_files/mcc.c mcc_generated_files/pin_manager.c main.c I2C.c RTCC.c Utilities.c Display.c mcc_generated_files/TMR_3s.c mcc_generated_files/TMR_775ms.c TMR_5m.c
+SOURCEFILES_QUOTED_IF_SPACED=mcc_generated_files/device_config.c mcc_generated_files/mcc.c mcc_generated_files/pin_manager.c main.c I2C.c RTCC.c Utilities.c Display.c mcc_generated_files/TMR_3s.c mcc_generated_files/TMR_775ms.c TMR_5m.c TMR_ProgMode.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/mcc_generated_files/device_config.p1 ${OBJECTDIR}/mcc_generated_files/mcc.p1 ${OBJECTDIR}/mcc_generated_files/pin_manager.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/I2C.p1 ${OBJECTDIR}/RTCC.p1 ${OBJECTDIR}/Utilities.p1 ${OBJECTDIR}/Display.p1 ${OBJECTDIR}/mcc_generated_files/TMR_3s.p1 ${OBJECTDIR}/mcc_generated_files/TMR_775ms.p1 ${OBJECTDIR}/TMR_5m.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/mcc_generated_files/device_config.p1.d ${OBJECTDIR}/mcc_generated_files/mcc.p1.d ${OBJECTDIR}/mcc_generated_files/pin_manager.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/I2C.p1.d ${OBJECTDIR}/RTCC.p1.d ${OBJECTDIR}/Utilities.p1.d ${OBJECTDIR}/Display.p1.d ${OBJECTDIR}/mcc_generated_files/TMR_3s.p1.d ${OBJECTDIR}/mcc_generated_files/TMR_775ms.p1.d ${OBJECTDIR}/TMR_5m.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/mcc_generated_files/device_config.p1 ${OBJECTDIR}/mcc_generated_files/mcc.p1 ${OBJECTDIR}/mcc_generated_files/pin_manager.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/I2C.p1 ${OBJECTDIR}/RTCC.p1 ${OBJECTDIR}/Utilities.p1 ${OBJECTDIR}/Display.p1 ${OBJECTDIR}/mcc_generated_files/TMR_3s.p1 ${OBJECTDIR}/mcc_generated_files/TMR_775ms.p1 ${OBJECTDIR}/TMR_5m.p1 ${OBJECTDIR}/TMR_ProgMode.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/mcc_generated_files/device_config.p1.d ${OBJECTDIR}/mcc_generated_files/mcc.p1.d ${OBJECTDIR}/mcc_generated_files/pin_manager.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/I2C.p1.d ${OBJECTDIR}/RTCC.p1.d ${OBJECTDIR}/Utilities.p1.d ${OBJECTDIR}/Display.p1.d ${OBJECTDIR}/mcc_generated_files/TMR_3s.p1.d ${OBJECTDIR}/mcc_generated_files/TMR_775ms.p1.d ${OBJECTDIR}/TMR_5m.p1.d ${OBJECTDIR}/TMR_ProgMode.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/mcc_generated_files/device_config.p1 ${OBJECTDIR}/mcc_generated_files/mcc.p1 ${OBJECTDIR}/mcc_generated_files/pin_manager.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/I2C.p1 ${OBJECTDIR}/RTCC.p1 ${OBJECTDIR}/Utilities.p1 ${OBJECTDIR}/Display.p1 ${OBJECTDIR}/mcc_generated_files/TMR_3s.p1 ${OBJECTDIR}/mcc_generated_files/TMR_775ms.p1 ${OBJECTDIR}/TMR_5m.p1
+OBJECTFILES=${OBJECTDIR}/mcc_generated_files/device_config.p1 ${OBJECTDIR}/mcc_generated_files/mcc.p1 ${OBJECTDIR}/mcc_generated_files/pin_manager.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/I2C.p1 ${OBJECTDIR}/RTCC.p1 ${OBJECTDIR}/Utilities.p1 ${OBJECTDIR}/Display.p1 ${OBJECTDIR}/mcc_generated_files/TMR_3s.p1 ${OBJECTDIR}/mcc_generated_files/TMR_775ms.p1 ${OBJECTDIR}/TMR_5m.p1 ${OBJECTDIR}/TMR_ProgMode.p1
 
 # Source Files
-SOURCEFILES=mcc_generated_files/device_config.c mcc_generated_files/mcc.c mcc_generated_files/pin_manager.c main.c I2C.c RTCC.c Utilities.c Display.c mcc_generated_files/TMR_3s.c mcc_generated_files/TMR_775ms.c TMR_5m.c
+SOURCEFILES=mcc_generated_files/device_config.c mcc_generated_files/mcc.c mcc_generated_files/pin_manager.c main.c I2C.c RTCC.c Utilities.c Display.c mcc_generated_files/TMR_3s.c mcc_generated_files/TMR_775ms.c TMR_5m.c TMR_ProgMode.c
 
 
 
@@ -182,6 +182,14 @@ ${OBJECTDIR}/TMR_5m.p1: TMR_5m.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/TMR_5m.d ${OBJECTDIR}/TMR_5m.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/TMR_5m.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/TMR_ProgMode.p1: TMR_ProgMode.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/TMR_ProgMode.p1.d 
+	@${RM} ${OBJECTDIR}/TMR_ProgMode.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/TMR_ProgMode.p1 TMR_ProgMode.c 
+	@-${MV} ${OBJECTDIR}/TMR_ProgMode.d ${OBJECTDIR}/TMR_ProgMode.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/TMR_ProgMode.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/mcc_generated_files/device_config.p1: mcc_generated_files/device_config.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/mcc_generated_files" 
@@ -270,6 +278,14 @@ ${OBJECTDIR}/TMR_5m.p1: TMR_5m.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/TMR_5m.p1 TMR_5m.c 
 	@-${MV} ${OBJECTDIR}/TMR_5m.d ${OBJECTDIR}/TMR_5m.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/TMR_5m.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/TMR_ProgMode.p1: TMR_ProgMode.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/TMR_ProgMode.p1.d 
+	@${RM} ${OBJECTDIR}/TMR_ProgMode.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/TMR_ProgMode.p1 TMR_ProgMode.c 
+	@-${MV} ${OBJECTDIR}/TMR_ProgMode.d ${OBJECTDIR}/TMR_ProgMode.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/TMR_ProgMode.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

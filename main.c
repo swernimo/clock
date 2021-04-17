@@ -5,19 +5,26 @@
 #include "Display.h"
 #include "mcc_generated_files/TMR_3s.h"
 #include "TMR_5m.h"
+#include "Utilities.h"
+#include "TMR_ProgMode.h"
 
-void main(void)
-{
-    // Initialize the device
+static void InitializeDevice() {
     SYSTEM_Initialize();
     TMR_5m_Initialize();
     TMR_3s_Initialize();
     TMR_775ms_Initialize();
+    TMR_ProgMode_Initialize();
     I2C_Initialize();
-    rtc6_Initialize();
+    rtc6_Initialize();    
+}
+
+void main(void)
+{
+    InitializeDevice();
     TMR_775ms_StartTimer();
     DisplayTime(12, 1, true);
     LED_PM_SetLow();
+    bool currentlyProgramming = false;
     while (1)
     {
         if(TMR_775ms_HasOverflowOccured()) {
@@ -30,20 +37,38 @@ void main(void)
             PIR0bits.TMR0IF = 0;
             TMR_775ms_StartTimer();
         }
-        if(SW_On_GetValue() == LOW) {
+        
+        if(SW_On_Pressed) {
             if(!TMR_3s_IsRunning()) {
                 TMR_3s_StartTimer();                
             }
         }
-        if(SW_On_GetValue() == HIGH) {
-            //restart 3 second timer to exit programming mode
+        
+        if(currentlyProgramming) {
+            //if any of the programming buttons are pressed (hour, min, prog) reset the timer
+            //TMR_ProgMode_Restart();
+        }
+        
+        if(!SW_On_Pressed) {
             LED_PM_SetLow();
             TMR_3s_StopTimer();
+            if (currentlyProgramming && TMR_ProgMode_HasOverflowOccured()) {
+                TMR_ProgMode_StopTimer();
+                LED_PM_SetLow();
+                rtcc_set_clock_programmed();
+                currentlyProgramming = false; 
+            } else if (currentlyProgramming && !TMR_ProgMode_HasOverflowOccured()) {
+                TMR_ProgMode_StartTimer();
+            }
         }
         if(TMR_3s_HasOverflowOccured()){
-            LED_PM_SetHigh();
-            TMR_3s_StopTimer();
-            rtcc_set_clock_programmed();
+            if (!currentlyProgramming) {
+                LED_PM_SetHigh();
+                currentlyProgramming = true;
+            } else {
+                TMR_3s_StopTimer();
+                LED_PM_SetLow();               
+            }
         }
     }
 }

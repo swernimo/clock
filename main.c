@@ -22,51 +22,81 @@ void main(void)
 {
     InitializeDevice();
     TMR_775ms_StartTimer();
-    DisplayTime(12, 1, true);
-    LED_PM_SetLow();
-    bool currentlyProgramming = false;
     while (1)
-    {        
-        if(TMR_775ms_HasOverflowOccured()) {
-            bool clockProgrammed = rtcc_clock_programmed();
-            if(!!clockProgrammed) {
-                FlashMidnight();
-            }
-            TMR_775ms_StopTimer();
-            LED_Toggle();
-            PIR0bits.TMR0IF = 0;
-            TMR_775ms_StartTimer();
+    {
+        /*
+         order of operations:
+         * Set Digit High
+         * Set Required Letters High
+         * delay 1 ms
+         * Set All Letters Low
+         * Set Digit Low
+         */
+        CLK_D1_SetHigh();
+        CLK_C_SetHigh();
+        CLK_B_SetHigh();
+        __delay_ms(1);
+        CLK_D1_SetLow();
+        CLK_C_SetLow();
+        CLK_B_SetLow();
+        CLK_D2_SetHigh();
+        CLK_A_SetHigh();
+        CLK_B_SetHigh();
+        CLK_G_SetHigh();
+        CLK_E_SetHigh();
+        CLK_D_SetHigh();
+        __delay_ms(1);
+        CLK_D2_SetLow();
+        CLK_A_SetLow();
+        CLK_B_SetLow();
+        CLK_G_SetLow();
+        CLK_E_SetLow();
+        CLK_D_SetLow();
+        CLK_D3_SetHigh();
+        CLK_A_SetHigh();
+        CLK_B_SetHigh();
+        CLK_C_SetHigh();
+        CLK_D_SetHigh();
+        CLK_G_SetHigh();
+        __delay_ms(1);
+        CLK_D3_SetLow();
+        CLK_A_SetLow();
+        CLK_B_SetLow();
+        CLK_C_SetLow();
+        CLK_D_SetLow();
+        CLK_G_SetLow();
+        
+        CLK_D4_SetHigh();
+        CLK_F_SetHigh();
+        CLK_G_SetHigh();
+        CLK_B_SetHigh();
+        CLK_C_SetHigh();
+        CLK_DP_SetHigh();
+        __delay_ms(1);
+        CLK_D4_SetLow();
+        CLK_F_SetLow();
+        CLK_G_SetLow();
+        CLK_B_SetLow();
+        CLK_C_SetLow();
+        CLK_DP_SetLow();
+        if (SW_On_Pressed) {
+            LED_On_Toggle();
         }
         
-        if(SW_On_Pressed) {
-            if(!TMR_3s_IsRunning()) {
-                TMR_3s_StartTimer();                
-            }
+        if (SW_Led_Pressed) {
+            LED_Led_Toggle();
         }
         
-        if(currentlyProgramming) {
-            //if any of the programming buttons are pressed (hour, min, prog) reset the timer
-            //TMR_ProgMode_Restart();
+        if (SW_Prog_Pressed) {
+            LED_Prog_Toggle();
         }
         
-        if(!SW_On_Pressed) {
-            TMR_3s_StopTimer();
-            if (currentlyProgramming) {
-                if(TMR_ProgMode_HasOverflowOccured()) {
-                    TMR_ProgMode_StopTimer();
-                    LED_PM_SetLow();
-                    rtcc_set_clock_programmed();
-                    currentlyProgramming = false;
-                } else {                    
-                    TMR_ProgMode_StartTimer();
-                }                
-            }
+        if (SW_Hr_Pressed) {
+            LED_Hr_Toggle();
         }
-        if(TMR_3s_HasOverflowOccured()){
-            if (!currentlyProgramming) {
-                LED_PM_SetHigh();
-                currentlyProgramming = true;
-            }
+        
+        if (SW_Min_Pressed) {
+            LED_Min_Toggle();
         }
     }
 }

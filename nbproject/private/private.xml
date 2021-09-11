@@ -5,9 +5,7 @@
         <group>
             <file>file:/C:/Users/swern/MPLABXProjects/Clock.X/I2C.c</file>
             <file>file:/C:/Users/swern/MPLABXProjects/Clock.X/main.c</file>
-            <file>file:/C:/Users/swern/MPLABXProjects/Clock.X/mcc_generated_files/tmr2.c</file>
-            <file>file:/C:/Users/swern/MPLABXProjects/Clock.X/RTCC.h</file>
-            <file>file:/C:/Users/swern/MPLABXProjects/Clock.X/RTCC.c</file>
+            <file>file:/C:/Users/swern/MPLABXProjects/Clock.X/Display.c</file>
             <file>file:/C:/Users/swern/MPLABXProjects/Clock.X/Utilities.h</file>
         </group>
     </open-files>

@@ -148,18 +148,29 @@ static uint8_t rtc6_GetComponent(uint8_t location, uint8_t mask){
     return (working & 0x0F) + (((working & (mask & 0xF0)) >> 4) * 10);
 }
 
-time_t rtc6_GetTime(void) {
-    struct tm tm_t;
-    memset(&tm_t, 0, sizeof (tm_t));
+DateTime_t rtc6_GetTime(void) {
     
-    tm_t.tm_year = rtc6_GetComponent(RTCC_YEAR, 0xFF) + 100; // Result only has two digits, this assumes 20xx
-    tm_t.tm_mon = rtc6_GetComponent(RTCC_MONTH, 0x1F) - 1; // time.h expects January as zero, clock gives 1
-    tm_t.tm_mday = rtc6_GetComponent(RTCC_DATE, 0x3F);
-    tm_t.tm_hour = rtc6_GetComponent(RTCC_HOUR, 0x3F);
-    tm_t.tm_min = rtc6_GetComponent(RTCC_MINUTES, 0x7F);
-    tm_t.tm_sec = rtc6_GetComponent(RTCC_SECONDS, 0x7F);
-
-    return mktime(&tm_t);
+    DateTime_t datetime = {
+        .sec = rtc6_GetComponent(RTCC_SECONDS, 0x7F),
+        .min = rtc6_GetComponent(RTCC_MINUTES, 0x7F),
+        .hr = rtc6_GetComponent(RTCC_HOUR, 0x3F),
+        .year = rtc6_GetComponent(RTCC_YEAR, 0xFF) + 100,
+        .month = rtc6_GetComponent(RTCC_MONTH, 0x1F),
+        .date = rtc6_GetComponent(RTCC_DATE, 0x3F)
+    };
+    
+    return datetime;
+//    struct tm tm_t;
+//    memset(&tm_t, 0, sizeof (tm_t));
+//    
+//    tm_t.tm_year = rtc6_GetComponent(RTCC_YEAR, 0xFF) + 100; // Result only has two digits, this assumes 20xx
+//    tm_t.tm_mon = rtc6_GetComponent(RTCC_MONTH, 0x1F) - 1; // time.h expects January as zero, clock gives 1
+//    tm_t.tm_mday = rtc6_GetComponent(RTCC_DATE, 0x3F);
+//    tm_t.tm_hour = rtc6_GetComponent(RTCC_HOUR, 0x3F);
+//    tm_t.tm_min = rtc6_GetComponent(RTCC_MINUTES, 0x7F);
+//    tm_t.tm_sec = rtc6_GetComponent(RTCC_SECONDS, 0x7F);
+//
+//    return mktime(&tm_t);
 }
 
 void rtc6_SetAlarm0(struct tm tm_t, bool almpol, uint8_t mask){

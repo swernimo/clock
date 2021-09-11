@@ -19,6 +19,7 @@
       <itemPath>mcc_generated_files/TMR_775ms.h</itemPath>
       <itemPath>TMR_5m.h</itemPath>
       <itemPath>TMR_ProgMode.h</itemPath>
+      <itemPath>Clock.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -43,6 +44,7 @@
       <itemPath>mcc_generated_files/TMR_775ms.c</itemPath>
       <itemPath>TMR_5m.c</itemPath>
       <itemPath>TMR_ProgMode.c</itemPath>
+      <itemPath>Clock.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

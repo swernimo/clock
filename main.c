@@ -33,7 +33,7 @@ void main(void)
             TMR_775ms_StartTimer();
         }
         
-        DisplayTime(currentTime.hr, currentTime.min, false);
+        DisplayTime(currentTime.hr, currentTime.min, true);
        
         if (SW_On_Pressed) {
             LED_On_Toggle();

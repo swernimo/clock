@@ -106,7 +106,29 @@ static void Zero() {
     CLK_F_SetHigh();    
 }
 
+static void Test() {
+    CLK_D1_SetHigh();
+    One();
+    __delay_ms(1);
+    CLK_D1_SetLow();
+    CLK_D2_SetHigh();
+    Two();
+    __delay_ms(1);
+    CLK_D2_SetLow();
+    CLK_D3_SetHigh();
+    Three();
+    __delay_ms(1);
+    CLK_D3_SetLow();
+    CLK_D4_SetHigh();
+    CLK_DP_SetHigh();
+    Four();
+    __delay_ms(1);
+    CLK_D4_SetLow();
+    CLK_DP_SetLow();
+}
+
 void DisplayTime(int hour, int minute, bool isAm) {
+//    Test();
      /*
          order of operations:
          * Set Digit High
@@ -116,48 +138,74 @@ void DisplayTime(int hour, int minute, bool isAm) {
          * Set Digit Low
          */
     switch (hour) {
+        case 1:
+            CLK_D1_SetLow();
+            CLK_D2_SetHigh();
+            One();
+            break;
+        case 2:
+            CLK_D1_SetLow();
+            CLK_D2_SetHigh();
+            Two();
+            break;
+        case 3:
+            CLK_D1_SetLow();
+            CLK_D2_SetHigh();
+            Three();            
+            break;
+        case 4:
+            CLK_D1_SetLow();
+            CLK_D2_SetHigh();
+            Four();
+            break;
+        case 5:
+            CLK_D1_SetLow();
+            CLK_D2_SetHigh();
+            Five();
+            break;
+        case 6:
+            CLK_D1_SetLow();
+            CLK_D2_SetHigh();
+            Six();
+            break;
+        case 7:
+            CLK_D1_SetLow();
+            CLK_D2_SetHigh();
+            Seven();
+            break;
+        case 8:
+            CLK_D1_SetLow();
+            CLK_D2_SetHigh();
+            Eight();
+            break;
+        case 9:
+            CLK_D1_SetLow();
+            CLK_D2_SetHigh();
+            Nine();
+            break;
         case 10:
+            CLK_D1_SetHigh();
+            One();
+            __delay_ms(1);
+            CLK_D1_SetLow();
+            CLK_D2_SetHigh();
+            Zero();
+            break;
         case 11:
+            CLK_D1_SetHigh();
+            One();
+            __delay_ms(1);
+            CLK_D1_SetLow();
+            CLK_D2_SetHigh();
+            One();
+            break;
         case 12:
             CLK_D1_SetHigh();
             One();
             __delay_ms(1);
-            break;
-    }   
-    CLK_D1_SetLow();
-    CLK_D2_SetHigh();
-    switch (hour) {
-        case 1:
-        case 11:
-            One();
-            break;
-        case 2:
-        case 12:
+            CLK_D1_SetLow();
+            CLK_D2_SetHigh();
             Two();
-            break;
-        case 3:
-            Three();            
-            break;
-        case 4:
-            Four();
-            break;
-        case 5:
-            Five();
-            break;
-        case 6:
-            Six();
-            break;
-        case 7:
-            Seven();
-            break;
-        case 8:
-            Eight();
-            break;
-        case 9:
-            Nine();
-            break;
-        case 10:
-            Zero();
             break;
     }
     __delay_ms(1);
@@ -171,14 +219,14 @@ void DisplayTime(int hour, int minute, bool isAm) {
 //        CLK_D4_SetHigh();
 //        Nine();
         
-        if(isAm) {
-           CLK_DP_SetLow(); 
-        } else {
-            CLK_DP_SetHigh();
-        }
-        __delay_ms(1);
-        CLK_DP_SetLow();        
-        CLK_D4_SetLow();
+//        if(isAm) {
+//           CLK_DP_SetLow(); 
+//        } else {
+//            CLK_DP_SetHigh();
+//        }
+//        __delay_ms(1);
+//        CLK_DP_SetLow();        
+//        CLK_D4_SetLow();
 }
 
 void FlashMidnight() {

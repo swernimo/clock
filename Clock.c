@@ -62,6 +62,7 @@ static void Five() {
 
 static void Six() {
     AllOff();
+    CLK_A_SetHigh();
     CLK_F_SetHigh();
     CLK_G_SetHigh();
     CLK_C_SetHigh();
@@ -127,16 +128,7 @@ static void Test() {
     CLK_DP_SetLow();
 }
 
-void DisplayTime(int hour, int minute, bool isAm) {
-//    Test();
-     /*
-         order of operations:
-         * Set Digit High
-         * Set Required Letters High
-         * delay 1 ms
-         * Set All Letters Low
-         * Set Digit Low
-         */
+static void DisplayHours(int hour) {
     switch (hour) {
         case 1:
             CLK_D1_SetLow();
@@ -210,15 +202,132 @@ void DisplayTime(int hour, int minute, bool isAm) {
     }
     __delay_ms(1);
     CLK_D2_SetLow();
-        
-//        CLK_D3_SetHigh();
-//        Nine();
-//        __delay_ms(1);
-//        CLK_D3_SetLow();
-//        
-//        CLK_D4_SetHigh();
-//        Nine();
-        
+}
+
+static void DisplayMinuteSameOnesPlace(void (onesPlace)(void), int minute) {    
+    switch(minute % 10) {
+        case 0:
+            CLK_D3_SetHigh();
+            onesPlace();
+            __delay_ms(1);
+            CLK_D3_SetLow();
+            CLK_D4_SetHigh();
+            Zero();
+            __delay_ms(1);
+            CLK_D4_SetLow();
+            break;
+        case 1:
+            CLK_D3_SetHigh();
+            onesPlace();
+            __delay_ms(1);
+            CLK_D3_SetLow();
+            CLK_D4_SetHigh();
+            One();
+            __delay_ms(1);
+            CLK_D4_SetLow();
+            break;
+        case 2:
+            CLK_D3_SetHigh();
+            onesPlace();
+            __delay_ms(1);
+            CLK_D3_SetLow();
+            CLK_D4_SetHigh();
+            Two();
+            __delay_ms(1);
+            CLK_D4_SetLow();
+            break;
+        case 3:
+            CLK_D3_SetHigh();
+            onesPlace();
+            __delay_ms(1);
+            CLK_D3_SetLow();
+            CLK_D4_SetHigh();
+            Three();
+            __delay_ms(1);
+            CLK_D4_SetLow();
+            break;
+        case 4:
+            CLK_D3_SetHigh();
+            onesPlace();
+            __delay_ms(1);
+            CLK_D3_SetLow();
+            CLK_D4_SetHigh();
+            Four();
+            __delay_ms(1);
+            CLK_D4_SetLow();
+            break;
+        case 5:
+            CLK_D3_SetHigh();
+            onesPlace();
+            __delay_ms(1);
+            CLK_D3_SetLow();
+            CLK_D4_SetHigh();
+            Five();
+            __delay_ms(1);
+            CLK_D4_SetLow();
+            break;
+        case 6:
+            CLK_D3_SetHigh();
+            onesPlace();
+            __delay_ms(1);
+            CLK_D3_SetLow();
+            CLK_D4_SetHigh();
+            Six();
+            __delay_ms(1);
+            CLK_D4_SetLow();
+            break;
+        case 7:
+            CLK_D3_SetHigh();
+            onesPlace();
+            __delay_ms(1);
+            CLK_D3_SetLow();
+            CLK_D4_SetHigh();
+            Seven();
+            __delay_ms(1);
+            CLK_D4_SetLow();
+            break;
+        case 8:
+            CLK_D3_SetHigh();
+            onesPlace();
+            __delay_ms(1);
+            CLK_D3_SetLow();
+            CLK_D4_SetHigh();
+            Eight();
+            __delay_ms(1);
+            CLK_D4_SetLow();
+            break;
+        case 9:
+            CLK_D3_SetHigh();
+            onesPlace();
+            __delay_ms(1);
+            CLK_D3_SetLow();
+            CLK_D4_SetHigh();
+            Nine();
+            __delay_ms(1);
+            CLK_D4_SetLow();
+            break;
+    }
+}
+
+static void DisplayMinutes(int minute) {
+    if (minute < 10) {
+        DisplayMinuteSameOnesPlace(Zero, minute);
+    } else if (minute < 20) {
+        DisplayMinuteSameOnesPlace(One, minute);
+    } else if (minute < 30) {
+        DisplayMinuteSameOnesPlace(Two, minute);        
+    } else if (minute < 40) {
+        DisplayMinuteSameOnesPlace(Three, minute);
+    } else if (minute < 50) {
+        DisplayMinuteSameOnesPlace(Four, minute);
+    } else {
+        DisplayMinuteSameOnesPlace(Five, minute);
+    }
+}
+
+void DisplayTime(int hour, int minute, bool isAm) {
+    DisplayHours(hour);
+    DisplayMinutes(minute);
 //        if(isAm) {
 //           CLK_DP_SetLow(); 
 //        } else {

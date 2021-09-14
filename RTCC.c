@@ -139,29 +139,94 @@ static uint8_t rtc6_GetComponent(uint8_t location, uint8_t mask){
     return (working & 0x0F) + (((working & (mask & 0xF0)) >> 4) * 10);
 }
 
-void rtc6_SetTime(uint8_t hour, int minute, bool isPm) {
+void rtc6_SetTime(int hour, int minute, bool isPm) {
     rtc6_SetComponent(RTCC_MINUTES, 0x00, minute);
     rtc6_SetComponent(RTCC_SECONDS, 0x80, 0);
-//    hour |= 0x00;
-    rtc6_SetComponent(RTCC_HOUR, 0x00, hour);
-//    uint8_t hourReg = rtcc_read(RTCC_HOUR);
-//    if (isPm) {
-//        hourReg = SET_BIT(hourReg, 5);
-//    } else {
-//        hourReg = CLEAR_BIT(hourReg, 5);        
-//    }
-//    rtc6_SetComponent(RTCC_HOUR, 0x00, hourReg);    
+    uint8_t hourReg = 0x00;
+    if(isPm) {
+        hourReg = SET_BIT(hourReg, 5);
+    }
+    switch(hour) {
+        case 1:
+            hourReg = SET_BIT(hourReg, 0);
+            break;
+        case 2:
+            hourReg = SET_BIT(hourReg, 1);
+            break;
+        case 3:
+            hourReg = SET_BIT(hourReg, 0);
+            hourReg = SET_BIT(hourReg, 1);
+            break;
+        case 4:
+            hourReg = SET_BIT(hourReg, 2);
+            break;
+        case 5:
+            hourReg = SET_BIT(hourReg, 0);
+            hourReg = SET_BIT(hourReg, 2);
+            break;
+        case 6:
+            hourReg = SET_BIT(hourReg, 1);
+            hourReg = SET_BIT(hourReg, 2);
+            break;
+        case 7:
+            hourReg = SET_BIT(hourReg, 0);
+            hourReg = SET_BIT(hourReg, 1);
+            hourReg = SET_BIT(hourReg, 2);
+            break;
+        case 8:
+            hourReg = SET_BIT(hourReg, 3);
+            break;
+        case 9:
+            hourReg = SET_BIT(hourReg, 3);
+            hourReg = SET_BIT(hourReg, 0);
+            break;
+        case 10:
+            hourReg = SET_BIT(hourReg, 4);
+            break;
+        case 11:
+            hourReg = SET_BIT(hourReg, 4);
+            hourReg = SET_BIT(hourReg, 0);
+            break;
+        case 12:
+            hourReg = SET_BIT(hourReg, 4);
+            hourReg = SET_BIT(hourReg, 1);
+            break;
+    }
+    rtcc_write(RTCC_HOUR, hourReg);
 }
 
 DateTime_t rtc6_GetTime(void) {
-    uint8_t hourReg = rtc6_GetComponent(RTCC_HOUR, 0x3F);
+    uint8_t hourReg = rtcc_read(RTCC_HOUR);
     bool isPm = CHECK_BIT(hourReg, 5);
-    //REG &= ~((1<<7) | (1<<6) | ...);
-//    uint8_t hour = ~(hourReg & ((1 << 7) | (1 << 6) | (1 << 5)));
+    int hour = 0;
+    
+    if(CHECK_BIT(hourReg, 4)) {
+        hour += 10;
+    }
+    
+    if(CHECK_BIT(hourReg, 0)) {
+        hour += 1;
+    }
+    
+    
+    if(CHECK_BIT(hourReg, 1)) {
+        hour += 2;
+    }
+    
+    
+    if(CHECK_BIT(hourReg, 2)) {
+        hour += 4;
+    }
+    
+    
+    if(CHECK_BIT(hourReg, 3)) {
+        hour += 8;
+    }
+    
     DateTime_t datetime = {
         .sec = rtc6_GetComponent(RTCC_SECONDS, 0x7F),
         .min = rtc6_GetComponent(RTCC_MINUTES, 0x7F),
-        .hr = hourReg,
+        .hr = hour,
         .year = rtc6_GetComponent(RTCC_YEAR, 0xFF) + 100,
         .month = rtc6_GetComponent(RTCC_MONTH, 0x1F),
         .date = rtc6_GetComponent(RTCC_DATE, 0x3F),

@@ -142,9 +142,9 @@ static uint8_t rtc6_GetComponent(uint8_t location, uint8_t mask){
 void rtc6_SetTime(int hour, int minute, bool isPm) {
     rtc6_SetComponent(RTCC_MINUTES, 0x00, minute);
     rtc6_SetComponent(RTCC_SECONDS, 0x80, 0);
-    uint8_t hourReg = 0x00;
+    uint8_t hourReg = 0x40;
     if(isPm) {
-        hourReg = SET_BIT(hourReg, 5);
+        hourReg = 0x60;
     }
     switch(hour) {
         case 1:

@@ -3,10 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/swern/MPLABXProjects/Clock.X/I2C.c</file>
             <file>file:/C:/Users/swern/MPLABXProjects/Clock.X/main.c</file>
-            <file>file:/C:/Users/swern/MPLABXProjects/Clock.X/Display.c</file>
-            <file>file:/C:/Users/swern/MPLABXProjects/Clock.X/Utilities.h</file>
+            <file>file:/C:/Users/swern/MPLABXProjects/Clock.X/RTCC.c</file>
         </group>
     </open-files>
 </project-private>

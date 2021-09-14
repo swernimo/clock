@@ -23,7 +23,7 @@ void main(void)
 {
     InitializeDevice();
     TMR_775ms_StartTimer();
-    rtc6_SetTime(7, 40, false);
+    rtc6_SetTime(11, 59, false);
     DateTime_t currentTime = rtc6_GetTime();
     while (1)
     {

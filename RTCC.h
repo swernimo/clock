@@ -27,6 +27,7 @@
 typedef struct {
     int sec, min, hr;
     int year, month, date, day;
+    bool isPm;
 } DateTime_t;
 
 void rtc6_Initialize(void);
@@ -38,7 +39,7 @@ void rtc6_SetAlarm1(struct tm tm_t, bool almpol, uint8_t mask);
 void rtc6_ClearAlarm0(void);
 void rtc6_ClearAlarm1(void);
 
-void rtc6_SetTime(int hour, int minute, bool isAM);
+void rtc6_SetTime(uint8_t hour, int minute, bool isPm);
 DateTime_t rtc6_GetTime(void);
 
 bool rtcc_clock_programmed();

@@ -325,17 +325,19 @@ static void DisplayMinutes(int minute) {
     }
 }
 
-void DisplayTime(int hour, int minute, bool isAm) {
+void DisplayTime(int hour, int minute, bool isPm) {
     DisplayHours(hour);
     DisplayMinutes(minute);
-//        if(isAm) {
-//           CLK_DP_SetLow(); 
-//        } else {
-//            CLK_DP_SetHigh();
-//        }
-//        __delay_ms(1);
-//        CLK_DP_SetLow();        
-//        CLK_D4_SetLow();
+    
+    if(isPm) {
+        CLK_D4_SetHigh();
+        CLK_DP_SetHigh();
+        __delay_ms(1);
+        CLK_D4_SetLow();
+        CLK_DP_SetLow();
+    } else {
+       CLK_DP_SetLow(); 
+    }
 }
 
 void FlashMidnight() {

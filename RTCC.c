@@ -93,7 +93,7 @@ void rtc6_Initialize(void) {
     //Configure Control Register - SQWE=1, ALM0 = 00 {No Alarms Activated},
     //                             RS2, RS1, RS0 = 000 {1 HZ}
     rtcc_write(CONTROL_REG, ALM_NO + SQWE + MFP_01H);
-
+    
     // Start the external crystal and check OSCON to know when it is running
     rtcc_write(RTCC_SECONDS, dateTime.sec | ST_SET);
     uint8_t reg;
@@ -116,13 +116,11 @@ void rtc6_Initialize(void) {
         rtcc_write(Program_Mode_Reg, 0x00);
         rtc6_ClearAlarm0();
         rtc6_ClearAlarm1();
-        //disable both alarms 
-//        struct tm midnight = { 0, 0, 12, 1, 0, 121 }; 
-//        time_t now = time(NULL);
-//        now.tm_hour = 12;
-//        time_t rawtime = mktime(&midnight);
-//        rtc6_SetTime(rawtime);
+        rtc6_EnableAlarms(false, false);
+        //set the clock to 12 hour mode
+        rtcc_write(RTCC_HOUR, 0x20);
     }
+    
 }
 
 void rtc6_EnableAlarms(bool alarm0, bool alarm1){
@@ -136,30 +134,106 @@ static void rtc6_SetComponent(uint8_t location, uint8_t mask, uint8_t time){
     rtcc_write(location, inMemory | (time % 10) | ((time / 10) << 4)); 
 }
 
-void rtc6_SetTime(int hour, int minute, bool isAM) {
-    rtc6_SetComponent(RTCC_MINUTES, 0x00, minute);
-    rtc6_SetComponent(RTCC_SECONDS, 0x80, 0);
-    rtc6_SetComponent(RTCC_HOUR, 0x00, hour);
-    //set AM/PM flag
-}
-
 static uint8_t rtc6_GetComponent(uint8_t location, uint8_t mask){
     uint8_t working = rtcc_read(location) & mask;
     return (working & 0x0F) + (((working & (mask & 0xF0)) >> 4) * 10);
 }
 
-time_t rtc6_GetTime(void) {
-    struct tm tm_t;
-    memset(&tm_t, 0, sizeof (tm_t));
-    
-    tm_t.tm_year = rtc6_GetComponent(RTCC_YEAR, 0xFF) + 100; // Result only has two digits, this assumes 20xx
-    tm_t.tm_mon = rtc6_GetComponent(RTCC_MONTH, 0x1F) - 1; // time.h expects January as zero, clock gives 1
-    tm_t.tm_mday = rtc6_GetComponent(RTCC_DATE, 0x3F);
-    tm_t.tm_hour = rtc6_GetComponent(RTCC_HOUR, 0x3F);
-    tm_t.tm_min = rtc6_GetComponent(RTCC_MINUTES, 0x7F);
-    tm_t.tm_sec = rtc6_GetComponent(RTCC_SECONDS, 0x7F);
+void rtc6_SetTime(int hour, int minute, bool isPm) {
+    rtc6_SetComponent(RTCC_MINUTES, 0x00, minute);
+    rtc6_SetComponent(RTCC_SECONDS, 0x80, 0);
+    uint8_t hourReg = 0x40;
+    if(isPm) {
+        hourReg = 0x60;
+    }
+    switch(hour) {
+        case 1:
+            hourReg = SET_BIT(hourReg, 0);
+            break;
+        case 2:
+            hourReg = SET_BIT(hourReg, 1);
+            break;
+        case 3:
+            hourReg = SET_BIT(hourReg, 0);
+            hourReg = SET_BIT(hourReg, 1);
+            break;
+        case 4:
+            hourReg = SET_BIT(hourReg, 2);
+            break;
+        case 5:
+            hourReg = SET_BIT(hourReg, 0);
+            hourReg = SET_BIT(hourReg, 2);
+            break;
+        case 6:
+            hourReg = SET_BIT(hourReg, 1);
+            hourReg = SET_BIT(hourReg, 2);
+            break;
+        case 7:
+            hourReg = SET_BIT(hourReg, 0);
+            hourReg = SET_BIT(hourReg, 1);
+            hourReg = SET_BIT(hourReg, 2);
+            break;
+        case 8:
+            hourReg = SET_BIT(hourReg, 3);
+            break;
+        case 9:
+            hourReg = SET_BIT(hourReg, 3);
+            hourReg = SET_BIT(hourReg, 0);
+            break;
+        case 10:
+            hourReg = SET_BIT(hourReg, 4);
+            break;
+        case 11:
+            hourReg = SET_BIT(hourReg, 4);
+            hourReg = SET_BIT(hourReg, 0);
+            break;
+        case 12:
+            hourReg = SET_BIT(hourReg, 4);
+            hourReg = SET_BIT(hourReg, 1);
+            break;
+    }
+    rtcc_write(RTCC_HOUR, hourReg);
+}
 
-    return mktime(&tm_t);
+DateTime_t rtc6_GetTime(void) {
+    uint8_t hourReg = rtcc_read(RTCC_HOUR);
+    bool isPm = CHECK_BIT(hourReg, 5);
+    int hour = 0;
+    
+    if(CHECK_BIT(hourReg, 4)) {
+        hour += 10;
+    }
+    
+    if(CHECK_BIT(hourReg, 0)) {
+        hour += 1;
+    }
+    
+    
+    if(CHECK_BIT(hourReg, 1)) {
+        hour += 2;
+    }
+    
+    
+    if(CHECK_BIT(hourReg, 2)) {
+        hour += 4;
+    }
+    
+    
+    if(CHECK_BIT(hourReg, 3)) {
+        hour += 8;
+    }
+    
+    DateTime_t datetime = {
+        .sec = rtc6_GetComponent(RTCC_SECONDS, 0x7F),
+        .min = rtc6_GetComponent(RTCC_MINUTES, 0x7F),
+        .hr = hour,
+        .year = rtc6_GetComponent(RTCC_YEAR, 0xFF) + 100,
+        .month = rtc6_GetComponent(RTCC_MONTH, 0x1F),
+        .date = rtc6_GetComponent(RTCC_DATE, 0x3F),
+        .isPm = isPm
+    };
+    
+    return datetime;
 }
 
 void rtc6_SetAlarm0(struct tm tm_t, bool almpol, uint8_t mask){

@@ -31,6 +31,7 @@ void TMR_775ms_StopTimer(void)
 {
     // Stop the Timer by writing to TMR0ON bit
     T0CON0bits.T0EN = 0;
+    PIR0bits.TMR0IF = 0;
 }
 
 uint8_t TMR_775ms_ReadTimer(void)

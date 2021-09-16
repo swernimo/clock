@@ -2,11 +2,12 @@
 #include "mcc_generated_files/TMR_775ms.h"
 #include "I2C.h"
 #include "RTCC.h"
-#include "Display.h"
+//#include "Display.h"
 #include "mcc_generated_files/TMR_3s.h"
 #include "TMR_5m.h"
 #include "Utilities.h"
 #include "TMR_ProgMode.h"
+#include "Clock.h"
 
 static void InitializeDevice() {
     SYSTEM_Initialize();
@@ -22,63 +23,18 @@ void main(void)
 {
     InitializeDevice();
     TMR_775ms_StartTimer();
+    rtc6_SetTime(11, 59, false);
+    DateTime_t currentTime = rtc6_GetTime();
     while (1)
     {
-        /*
-         order of operations:
-         * Set Digit High
-         * Set Required Letters High
-         * delay 1 ms
-         * Set All Letters Low
-         * Set Digit Low
-         */
-        CLK_D1_SetHigh();
-        CLK_C_SetHigh();
-        CLK_B_SetHigh();
-        __delay_ms(1);
-        CLK_D1_SetLow();
-        CLK_C_SetLow();
-        CLK_B_SetLow();
-        CLK_D2_SetHigh();
-        CLK_A_SetHigh();
-        CLK_B_SetHigh();
-        CLK_G_SetHigh();
-        CLK_E_SetHigh();
-        CLK_D_SetHigh();
-        __delay_ms(1);
-        CLK_D2_SetLow();
-        CLK_A_SetLow();
-        CLK_B_SetLow();
-        CLK_G_SetLow();
-        CLK_E_SetLow();
-        CLK_D_SetLow();
-        CLK_D3_SetHigh();
-        CLK_A_SetHigh();
-        CLK_B_SetHigh();
-        CLK_C_SetHigh();
-        CLK_D_SetHigh();
-        CLK_G_SetHigh();
-        __delay_ms(1);
-        CLK_D3_SetLow();
-        CLK_A_SetLow();
-        CLK_B_SetLow();
-        CLK_C_SetLow();
-        CLK_D_SetLow();
-        CLK_G_SetLow();
+        if(TMR_775ms_HasOverflowOccured()) {            
+            currentTime = rtc6_GetTime();
+            TMR_775ms_StopTimer();
+            TMR_775ms_StartTimer();
+        }
         
-        CLK_D4_SetHigh();
-        CLK_F_SetHigh();
-        CLK_G_SetHigh();
-        CLK_B_SetHigh();
-        CLK_C_SetHigh();
-        CLK_DP_SetHigh();
-        __delay_ms(1);
-        CLK_D4_SetLow();
-        CLK_F_SetLow();
-        CLK_G_SetLow();
-        CLK_B_SetLow();
-        CLK_C_SetLow();
-        CLK_DP_SetLow();
+        DisplayTime(currentTime.hr, currentTime.min, currentTime.isPm);
+       
         if (SW_On_Pressed) {
             LED_On_Toggle();
         }
